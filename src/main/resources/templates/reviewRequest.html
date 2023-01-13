@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Diplom angefordert</title>
+</head>
+<body>
+<p><strong>{requester.name} {requester.callSign}</strong> hat eine Diplom-Anfrage für folgende Diplome gestellt:</p>
+<ul>
+    {#for candidate in candidates}
+        <li>{candidate.category} ({candidate.rank})</li>
+    {/for}
+</ul>
+<p>Bitte den Anhang prüfen und an {requester.mail} übermitteln.</p>
+</body>
+</html>

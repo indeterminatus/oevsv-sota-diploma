@@ -1,0 +1,53 @@
+###
+# @name JSON aller Aktivierer
+GET https://api-db.sota.org.uk/admin/activator_roll?associationID=0
+Accept: application/json
+Accept-Encoding: gzip
+
+###
+# @name JSON aller Chaser
+GET https://api-db.sota.org.uk/admin/chaser_roll?associationID=0
+Accept: application/json
+
+###
+# @name JSON aller SWL
+GET https://api-db.sota.org.uk/admin/swl_roll?associationID=-1
+Accept: application/json
+
+###
+# @name Alle Aktivierungen pro UserID (am Beispiel OE5JFE):
+GET https://api-db.sota.org.uk/admin/activator_log_by_id?year=all&id=11330
+Accept: application/json
+
+###
+# @name Alle Chases pro UserID (am Beispiel OE5JFE):
+GET https://api-db.sota.org.uk/admin/chaser_log_by_id?year=all&id=11330
+Accept: application/json
+
+###
+# @name Alle S2S pro UserID (am Beispiel OE5JFE):
+GET https://api-db.sota.org.uk/admin/s2s_log_by_id?year=all&id=11330
+Accept: application/json
+
+###
+# @name Alle Aktivierungen pro UserID (am Beispiel OE9NAT):
+GET https://api-db.sota.org.uk/admin/activator_log_by_id?year=all&id=52194
+Accept: application/json
+Accept-Encoding: gzip, deflate, br
+
+# @name Alle Chases pro UserID (am Beispiel OE5JFE):
+GET https://api-db.sota.org.uk/admin/chaser_log_by_id?year=all&id=11330
+Accept: application/json
+
+
+###
+# @name Alle SWL
+# curl "https://api-db.sota.org.uk/admin/swl_roll?associationID=-1" -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:103.0) Gecko/20100101 Firefox/103.0" -H "Accept: application/json, text/plain, */*" -H "Accept-Language: de,en-US;q=0.7,en;q=0.3" -H "Accept-Encoding: gzip, deflate, br" -H "Origin: https://www.sotadata.org.uk" -H "Connection: keep-alive" -H "Referer: https://www.sotadata.org.uk/" -H "Sec-Fetch-Dest: empty" -H "Sec-Fetch-Mode: cors" -H "Sec-Fetch-Site: cross-site"
+GET https://api-db.sota.org.uk/admin/swl_roll?associationID=-1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:103.0) Gecko/20100101 Firefox/103.0
+Accept: application/json, text/plain, */*
+Accept-Language: de,en-US;q=0.7,en;q=0.3
+Accept-Encoding: gzip, deflate, br
+Origin: https://www.sotadata.org.uk
+Connection: keep-alive
+Referer: https://www.sotadata.org.uk/

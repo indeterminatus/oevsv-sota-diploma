@@ -1,0 +1,110 @@
+#@name S2S
+POST http://localhost:8080/api/diploma/pdf/generate
+Accept: application/octet-stream,application/pdf
+Content-Type: application/json
+
+{
+  "requester": {
+    "callSign": "oe5idt",
+    "mail": "oe5idt@oevsv.at",
+    "name": "David Schwingenschlögl"
+  },
+  "candidate": {
+    "callSign": "oe5idt",
+    "userID": "12345",
+    "category": "S2S",
+    "rank": "{{rank}}",
+    "activations": {
+      "OE1": 0,
+      "OE2": 0,
+      "OE3": 10,
+      "OE4": 0,
+      "OE5": 0,
+      "OE6": 4,
+      "OE7": 10,
+      "OE8": 0,
+      "OE9": 0
+    }
+  },
+  "sequence": 1,
+  "locale": "en-US",
+  "quality": 0.1
+}
+
+>>! temporary/oe5idt_en_s2s_{{rank}}.pdf
+
+###
+
+#@name Activator
+POST http://localhost:8080/api/diploma/pdf/generate
+Accept: application/octet-stream,application/pdf
+Content-Type: application/json
+
+{
+  "requester": {
+    "callSign": "oe5idt",
+    "mail": "oe5idt@oevsv.at",
+    "name": "David Schwingenschlögl"
+  },
+  "candidate": {
+    "callSign": "oe5idt",
+    "userID": "12345",
+    "category": "ACTIVATOR",
+    "rank": "{{rank}}",
+    "activations": {
+      "OE1": 0,
+      "OE2": 0,
+      "OE3": 10,
+      "OE4": 0,
+      "OE5": 0,
+      "OE6": 4,
+      "OE7": 10,
+      "OE8": 0,
+      "OE9": 0
+    }
+  },
+  "sequence": 2,
+  "locale": "en-US",
+  "quality": 0.1
+}
+
+>>! temporary/oe5idt_en_act_{{rank}}.pdf
+
+###
+
+#@name Chaser
+POST http://localhost:8080/api/diploma/pdf/generate
+Accept: application/octet-stream,application/pdf
+Content-Type: application/json
+
+{
+  "requester": {
+    "callSign": "oe5idt",
+    "mail": "oe5idt@oevsv.at",
+    "name": "David Schwingenschlögl"
+  },
+  "candidate": {
+    "callSign": "oe5idt",
+    "userID": "12345",
+    "category": "CHASER",
+    "rank": "{{rank}}",
+    "activations": {
+      "OE1": 0,
+      "OE2": 0,
+      "OE3": 10,
+      "OE4": 0,
+      "OE5": 3,
+      "OE6": 4,
+      "OE7": 10,
+      "OE8": 0,
+      "OE9": 0
+    }
+  },
+  "sequence": 3,
+  "locale": "en-US",
+  "quality": 0.1
+}
+
+>>! temporary/oe5idt_en_cha_{{rank}}.pdf
+
+###

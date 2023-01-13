@@ -1,0 +1,110 @@
+#@name S2S
+POST http://localhost:8080/api/diploma/pdf/generate
+Accept: application/octet-stream,application/pdf
+Content-Type: application/json
+
+{
+  "requester": {
+    "callSign": "XXXXXX",
+    "mail": "oe5idt@oevsv.at",
+    "name": "Max Mustermann"
+  },
+  "candidate": {
+    "callSign": "XXXXXX",
+    "userID": "12345",
+    "category": "S2S",
+    "rank": "BRONZE",
+    "activations": {
+      "OE1": 0,
+      "OE2": 0,
+      "OE3": 10,
+      "OE4": 0,
+      "OE5": 0,
+      "OE6": 4,
+      "OE7": 0,
+      "OE8": 0,
+      "OE9": 0
+    }
+  },
+  "sequence": 1,
+  "locale": "de-AT",
+  "quality": 1.0
+}
+
+>>! temporary/xxxxxx_de_s2s_bronze.pdf
+
+###
+
+#@name simple PDF generation for testing purposes
+POST http://localhost:8080/api/diploma/pdf/generate
+Accept: application/octet-stream,application/pdf
+Content-Type: application/json
+
+{
+  "requester": {
+    "callSign": "XXXXXX",
+    "mail": "oe5idt@oevsv.at",
+    "name": "Max Mustermann"
+  },
+  "candidate": {
+    "callSign": "XXXXXX",
+    "userID": "12345",
+    "category": "ACTIVATOR",
+    "rank": "SILVER",
+    "activations": {
+      "OE1": 0,
+      "OE2": 3,
+      "OE3": 10,
+      "OE4": 0,
+      "OE5": 0,
+      "OE6": 4,
+      "OE7": 0,
+      "OE8": 0,
+      "OE9": 4
+    }
+  },
+  "sequence": 2,
+  "locale": "de-AT",
+  "quality": 1.0
+}
+
+>>! temporary/xxxxxx_de_act_silver.pdf
+
+###
+
+#@name simple PDF generation for testing purposes
+POST http://localhost:8080/api/diploma/pdf/generate
+Accept: application/octet-stream,application/pdf
+Content-Type: application/json
+
+{
+  "requester": {
+    "callSign": "XXXXXX",
+    "mail": "oe5idt@oevsv.at",
+    "name": "Max Mustermann"
+  },
+  "candidate": {
+    "callSign": "XXXXXX",
+    "userID": "12345",
+    "category": "CHASER",
+    "rank": "GOLD",
+    "activations": {
+      "OE1": 2,
+      "OE2": 0,
+      "OE3": 10,
+      "OE4": 4,
+      "OE5": 3,
+      "OE6": 4,
+      "OE7": 10,
+      "OE8": 3,
+      "OE9": 0
+    }
+  },
+  "sequence": 3,
+  "locale": "de-AT",
+  "quality": 1.0
+}
+
+>>! temporary/xxxxxx_de_cha_gold.pdf
+
+###

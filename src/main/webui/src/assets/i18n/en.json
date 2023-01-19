@@ -1,0 +1,62 @@
+{
+  "application": {
+    "title": "ÖVSV SOTA Awards"
+  },
+  "input": {
+    "callsign": {
+      "label": "Your Callsign",
+      "error": {
+        "invalid": "Not a valid callsign",
+        "required": "Your callsign is required"
+      }
+    },
+    "email": {
+      "label": "E-Mail Address",
+      "error": {
+        "invalid": "Not a valid e-mail address",
+        "required": "Your e-mail address is required"
+      }
+    },
+    "name": {
+      "label": "Name",
+      "error": {
+        "required": "Your name is required"
+      },
+      "placeholder": "Appears on award"
+    },
+    "check": {
+      "label": "Check"
+    },
+    "request": {
+      "label": "Request"
+    }
+  },
+  "api": {
+    "response": {
+      "error": {
+        "none": "There are currently no awards for you."
+      },
+      "request": {
+        "success": "Your request for this award was accepted and will be processed. The award will be delivered to your e-mail address."
+      }
+    }
+  },
+  "rank": {
+    "label": "Rank",
+    "GOLD": "Gold",
+    "SILVER": "Silver",
+    "BRONZE": "Bronze",
+    "NONE": "Unknown"
+  },
+  "category": {
+    "label": "Category",
+    "ACTIVATOR": "Activator",
+    "CHASER": "Chaser",
+    "S2S": "S2S"
+  },
+  "i18n": {
+    "language": "Sprache auswählen"
+  },
+  "de": "Deutsch",
+  "en": "English"
+}

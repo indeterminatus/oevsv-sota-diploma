@@ -1,0 +1,62 @@
+{
+  "application": {
+    "title": "ÖVSV SOTA Diplomantrag"
+  },
+  "input": {
+    "callsign": {
+      "label": "Dein Rufzeichen",
+      "error": {
+        "invalid": "Kein gültiges Rufzeichen",
+        "required": "Rufzeichen ist erforderlich"
+      }
+    },
+    "email": {
+      "label": "E-Mail Adresse",
+      "error": {
+        "invalid": "Keine gültige E-Mail Adresse",
+        "required": "E-Mail Adresse ist erforderlich"
+      }
+    },
+    "name": {
+      "label": "Name",
+      "error": {
+        "required": "Name ist erforderlich"
+      },
+      "placeholder": "Erscheint am Diplom"
+    },
+    "check": {
+      "label": "Prüfen"
+    },
+    "request": {
+      "label": "Anfordern"
+    }
+  },
+  "api": {
+    "response": {
+      "error": {
+        "none": "Es werden derzeit keine Anforderungen für ein Diplom erreicht."
+      },
+      "request": {
+        "success": "Die Diplomanfrage wurde aufgenommen und bearbeitet. Du erhältst das Diplom in nächster Zeit an deine E-Mail Adresse."
+      }
+    }
+  },
+  "rank": {
+    "label": "Rang",
+    "GOLD": "Gold",
+    "SILVER": "Silber",
+    "BRONZE": "Bronze",
+    "NONE": "Unbekannt"
+  },
+  "category": {
+    "label": "Kategorie",
+    "ACTIVATOR": "Aktivierer",
+    "CHASER": "Chaser",
+    "S2S": "S2S"
+  },
+  "i18n": {
+    "language": "Select language"
+  },
+  "de": "Deutsch",
+  "en": "English"
+}

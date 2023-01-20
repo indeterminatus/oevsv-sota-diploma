@@ -1,0 +1,34 @@
+version: "3.9"
+
+services:
+
+  # Persistence (postgresql)
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: diploma2022
+      POSTGRES_USER: postgres
+    ports:
+      - "5432"
+    volumes:
+      - ./data:/var/lib/postgresql/data
+
+  # Redis instance
+  redis:
+    image: redis
+    restart: always
+    ports:
+      - "6379"
+
+  # Application
+  application:
+    image: quarkus/oevsv-sota-diploma:1.0.0
+    restart: always
+    env_file:
+      - .env
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+      - redis

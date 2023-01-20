@@ -38,7 +38,7 @@ import java.time.LocalDate;
  * @author schwingenschloegl
  */
 @Entity(name = "DiplomaLog")
-@SequenceGenerator(initialValue = 1, name = "diploma", sequenceName = "diploma_sequence")
+@SequenceGenerator(initialValue = 1, name = "diploma", sequenceName = "diploma_sequence", allocationSize = 1)
 @Table(name = "DiplomaLog")
 public class DiplomaLog extends PanacheEntityBase {
 

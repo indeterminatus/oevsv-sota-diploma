@@ -47,7 +47,8 @@ import java.util.Objects;
 })
 @NamedQuery(name = "SummitList.updateValidFromAndValidToBySummitCode", query = "update SummitListEntry s set s.validFrom = :validFrom, s.validTo = :validTo where s.summitCode = :summitCode", lockMode = LockModeType.WRITE)
 @NamedQuery(name = "SummitList.validSummit", query = "select s from SummitListEntry s where s.summitCode = :summitCode and s.validFrom >= :date and s.validTo <= :date")
-public final class SummitListEntry extends PanacheEntityBase {
+// NB: class is not final to allow enhanced proxy (via extension); this boosts performance quite a bit
+public /*final*/ class SummitListEntry extends PanacheEntityBase {
 
     @Id
     @Column(name = "summitCode")

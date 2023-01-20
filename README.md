@@ -16,6 +16,14 @@ In order for the application to work properly, a few configuration options need 
  * QUARKUS_MAILER_FROM
  * QUARKUS_MAILER_MOCK=false
 
+If you're not running the application in dev mode, you should specify the following:
+ * QUARKUS_REDIS_HOSTS
+ * QUARKUS_DATASOURCE_JDBC_URL
+
+To configure the behaviour of the application, following environment variables are supported:
+ * DIPLOMA_MAILING_RECIPIENTS
+ * CHECK_AFTER_DATE
+
 ## Running the application in dev mode
 
 You can run your application in dev mode that enables live coding using:
@@ -36,25 +44,10 @@ Be aware that it’s not an _über-jar_ as the dependencies are copied into the 
 
 The application is now runnable using `java -jar target/quarkus-app/quarkus-run.jar`.
 
-If you want to build an _über-jar_, execute the following command:
+## Building everything for Docker
+
+This is the sequence to use to build the application for Docker:
 ```shell script
-./mvnw package -Dquarkus.package.type=uber-jar
+mvn clean package
+docker build -f src/main/docker/Dockerfile.jvm -t quarkus/oevsv-sota-diploma:1.0.0 .
 ```
-
-The application, packaged as an _über-jar_, is now runnable using `java -jar target/*-runner.jar`.
-
-## Creating a native executable
-
-You can create a native executable using: 
-```shell script
-./mvnw package -Pnative
-```
-
-Or, if you don't have GraalVM installed, you can run the native executable build in a container using: 
-```shell script
-./mvnw package -Pnative -Dquarkus.native.container-build=true
-```
-
-You can then execute your native executable with: `./target/diploma-1.0.0-SNAPSHOT-runner`
-
-If you want to learn more about building native executables, please consult https://quarkus.io/guides/maven-tooling.

@@ -32,11 +32,11 @@ import java.time.LocalDate;
  *
  * @param ownCallSign      own call sign
  * @param otherCallSign    call sign of other end of QSO
+ * @param activationDate   date of activation
  * @param _summit2Code     code of activated summit; do not use directly
  * @param _activatedSummit name of activated summit; do not use directly
  * @param _summitCode      code of chased summit; do not use directly
  * @param _chasedSummit    name of chased summit; do not use directly
- * @param activationTime   time of activation
  */
 public record SummitToSummitLog(@JsonProperty("OwnCallsign") String ownCallSign,
                                 @JsonProperty("OtherCallsign") String otherCallSign,

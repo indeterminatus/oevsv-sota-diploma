@@ -42,6 +42,7 @@ import org.eclipse.microprofile.rest.client.inject.RestClient;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
+import javax.annotation.security.PermitAll;
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
@@ -129,6 +130,7 @@ public class DiplomaResource {
     }
 
     @GET
+    @PermitAll
     @Path("/candidates")
     @Produces("application/json")
     @Blocking
@@ -215,6 +217,7 @@ public class DiplomaResource {
     }
 
     @POST
+    @PermitAll
     @Path("/request")
     @Produces("application/json")
     @Consumes("application/json")

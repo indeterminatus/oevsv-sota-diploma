@@ -21,6 +21,7 @@ import at.oevsv.sota.data.api.Candidate;
 import at.oevsv.sota.data.api.Requester;
 import io.quarkus.test.common.QuarkusTestResource;
 import io.quarkus.test.junit.QuarkusTest;
+import io.quarkus.test.security.TestSecurity;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.EnumSource;
@@ -77,6 +78,7 @@ final class PdfGenerationResourceTest {
     // endregion
 
     @Test
+    @TestSecurity(user = "test", roles = "admin")
     void generatePdf() throws IOException {
         final var response = sut.generatePdf(new PdfGenerationResource.Generation(requester(), candidate(Candidate.Category.ACTIVATOR, Candidate.Rank.GOLD)));
         assertThat(response).hasStatusCode(200).hasMediaType(MediaType.APPLICATION_OCTET_STREAM_TYPE).hasEntity();

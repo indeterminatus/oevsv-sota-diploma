@@ -32,6 +32,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.eclipse.microprofile.config.inject.ConfigProperty;
 
 import javax.annotation.Nonnull;
+import javax.annotation.security.RolesAllowed;
 import javax.enterprise.context.ApplicationScoped;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DefaultValue;
@@ -46,6 +47,7 @@ import java.util.Locale;
 
 @ApplicationScoped
 @Path("/api/diploma/pdf")
+@RolesAllowed("admin")
 public class PdfGenerationResource {
 
     private static final int EXPECTED_SIZE = 4 * 1024 * 1024;

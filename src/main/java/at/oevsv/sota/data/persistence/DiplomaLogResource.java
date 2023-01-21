@@ -24,6 +24,8 @@ import at.oevsv.sota.data.domain.Summit;
 import io.quarkus.panache.common.Parameters;
 import org.jetbrains.annotations.VisibleForTesting;
 
+import javax.annotation.security.PermitAll;
+import javax.annotation.security.RolesAllowed;
 import javax.enterprise.context.ApplicationScoped;
 import javax.transaction.Transactional;
 import javax.ws.rs.Consumes;
@@ -48,6 +50,7 @@ import java.util.function.IntSupplier;
 public final class DiplomaLogResource {
 
     @POST
+    @PermitAll
     @Transactional
     public boolean create(DiplomaRequest request) {
         final var signedCandidates = request.candidates();
@@ -93,13 +96,21 @@ public final class DiplomaLogResource {
     }
 
     @GET
+    @RolesAllowed("admin")
     @Path("/pending")
     @Transactional
     public List<DiplomaLog> listPending() {
+        return doListPending();
+    }
+
+    @VisibleForTesting
+    @Transactional
+    List<DiplomaLog> doListPending() {
         return DiplomaLog.list("select s from DiplomaLog s where s.reviewMailSent = false");
     }
 
     @PUT
+    @RolesAllowed("admin")
     @Path("/{id}")
     @Transactional
     public DiplomaLog update(@PathParam("id") Long id, DiplomaLog entry) {
@@ -122,7 +133,7 @@ public final class DiplomaLogResource {
 
     @Transactional
     @VisibleForTesting
-    public void deleteAll() {
+    void deleteAll() {
         DiplomaLog.deleteAll();
     }
 

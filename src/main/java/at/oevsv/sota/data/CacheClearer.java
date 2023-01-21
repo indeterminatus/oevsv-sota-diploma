@@ -20,6 +20,7 @@ import io.opentelemetry.instrumentation.annotations.WithSpan;
 import io.quarkus.cache.CacheManager;
 import io.quarkus.scheduler.Scheduled;
 
+import javax.annotation.security.RolesAllowed;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;
@@ -30,6 +31,7 @@ import javax.ws.rs.core.MediaType;
 import java.time.Duration;
 
 @Path("/api/cache")
+@RolesAllowed("admin")
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
 @ApplicationScoped

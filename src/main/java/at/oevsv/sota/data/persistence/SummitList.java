@@ -28,7 +28,10 @@ import org.apache.commons.lang3.StringUtils;
 import org.eclipse.microprofile.faulttolerance.Bulkhead;
 import org.eclipse.microprofile.rest.client.inject.RestClient;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.VisibleForTesting;
 
+import javax.annotation.security.PermitAll;
+import javax.annotation.security.RolesAllowed;
 import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.event.Observes;
 import javax.inject.Inject;
@@ -65,12 +68,30 @@ public final class SummitList {
     ExternalSummitsListService externalSummitsListService;
 
     @POST
+    @RolesAllowed("admin")
     @Path("/synchronize")
     @Scheduled(cron = "{summit.update.cron}")
     @WithSpan(value = "Check for summit list update")
     @Bulkhead(value = 1, waitingTaskQueue = 1)
     @Transactional
     public void synchronize() {
+        doSynchronize();
+    }
+
+    @Transactional
+    void onStart(@Observes StartupEvent event) {
+        Log.infof("Application initialized; synchronizing summit list...");
+        doSynchronize();
+        Log.infof("Summit list synchronization completed.");
+    }
+
+    /**
+     * Actually performs the synchronization; this was extracted, because the {@link #onStart(StartupEvent)} path should
+     * not depend on authorization (as it's the local application context).
+     */
+    @VisibleForTesting
+    @Transactional
+    void doSynchronize() {
         String lastSummitListFetch = "";
         var lastUpdateDate = SummitListUpdateLog.lastUpdate();
         if (lastUpdateDate != null) {
@@ -101,12 +122,6 @@ public final class SummitList {
         }
 
         Log.infof("Last update: %s", lastSummitListFetch);
-    }
-
-    void onStart(@Observes StartupEvent event) {
-        Log.infof("Application initialized; synchronizing summit list...");
-        synchronize();
-        Log.infof("Summit list synchronization completed.");
     }
 
     @WithSpan(value = "Persist All Summits")
@@ -147,12 +162,14 @@ public final class SummitList {
     }
 
     @GET
+    @PermitAll
     @SuppressWarnings("java:S3252") // justification: SummitListEntry is better readable
     public List<SummitListEntry> list() {
         return SummitListEntry.listAll();
     }
 
     @GET
+    @PermitAll
     @Path("/{code}")
     @SuppressWarnings("java:S3252") // justification: SummitListEntry is better readable
     public SummitListEntry getSummitListEntry(@PathParam("code") String summitCode) {
@@ -160,6 +177,7 @@ public final class SummitList {
     }
 
     @PUT
+    @RolesAllowed("admin")
     @Path("/{code}")
     @Transactional
     @SuppressWarnings("java:S3252") // justification: SummitListEntry is better readable

@@ -31,6 +31,7 @@ import io.quarkus.scheduler.Scheduled;
 import io.smallrye.common.annotation.Blocking;
 import org.eclipse.microprofile.faulttolerance.Bulkhead;
 
+import javax.annotation.security.RolesAllowed;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;
@@ -51,6 +52,7 @@ import java.util.concurrent.ThreadFactory;
 
 @ApplicationScoped
 @Path("/api/mail")
+@RolesAllowed("admin")
 public class MailingResource {
 
     @Inject

@@ -19,6 +19,7 @@ package at.oevsv.sota.data.persistence;
 import at.oevsv.sota.data.WireMockExtension;
 import io.quarkus.test.common.QuarkusTestResource;
 import io.quarkus.test.junit.QuarkusTest;
+import io.quarkus.test.security.TestSecurity;
 import org.junit.jupiter.api.Test;
 
 import javax.inject.Inject;
@@ -33,6 +34,7 @@ final class SummitListTest {
     SummitList sut;
 
     @Test
+    @TestSecurity(user = "test", roles = "admin")
     void synchronizeCanBeCalledInSuccession() {
         sut.synchronize();
         final var firstFetch = sut.list();

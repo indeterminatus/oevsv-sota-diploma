@@ -23,7 +23,9 @@ import at.oevsv.sota.data.api.Requester;
 import at.oevsv.sota.data.api.SignedCandidate;
 import at.oevsv.sota.data.domain.Summit;
 import at.oevsv.sota.data.persistence.DiplomaLogResource;
+import at.oevsv.sota.data.persistence.DiplomaLogResourceTestSeam;
 import at.oevsv.sota.data.persistence.SummitList;
+import at.oevsv.sota.data.persistence.SummitListTestSeam;
 import io.quarkus.test.common.QuarkusTestResource;
 import io.quarkus.test.junit.QuarkusTest;
 import org.junit.jupiter.api.BeforeEach;
@@ -54,7 +56,7 @@ final class DiplomaResourceTest {
 
     @BeforeEach
     void synchronize() {
-        summitList.synchronize();
+        SummitListTestSeam.synchronizeOn(summitList);
     }
 
     @Test
@@ -91,7 +93,7 @@ final class DiplomaResourceTest {
     @GuardedBy("LOCK")
     void candidates_OE5JFE_yieldExpectedResults() {
         synchronized (LOCK) {
-            logs.deleteAll();
+            DiplomaLogResourceTestSeam.deleteAllOn(logs);
             final var candidates = sut.checkCandidatesForUser("OE5JFE", null);
 
             assertActivatorCandidate(candidates);
@@ -121,8 +123,8 @@ final class DiplomaResourceTest {
             final var request = sut.requestDiploma("OE5JFE", new DiplomaRequest(new Requester("OE5JFE", "noreply@nothing.com", "Dip-Dip Dabbadudei"), candidates));
             assertThat(request).isTrue();
 
-            assertThat(logs.listPending()).isNotEmpty();
-            logs.deleteAll();
+            assertThat(DiplomaLogResourceTestSeam.listPendingOn(logs)).isNotEmpty();
+            DiplomaLogResourceTestSeam.deleteAllOn(logs);
         }
     }
 

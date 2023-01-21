@@ -21,6 +21,7 @@ import at.oevsv.sota.data.api.Requester;
 import io.quarkus.mailer.Mail;
 import io.quarkus.mailer.MockMailbox;
 import io.quarkus.test.junit.QuarkusTest;
+import io.quarkus.test.security.TestSecurity;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -45,6 +46,7 @@ class MailingResourceTest {
     }
 
     @Test
+    @TestSecurity(user = "test", roles = "admin")
     void sendingMailWorks() throws IOException {
         final Requester requester = new Requester();
         requester.mail = "something@nothing.com";

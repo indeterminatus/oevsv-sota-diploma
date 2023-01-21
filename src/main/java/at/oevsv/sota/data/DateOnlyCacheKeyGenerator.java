@@ -29,6 +29,9 @@ import java.time.format.DateTimeFormatter;
  * Interprets an RFC 1123 String as timestamp, but strips away hours, minutes, seconds ... effectively allowing us to
  * coerce all requests on the same day into the same cache entry. This effectively allows to fetch data only once per
  * day.
+ *
+ * @implNote Note that this class may make assumptions about the number and constellation of method parameters; before blindly
+ * wiring this up, make sure that it fits your needs!
  */
 @RegisterForReflection
 public final class DateOnlyCacheKeyGenerator implements CacheKeyGenerator {

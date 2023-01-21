@@ -24,6 +24,7 @@ import io.opentelemetry.instrumentation.annotations.WithSpan;
 import io.quarkus.logging.Log;
 import io.quarkus.runtime.StartupEvent;
 import io.quarkus.scheduler.Scheduled;
+import org.apache.commons.lang3.StringUtils;
 import org.eclipse.microprofile.faulttolerance.Bulkhead;
 import org.eclipse.microprofile.rest.client.inject.RestClient;
 import org.jetbrains.annotations.NotNull;
@@ -40,6 +41,7 @@ import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.RedirectionException;
 import javax.ws.rs.core.MediaType;
 import java.io.IOException;
 import java.io.InputStream;
@@ -90,6 +92,12 @@ public final class SummitList {
             log.persistAndFlush();
         } catch (IOException e) {
             Log.warn("Could not update summit list.", e);
+        } catch (RedirectionException e) {
+            if (StringUtils.contains(e.getMessage(), "HTTP 304")) {
+                Log.info("No modifications since last check.");
+            } else {
+                Log.warn("Could not update summit list.", e);
+            }
         }
 
         Log.infof("Last update: %s", lastSummitListFetch);
@@ -98,7 +106,7 @@ public final class SummitList {
     void onStart(@Observes StartupEvent event) {
         Log.infof("Application initialized; synchronizing summit list...");
         synchronize();
-        Log.infof("Summit list synchronized.");
+        Log.infof("Summit list synchronization completed.");
     }
 
     @WithSpan(value = "Persist All Summits")

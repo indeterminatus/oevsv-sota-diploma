@@ -23,7 +23,7 @@ services:
 
   # Application
   application:
-    image: quarkus/oevsv-sota-diploma:1.0.0
+    image: docker.io/indeterminatus/oevsv-sota-diploma
     restart: always
     env_file:
       - .env

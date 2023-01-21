@@ -18,6 +18,8 @@ package at.oevsv.sota.pdf;
 
 import at.oevsv.sota.data.api.Candidate;
 
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import java.util.Locale;
 import java.util.Objects;
 
@@ -31,8 +33,15 @@ final class DefaultDiplomaIdGenerator implements DiplomaIdGenerator {
     private final Candidate candidate;
     private final int sequence;
 
-    public DefaultDiplomaIdGenerator(Candidate candidate, int sequence) {
+    public DefaultDiplomaIdGenerator(Candidate candidate, @Min(0L) @Max(99_999L) int sequence) {
         this.candidate = Objects.requireNonNull(candidate);
+        if (sequence < 0) {
+            throw new IllegalArgumentException(String.format("sequence must not be negative! Passed: %d", sequence));
+        }
+        if (sequence > 99_999) {
+            throw new IllegalArgumentException(String.format("sequence must not exceed 99_999! Passed: %d", sequence));
+        }
+        // invariant: 0 <= sequence <= 99_999
         this.sequence = sequence;
     }
 

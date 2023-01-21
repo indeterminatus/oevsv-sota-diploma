@@ -100,12 +100,11 @@ public final class DiplomaLogResource {
     @Path("/pending")
     @Transactional
     public List<DiplomaLog> listPending() {
-        return doListPending();
+        return listPendingInternal();
     }
 
-    @VisibleForTesting
     @Transactional
-    List<DiplomaLog> doListPending() {
+    public List<DiplomaLog> listPendingInternal() {
         return DiplomaLog.list("select s from DiplomaLog s where s.reviewMailSent = false");
     }
 

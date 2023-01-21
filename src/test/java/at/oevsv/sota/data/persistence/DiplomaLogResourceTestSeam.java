@@ -24,7 +24,7 @@ import java.util.List;
 public final class DiplomaLogResourceTestSeam {
 
     public static List<DiplomaLog> listPendingOn(DiplomaLogResource log) {
-        return log.doListPending();
+        return log.listPendingInternal();
     }
 
     public static void deleteAllOn(DiplomaLogResource log) {

@@ -70,9 +70,6 @@ public final class SummitList {
     @POST
     @RolesAllowed("admin")
     @Path("/synchronize")
-    @Scheduled(cron = "{summit.update.cron}")
-    @WithSpan(value = "Check for summit list update")
-    @Bulkhead(value = 1, waitingTaskQueue = 1)
     @Transactional
     public void synchronize() {
         doSynchronize();
@@ -89,6 +86,9 @@ public final class SummitList {
      * Actually performs the synchronization; this was extracted, because the {@link #onStart(StartupEvent)} path should
      * not depend on authorization (as it's the local application context).
      */
+    @Scheduled(cron = "{summit.update.cron}")
+    @WithSpan(value = "Check for summit list update")
+    @Bulkhead(value = 1, waitingTaskQueue = 1)
     @VisibleForTesting
     @Transactional
     void doSynchronize() {

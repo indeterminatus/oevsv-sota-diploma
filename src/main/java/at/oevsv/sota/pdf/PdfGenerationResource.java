@@ -47,7 +47,6 @@ import java.util.Locale;
 
 @ApplicationScoped
 @Path("/api/diploma/pdf")
-@RolesAllowed("admin")
 public class PdfGenerationResource {
 
     private static final int EXPECTED_SIZE = 4 * 1024 * 1024;
@@ -112,20 +111,33 @@ public class PdfGenerationResource {
 
     @POST
     @Path("/generate")
+    @RolesAllowed("admin")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_OCTET_STREAM)
     public Response generatePdf(Generation generation) throws IOException {
-        final var request = generation.requester;
-        final var candidate = generation.candidate;
-
-        String fileName = fileNameFor(request, candidate);
-        Log.infof("Generating diploma %s", fileName);
-        byte[] bytes = generateBinary(request, candidate, generation.sequence, generation.quality, generation.locale, diplomaManager, debugLayout);
-        Log.infof("Generated diploma %s (%d bytes)", fileName, bytes.length);
+        String fileName = fileNameFor(generation);
+        byte[] bytes = generatePdfBytes(generation, fileName);
 
         return Response.ok(bytes, MediaType.APPLICATION_OCTET_STREAM)
                 .header("Content-Disposition", "attachment;filename=" + fileName)
                 .build();
+    }
+
+    public String fileNameFor(Generation generation) {
+        return fileNameFor(generation.requester, generation.candidate);
+    }
+
+    public byte[] generatePdfBytes(Generation generation) throws IOException {
+        return generatePdfBytes(generation, fileNameFor(generation));
+    }
+
+    @Nonnull
+    private byte[] generatePdfBytes(Generation generation, String fileName) throws IOException {
+        Log.infof("Generating diploma %s", fileName);
+        byte[] bytes = generateBinary(generation.requester, generation.candidate, generation.sequence, generation.quality, generation.locale, diplomaManager, debugLayout);
+        Log.infof("Generated diploma %s (%d bytes)", fileName, bytes.length);
+
+        return bytes;
     }
 
     @VisibleForTesting

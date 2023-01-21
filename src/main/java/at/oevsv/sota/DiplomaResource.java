@@ -32,6 +32,7 @@ import io.opentelemetry.api.trace.SpanKind;
 import io.opentelemetry.instrumentation.annotations.SpanAttribute;
 import io.opentelemetry.instrumentation.annotations.WithSpan;
 import io.quarkus.cache.CacheResult;
+import io.quarkus.logging.Log;
 import io.smallrye.common.annotation.Blocking;
 import io.smallrye.mutiny.Uni;
 import io.vertx.core.http.HttpServerRequest;
@@ -138,6 +139,7 @@ public class DiplomaResource {
     public Collection<SignedCandidate> checkCandidatesForUser(@SpanAttribute("callSign") @QueryParam("callsign") String callSign, @Context HttpServerRequest request) {
         enforceRateLimit(request);
 
+        Log.infof("Retrieving candidates for user %s since %s", callSign, checkAfter);
         final var userId = userIdForCallSign(callSign);
         if (userId == null) {
             throw new NotFoundException("No user found for callsign.");
@@ -176,6 +178,7 @@ public class DiplomaResource {
         final var requests = await(redis.get(throttlingKey));
         final int requestNumber = (requests != null) ? requests.toInteger() : 0;
         if (requestNumber >= requestsPerMinute) {
+            Log.warnf("Exceeded %d requests per minute; key: %s", requestsPerMinute, throttlingKey);
             throw new WebApplicationException(Response.status(Response.Status.TOO_MANY_REQUESTS).header("X-Rate-Limit-Retry-After-Seconds", 60 - now.getSecond()).build());
         }
 

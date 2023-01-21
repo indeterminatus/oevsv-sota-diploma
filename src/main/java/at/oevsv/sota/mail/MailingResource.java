@@ -31,6 +31,7 @@ import io.quarkus.scheduler.Scheduled;
 import io.smallrye.common.annotation.Blocking;
 import org.eclipse.microprofile.faulttolerance.Bulkhead;
 
+import javax.annotation.Nonnull;
 import javax.annotation.security.RolesAllowed;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
@@ -52,7 +53,6 @@ import java.util.concurrent.ThreadFactory;
 
 @ApplicationScoped
 @Path("/api/mail")
-@RolesAllowed("admin")
 public class MailingResource {
 
     @Inject
@@ -76,7 +76,7 @@ public class MailingResource {
     @Blocking
     @WithSpan(kind = SpanKind.SERVER, value = "sendPendingRequests")
     public void sendPendingRequests() {
-        final var pendingRequests = diplomaLog.listPending();
+        final var pendingRequests = diplomaLog.listPendingInternal();
         if (!pendingRequests.isEmpty()) {
             Log.infof("Sending %d pending diploma requests for review.", pendingRequests.size());
         }
@@ -102,8 +102,8 @@ public class MailingResource {
     public void sendDiplomaForReview(Requester requester, Candidate candidate, int sequence) throws IOException {
         final var template = Templates.reviewRequest(requester, List.of(candidate));
         final var mail = new Mail();
-        final var generatedPdf = generatePdf(requester, candidate, sequence);
-        mail.addAttachment(candidate.category().toString() + ".pdf", generatedPdf, "application/pdf");
+        final var generatedPdf = generatePreviewPdf(requester, candidate, sequence);
+        mail.addAttachment(generator.fileNameFor(generationParameter(requester, candidate, sequence)), generatedPdf, "application/pdf");
         template.mail(mail);
 
         template.subject(MessageFormat.format("Diplom-Anfrage von {0} ({1})", requester.name, requester.callSign));
@@ -120,17 +120,23 @@ public class MailingResource {
         Log.debug("Mail sent.");
     }
 
-    private byte[] generatePdf(Requester requester, Candidate candidate, int sequence) throws IOException {
-        final var parameter = new PdfGenerationResource.Generation(requester, candidate);
+    @Nonnull
+    private byte[] generatePreviewPdf(Requester requester, Candidate candidate, int sequence) throws IOException {
+        final PdfGenerationResource.Generation parameter = generationParameter(requester, candidate, sequence);
         parameter.setQuality(0.1f);
+        return generator.generatePdfBytes(parameter);
+    }
+
+    @Nonnull
+    private static PdfGenerationResource.Generation generationParameter(Requester requester, Candidate candidate, int sequence) {
+        final var parameter = new PdfGenerationResource.Generation(requester, candidate);
         parameter.setSequence(sequence);
-        try (final var response = generator.generatePdf(parameter)) {
-            return response.readEntity(byte[].class);
-        }
+        return parameter;
     }
 
     @POST
     @Path("test")
+    @RolesAllowed("admin")
     @Blocking
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
@@ -141,7 +147,7 @@ public class MailingResource {
             sendDiplomaForReview(requester, candidate, 9999);
         } else {
             mailer.send(new Mail().setSubject("ÖVSV Mailing Test").addTo(recipient).setText("Auto-generated test mail")
-                    .addAttachment("test.pdf", generatePdf(requester, candidate, 9999), "application/pdf")).await().atMost(Duration.ofMinutes(5L));
+                    .addAttachment("test.pdf", generatePreviewPdf(requester, candidate, 9999), "application/pdf")).await().atMost(Duration.ofMinutes(5L));
         }
     }
 }

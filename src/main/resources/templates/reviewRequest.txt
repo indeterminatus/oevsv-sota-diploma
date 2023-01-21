@@ -1,7 +1,10 @@
-{@at.oevsv.sota.data.api.Requester requester}
 Diplom angefordert
 
-{requester.name} {requester.callSign} hat eine Diplom-Anfrage gestellt.
+{requester.name} {requester.callSign} hat eine Diplom-Anfrage für folgende Diplome gestellt:
+{#for candidate in candidates}
+  * {candidate.category} ({candidate.rank})
+{/for}
+
 Bitte den Anhang prüfen und an {requester.mail} übermitteln.
 
 Dies ist eine automatisch generierte E-Mail Nachricht.

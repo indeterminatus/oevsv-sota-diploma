@@ -195,6 +195,11 @@
             <groupId>io.quarkus</groupId>
             <artifactId>quarkus-redis-client</artifactId>
         </dependency>
+        <!-- Building / deployment -->
+        <dependency>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-container-image-docker</artifactId>
+        </dependency>
         <!-- Other dependencies -->
         <dependency>
             <groupId>io.quarkiverse.quinoa</groupId>

@@ -41,4 +41,5 @@ nb-configuration.xml
 /src/main/doc/adr-tools-3.0.0/
 /src/test/resources/temporary/*.pdf
 /src/main/resources/pdf/images/*.psd
-/src/main/resources/docker/oevsv-sota-diploma/data/*
+/src/main/docker/oevsv-sota-diploma/data/*
+/src/main/assets/*.psd

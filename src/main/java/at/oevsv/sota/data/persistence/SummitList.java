@@ -22,12 +22,14 @@ import at.oevsv.sota.data.domain.SummitListEntry;
 import com.opencsv.bean.CsvToBeanBuilder;
 import io.opentelemetry.instrumentation.annotations.WithSpan;
 import io.quarkus.logging.Log;
+import io.quarkus.runtime.StartupEvent;
 import io.quarkus.scheduler.Scheduled;
 import org.eclipse.microprofile.faulttolerance.Bulkhead;
 import org.eclipse.microprofile.rest.client.inject.RestClient;
 import org.jetbrains.annotations.NotNull;
 
 import javax.enterprise.context.ApplicationScoped;
+import javax.enterprise.event.Observes;
 import javax.inject.Inject;
 import javax.transaction.Transactional;
 import javax.ws.rs.Consumes;
@@ -91,6 +93,12 @@ public final class SummitList {
         }
 
         Log.infof("Last update: %s", lastSummitListFetch);
+    }
+
+    void onStart(@Observes StartupEvent event) {
+        Log.infof("Application initialized; synchronizing summit list...");
+        synchronize();
+        Log.infof("Summit list synchronized.");
     }
 
     @WithSpan(value = "Persist All Summits")

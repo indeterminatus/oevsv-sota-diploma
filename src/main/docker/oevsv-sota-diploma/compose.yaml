@@ -23,8 +23,8 @@ services:
 
   # Application
   application:
-    image: docker.io/indeterminatus/oevsv-sota-diploma
-    restart: always
+    image: docker.io/indeterminatus/oevsv-sota-diploma:1.0.0-SNAPSHOT
+    restart: unless-stopped
     env_file:
       - .env
     ports:

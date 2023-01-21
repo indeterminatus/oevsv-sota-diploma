@@ -27,16 +27,17 @@
     <app-name-editor [target]="checkForm" class="form-element"></app-name-editor>
     <button mat-raised-button type="submit" [disabled]="!checkForm.valid">{{'input.check.label' | translate}}</button>
   </div>
-  <div class="sota-form" *ngIf="checked">
+</form>
+
+<div class="sota-form" *ngIf="checked">
     <span class="form-element" *ngIf="!candidates || candidates.length === 0">
       {{'api.response.error.none' | translate}}
     </span>
-    <span *ngIf="candidates && candidates.length >= 0">
+  <span *ngIf="candidates && candidates.length >= 0">
     <app-candidate-display class="form-element" *ngFor="let candidate of candidates"
                            [requester]="requester" [ngForAs]="candidate">
     </app-candidate-display>
       </span>
-  </div>
-</form>
+</div>
 
 <router-outlet></router-outlet>

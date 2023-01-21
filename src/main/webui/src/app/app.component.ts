@@ -40,8 +40,6 @@ export class AppComponent implements OnInit {
   @Output()
   requester: Requester | undefined = undefined;
 
-  private availableCandidates: SignedCandidate[] | undefined = undefined;
-
   constructor(private readonly translate: TranslateService, private readonly formBuilder: FormBuilder, private dataService: DiplomaService) {
     translate.addLangs(['de', 'en']);
     translate.setDefaultLang('de');
@@ -61,13 +59,11 @@ export class AppComponent implements OnInit {
 
     this.dataService.check(requester).then(data => {
         const filtered: SignedCandidate[] = data.filter((value) => value.candidate.rank !== 'NONE');
-        this.availableCandidates = filtered;
         this.createComponentsFor(filtered);
         this.requester = requester;
         this.checked = true;
       },
       error => {
-        this.availableCandidates = [];
         this.createComponentsFor([]);
         console.debug("Received error!", error);
         this.checked = true;

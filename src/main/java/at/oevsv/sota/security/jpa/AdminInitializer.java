@@ -31,14 +31,24 @@ import javax.transaction.Transactional;
 @ApplicationScoped
 class AdminInitializer {
 
+    /**
+     * The name of the administrative user.
+     */
+    private static final String USERNAME = "administrator";
+
     @ConfigProperty(name = "administrator.password", defaultValue = "")
     String password;
 
     @Transactional
     void onStart(@Observes StartupEvent event) {
-        if (StringUtils.isNotBlank(password) && User.findByName("administrator") == null) {
-            Log.infof("Setting initial administrator password to '%s'", password);
-            User.add("administrator", password, "admin");
+        if (StringUtils.isNotBlank(password)) {
+            if (User.findById(USERNAME) == null) {
+                Log.infof("Setting initial administrator password to '%s'", password);
+                User.add(USERNAME, password, "admin");
+            } else {
+                Log.infof("Changing administrator password to '%s'", password);
+                User.changePassword(USERNAME, password);
+            }
         }
     }
 }

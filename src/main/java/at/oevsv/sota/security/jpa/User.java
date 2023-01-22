@@ -23,8 +23,6 @@ import io.quarkus.security.jpa.Roles;
 import io.quarkus.security.jpa.UserDefinition;
 import io.quarkus.security.jpa.Username;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -60,8 +58,11 @@ public class User extends PanacheEntityBase {
         user.persist();
     }
 
-    @Nullable
-    static User findByName(@Nonnull String username) {
-        return User.find("username", username).firstResult();
+    static void changePassword(String username, String password) {
+        User user = findById(username);
+        if (user != null) {
+            user.password = BcryptUtil.bcryptHash(password);
+            user.persist();
+        }
     }
 }

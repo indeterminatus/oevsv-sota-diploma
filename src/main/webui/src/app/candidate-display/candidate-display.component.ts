@@ -21,6 +21,7 @@ import {SignedCandidate} from "../api/signed-candidate";
 import {DiplomaService} from "../diploma.service";
 import {DiplomaRequest} from "../api/diploma-request";
 import {Requester} from "../api/requester";
+import {faCheck} from "@fortawesome/free-solid-svg-icons";
 
 @Component({
   selector: 'app-candidate-display',
@@ -28,6 +29,8 @@ import {Requester} from "../api/requester";
   styleUrls: ['./candidate-display.component.css']
 })
 export class CandidateDisplayComponent extends BaseComponent implements OnInit {
+
+  checkIcon = faCheck;
 
   checking: boolean = false;
   checked: boolean = false;

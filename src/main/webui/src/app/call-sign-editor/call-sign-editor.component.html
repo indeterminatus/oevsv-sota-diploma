@@ -16,6 +16,8 @@
 
 <mat-form-field appearance="fill">
   <mat-label>{{'input.callsign.label' | translate}}</mat-label>
-  <input matInput id="call-sign" type="text" [formControl]="callSign" placeholder="OE5IDT" required>
+  <mat-hint>{{'input.callsign.hint' | translate}}</mat-hint>
+  <input matInput id="call-sign" type="text" [formControl]="callSign"
+         placeholder="{{'input.callsign.placeholder' | translate}}" required>
   <mat-error *ngIf="callSign.invalid">{{getErrorMessage()}}</mat-error>
 </mat-form-field>

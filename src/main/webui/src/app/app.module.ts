@@ -37,6 +37,8 @@ import {BaseComponent} from './base-component/base.component';
 import {MatCheckboxModule} from "@angular/material/checkbox";
 import {MatCardModule} from "@angular/material/card";
 import {MatProgressBarModule} from "@angular/material/progress-bar";
+import {MatIconModule} from "@angular/material/icon";
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 export function httpTranslateLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -52,28 +54,30 @@ export function httpTranslateLoaderFactory(http: HttpClient) {
     CandidateDisplayComponent,
     BaseComponent
   ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    AppRoutingModule,
-    ReactiveFormsModule,
-    HttpClientModule,
-    TranslateModule.forRoot({
-      loader: {
-        provide: TranslateLoader,
-        useFactory: httpTranslateLoaderFactory,
-        deps: [HttpClient]
-      }
-    }),
-    MatSelectModule,
-    MatInputModule,
-    MatToolbarModule,
-    MatButtonModule,
-    FormsModule,
-    MatCheckboxModule,
-    MatCardModule,
-    MatProgressBarModule
-  ],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        AppRoutingModule,
+        ReactiveFormsModule,
+        HttpClientModule,
+        TranslateModule.forRoot({
+            loader: {
+                provide: TranslateLoader,
+                useFactory: httpTranslateLoaderFactory,
+                deps: [HttpClient]
+            }
+        }),
+        MatSelectModule,
+        MatInputModule,
+        MatToolbarModule,
+        MatButtonModule,
+        FormsModule,
+        MatCheckboxModule,
+        MatCardModule,
+        MatProgressBarModule,
+        MatIconModule,
+        FontAwesomeModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

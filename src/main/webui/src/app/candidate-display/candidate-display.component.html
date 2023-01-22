@@ -27,7 +27,10 @@
   </mat-card-actions>
   <mat-card-footer>
     <mat-progress-bar mode="indeterminate" *ngIf="checking"></mat-progress-bar>
-    <span class="form-element" *ngIf="checked && success">{{'api.response.request.success' | translate}}</span>
+    <div class="mat-body" *ngIf="checked && success">
+      <fa-icon icon="check"></fa-icon>
+      <span>{{'api.response.request.success' | translate}}</span>
+    </div>
     <mat-error *ngIf="getErrorMessage()">{{getErrorMessage()}}</mat-error>
   </mat-card-footer>
 </mat-card>

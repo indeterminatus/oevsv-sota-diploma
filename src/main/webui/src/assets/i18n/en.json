@@ -5,6 +5,8 @@
   "input": {
     "callsign": {
       "label": "Your Callsign",
+      "placeholder": "OE1QSL",
+      "hint": "",
       "error": {
         "invalid": "Not a valid callsign",
         "required": "Your callsign is required"
@@ -12,6 +14,8 @@
     },
     "email": {
       "label": "E-Mail Address",
+      "placeholder": "oe1qsl@oevsv.at",
+      "hint": "",
       "error": {
         "invalid": "Not a valid e-mail address",
         "required": "Your e-mail address is required"
@@ -19,10 +23,11 @@
     },
     "name": {
       "label": "Name",
+      "placeholder": "John Smith",
+      "hint": "Appears on your award",
       "error": {
         "required": "Your name is required"
-      },
-      "placeholder": "Appears on award"
+      }
     },
     "check": {
       "label": "Check"
@@ -34,11 +39,16 @@
   "api": {
     "response": {
       "error": {
-        "none": "There are currently no awards for you."
+        "none": "There are currently no awards for you to request."
       },
       "request": {
         "success": "Your request for this award was accepted and will be processed. The award will be delivered to your e-mail address."
       }
+    }
+  },
+  "content": {
+    "header": {
+      "available": "Congratulations! There is at least one award for you to request:"
     }
   },
   "rank": {

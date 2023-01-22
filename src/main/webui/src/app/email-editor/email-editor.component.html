@@ -16,6 +16,8 @@
 
 <mat-form-field appearance="fill">
   <mat-label>{{'input.email.label' | translate}}</mat-label>
-  <input matInput id="email" type="text" [formControl]="email" placeholder="oe5idt@oevsv.at" required>
+  <mat-hint>{{'input.email.hint' | translate}}</mat-hint>
+  <input matInput id="email" type="text" [formControl]="email" placeholder="{{'input.email.placeholder' | translate}}"
+         required>
   <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
 </mat-form-field>

@@ -16,6 +16,7 @@
 
 <mat-form-field appearance="fill">
   <mat-label>{{'input.name.label' | translate}}</mat-label>
+  <mat-hint>{{'input.name.hint' | translate}}</mat-hint>
   <input matInput id="name" type="text" [formControl]="name" placeholder="{{'input.name.placeholder' | translate}}"
          required>
   <mat-error *ngIf="name.invalid">{{getErrorMessage()}}</mat-error>

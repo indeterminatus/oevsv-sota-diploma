@@ -5,6 +5,8 @@
   "input": {
     "callsign": {
       "label": "Dein Rufzeichen",
+      "placeholder": "OE1QSL",
+      "hint": "",
       "error": {
         "invalid": "Kein gültiges Rufzeichen",
         "required": "Rufzeichen ist erforderlich"
@@ -12,6 +14,8 @@
     },
     "email": {
       "label": "E-Mail Adresse",
+      "placeholder": "oe1qsl@oevsv.at",
+      "hint": "",
       "error": {
         "invalid": "Keine gültige E-Mail Adresse",
         "required": "E-Mail Adresse ist erforderlich"
@@ -19,10 +23,11 @@
     },
     "name": {
       "label": "Name",
+      "placeholder": "Maximilian Mustermann",
+      "hint": "Erscheint am Diplom",
       "error": {
         "required": "Name ist erforderlich"
-      },
-      "placeholder": "Erscheint am Diplom"
+      }
     },
     "check": {
       "label": "Prüfen"
@@ -34,11 +39,16 @@
   "api": {
     "response": {
       "error": {
-        "none": "Es werden derzeit keine Anforderungen für ein Diplom erreicht."
+        "none": "Derzeit gibt es kein Diplom, das du anfordern kannst."
       },
       "request": {
-        "success": "Die Diplomanfrage wurde aufgenommen und bearbeitet. Du erhältst das Diplom in nächster Zeit an deine E-Mail Adresse."
+        "success": "Die Diplomanfrage ist aufgenommen und wird bearbeitet. Du erhältst das Diplom in nächster Zeit an deine E-Mail Adresse."
       }
+    }
+  },
+  "content": {
+    "header": {
+      "available": "Herzlichen Glückwunsch! Du kannst mindestens ein Diplom beantragen:"
     }
   },
   "rank": {

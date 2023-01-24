@@ -81,3 +81,9 @@ Content-Type: application/json
 #@name Send test mail
 POST http://localhost:8080/api/mail/test?to=oe5idt@oevsv.at&templated=true
 Accept: application/json
+
+###
+
+#@name Synchronize summits
+POST http://localhost:8080/api/summits/synchronize
+Accept: application/json

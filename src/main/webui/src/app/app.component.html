@@ -33,7 +33,7 @@
   <div class="mat-body" *ngIf="!candidates || candidates.length === 0">
     {{'api.response.error.none' | translate}}
   </div>
-  <div *ngIf="candidates && candidates.length >= 0">
+  <div *ngIf="candidates && candidates.length > 0">
     <mat-label>{{'content.header.available' | translate}}</mat-label>
     <app-candidate-display class="form-element" *ngFor="let candidate of candidates"
                            [requester]="requester" [ngForAs]="candidate">

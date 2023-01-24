@@ -20,6 +20,11 @@
     <mat-card-subtitle>{{getRank()}}</mat-card-subtitle>
   </mat-card-header>
   <mat-card-content>
+    <ul *ngIf="signedCandidate?.candidate?.activations">
+      <li *ngFor="let activation of signedCandidate?.candidate?.activations | keyvalue">
+        {{activation.key}}: {{activation.value}}
+      </li>
+    </ul>
   </mat-card-content>
   <mat-card-actions>
     <button mat-raised-button (click)="requestDiploma()"

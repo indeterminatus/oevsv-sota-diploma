@@ -16,7 +16,7 @@ services:
 
   # Redis instance
   redis:
-    image: redis
+    image: docker.io/redis:7-alpine
     restart: always
     ports:
       - "6379"

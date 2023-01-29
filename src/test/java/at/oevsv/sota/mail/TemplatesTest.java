@@ -16,13 +16,16 @@
 
 package at.oevsv.sota.mail;
 
+import at.oevsv.sota.data.api.Candidate;
 import at.oevsv.sota.data.api.Requester;
+import at.oevsv.sota.data.domain.Summit;
 import io.quarkus.logging.Log;
 import io.quarkus.test.junit.QuarkusTest;
 import org.jetbrains.annotations.NotNull;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
+import java.util.Map;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -44,6 +47,15 @@ final class TemplatesTest {
         final var rendered = template.templateInstance().render();
         Log.info(rendered);
         assertThat(rendered).isNotEmpty();
+    }
+
+    @Test
+    void activationsArePrinted() {
+        final var template = Templates.reviewRequest(getRequester(), List.of(new Candidate("OE5IDT", "", Candidate.Category.S2S, Candidate.Rank.BRONZE, Map.of(Summit.State.OE1, 1L, Summit.State.OE5, 12L))));
+        final var rendered = template.templateInstance().render();
+        Log.info(rendered);
+
+        assertThat(rendered).contains("OE1: 1").contains("OE5: 12");
     }
 
     @NotNull

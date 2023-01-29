@@ -8,7 +8,13 @@
 <p><strong>{requester.name} {requester.callSign}</strong> hat eine Diplom-Anfrage für folgende Diplome gestellt:</p>
 <ul>
     {#for candidate in candidates}
-        <li>{candidate.category} ({candidate.rank})</li>
+        <li>{candidate.category} ({candidate.rank}):<br>
+        <ul>
+            {#for state in candidate.activations.keySet}
+                <li>{state}: {candidate.activations.get(state)}</li>
+            {/for}
+        </ul>
+        </li>
     {/for}
 </ul>
 <p>Bitte den Anhang prüfen und an {requester.mail} übermitteln.</p>

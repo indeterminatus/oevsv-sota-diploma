@@ -2,7 +2,10 @@ Diplom angefordert
 
 {requester.name} {requester.callSign} hat eine Diplom-Anfrage für folgende Diplome gestellt:
 {#for candidate in candidates}
-  * {candidate.category} ({candidate.rank})
+  * {candidate.category} ({candidate.rank}):
+    {#for state in candidate.activations.keySet}
+    {state}: {candidate.activations.get(state)}
+    {/for}
 {/for}
 
 Bitte den Anhang prüfen und an {requester.mail} übermitteln.

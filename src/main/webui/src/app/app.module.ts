@@ -39,6 +39,7 @@ import {MatCardModule} from "@angular/material/card";
 import {MatProgressBarModule} from "@angular/material/progress-bar";
 import {MatIconModule} from "@angular/material/icon";
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
+import { SpinnerComponent } from './spinner/spinner.component';
 
 export function httpTranslateLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -52,7 +53,8 @@ export function httpTranslateLoaderFactory(http: HttpClient) {
     EmailEditorComponent,
     NameEditorComponent,
     CandidateDisplayComponent,
-    BaseComponent
+    BaseComponent,
+    SpinnerComponent
   ],
     imports: [
         BrowserModule,

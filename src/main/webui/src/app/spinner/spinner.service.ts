@@ -14,36 +14,25 @@
  * limitations under the License.
  */
 
-/* You can add global styles to this file, and also import other style files */
+import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 
-html, body {
-  height: 100%;
-}
+@Injectable({
+  providedIn: 'root'
+})
+export class SpinnerService {
 
-body {
-  margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
-}
+  public spinner$: Subject<any>;
 
-app-spinner {
-  position: fixed;
-  margin: 0 auto;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  text-align: center;
-  z-index: 999;
-  overflow: hidden;
-  background: #fff;
-  opacity: 0.5;
-}
+  constructor() {
+    this.spinner$ = new Subject<any>();
+  }
 
-app-spinner:before {
-  content: "";
-  height: 100%;
-  display: inline-block;
-  vertical-align: middle;
+  showSpinner() {
+    this.spinner$.next(true);
+  }
+
+  hideSpinner() {
+    this.spinner$.next(false);
+  }
 }

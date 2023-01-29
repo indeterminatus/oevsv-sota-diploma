@@ -20,6 +20,7 @@ import {FormBuilder} from "@angular/forms";
 import {DiplomaService} from "./diploma.service";
 import {Requester} from "./api/requester";
 import {SignedCandidate} from "./api/signed-candidate";
+import {SpinnerService} from "./spinner/spinner.service";
 
 @Component({
   selector: 'app-root',
@@ -40,9 +41,18 @@ export class AppComponent implements OnInit {
   @Output()
   requester: Requester | undefined = undefined;
 
-  constructor(private readonly translate: TranslateService, private readonly formBuilder: FormBuilder, private dataService: DiplomaService) {
+  showSpinner = false;
+
+  constructor(private readonly translate: TranslateService, private readonly formBuilder: FormBuilder, private dataService: DiplomaService, private spinnerService: SpinnerService) {
     translate.addLangs(['de', 'en']);
     translate.setDefaultLang('de');
+
+    this.spinnerService.spinner$.subscribe((data: boolean) => {
+      setTimeout(() => {
+        this.showSpinner = data ? data : false;
+      });
+      console.log(this.showSpinner);
+    });
   }
 
   ngOnInit(): void {
@@ -57,6 +67,7 @@ export class AppComponent implements OnInit {
       mail: this.checkForm.get<string>('email')?.value
     };
 
+    this.spinnerService.showSpinner();
     this.dataService.check(requester).then(data => {
         const filtered: SignedCandidate[] = data.filter((value) => value.candidate.rank !== 'NONE');
         this.createComponentsFor(filtered);
@@ -67,7 +78,9 @@ export class AppComponent implements OnInit {
         this.createComponentsFor([]);
         console.debug("Received error!", error);
         this.checked = true;
-      });
+      }).finally(() => {
+      this.spinnerService.hideSpinner();
+    });
   }
 
   private createComponentsFor(data: SignedCandidate[]): void {

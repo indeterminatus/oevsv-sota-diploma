@@ -29,12 +29,15 @@ import io.quarkus.mailer.Mail;
 import io.quarkus.mailer.reactive.ReactiveMailer;
 import io.quarkus.scheduler.Scheduled;
 import io.smallrye.common.annotation.Blocking;
+import org.eclipse.microprofile.config.inject.ConfigProperty;
 import org.eclipse.microprofile.faulttolerance.Bulkhead;
 
 import javax.annotation.Nonnull;
 import javax.annotation.security.RolesAllowed;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DefaultValue;
 import javax.ws.rs.POST;
@@ -66,6 +69,11 @@ public class MailingResource {
 
     @Inject
     ReactiveMailer mailer;
+
+    @ConfigProperty(name = "pdf.preview.quality", defaultValue = "95")
+    @Min(1L)
+    @Max(100L)
+    int previewQuality;
 
     private final ThreadFactory threadFactory =
             new ThreadFactoryBuilder().setNameFormat("mailing-worker-%d").build();
@@ -123,7 +131,7 @@ public class MailingResource {
     @Nonnull
     private byte[] generatePreviewPdf(Requester requester, Candidate candidate, int sequence) throws IOException {
         final PdfGenerationResource.Generation parameter = generationParameter(requester, candidate, sequence);
-        parameter.setQuality(0.1f);
+        parameter.setQuality(previewQuality / 100.0f);
         return generator.generatePdfBytes(parameter);
     }
 

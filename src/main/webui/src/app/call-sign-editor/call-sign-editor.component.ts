@@ -26,7 +26,7 @@ import {BaseComponent} from "../base-component/base.component";
 })
 export class CallSignEditorComponent extends BaseComponent implements OnInit {
 
-  readonly callSign = new FormControl('', [Validators.required, Validators.pattern(/^([A-Z0-9]+\/)?[A-Z0-9]{1,2}\d+[A-Z]+(\/[A-Z0-9]+)?$/iu)]);
+  readonly callSign = new FormControl('', [Validators.required, Validators.pattern(/^([A-Z0-9]+\/)?[A-Z0-9]{1,2}\d+[A-Z]+(\/[A-Z0-9]+)?$/iu), Validators.minLength(3), Validators.maxLength(15)]);
 
   constructor(override readonly translate: TranslateService) {
     super(translate);
@@ -41,6 +41,12 @@ export class CallSignEditorComponent extends BaseComponent implements OnInit {
       return this.translate.instant('input.callsign.error.required');
     }
     if (this.callSign.hasError('pattern')) {
+      return this.translate.instant('input.callsign.error.invalid');
+    }
+    if (this.callSign.hasError('minLength')) {
+      return this.translate.instant('input.callsign.error.invalid');
+    }
+    if (this.callSign.hasError('maxLength')) {
       return this.translate.instant('input.callsign.error.invalid');
     }
     return '';

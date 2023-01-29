@@ -26,7 +26,8 @@
       "placeholder": "John Smith",
       "hint": "Appears on your award",
       "error": {
-        "required": "Your name is required"
+        "required": "Your name is required",
+        "maxLength": "Maximum length exceeded"
       }
     },
     "check": {

@@ -26,7 +26,8 @@
       "placeholder": "Maximilian Mustermann",
       "hint": "Erscheint am Diplom",
       "error": {
-        "required": "Name ist erforderlich"
+        "required": "Name ist erforderlich",
+        "maxLength": "Maximale Länge überschritten"
       }
     },
     "check": {

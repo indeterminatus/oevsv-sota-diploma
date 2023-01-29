@@ -26,7 +26,7 @@ import {BaseComponent} from "../base-component/base.component";
 })
 export class NameEditorComponent extends BaseComponent implements OnInit {
 
-  readonly name = new FormControl('', [Validators.required]);
+  readonly name = new FormControl('', [Validators.required, Validators.maxLength(100)]);
 
   constructor(public override readonly translate: TranslateService) {
     super(translate);
@@ -39,6 +39,9 @@ export class NameEditorComponent extends BaseComponent implements OnInit {
   getErrorMessage(): string {
     if (this.name.hasError('required')) {
       return this.translate.instant('input.name.error.required');
+    }
+    if (this.name.hasError('maxLength')) {
+      return this.translate.instant('input.name.error.maxLength');
     }
     return '';
   }

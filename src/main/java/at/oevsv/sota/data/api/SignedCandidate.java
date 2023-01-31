@@ -17,13 +17,10 @@
 package at.oevsv.sota.data.api;
 
 import at.oevsv.sota.data.domain.jackson.CanonicalJson;
+import at.oevsv.sota.security.Hmac;
 import io.quarkus.logging.Log;
 import org.apache.commons.lang3.StringUtils;
 
-import javax.crypto.Mac;
-import javax.crypto.spec.SecretKeySpec;
-import javax.xml.bind.DatatypeConverter;
-import java.nio.charset.StandardCharsets;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 
@@ -35,8 +32,6 @@ import java.security.NoSuchAlgorithmException;
  * @author schwingenschloegl
  */
 public record SignedCandidate(Candidate candidate, String signature) {
-
-    private static final String ALGORITHM = "HmacSHA256";
 
     public static SignedCandidate sign(Candidate candidate) {
         final var signature = generateSignature(candidate);
@@ -58,19 +53,10 @@ public record SignedCandidate(Candidate candidate, String signature) {
 
         // invariant: canonical != null
         try {
-            // TODO: generate key once
-            return hmac(ALGORITHM, canonical, "test123");
+            return Hmac.calculate(canonical);
         } catch (NoSuchAlgorithmException | InvalidKeyException e) {
             Log.warnf(e, "Could not sign canonical JSON.");
             return null;
         }
-    }
-
-    // TODO: move to class of its own
-    private static String hmac(String algorithm, String data, String key) throws NoSuchAlgorithmException, InvalidKeyException {
-        SecretKeySpec keySpec = new SecretKeySpec(key.getBytes(StandardCharsets.UTF_8), algorithm);
-        Mac mac = Mac.getInstance(algorithm);
-        mac.init(keySpec);
-        return DatatypeConverter.printHexBinary(mac.doFinal(data.getBytes(StandardCharsets.UTF_8)));
     }
 }

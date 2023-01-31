@@ -31,7 +31,6 @@ import javax.ws.rs.core.MediaType;
 import java.time.Duration;
 
 @Path("/api/cache")
-@RolesAllowed("admin")
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
 @ApplicationScoped
@@ -42,9 +41,14 @@ public class CacheClearer {
 
     @POST
     @Path("/cache/invalidate")
+    @RolesAllowed("admin")
+    public void clearAllCaches() {
+        doClearAllCaches();
+    }
+
     @Scheduled(cron = "{cache.invalidation.cron}")
     @WithSpan(value = "Clear Caches")
-    public void clearAllCaches() {
+    void doClearAllCaches() {
         for (final var cacheName : cacheManager.getCacheNames()) {
             cacheManager.getCache(cacheName).ifPresent(cache -> cache.invalidateAll().await().atMost(Duration.ofMinutes(1L)));
         }

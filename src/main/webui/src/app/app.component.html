@@ -35,9 +35,12 @@
   </div>
   <div *ngIf="candidates && candidates.length > 0">
     <mat-label>{{'content.header.available' | translate}}</mat-label>
-    <app-candidate-display class="form-element" *ngFor="let candidate of candidates"
-                           [requester]="requester" [ngForAs]="candidate">
-    </app-candidate-display>
+    <div fxLayout="row wrap" fxLayout.sm="column" fxLayoutGap="16px grid">
+      <div fxFlex="33%" fxFlex.xs="100%" fxFlex.sm="50%" fxFlexAlign="start stretch" *ngFor="let candidate of candidates">
+        <app-candidate-display [requester]="requester" [ngForAs]="candidate">
+        </app-candidate-display>
+      </div>
+    </div>
   </div>
 </div>
 

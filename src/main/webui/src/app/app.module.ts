@@ -39,7 +39,8 @@ import {MatCardModule} from "@angular/material/card";
 import {MatProgressBarModule} from "@angular/material/progress-bar";
 import {MatIconModule} from "@angular/material/icon";
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
-import { SpinnerComponent } from './spinner/spinner.component';
+import {SpinnerComponent} from './spinner/spinner.component';
+import {FlexLayoutModule, FlexModule} from "@angular/flex-layout";
 
 export function httpTranslateLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -56,30 +57,31 @@ export function httpTranslateLoaderFactory(http: HttpClient) {
     BaseComponent,
     SpinnerComponent
   ],
-    imports: [
-        BrowserModule,
-        BrowserAnimationsModule,
-        AppRoutingModule,
-        ReactiveFormsModule,
-        HttpClientModule,
-        TranslateModule.forRoot({
-            loader: {
-                provide: TranslateLoader,
-                useFactory: httpTranslateLoaderFactory,
-                deps: [HttpClient]
-            }
-        }),
-        MatSelectModule,
-        MatInputModule,
-        MatToolbarModule,
-        MatButtonModule,
-        FormsModule,
-        MatCheckboxModule,
-        MatCardModule,
-        MatProgressBarModule,
-        MatIconModule,
-        FontAwesomeModule
-    ],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    AppRoutingModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: httpTranslateLoaderFactory,
+        deps: [HttpClient]
+      }
+    }),
+    MatSelectModule,
+    MatInputModule,
+    MatToolbarModule,
+    MatButtonModule,
+    FormsModule,
+    FlexLayoutModule,
+    MatCheckboxModule,
+    MatCardModule,
+    MatProgressBarModule,
+    MatIconModule,
+    FontAwesomeModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

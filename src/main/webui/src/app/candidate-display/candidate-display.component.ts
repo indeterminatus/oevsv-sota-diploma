@@ -21,7 +21,7 @@ import {SignedCandidate} from "../api/signed-candidate";
 import {DiplomaService} from "../diploma.service";
 import {DiplomaRequest} from "../api/diploma-request";
 import {Requester} from "../api/requester";
-import {faCheck} from "@fortawesome/free-solid-svg-icons";
+import {faAward, faCheck, faRankingStar} from "@fortawesome/free-solid-svg-icons";
 
 @Component({
   selector: 'app-candidate-display',
@@ -31,6 +31,8 @@ import {faCheck} from "@fortawesome/free-solid-svg-icons";
 export class CandidateDisplayComponent extends BaseComponent implements OnInit {
 
   checkIcon = faCheck;
+  categoryIcon = faAward;
+  rankIcon = faRankingStar;
 
   checking: boolean = false;
   checked: boolean = false;

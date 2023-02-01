@@ -41,6 +41,7 @@ import {MatIconModule} from "@angular/material/icon";
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {SpinnerComponent} from './spinner/spinner.component';
 import {FlexLayoutModule, FlexModule} from "@angular/flex-layout";
+import {MatDividerModule} from "@angular/material/divider";
 
 export function httpTranslateLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -80,7 +81,8 @@ export function httpTranslateLoaderFactory(http: HttpClient) {
     MatCardModule,
     MatProgressBarModule,
     MatIconModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    MatDividerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -20,6 +20,8 @@
     <mat-card-subtitle>{{'rank.' + getRank() | translate}}</mat-card-subtitle>
   </mat-card-header>
   <mat-card-content>
+    <mat-divider vertical="false"></mat-divider>
+    <p style="margin-top: 10px">{{'content.header.overview' | translate}}</p>
     <ul *ngIf="signedCandidate?.candidate?.activations">
       <li *ngFor="let activation of signedCandidate?.candidate?.activations | keyvalue">
         {{activation.key}}: {{activation.value}}

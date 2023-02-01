@@ -50,7 +50,8 @@
   },
   "content": {
     "header": {
-      "available": "Congratulations! There is at least one award for you to request:"
+      "available": "Congratulations! There is at least one award for you to request:",
+      "overview": "Your achievements per state:"
     }
   },
   "rank": {

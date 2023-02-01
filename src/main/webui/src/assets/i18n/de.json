@@ -50,7 +50,8 @@
   },
   "content": {
     "header": {
-      "available": "Herzlichen Glückwunsch! Du kannst mindestens ein Diplom beantragen:"
+      "available": "Herzlichen Glückwunsch! Du kannst mindestens ein Diplom beantragen:",
+      "overview": "Du hast diese Werte pro Bundesland erreicht:"
     }
   },
   "rank": {

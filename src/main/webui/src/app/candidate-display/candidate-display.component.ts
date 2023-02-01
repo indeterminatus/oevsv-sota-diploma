@@ -53,23 +53,23 @@ export class CandidateDisplayComponent extends BaseComponent implements OnInit {
 
   requestDiploma(): void {
     if (this.requester && this.signedCandidate) {
+      console.log("Current language: ", this.translate.currentLang);
       let request: DiplomaRequest = {
         requester: this.requester,
         candidates: [this.signedCandidate]
       };
       this.checking = true;
       this.diplomaService.request(request).then((result: boolean) => {
-        this.checked = true;
         this.success = result;
-        this.checking = false;
       }, (reason: any) => {
-        this.checked = true;
         this.success = false;
-        this.lastError = reason;
+        console.debug("Error!", reason);
+      }).finally(() => {
+        this.checked = true;
         this.checking = false;
+        this.lastError = this.success ? '' : 'api.response.request.failure';
       });
-    }
-    else {
+    } else {
       this.checked = true;
       this.checking = false;
       this.success = false;

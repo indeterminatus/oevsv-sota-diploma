@@ -36,6 +36,6 @@
       <fa-icon [icon]="checkIcon"></fa-icon>&nbsp;
       <div>{{'api.response.request.success' | translate}}</div>
     </div>
-    <mat-error *ngIf="getErrorMessage()">{{getErrorMessage()}}</mat-error>
+    <mat-error *ngIf="getErrorMessage()">{{getErrorMessage() | translate}}</mat-error>
   </mat-card-footer>
 </mat-card>

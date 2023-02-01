@@ -43,7 +43,8 @@
         "none": "Derzeit gibt es kein Diplom, das du anfordern kannst."
       },
       "request": {
-        "success": "Die Diplomanfrage ist aufgenommen und wird bearbeitet. Du erhältst das Diplom in nächster Zeit an deine E-Mail Adresse."
+        "success": "Die Diplomanfrage ist aufgenommen und wird bearbeitet. Du erhältst das Diplom in nächster Zeit an deine E-Mail Adresse.",
+        "failure": "Leider kann deine Anfrage momentan nicht aufgenommen werden. Bitte versuche es zu einem späteren Zeitpunkt erneut."
       }
     }
   },

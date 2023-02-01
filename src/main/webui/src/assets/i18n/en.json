@@ -43,7 +43,8 @@
         "none": "There are currently no awards for you to request."
       },
       "request": {
-        "success": "Your request for this award was accepted and will be processed. The award will be delivered to your e-mail address."
+        "success": "Your request for this award was accepted and will be processed. The award will be delivered to your e-mail address.",
+        "failure": "Unfortunately, something went terribly wrong. Your request could not be accepted. Please try again later."
       }
     }
   },

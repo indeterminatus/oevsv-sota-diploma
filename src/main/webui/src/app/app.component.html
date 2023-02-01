@@ -25,7 +25,8 @@
     <app-callsign-editor [target]="checkForm" class="form-element"></app-callsign-editor>
     <app-email-editor [target]="checkForm" class="form-element"></app-email-editor>
     <app-name-editor [target]="checkForm" class="form-element"></app-name-editor>
-    <button mat-raised-button type="submit" [disabled]="!checkForm.valid">{{'input.check.label' | translate}}</button>
+    <button mat-raised-button class="mat-primary" type="submit"
+            [disabled]="!checkForm.valid">{{'input.check.label' | translate}}</button>
   </div>
 </form>
 
@@ -35,10 +36,12 @@
   </div>
   <div *ngIf="candidates && candidates.length > 0">
     <mat-label>{{'content.header.available' | translate}}</mat-label>
-    <div fxLayout="row wrap" fxLayout.sm="column" fxLayoutGap="16px grid">
-      <div fxFlex="33%" fxFlex.xs="100%" fxFlex.sm="50%" fxFlexAlign="start stretch" *ngFor="let candidate of candidates">
-        <app-candidate-display [requester]="requester" [ngForAs]="candidate">
-        </app-candidate-display>
+    <div style="overflow: hidden; padding-top: 10px; padding-bottom: 10px">
+      <div fxLayout="row wrap" fxLayout.sm="column" fxLayoutGap="16px grid">
+        <div fxFlex="33%" fxFlex.xs="100%" fxFlex.sm="50%" *ngFor="let candidate of candidates">
+          <app-candidate-display [requester]="requester" [ngForAs]="candidate">
+          </app-candidate-display>
+        </div>
       </div>
     </div>
   </div>

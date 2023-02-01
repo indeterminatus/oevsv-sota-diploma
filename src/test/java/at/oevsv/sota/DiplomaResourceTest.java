@@ -35,6 +35,7 @@ import javax.annotation.concurrent.GuardedBy;
 import javax.inject.Inject;
 import javax.ws.rs.NotFoundException;
 import java.util.Collection;
+import java.util.Locale;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
@@ -120,7 +121,7 @@ final class DiplomaResourceTest {
     void candidates_requestDiploma() {
         synchronized (LOCK) {
             final var candidates = sut.checkCandidatesForUser("OE5JFE", null);
-            final var request = sut.requestDiploma("OE5JFE", new DiplomaRequest(new Requester("OE5JFE", "noreply@nothing.com", "Dip-Dip Dabbadudei"), candidates));
+            final var request = sut.requestDiploma("OE5JFE", new DiplomaRequest(new Requester("OE5JFE", "noreply@nothing.com", "Dip-Dip Dabbadudei"), candidates, "de"));
             assertThat(request).isTrue();
 
             assertThat(DiplomaLogResourceTestSeam.listPendingOn(logs)).isNotEmpty();

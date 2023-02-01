@@ -96,6 +96,9 @@ public class DiplomaLog extends PanacheEntityBase {
     @Column(name = "OE9")
     private int activationsOE9;
 
+    @Column(name = "language", length = 3)
+    private String language;
+
     @Version
     private int version;
 
@@ -167,6 +170,10 @@ public class DiplomaLog extends PanacheEntityBase {
         return activationsOE9;
     }
 
+    public String getLanguage() {
+        return language;
+    }
+
     public void setCallSign(String callSign) {
         this.callSign = callSign;
     }
@@ -225,5 +232,9 @@ public class DiplomaLog extends PanacheEntityBase {
 
     public void setActivationsOE9(int activationsOE9) {
         this.activationsOE9 = activationsOE9;
+    }
+
+    public void setLanguage(String language) {
+        this.language = language;
     }
 }

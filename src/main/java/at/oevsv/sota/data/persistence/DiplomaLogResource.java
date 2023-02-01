@@ -22,6 +22,7 @@ import at.oevsv.sota.data.api.Requester;
 import at.oevsv.sota.data.api.SignedCandidate;
 import at.oevsv.sota.data.domain.Summit;
 import io.quarkus.panache.common.Parameters;
+import org.apache.commons.lang3.StringUtils;
 import org.jetbrains.annotations.VisibleForTesting;
 
 import javax.annotation.security.PermitAll;
@@ -40,6 +41,7 @@ import javax.ws.rs.core.MediaType;
 import java.time.LocalDate;
 import java.util.EnumMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 import java.util.function.IntSupplier;
 
@@ -92,6 +94,9 @@ public final class DiplomaLogResource {
         entry.setActivationsOE7(candidate.activations().getOrDefault(Summit.State.OE7, 0L).intValue());
         entry.setActivationsOE8(candidate.activations().getOrDefault(Summit.State.OE8, 0L).intValue());
         entry.setActivationsOE9(candidate.activations().getOrDefault(Summit.State.OE9, 0L).intValue());
+        if (StringUtils.equalsIgnoreCase(request.language(), "en")) {
+            entry.setLanguage(request.language());
+        }
         entry.persist();
     }
 
@@ -158,6 +163,10 @@ public final class DiplomaLogResource {
         checkAndAdd(diplomaLog::getActivationsOE8, Summit.State.OE8, activations);
         checkAndAdd(diplomaLog::getActivationsOE9, Summit.State.OE9, activations);
         return new Candidate(diplomaLog.getCallSign(), null, diplomaLog.getCategory(), diplomaLog.getRank(), activations);
+    }
+
+    public static Locale toRequestedLocale(DiplomaLog diplomaLog) {
+        return StringUtils.equalsIgnoreCase(diplomaLog.getLanguage(), "en") ? Locale.ENGLISH : Locale.GERMAN;
     }
 
     private static void checkAndAdd(IntSupplier check, Summit.State state, Map<Summit.State, Long> target) {

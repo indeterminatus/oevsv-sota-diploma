@@ -20,4 +20,5 @@ import {SignedCandidate} from "./signed-candidate";
 export interface DiplomaRequest {
   requester: Requester;
   candidates: SignedCandidate[];
+  language?: 'de' | 'en';
 }

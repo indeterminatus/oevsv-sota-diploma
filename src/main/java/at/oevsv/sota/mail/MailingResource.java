@@ -49,6 +49,7 @@ import java.io.IOException;
 import java.text.MessageFormat;
 import java.time.Duration;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -91,9 +92,10 @@ public class MailingResource {
         for (final var pending : pendingRequests) {
             final var requester = DiplomaLogResource.toRequester(pending);
             final var candidate = DiplomaLogResource.toCandidate(pending);
+            final var locale = DiplomaLogResource.toRequestedLocale(pending);
 
             try {
-                sendDiplomaForReview(requester, candidate, pending.id.intValue());
+                sendDiplomaForReview(requester, candidate, pending.id.intValue(), locale);
                 Log.debugf("Marking request with ID %d as review-mail-sent", pending.id);
                 diplomaLog.markReviewMailSent(pending.id);
                 Log.debugf("Marked request with ID %d as review-mail-sent", pending.id);
@@ -107,10 +109,10 @@ public class MailingResource {
     }
 
     @WithSpan(kind = SpanKind.SERVER, value = "sendDiplomaForReview")
-    public void sendDiplomaForReview(Requester requester, Candidate candidate, int sequence) throws IOException {
+    public void sendDiplomaForReview(Requester requester, Candidate candidate, int sequence, Locale locale) throws IOException {
         final var template = Templates.reviewRequest(requester, List.of(candidate));
         final var mail = new Mail();
-        final var generatedPdf = generatePreviewPdf(requester, candidate, sequence);
+        final var generatedPdf = generatePreviewPdf(requester, candidate, sequence, locale);
         mail.addAttachment(generator.fileNameFor(generationParameter(requester, candidate, sequence)), generatedPdf, "application/pdf");
         template.mail(mail);
 
@@ -129,9 +131,10 @@ public class MailingResource {
     }
 
     @Nonnull
-    private byte[] generatePreviewPdf(Requester requester, Candidate candidate, int sequence) throws IOException {
+    private byte[] generatePreviewPdf(Requester requester, Candidate candidate, int sequence, Locale locale) throws IOException {
         final PdfGenerationResource.Generation parameter = generationParameter(requester, candidate, sequence);
         parameter.setQuality(previewQuality / 100.0f);
+        parameter.setLocale(locale);
         return generator.generatePdfBytes(parameter);
     }
 
@@ -152,10 +155,10 @@ public class MailingResource {
         final var requester = new Requester("---", recipient, "Test Empfänger");
         final var candidate = new Candidate("---", "", Candidate.Category.CHASER, Candidate.Rank.BRONZE, Map.of(Summit.State.OE5, 1L));
         if (templated) {
-            sendDiplomaForReview(requester, candidate, 9999);
+            sendDiplomaForReview(requester, candidate, 9999, Locale.GERMAN);
         } else {
             mailer.send(new Mail().setSubject("ÖVSV Mailing Test").addTo(recipient).setText("Auto-generated test mail")
-                    .addAttachment("test.pdf", generatePreviewPdf(requester, candidate, 9999), "application/pdf")).await().atMost(Duration.ofMinutes(5L));
+                    .addAttachment("test.pdf", generatePreviewPdf(requester, candidate, 9999, Locale.GERMAN), "application/pdf")).await().atMost(Duration.ofMinutes(5L));
         }
     }
 }

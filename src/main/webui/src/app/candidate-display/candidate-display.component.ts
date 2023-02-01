@@ -58,7 +58,8 @@ export class CandidateDisplayComponent extends BaseComponent implements OnInit {
       console.log("Current language: ", this.translate.currentLang);
       let request: DiplomaRequest = {
         requester: this.requester,
-        candidates: [this.signedCandidate]
+        candidates: [this.signedCandidate],
+        language: this.translate.currentLang === 'en' ? 'en' : 'de'
       };
       this.checking = true;
       this.diplomaService.request(request).then((result: boolean) => {

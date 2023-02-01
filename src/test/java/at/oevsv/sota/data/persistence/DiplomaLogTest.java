@@ -43,7 +43,7 @@ final class DiplomaLogTest {
         final var requester = new Requester("OE5IDT", "test@nothing.com", "Max Mustermann");
         final var candidate = new Candidate("OE5IDT", "1", Candidate.Category.S2S, Candidate.Rank.BRONZE, Map.of());
 
-        sut.create(new DiplomaRequest(requester, Set.of(SignedCandidate.sign(candidate))));
+        sut.create(new DiplomaRequest(requester, Set.of(SignedCandidate.sign(candidate)), null));
 
         assertThat(sut.alreadyRequested(requester, candidate)).isTrue();
     }
@@ -57,7 +57,7 @@ final class DiplomaLogTest {
     void creatingSameCandidateTwiceDoesNothingTheSecondTime() {
         final var requester = new Requester("OE5IDT", "test@nothing.com", "Max Mustermann");
         final var candidate = new Candidate("OE5IDT", "1", Candidate.Category.ACTIVATOR, Candidate.Rank.BRONZE, Map.of());
-        final var diplomaRequest = new DiplomaRequest(requester, Set.of(SignedCandidate.sign(candidate)));
+        final var diplomaRequest = new DiplomaRequest(requester, Set.of(SignedCandidate.sign(candidate)), null);
 
         assertThat(sut.create(diplomaRequest)).isTrue();
         assertThat(sut.create(diplomaRequest)).isFalse();

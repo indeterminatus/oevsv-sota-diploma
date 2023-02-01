@@ -27,6 +27,7 @@ import org.junit.jupiter.api.Test;
 
 import javax.inject.Inject;
 import java.io.IOException;
+import java.util.Locale;
 import java.util.Map;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -53,7 +54,7 @@ class MailingResourceTest {
         requester.callSign = "OE0QSL";
         requester.name = "Not Sure";
 
-        sut.sendDiplomaForReview(requester, new Candidate(requester.callSign, "12345", Candidate.Category.ACTIVATOR, Candidate.Rank.BRONZE, Map.of()), 9999);
+        sut.sendDiplomaForReview(requester, new Candidate(requester.callSign, "12345", Candidate.Category.ACTIVATOR, Candidate.Rank.BRONZE, Map.of()), 9999, Locale.GERMAN);
 
         final var mails = mailbox.getMessagesSentTo("oe5idt@oevsv.at");
         assertThat(mails).hasSize(1);

@@ -25,8 +25,10 @@ import java.util.Collection;
  *
  * @param requester
  * @param candidates
+ * @param language
  * @author schwingenschloegl
  */
 public record DiplomaRequest(@JsonProperty("requester") Requester requester,
-                             @JsonProperty("candidates") Collection<SignedCandidate> candidates) {
+                             @JsonProperty("candidates") Collection<SignedCandidate> candidates,
+                             @JsonProperty("language") String language) {
 }

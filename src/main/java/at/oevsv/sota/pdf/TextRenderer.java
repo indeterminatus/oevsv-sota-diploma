@@ -54,7 +54,7 @@ final class TextRenderer {
         this.candidate = Objects.requireNonNull(candidate);
         this.requester = Objects.requireNonNull(requester);
         this.locale = Objects.requireNonNull(locale);
-        resourceBundle = ResourceBundle.getBundle("/pdf/i18n/messages", locale);
+        resourceBundle = ResourceBundle.getBundle("pdf.i18n.messages", locale, ResourceBundle.Control.getControl(ResourceBundle.Control.FORMAT_PROPERTIES));
         this.diplomaManager = Objects.requireNonNull(diplomaManager);
         this.sequence = sequence;
         this.debugLayout = debugLayout;

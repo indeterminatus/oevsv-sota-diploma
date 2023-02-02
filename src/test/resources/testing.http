@@ -87,3 +87,9 @@ Accept: application/json
 #@name Synchronize summits
 POST http://localhost:8080/api/summits/synchronize
 Accept: application/json
+
+###
+
+#@name Checking ResourceBundle troubles
+GET http://localhost:8080/api/test/bundle
+Accept: text/plain

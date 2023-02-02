@@ -51,6 +51,7 @@ import java.time.Duration;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+import java.util.MissingResourceException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadFactory;
@@ -89,6 +90,7 @@ public class MailingResource {
         if (!pendingRequests.isEmpty()) {
             Log.infof("Sending %d pending diploma requests for review.", pendingRequests.size());
         }
+        int successful = 0;
         for (final var pending : pendingRequests) {
             final var requester = DiplomaLogResource.toRequester(pending);
             final var candidate = DiplomaLogResource.toCandidate(pending);
@@ -99,12 +101,13 @@ public class MailingResource {
                 Log.debugf("Marking request with ID %d as review-mail-sent", pending.id);
                 diplomaLog.markReviewMailSent(pending.id);
                 Log.debugf("Marked request with ID %d as review-mail-sent", pending.id);
-            } catch (IOException e) {
+                ++successful;
+            } catch (IOException | MissingResourceException e) {
                 Log.warnf(e, "Could not send request %d for review!", pending.id);
             }
         }
         if (!pendingRequests.isEmpty()) {
-            Log.infof("Sent %d pending diploma requests for review.", pendingRequests.size());
+            Log.infof("Sent %d (of %d) pending diploma requests for review.", successful, pendingRequests.size());
         }
     }
 

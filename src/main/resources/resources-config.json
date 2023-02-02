@@ -1,0 +1,20 @@
+{
+  "resources": {
+    "includes": [
+      {
+        "pattern": "^pdf/.*$"
+      }
+    ]
+  },
+  "bundles": [
+    {
+      "name": "pdf.i18n.messages",
+      "locales": [
+        "de",
+        "en",
+        "de-AT",
+        "en-US"
+      ]
+    }
+  ]
+}

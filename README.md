@@ -1,4 +1,4 @@
-# ÖVSV SOTA diploma generation
+# OE SOTA award generation
 
 A simple web-service (with accompanying Web UI) to facilitate management, generation and sending of awards for
 SOTA accomplishments specific to the Austrian SOTA division.

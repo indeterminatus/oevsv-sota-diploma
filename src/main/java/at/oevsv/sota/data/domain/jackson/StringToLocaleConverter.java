@@ -17,6 +17,7 @@
 package at.oevsv.sota.data.domain.jackson;
 
 import com.fasterxml.jackson.databind.util.StdConverter;
+import io.quarkus.runtime.annotations.RegisterForReflection;
 
 import java.util.Locale;
 
@@ -25,6 +26,7 @@ import java.util.Locale;
  *
  * @author schwingenschloegl
  */
+@RegisterForReflection
 public final class StringToLocaleConverter extends StdConverter<String, Locale> {
 
     @Override

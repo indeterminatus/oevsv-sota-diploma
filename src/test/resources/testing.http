@@ -78,9 +78,17 @@ Content-Type: application/json
 
 ###
 
-#@name Send test mail
+#@name Send test mail (templated)
 POST http://localhost:8080/api/mail/test?to=oe5idt@oevsv.at&templated=true
 Accept: application/json
+Authorization: Basic YWRtaW5pc3RyYXRvcjp0ZXN0MTIzNA==
+
+###
+
+#@name Send test mail (NOT templated)
+POST http://localhost:8080/api/mail/test?to=oe5idt@oevsv.at&templated=false
+Accept: application/json
+Authorization: Basic YWRtaW5pc3RyYXRvcjp0ZXN0MTIzNA==
 
 ###
 

@@ -22,6 +22,7 @@ import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
+import java.nio.charset.Charset;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
@@ -35,5 +36,18 @@ public class TestResource {
     public String checkResourceBundle(@QueryParam("name") @DefaultValue("pdf.i18n.messages") String bundleName, @QueryParam("language") @DefaultValue("de") String language, @QueryParam("key") @DefaultValue("diploma.title") String key) {
         final var bundle = ResourceBundle.getBundle(bundleName, Locale.forLanguageTag(language), ResourceBundle.Control.getControl(ResourceBundle.Control.FORMAT_PROPERTIES));
         return bundle.getString(key);
+    }
+
+    @GET
+    @PermitAll
+    @Path("/charset")
+    @Produces("text/plain")
+    public String checkCharset(@QueryParam("name") @DefaultValue("Cp1252") String name) {
+        if (!Charset.isSupported(name)) {
+            return String.format("Charset %s is not supported!", name);
+        }
+
+        final var charset = Charset.forName(name);
+        return charset.toString();
     }
 }

@@ -16,12 +16,21 @@
 
 package at.oevsv.sota;
 
+import io.quarkus.logging.Log;
+import org.apache.commons.io.IOUtils;
+
 import javax.annotation.security.PermitAll;
+import javax.annotation.security.RolesAllowed;
+import javax.ws.rs.Consumes;
 import javax.ws.rs.DefaultValue;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
+import javax.ws.rs.WebApplicationException;
+import javax.ws.rs.core.Response;
+import java.io.IOException;
 import java.nio.charset.Charset;
 import java.util.Locale;
 import java.util.ResourceBundle;
@@ -49,5 +58,23 @@ public class TestResource {
 
         final var charset = Charset.forName(name);
         return charset.toString();
+    }
+
+    @POST
+    @RolesAllowed("admin")
+    @Path("/resource")
+    @Produces("text/plain")
+    @Consumes("text/plain")
+    public String checkResource(String name) {
+        try (final var is = this.getClass().getResourceAsStream(name)) {
+            if (is == null) {
+                throw new WebApplicationException(String.format("Resource %s not found.", name), Response.Status.NOT_FOUND);
+            } else {
+                return String.format("Exists and has %d bytes.", IOUtils.consume(is));
+            }
+        } catch (IOException e) {
+            Log.warn("Could not consume resource.", e);
+            throw new WebApplicationException(String.format("Could not consume resource %s.", name), Response.Status.INTERNAL_SERVER_ERROR);
+        }
     }
 }

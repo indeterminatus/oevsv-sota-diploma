@@ -92,7 +92,7 @@ final class ImageRenderer {
 
     private void renderBackground(Graphics2D target, Rectangle bounds) throws IOException {
         // Background Size: 3508 x 2480 px (A4, 300 dpi)
-        try (final InputStream is = ImageRenderer.class.getClassLoader().getResourceAsStream(backgroundResource())) {
+        try (final InputStream is = this.getClass().getResourceAsStream(backgroundResource())) {
             if (is != null) {
                 final var background = ImageIO.read(is);
                 final var graphics = background.createGraphics();
@@ -154,8 +154,8 @@ final class ImageRenderer {
         }
     }
 
-    private static void renderResourceAt(Graphics2D target, String resourceName, int startX, int startY) throws IOException {
-        try (final InputStream is = ImageRenderer.class.getClassLoader().getResourceAsStream(resourceName)) {
+    private void renderResourceAt(Graphics2D target, String resourceName, int startX, int startY) throws IOException {
+        try (final InputStream is = this.getClass().getResourceAsStream(resourceName)) {
             if (is != null) {
                 final var image = ImageIO.read(is);
                 target.drawImage(image, startX, startY, image.getWidth(), image.getHeight(), null);

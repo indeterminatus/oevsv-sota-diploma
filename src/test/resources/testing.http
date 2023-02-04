@@ -2,6 +2,7 @@
 POST http://localhost:8080/api/diploma/pdf/generate
 Accept: application/octet-stream,application/pdf
 Content-Type: application/json
+Authorization: Basic YWRtaW5pc3RyYXRvcjp0ZXN0MTIzNA==
 
 {
   "requester": {
@@ -101,3 +102,13 @@ Accept: application/json
 #@name Checking ResourceBundle troubles
 GET http://localhost:8080/api/test/bundle
 Accept: text/plain
+
+###
+
+#@name Checking Resource loading troubles
+POST http://localhost:8080/api/test/resource?name=
+Accept: text/plain
+Content-Type: text/plain
+Authorization: Basic YWRtaW5pc3RyYXRvcjp0ZXN0MTIzNA==
+
+/pdf/images/background/activator.png

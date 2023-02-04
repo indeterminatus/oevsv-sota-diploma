@@ -20,6 +20,7 @@ import com.lowagie.text.Document;
 import com.lowagie.text.pdf.PdfGraphics2D;
 import com.lowagie.text.pdf.PdfPageEventHelper;
 import com.lowagie.text.pdf.PdfWriter;
+import io.quarkus.logging.Log;
 
 import java.io.IOException;
 
@@ -50,6 +51,7 @@ final class PdfBackgroundSetter extends PdfPageEventHelper {
                 graphics2D.dispose();
             }
         } catch (IOException e) {
+            Log.warn("Could not set background image.", e);
             throw new RuntimeException("Could not set background image.", e);
         }
     }

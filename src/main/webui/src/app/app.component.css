@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+@import "~@fontsource/roboto/latin-ext-400.css";
+
 .toolbar-spacer {
   flex: 1 1 auto;
 }

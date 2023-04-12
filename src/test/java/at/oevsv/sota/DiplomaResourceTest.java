@@ -34,8 +34,9 @@ import org.junit.jupiter.api.Test;
 import javax.annotation.concurrent.GuardedBy;
 import javax.inject.Inject;
 import javax.ws.rs.NotFoundException;
+import java.time.LocalDate;
+import java.time.Month;
 import java.util.Collection;
-import java.util.Locale;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
@@ -68,6 +69,11 @@ final class DiplomaResourceTest {
     @Test
     void chasers_fetched() {
         assertThat(sut.fetchChasers()).isNotEmpty();
+    }
+
+    @Test
+    void shortWaveListeners_fetched() {
+        assertThat(sut.fetchShortWaveListeners()).isNotEmpty();
     }
 
     @Test
@@ -107,6 +113,19 @@ final class DiplomaResourceTest {
         final var candidates = sut.checkCandidatesForUser("OE9NAT", null);
 
         assertThat(candidates).isNotEmpty();
+    }
+
+    @Test
+    void s2sLog_IK2LEY_yieldsExpectedResults() {
+        synchronized (LOCK) {
+            final var previous = sut.checkAfter;
+            sut.checkAfter = LocalDate.of(2023, Month.JANUARY, 1);
+            final var candidates = sut.checkCandidatesForUser("IK2LEY", null);
+
+            assertThat(candidates).isNotEmpty();
+
+            sut.checkAfter = previous;
+        }
     }
 
     @Test

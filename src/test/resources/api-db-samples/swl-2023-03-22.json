@@ -1,0 +1,1586 @@
+[
+  {
+    "Position": 1,
+    "UserID": 1113,
+    "SWL": "ONL 5923",
+    "Username": "on2wab",
+    "Points": 12728,
+    "stationsWorked": 3058,
+    "Average": "4.16"
+  },
+  {
+    "Position": 2,
+    "UserID": 16948,
+    "SWL": "OK1-11861",
+    "Username": "ok1fmj",
+    "Points": 11367,
+    "stationsWorked": 2186,
+    "Average": "5.20"
+  },
+  {
+    "Position": 3,
+    "UserID": 1158,
+    "SWL": "4X4-2238",
+    "Username": "4X4-2238",
+    "Points": 6864,
+    "stationsWorked": 1240,
+    "Average": "5.54"
+  },
+  {
+    "Position": 4,
+    "UserID": 69,
+    "SWL": "BRS180710 G-20843",
+    "Username": "m1eyp",
+    "Points": 6251,
+    "stationsWorked": 1723,
+    "Average": "3.63"
+  },
+  {
+    "Position": 5,
+    "UserID": 1152,
+    "SWL": "RS93469",
+    "Username": "g0vwp",
+    "Points": 4419,
+    "stationsWorked": 848,
+    "Average": "5.21"
+  },
+  {
+    "Position": 6,
+    "UserID": 12200,
+    "SWL": "Enmham",
+    "Username": "4Z5EM",
+    "Points": 3925,
+    "stationsWorked": 797,
+    "Average": "4.92"
+  },
+  {
+    "Position": 7,
+    "UserID": 99,
+    "SWL": "R. Leighton",
+    "Username": "RSLEIGHTON",
+    "Points": 2825,
+    "stationsWorked": 732,
+    "Average": "3.86"
+  },
+  {
+    "Position": 8,
+    "UserID": 184,
+    "SWL": "BRS188236",
+    "Username": "BADGER",
+    "Points": 1516,
+    "stationsWorked": 461,
+    "Average": "3.29"
+  },
+  {
+    "Position": 9,
+    "UserID": 45717,
+    "SWL": "SWL2E0CPX",
+    "Username": "paul.strickland67@gmail.com",
+    "Points": 1464,
+    "stationsWorked": 339,
+    "Average": "4.32"
+  },
+  {
+    "Position": 10,
+    "UserID": 7182,
+    "SWL": "DE3MKM",
+    "Username": "DE3MKM",
+    "Points": 1165,
+    "stationsWorked": 178,
+    "Average": "6.54"
+  },
+  {
+    "Position": 11,
+    "UserID": 3076,
+    "SWL": "A6971",
+    "Username": "COLBIKEMAN",
+    "Points": 1117,
+    "stationsWorked": 259,
+    "Average": "4.31"
+  },
+  {
+    "Position": 12,
+    "UserID": 12010,
+    "SWL": "acsutton",
+    "Username": "GM6ZAK",
+    "Points": 1025,
+    "stationsWorked": 303,
+    "Average": "3.38"
+  },
+  {
+    "Position": 13,
+    "UserID": 729,
+    "SWL": "BRS200466",
+    "Username": "jimmy",
+    "Points": 808,
+    "stationsWorked": 254,
+    "Average": "3.18"
+  },
+  {
+    "Position": 14,
+    "UserID": 2005,
+    "SWL": "BRS202410",
+    "Username": "DAI84B",
+    "Points": 804,
+    "stationsWorked": 177,
+    "Average": "4.54"
+  },
+  {
+    "Position": 15,
+    "UserID": 62,
+    "SWL": "BRS183940",
+    "Username": "M1EYO",
+    "Points": 692,
+    "stationsWorked": 224,
+    "Average": "3.09"
+  },
+  {
+    "Position": 16,
+    "UserID": 8436,
+    "SWL": "BRS301178",
+    "Username": "M6RUG",
+    "Points": 671,
+    "stationsWorked": 129,
+    "Average": "5.20"
+  },
+  {
+    "Position": 17,
+    "UserID": 857,
+    "SWL": "G. Harper",
+    "Username": "GEOFF1958",
+    "Points": 650,
+    "stationsWorked": 117,
+    "Average": "5.56"
+  },
+  {
+    "Position": 18,
+    "UserID": 1931,
+    "SWL": "DE0MSD",
+    "Username": "SITTIMAR",
+    "Points": 506,
+    "stationsWorked": 102,
+    "Average": "4.96"
+  },
+  {
+    "Position": 19,
+    "UserID": 10600,
+    "SWL": "SP9-29-057",
+    "Username": "WERONIKA",
+    "Points": 480,
+    "stationsWorked": 72,
+    "Average": "6.67"
+  },
+  {
+    "Position": 20,
+    "UserID": 13493,
+    "SWL": "PY1RI",
+    "Username": "py1ri",
+    "Points": 397,
+    "stationsWorked": 179,
+    "Average": "2.22"
+  },
+  {
+    "Position": 21,
+    "UserID": 3966,
+    "SWL": "SP9-4696-KA",
+    "Username": "SYLWESTER",
+    "Points": 378,
+    "stationsWorked": 73,
+    "Average": "5.18"
+  },
+  {
+    "Position": 22,
+    "UserID": 13374,
+    "SWL": "HE9TJA",
+    "Username": "TGIANNONE",
+    "Points": 345,
+    "stationsWorked": 89,
+    "Average": "3.88"
+  },
+  {
+    "Position": 23,
+    "UserID": 13102,
+    "SWL": "PY1433SWL",
+    "Username": "dbahiense",
+    "Points": 333,
+    "stationsWorked": 52,
+    "Average": "6.40"
+  },
+  {
+    "Position": 24,
+    "UserID": 48431,
+    "SWL": "PY1482SWL",
+    "Username": "fabio-pu1kge",
+    "Points": 329,
+    "stationsWorked": 225,
+    "Average": "1.46"
+  },
+  {
+    "Position": 25,
+    "UserID": 46171,
+    "SWL": "PY1429SWL",
+    "Username": "kikojardim",
+    "Points": 291,
+    "stationsWorked": 141,
+    "Average": "2.06"
+  },
+  {
+    "Position": 26,
+    "UserID": 13478,
+    "SWL": "Azevedo",
+    "Username": "py1pts",
+    "Points": 287,
+    "stationsWorked": 74,
+    "Average": "3.88"
+  },
+  {
+    "Position": 27,
+    "UserID": 7716,
+    "SWL": "G. Swift",
+    "Username": "M0ONI",
+    "Points": 260,
+    "stationsWorked": 46,
+    "Average": "5.65"
+  },
+  {
+    "Position": 28,
+    "UserID": 2614,
+    "SWL": "M. Weber",
+    "Username": "MERLE",
+    "Points": 243,
+    "stationsWorked": 49,
+    "Average": "4.96"
+  },
+  {
+    "Position": "=28",
+    "UserID": 2613,
+    "SWL": "H. Weber",
+    "Username": "HERM",
+    "Points": 243,
+    "stationsWorked": 50,
+    "Average": "4.86"
+  },
+  {
+    "Position": 30,
+    "UserID": 48122,
+    "SWL": "ZL1BQD\/SWL",
+    "Username": "zl1bqd",
+    "Points": 228,
+    "stationsWorked": 48,
+    "Average": "4.75"
+  },
+  {
+    "Position": 31,
+    "UserID": 15553,
+    "SWL": "WPE4IRJ",
+    "Username": "ae1ms",
+    "Points": 199,
+    "stationsWorked": 30,
+    "Average": "6.63"
+  },
+  {
+    "Position": 32,
+    "UserID": 9517,
+    "SWL": "SP8-20-130",
+    "Username": "SP8-20-130",
+    "Points": 188,
+    "stationsWorked": 39,
+    "Average": "4.82"
+  },
+  {
+    "Position": 33,
+    "UserID": 138,
+    "SWL": "DE3THA",
+    "Username": "DO1UZOLAF",
+    "Points": 187,
+    "stationsWorked": 51,
+    "Average": "3.67"
+  },
+  {
+    "Position": 34,
+    "UserID": 22653,
+    "SWL": "WA4428SWL",
+    "Username": "n1rbd",
+    "Points": 175,
+    "stationsWorked": 32,
+    "Average": "5.47"
+  },
+  {
+    "Position": 35,
+    "UserID": 21480,
+    "SWL": "DE4TNA",
+    "Username": "DE4TNA",
+    "Points": 173,
+    "stationsWorked": 27,
+    "Average": "6.41"
+  },
+  {
+    "Position": 36,
+    "UserID": 71836,
+    "SWL": "sp9cbm",
+    "Username": "sp9cbm",
+    "Points": 153,
+    "stationsWorked": 24,
+    "Average": "6.38"
+  },
+  {
+    "Position": 37,
+    "UserID": 7849,
+    "SWL": "dmott",
+    "Username": "KW4AG",
+    "Points": 146,
+    "stationsWorked": 20,
+    "Average": "7.30"
+  },
+  {
+    "Position": 38,
+    "UserID": 15554,
+    "SWL": "JeanSwann",
+    "Username": "ae1js",
+    "Points": 134,
+    "stationsWorked": 20,
+    "Average": "6.70"
+  },
+  {
+    "Position": 39,
+    "UserID": 44776,
+    "SWL": "PY1493SWL",
+    "Username": "weslley",
+    "Points": 130,
+    "stationsWorked": 47,
+    "Average": "2.77"
+  },
+  {
+    "Position": 40,
+    "UserID": 5345,
+    "SWL": "A.Moseley",
+    "Username": "vk1namaus",
+    "Points": 127,
+    "stationsWorked": 31,
+    "Average": "4.10"
+  },
+  {
+    "Position": 41,
+    "UserID": 9586,
+    "SWL": "jankk6abz\/jp",
+    "Username": "JANKK6ABZ",
+    "Points": 121,
+    "stationsWorked": 25,
+    "Average": "4.84"
+  },
+  {
+    "Position": 42,
+    "UserID": 2945,
+    "SWL": "BRS200659",
+    "Username": "geom6sdr",
+    "Points": 116,
+    "stationsWorked": 32,
+    "Average": "3.62"
+  },
+  {
+    "Position": 43,
+    "UserID": 48123,
+    "SWL": "DE9CHR",
+    "Username": "do1ca",
+    "Points": 110,
+    "stationsWorked": 21,
+    "Average": "5.24"
+  },
+  {
+    "Position": "=43",
+    "UserID": 7201,
+    "SWL": "J. Johnston",
+    "Username": "TELEX",
+    "Points": 110,
+    "stationsWorked": 24,
+    "Average": "4.58"
+  },
+  {
+    "Position": 45,
+    "UserID": 8204,
+    "SWL": "SWL1BRL",
+    "Username": "MARTIN_BRL",
+    "Points": 101,
+    "stationsWorked": 19,
+    "Average": "5.32"
+  },
+  {
+    "Position": 46,
+    "UserID": 10561,
+    "SWL": "jmtelletxea ursuegi",
+    "Username": "EA2DOP",
+    "Points": 94,
+    "stationsWorked": 22,
+    "Average": "4.27"
+  },
+  {
+    "Position": "=46",
+    "UserID": 10344,
+    "SWL": "HB9FUE",
+    "Username": "psenna",
+    "Points": 94,
+    "stationsWorked": 22,
+    "Average": "4.27"
+  },
+  {
+    "Position": 48,
+    "UserID": 1447,
+    "SWL": "L. Hansjürg",
+    "Username": "hb9cue",
+    "Points": 77,
+    "stationsWorked": 20,
+    "Average": "3.85"
+  },
+  {
+    "Position": 49,
+    "UserID": 9840,
+    "SWL": "SV2028SWL",
+    "Username": "SV2028SWL",
+    "Points": 75,
+    "stationsWorked": 18,
+    "Average": "4.17"
+  },
+  {
+    "Position": 50,
+    "UserID": 8187,
+    "SWL": "K Magde",
+    "Username": "AC2KL",
+    "Points": 73,
+    "stationsWorked": 14,
+    "Average": "5.21"
+  },
+  {
+    "Position": 51,
+    "UserID": 8612,
+    "SWL": "BIBARRA",
+    "Username": "EA2EHX",
+    "Points": 72,
+    "stationsWorked": 13,
+    "Average": "5.54"
+  },
+  {
+    "Position": 52,
+    "UserID": 46472,
+    "SWL": "oniver",
+    "Username": "oniver",
+    "Points": 70,
+    "stationsWorked": 13,
+    "Average": "5.38"
+  },
+  {
+    "Position": 53,
+    "UserID": 8209,
+    "SWL": "SWL-VK3",
+    "Username": "TRRROGLODYTE",
+    "Points": 69,
+    "stationsWorked": 14,
+    "Average": "4.93"
+  },
+  {
+    "Position": 54,
+    "UserID": 45594,
+    "SWL": "SWLTI5JON",
+    "Username": "ti5jon",
+    "Points": 67,
+    "stationsWorked": 14,
+    "Average": "4.79"
+  },
+  {
+    "Position": 55,
+    "UserID": 44692,
+    "SWL": "SWL ANGEL FERNANDEZ",
+    "Username": "angel@fernandez.mx",
+    "Points": 64,
+    "stationsWorked": 9,
+    "Average": "7.11"
+  },
+  {
+    "Position": 56,
+    "UserID": 46091,
+    "SWL": "SWL Carlos N",
+    "Username": "cnavarro",
+    "Points": 58,
+    "stationsWorked": 6,
+    "Average": "9.67"
+  },
+  {
+    "Position": 57,
+    "UserID": 46449,
+    "SWL": "YB2014SWL",
+    "Username": "yc2voc",
+    "Points": 54,
+    "stationsWorked": 8,
+    "Average": "6.75"
+  },
+  {
+    "Position": 58,
+    "UserID": 6451,
+    "SWL": "A. Geddes",
+    "Username": "vk2mwp",
+    "Points": 50,
+    "stationsWorked": 13,
+    "Average": "3.85"
+  },
+  {
+    "Position": 59,
+    "UserID": 6723,
+    "SWL": "SP9AMH\/SWL",
+    "Username": "sp9amh",
+    "Points": 48,
+    "stationsWorked": 6,
+    "Average": "8.00"
+  },
+  {
+    "Position": 60,
+    "UserID": 6919,
+    "SWL": "M. Glass",
+    "Username": "VK6FMTG",
+    "Points": 45,
+    "stationsWorked": 8,
+    "Average": "5.62"
+  },
+  {
+    "Position": "=60",
+    "UserID": 3246,
+    "SWL": "BRS205832",
+    "Username": "04PARRISHE",
+    "Points": 45,
+    "stationsWorked": 22,
+    "Average": "2.05"
+  },
+  {
+    "Position": 62,
+    "UserID": 58154,
+    "SWL": "DE1TPP",
+    "Username": "torry_pb",
+    "Points": 41,
+    "stationsWorked": 8,
+    "Average": "5.12"
+  },
+  {
+    "Position": 63,
+    "UserID": 45931,
+    "SWL": "Sigma04",
+    "Username": "sigma04",
+    "Points": 40,
+    "stationsWorked": 17,
+    "Average": "2.35"
+  },
+  {
+    "Position": "=63",
+    "UserID": 10779,
+    "SWL": "JUAN",
+    "Username": "EA2ENE",
+    "Points": 40,
+    "stationsWorked": 9,
+    "Average": "4.44"
+  },
+  {
+    "Position": "=63",
+    "UserID": 5976,
+    "SWL": "D. Gulley",
+    "Username": "ki4aau",
+    "Points": 40,
+    "stationsWorked": 9,
+    "Average": "4.44"
+  },
+  {
+    "Position": 66,
+    "UserID": 9321,
+    "SWL": "SWL-DL1ZAP",
+    "Username": "DL1ZAP",
+    "Points": 38,
+    "stationsWorked": 6,
+    "Average": "6.33"
+  },
+  {
+    "Position": "=66",
+    "UserID": 52126,
+    "SWL": "PY1487SWL",
+    "Username": "jcanterle",
+    "Points": 38,
+    "stationsWorked": 6,
+    "Average": "6.33"
+  },
+  {
+    "Position": 68,
+    "UserID": 8358,
+    "SWL": "SP6MJS",
+    "Username": "SP6MJS",
+    "Points": 34,
+    "stationsWorked": 4,
+    "Average": "8.50"
+  },
+  {
+    "Position": 69,
+    "UserID": 4346,
+    "SWL": "kcw",
+    "Username": "KO CHANG-WOO",
+    "Points": 32,
+    "stationsWorked": 7,
+    "Average": "4.57"
+  },
+  {
+    "Position": 70,
+    "UserID": 13216,
+    "SWL": "SWLTI3IES",
+    "Username": "ti3ies",
+    "Points": 30,
+    "stationsWorked": 3,
+    "Average": "10.00"
+  },
+  {
+    "Position": "=70",
+    "UserID": 4947,
+    "SWL": "R. Cook",
+    "Username": "vk3afw",
+    "Points": 30,
+    "stationsWorked": 4,
+    "Average": "7.50"
+  },
+  {
+    "Position": 72,
+    "UserID": 8058,
+    "SWL": "M. Jenner",
+    "Username": "VK7FB",
+    "Points": 28,
+    "stationsWorked": 11,
+    "Average": "2.55"
+  },
+  {
+    "Position": 73,
+    "UserID": 11112,
+    "SWL": "D. Mayer Sigrist",
+    "Username": "HB9EPE",
+    "Points": 27,
+    "stationsWorked": 8,
+    "Average": "3.38"
+  },
+  {
+    "Position": 74,
+    "UserID": 3588,
+    "SWL": "HL2-0112B",
+    "Username": "KWON, DAE-GEUN",
+    "Points": 26,
+    "stationsWorked": 4,
+    "Average": "6.50"
+  },
+  {
+    "Position": "=74",
+    "UserID": 9465,
+    "SWL": "SP-0142-JG",
+    "Username": "ARKADIUSZ",
+    "Points": 26,
+    "stationsWorked": 8,
+    "Average": "3.25"
+  },
+  {
+    "Position": 76,
+    "UserID": 12324,
+    "SWL": "WA7271SWL",
+    "Username": "penguin359",
+    "Points": 25,
+    "stationsWorked": 4,
+    "Average": "6.25"
+  },
+  {
+    "Position": 77,
+    "UserID": 6833,
+    "SWL": "JGURUTZARRI",
+    "Username": "ea2if",
+    "Points": 24,
+    "stationsWorked": 16,
+    "Average": "1.50"
+  },
+  {
+    "Position": "=77",
+    "UserID": 7081,
+    "SWL": "SWL-SV2FLM",
+    "Username": "sv2flm",
+    "Points": 24,
+    "stationsWorked": 5,
+    "Average": "4.80"
+  },
+  {
+    "Position": 79,
+    "UserID": 45942,
+    "SWL": "PY1366SWL",
+    "Username": "sperryjr",
+    "Points": 22,
+    "stationsWorked": 3,
+    "Average": "7.33"
+  },
+  {
+    "Position": "=79",
+    "UserID": 48569,
+    "SWL": "PU2143SWL",
+    "Username": "py2tdb",
+    "Points": 22,
+    "stationsWorked": 9,
+    "Average": "2.44"
+  },
+  {
+    "Position": 81,
+    "UserID": 9939,
+    "SWL": "CT2GQI",
+    "Username": "CT2GQI",
+    "Points": 21,
+    "stationsWorked": 20,
+    "Average": "1.05"
+  },
+  {
+    "Position": 82,
+    "UserID": 45932,
+    "SWL": "COYOTE MAC",
+    "Username": "spectro1",
+    "Points": 20,
+    "stationsWorked": 5,
+    "Average": "4.00"
+  },
+  {
+    "Position": 83,
+    "UserID": 1791,
+    "SWL": "T. Booth",
+    "Username": "g4ytd",
+    "Points": 19,
+    "stationsWorked": 4,
+    "Average": "4.75"
+  },
+  {
+    "Position": "=83",
+    "UserID": 3042,
+    "SWL": "C. Rowan",
+    "Username": "M6RWN",
+    "Points": 19,
+    "stationsWorked": 3,
+    "Average": "6.33"
+  },
+  {
+    "Position": "=83",
+    "UserID": 9361,
+    "SWL": "JA8-5871",
+    "Username": "jf8lpb",
+    "Points": 19,
+    "stationsWorked": 4,
+    "Average": "4.75"
+  },
+  {
+    "Position": 86,
+    "UserID": 9504,
+    "SWL": "LZ1-E220",
+    "Username": "lz1gj",
+    "Points": 18,
+    "stationsWorked": 3,
+    "Average": "6.00"
+  },
+  {
+    "Position": 87,
+    "UserID": 8350,
+    "SWL": "",
+    "Username": "pcc768",
+    "Points": 17,
+    "stationsWorked": 3,
+    "Average": "5.67"
+  },
+  {
+    "Position": 88,
+    "UserID": 10250,
+    "SWL": "CSHEPHERD",
+    "Username": "ZL1SHP",
+    "Points": 16,
+    "stationsWorked": 7,
+    "Average": "2.29"
+  },
+  {
+    "Position": "=88",
+    "UserID": 12108,
+    "SWL": "ThZi",
+    "Username": "zauberertz",
+    "Points": 16,
+    "stationsWorked": 2,
+    "Average": "8.00"
+  },
+  {
+    "Position": 90,
+    "UserID": 3784,
+    "SWL": "SWL-IN3AQK",
+    "Username": "in3aqk",
+    "Points": 15,
+    "stationsWorked": 3,
+    "Average": "5.00"
+  },
+  {
+    "Position": 91,
+    "UserID": 4356,
+    "SWL": "WA6079SWL",
+    "Username": "GOODMAN",
+    "Points": 14,
+    "stationsWorked": 2,
+    "Average": "7.00"
+  },
+  {
+    "Position": "=91",
+    "UserID": 2687,
+    "SWL": "BRS205974",
+    "Username": "M6ADB",
+    "Points": 14,
+    "stationsWorked": 3,
+    "Average": "4.67"
+  },
+  {
+    "Position": "=91",
+    "UserID": 52007,
+    "SWL": "PT7121SWL",
+    "Username": "pt7kc",
+    "Points": 14,
+    "stationsWorked": 12,
+    "Average": "1.17"
+  },
+  {
+    "Position": "=91",
+    "UserID": 56709,
+    "SWL": "PT7119SWL",
+    "Username": "selva_rodolfo",
+    "Points": 14,
+    "stationsWorked": 2,
+    "Average": "7.00"
+  },
+  {
+    "Position": 95,
+    "UserID": 22629,
+    "SWL": "EA1DHB",
+    "Username": "ea1dhb",
+    "Points": 12,
+    "stationsWorked": 2,
+    "Average": "6.00"
+  },
+  {
+    "Position": "=95",
+    "UserID": 5219,
+    "SWL": "M. Batchelor",
+    "Username": "batchy001",
+    "Points": 12,
+    "stationsWorked": 3,
+    "Average": "4.00"
+  },
+  {
+    "Position": 97,
+    "UserID": 12819,
+    "SWL": "SP9-06-127",
+    "Username": "DOMINIK_1983",
+    "Points": 10,
+    "stationsWorked": 2,
+    "Average": "5.00"
+  },
+  {
+    "Position": "=97",
+    "UserID": 47639,
+    "SWL": "MA3292SWL",
+    "Username": "m7tkl",
+    "Points": 10,
+    "stationsWorked": 5,
+    "Average": "2.00"
+  },
+  {
+    "Position": "=97",
+    "UserID": 844,
+    "SWL": "K. Steinert",
+    "Username": "DF2GN KLAUS",
+    "Points": 10,
+    "stationsWorked": 4,
+    "Average": "2.50"
+  },
+  {
+    "Position": "=97",
+    "UserID": 13513,
+    "SWL": "ABAILEY",
+    "Username": "m0iqm",
+    "Points": 10,
+    "stationsWorked": 3,
+    "Average": "3.33"
+  },
+  {
+    "Position": "=97",
+    "UserID": 24751,
+    "SWL": "SMaznaritz",
+    "Username": "KC9YDV",
+    "Points": 10,
+    "stationsWorked": 1,
+    "Average": "10.00"
+  },
+  {
+    "Position": "=97",
+    "UserID": 9838,
+    "SWL": "Thomas Frank",
+    "Username": "DB5FT",
+    "Points": 10,
+    "stationsWorked": 1,
+    "Average": "10.00"
+  },
+  {
+    "Position": 103,
+    "UserID": 225,
+    "SWL": "S. Brown",
+    "Username": "m0sgb",
+    "Points": 9,
+    "stationsWorked": 4,
+    "Average": "2.25"
+  },
+  {
+    "Position": "=103",
+    "UserID": 22542,
+    "SWL": "D Lauder",
+    "Username": "CHARLIE672",
+    "Points": 9,
+    "stationsWorked": 9,
+    "Average": "1.00"
+  },
+  {
+    "Position": 105,
+    "UserID": 12189,
+    "SWL": "TEVDOKIMOFF",
+    "Username": "thomasevd",
+    "Points": 8,
+    "stationsWorked": 2,
+    "Average": "4.00"
+  },
+  {
+    "Position": "=105",
+    "UserID": 5958,
+    "SWL": "EMCCORD",
+    "Username": "WX4ET",
+    "Points": 8,
+    "stationsWorked": 1,
+    "Average": "8.00"
+  },
+  {
+    "Position": "=105",
+    "UserID": 8686,
+    "SWL": "F. Relvao",
+    "Username": "fijorel",
+    "Points": 8,
+    "stationsWorked": 2,
+    "Average": "4.00"
+  },
+  {
+    "Position": "=105",
+    "UserID": 5887,
+    "SWL": "D. Benninger",
+    "Username": "N8DEA",
+    "Points": 8,
+    "stationsWorked": 1,
+    "Average": "8.00"
+  },
+  {
+    "Position": "=105",
+    "UserID": 12651,
+    "SWL": "DE1TBL",
+    "Username": "hensys",
+    "Points": 8,
+    "stationsWorked": 2,
+    "Average": "4.00"
+  },
+  {
+    "Position": "=105",
+    "UserID": 7773,
+    "SWL": "D Holmes",
+    "Username": "G4ZAO",
+    "Points": 8,
+    "stationsWorked": 3,
+    "Average": "2.67"
+  },
+  {
+    "Position": "=105",
+    "UserID": 11315,
+    "SWL": "ds3mbb",
+    "Username": "ds3mbb",
+    "Points": 8,
+    "stationsWorked": 2,
+    "Average": "4.00"
+  },
+  {
+    "Position": "=105",
+    "UserID": 46517,
+    "SWL": "M Allinson",
+    "Username": "kg8trs",
+    "Points": 8,
+    "stationsWorked": 2,
+    "Average": "4.00"
+  },
+  {
+    "Position": 113,
+    "UserID": 56377,
+    "SWL": "PY1525SWL",
+    "Username": "rvargas",
+    "Points": 7,
+    "stationsWorked": 3,
+    "Average": "2.33"
+  },
+  {
+    "Position": "=113",
+    "UserID": 9868,
+    "SWL": "OK2-35491",
+    "Username": "OK5NW",
+    "Points": 7,
+    "stationsWorked": 2,
+    "Average": "3.50"
+  },
+  {
+    "Position": 115,
+    "UserID": 11178,
+    "SWL": "HB3YPI ",
+    "Username": "SILVIO",
+    "Points": 6,
+    "stationsWorked": 2,
+    "Average": "3.00"
+  },
+  {
+    "Position": "=115",
+    "UserID": 12198,
+    "SWL": "jkallo",
+    "Username": "KD9JLV",
+    "Points": 6,
+    "stationsWorked": 1,
+    "Average": "6.00"
+  },
+  {
+    "Position": "=115",
+    "UserID": 6139,
+    "SWL": "M. Bobal",
+    "Username": "OE3VBU",
+    "Points": 6,
+    "stationsWorked": 4,
+    "Average": "1.50"
+  },
+  {
+    "Position": "=115",
+    "UserID": 7413,
+    "SWL": "S. Ebnet",
+    "Username": "W6CHZ",
+    "Points": 6,
+    "stationsWorked": 1,
+    "Average": "6.00"
+  },
+  {
+    "Position": "=115",
+    "UserID": 6701,
+    "SWL": "A. Gardiner",
+    "Username": "vk2yk",
+    "Points": 6,
+    "stationsWorked": 1,
+    "Average": "6.00"
+  },
+  {
+    "Position": "=115",
+    "UserID": 74409,
+    "SWL": "KD9VDX\/SWL",
+    "Username": "amfleming81",
+    "Points": 6,
+    "stationsWorked": 1,
+    "Average": "6.00"
+  },
+  {
+    "Position": "=115",
+    "UserID": 11226,
+    "SWL": "kb1zpv",
+    "Username": "KB1ZPV",
+    "Points": 6,
+    "stationsWorked": 1,
+    "Average": "6.00"
+  },
+  {
+    "Position": 122,
+    "UserID": 8289,
+    "SWL": "A. Wingrove",
+    "Username": "G6LDL",
+    "Points": 5,
+    "stationsWorked": 3,
+    "Average": "1.67"
+  },
+  {
+    "Position": "=122",
+    "UserID": 2509,
+    "SWL": "S5-RS-097",
+    "Username": "s59ra",
+    "Points": 5,
+    "stationsWorked": 3,
+    "Average": "1.67"
+  },
+  {
+    "Position": "=122",
+    "UserID": 2033,
+    "SWL": "BRS201363",
+    "Username": "m6adl",
+    "Points": 5,
+    "stationsWorked": 2,
+    "Average": "2.50"
+  },
+  {
+    "Position": "=122",
+    "UserID": 3235,
+    "SWL": "R E Harwood",
+    "Username": "g0hrt",
+    "Points": 5,
+    "stationsWorked": 2,
+    "Average": "2.50"
+  },
+  {
+    "Position": 126,
+    "UserID": 11124,
+    "SWL": "K Gordon",
+    "Username": "K7KSG",
+    "Points": 4,
+    "stationsWorked": 1,
+    "Average": "4.00"
+  },
+  {
+    "Position": "=126",
+    "UserID": 7185,
+    "SWL": "OE1-1114",
+    "Username": "OE11114",
+    "Points": 4,
+    "stationsWorked": 1,
+    "Average": "4.00"
+  },
+  {
+    "Position": "=126",
+    "UserID": 49326,
+    "SWL": "YB2024SWL",
+    "Username": "yc2vut",
+    "Points": 4,
+    "stationsWorked": 4,
+    "Average": "1.00"
+  },
+  {
+    "Position": "=126",
+    "UserID": 7184,
+    "SWL": "OE1-1113",
+    "Username": "OE11113",
+    "Points": 4,
+    "stationsWorked": 1,
+    "Average": "4.00"
+  },
+  {
+    "Position": "=126",
+    "UserID": 60780,
+    "SWL": "KP4050SWL",
+    "Username": "wp4lg1@gmail.com",
+    "Points": 4,
+    "stationsWorked": 1,
+    "Average": "4.00"
+  },
+  {
+    "Position": "=126",
+    "UserID": 11658,
+    "SWL": "KBinnie",
+    "Username": "KB5KN",
+    "Points": 4,
+    "stationsWorked": 2,
+    "Average": "2.00"
+  },
+  {
+    "Position": "=126",
+    "UserID": 8946,
+    "SWL": "FMENDIA",
+    "Username": "EA2DSG",
+    "Points": 4,
+    "stationsWorked": 1,
+    "Average": "4.00"
+  },
+  {
+    "Position": "=126",
+    "UserID": 5308,
+    "SWL": "M. Jiménez",
+    "Username": "EA7GVZ",
+    "Points": 4,
+    "stationsWorked": 3,
+    "Average": "1.33"
+  },
+  {
+    "Position": "=126",
+    "UserID": 16733,
+    "SWL": "JWilliams",
+    "Username": "M7POE",
+    "Points": 4,
+    "stationsWorked": 2,
+    "Average": "2.00"
+  },
+  {
+    "Position": "=126",
+    "UserID": 10585,
+    "SWL": "HGrant",
+    "Username": "WA2AKV",
+    "Points": 4,
+    "stationsWorked": 1,
+    "Average": "4.00"
+  },
+  {
+    "Position": "=126",
+    "UserID": 7193,
+    "SWL": "OE1-100-1007",
+    "Username": "OE11001007",
+    "Points": 4,
+    "stationsWorked": 4,
+    "Average": "1.00"
+  },
+  {
+    "Position": "=126",
+    "UserID": 56536,
+    "SWL": "FLEOVALL",
+    "Username": "leopold.vallauri@gmail.com",
+    "Points": 4,
+    "stationsWorked": 1,
+    "Average": "4.00"
+  },
+  {
+    "Position": "=126",
+    "UserID": 56218,
+    "SWL": "MA3212SWL",
+    "Username": "2e0gkw",
+    "Points": 4,
+    "stationsWorked": 2,
+    "Average": "2.00"
+  },
+  {
+    "Position": 139,
+    "UserID": 7187,
+    "SWL": "DE1WDX",
+    "Username": "DL2KUW",
+    "Points": 3,
+    "stationsWorked": 2,
+    "Average": "1.50"
+  },
+  {
+    "Position": "=139",
+    "UserID": 8922,
+    "SWL": "S. Bligh-Wall",
+    "Username": "SBLIGHWALL",
+    "Points": 3,
+    "stationsWorked": 2,
+    "Average": "1.50"
+  },
+  {
+    "Position": "=139",
+    "UserID": 12575,
+    "SWL": "P. Shinn",
+    "Username": "K6FRC",
+    "Points": 3,
+    "stationsWorked": 2,
+    "Average": "1.50"
+  },
+  {
+    "Position": 142,
+    "UserID": 12509,
+    "SWL": "RWALKER",
+    "Username": "RWALKER462",
+    "Points": 2,
+    "stationsWorked": 1,
+    "Average": "2.00"
+  },
+  {
+    "Position": "=142",
+    "UserID": 6066,
+    "SWL": "H. Freitag",
+    "Username": "OE1SRC",
+    "Points": 2,
+    "stationsWorked": 1,
+    "Average": "2.00"
+  },
+  {
+    "Position": "=142",
+    "UserID": 12942,
+    "SWL": "J.G.Fandli",
+    "Username": "JFANDLI",
+    "Points": 2,
+    "stationsWorked": 1,
+    "Average": "2.00"
+  },
+  {
+    "Position": "=142",
+    "UserID": 6330,
+    "SWL": "Frantisek",
+    "Username": "FRANTA",
+    "Points": 2,
+    "stationsWorked": 1,
+    "Average": "2.00"
+  },
+  {
+    "Position": "=142",
+    "UserID": 73003,
+    "SWL": "PY3409SWL",
+    "Username": "troiano",
+    "Points": 2,
+    "stationsWorked": 1,
+    "Average": "2.00"
+  },
+  {
+    "Position": "=142",
+    "UserID": 7192,
+    "SWL": "OM3-2351",
+    "Username": "OM32351",
+    "Points": 2,
+    "stationsWorked": 2,
+    "Average": "1.00"
+  },
+  {
+    "Position": "=142",
+    "UserID": 7195,
+    "SWL": "G-13038",
+    "Username": "G13038",
+    "Points": 2,
+    "stationsWorked": 1,
+    "Average": "2.00"
+  },
+  {
+    "Position": "=142",
+    "UserID": 18188,
+    "SWL": "VE7GDH",
+    "Username": "VE7GDH",
+    "Points": 2,
+    "stationsWorked": 1,
+    "Average": "2.00"
+  },
+  {
+    "Position": "=142",
+    "UserID": 12122,
+    "SWL": "C. Lynch",
+    "Username": "M6ZCL",
+    "Points": 2,
+    "stationsWorked": 2,
+    "Average": "1.00"
+  },
+  {
+    "Position": 151,
+    "UserID": 9397,
+    "SWL": "US-P-39",
+    "Username": "US-P-39",
+    "Points": 1,
+    "stationsWorked": 1,
+    "Average": "1.00"
+  },
+  {
+    "Position": "=151",
+    "UserID": 7794,
+    "SWL": "H. Morales",
+    "Username": "NP3IR",
+    "Points": 1,
+    "stationsWorked": 1,
+    "Average": "1.00"
+  },
+  {
+    "Position": "=151",
+    "UserID": 7190,
+    "SWL": "OK2-31097",
+    "Username": "OK231097",
+    "Points": 1,
+    "stationsWorked": 1,
+    "Average": "1.00"
+  },
+  {
+    "Position": "=151",
+    "UserID": 9551,
+    "SWL": "YU1WAT\/SWL",
+    "Username": "yu1wat",
+    "Points": 1,
+    "stationsWorked": 1,
+    "Average": "1.00"
+  },
+  {
+    "Position": "=151",
+    "UserID": 6428,
+    "SWL": "VK3ARR_SWL",
+    "Username": "anryan",
+    "Points": 1,
+    "stationsWorked": 1,
+    "Average": "1.00"
+  },
+  {
+    "Position": "=151",
+    "UserID": 9402,
+    "SWL": "DE1KKG",
+    "Username": "DE1KKG",
+    "Points": 1,
+    "stationsWorked": 1,
+    "Average": "1.00"
+  },
+  {
+    "Position": "=151",
+    "UserID": 7415,
+    "SWL": "F. Towle",
+    "Username": "KC1AAQ",
+    "Points": 1,
+    "stationsWorked": 1,
+    "Average": "1.00"
+  },
+  {
+    "Position": "=151",
+    "UserID": 10939,
+    "SWL": "M BRIDLE",
+    "Username": "ZL2MNB",
+    "Points": 1,
+    "stationsWorked": 1,
+    "Average": "1.00"
+  },
+  {
+    "Position": "=151",
+    "UserID": 7719,
+    "SWL": "D. Johnson",
+    "Username": "BIGDAZZAR",
+    "Points": 1,
+    "stationsWorked": 1,
+    "Average": "1.00"
+  },
+  {
+    "Position": "=151",
+    "UserID": 11693,
+    "SWL": "Y.FUKUMA",
+    "Username": "jo3rtf",
+    "Points": 1,
+    "stationsWorked": 1,
+    "Average": "1.00"
+  },
+  {
+    "Position": "=151",
+    "UserID": 9417,
+    "SWL": "DE1KDC",
+    "Username": "DE1KDC",
+    "Points": 1,
+    "stationsWorked": 1,
+    "Average": "1.00"
+  },
+  {
+    "Position": "=151",
+    "UserID": 11169,
+    "SWL": "F-10828",
+    "Username": "F10828",
+    "Points": 1,
+    "stationsWorked": 1,
+    "Average": "1.00"
+  },
+  {
+    "Position": "=151",
+    "UserID": 7183,
+    "SWL": "PA1555-R40",
+    "Username": "PA1555R40",
+    "Points": 1,
+    "stationsWorked": 1,
+    "Average": "1.00"
+  },
+  {
+    "Position": "=151",
+    "UserID": 7186,
+    "SWL": "DE1GSW",
+    "Username": "DE1GSW",
+    "Points": 1,
+    "stationsWorked": 1,
+    "Average": "1.00"
+  },
+  {
+    "Position": "=151",
+    "UserID": 13203,
+    "SWL": "JA1002SWL",
+    "Username": "JA1002SWL",
+    "Points": 1,
+    "stationsWorked": 8,
+    "Average": "0.12"
+  },
+  {
+    "Position": "=151",
+    "UserID": 8568,
+    "SWL": "I. Bailey",
+    "Username": "VK6MIB",
+    "Points": 1,
+    "stationsWorked": 1,
+    "Average": "1.00"
+  },
+  {
+    "Position": "=151",
+    "UserID": 9401,
+    "SWL": "HE9SOL",
+    "Username": "HE9SOL",
+    "Points": 1,
+    "stationsWorked": 1,
+    "Average": "1.00"
+  },
+  {
+    "Position": "=151",
+    "UserID": 47108,
+    "SWL": "WA0127SWL",
+    "Username": "liv7070@gmail.com",
+    "Points": 1,
+    "stationsWorked": 1,
+    "Average": "1.00"
+  },
+  {
+    "Position": "=151",
+    "UserID": 7194,
+    "SWL": "US-M-125",
+    "Username": "USM125",
+    "Points": 1,
+    "stationsWorked": 1,
+    "Average": "1.00"
+  },
+  {
+    "Position": "=151",
+    "UserID": 965,
+    "SWL": "SV1012SWL",
+    "Username": "SW1JCO",
+    "Points": 1,
+    "stationsWorked": 1,
+    "Average": "1.00"
+  },
+  {
+    "Position": "=151",
+    "UserID": 9014,
+    "SWL": "F. Peyrin",
+    "Username": "F1REI",
+    "Points": 1,
+    "stationsWorked": 1,
+    "Average": "1.00"
+  },
+  {
+    "Position": "=151",
+    "UserID": 10368,
+    "SWL": "D. Hutcherson",
+    "Username": "KI4CBU",
+    "Points": 1,
+    "stationsWorked": 1,
+    "Average": "1.00"
+  },
+  {
+    "Position": "=151",
+    "UserID": 106,
+    "SWL": "M. Balmer",
+    "Username": "M5EVT",
+    "Points": 1,
+    "stationsWorked": 1,
+    "Average": "1.00"
+  },
+  {
+    "Position": "=151",
+    "UserID": 7191,
+    "SWL": "OK1-17323",
+    "Username": "OK117323",
+    "Points": 1,
+    "stationsWorked": 1,
+    "Average": "1.00"
+  },
+  {
+    "Position": "=151",
+    "UserID": 10245,
+    "SWL": "HSILVA",
+    "Username": "ct7aov",
+    "Points": 1,
+    "stationsWorked": 2,
+    "Average": "0.50"
+  },
+  {
+    "Position": "=151",
+    "UserID": 11170,
+    "SWL": "I8-1659-RC",
+    "Username": "I81659RC",
+    "Points": 1,
+    "stationsWorked": 1,
+    "Average": "1.00"
+  }
+]

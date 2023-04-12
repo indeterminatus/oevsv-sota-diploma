@@ -26,9 +26,9 @@ import java.util.Map;
 record SummitListBasedValidityCheck(Map<String, SummitListEntry> summitsByCode) implements SummitValidityCheck {
 
     @Override
-    public boolean isValidAt(@Nullable Summit summit, @Nullable LocalDate instant) {
+    public boolean isValidAt(@Nullable Summit summit, @Nullable LocalDate instant, boolean defaultIfUnknown) {
         if (summit == null || instant == null) {
-            return false;
+            return defaultIfUnknown;
         }
 
         final var listEntry = summitsByCode.get(summit.code());
@@ -38,6 +38,6 @@ record SummitListBasedValidityCheck(Map<String, SummitListEntry> summitsByCode) 
             return afterStart && beforeEnd;
         }
 
-        return false;
+        return defaultIfUnknown;
     }
 }

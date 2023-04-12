@@ -45,12 +45,23 @@ final class SummitListBasedValidityCheckTest {
         final var sut = new SummitListBasedValidityCheck(map);
         final var summit = new Summit("OE/VB-357", "Wannaköpfle");
 
-        assertThat(sut.isValidAt(summit, LocalDate.of(2007, 7, 1))).isTrue();
-        assertThat(sut.isValidAt(summit, LocalDate.of(2007, 7, 2))).isTrue();
-        assertThat(sut.isValidAt(summit, LocalDate.of(2007, 6, 30))).isFalse();
+        assertThat(sut.isValidAt(summit, LocalDate.of(2007, 7, 1), false)).isTrue();
+        assertThat(sut.isValidAt(summit, LocalDate.of(2007, 7, 2), false)).isTrue();
+        assertThat(sut.isValidAt(summit, LocalDate.of(2007, 6, 30), false)).isFalse();
 
-        assertThat(sut.isValidAt(summit, LocalDate.of(2015, 12, 31))).isTrue();
-        assertThat(sut.isValidAt(summit, LocalDate.of(2015, 12, 30))).isTrue();
-        assertThat(sut.isValidAt(summit, LocalDate.of(2016, 1, 1))).isFalse();
+        assertThat(sut.isValidAt(summit, LocalDate.of(2015, 12, 31), false)).isTrue();
+        assertThat(sut.isValidAt(summit, LocalDate.of(2015, 12, 30), false)).isTrue();
+        assertThat(sut.isValidAt(summit, LocalDate.of(2016, 1, 1), false)).isFalse();
+    }
+
+    @Test
+    void unmanagedSummit_yieldsDefault() {
+        final var map = sut.summitList();
+
+        final var sut = new SummitListBasedValidityCheck(map);
+        final var summit = new Summit("I/LO-422", "Monte Monarco");
+
+        assertThat(sut.isValidAt(summit, LocalDate.of(2016, 1, 1), true)).isTrue();
+        assertThat(sut.isValidAt(summit, LocalDate.of(2016, 1, 1), false)).isFalse();
     }
 }

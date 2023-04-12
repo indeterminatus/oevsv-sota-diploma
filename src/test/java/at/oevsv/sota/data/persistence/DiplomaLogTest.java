@@ -49,6 +49,16 @@ final class DiplomaLogTest {
     }
 
     @Test
+    void alreadyRequested_canonicalCallSign_yieldsTrueAfterCreate() {
+        final var requester = new Requester("OE5IDT/p", "test@nothing.com", "Max Mustermann");
+        final var candidate = new Candidate("OE5IDT", "1", Candidate.Category.S2S, Candidate.Rank.BRONZE, Map.of());
+
+        sut.create(new DiplomaRequest(requester, Set.of(SignedCandidate.sign(candidate)), null));
+
+        assertThat(sut.alreadyRequested(new Requester("oe5idt/3", "test@nothing.com", "Max Mustermann"), candidate)).isTrue();
+    }
+
+    @Test
     void alreadyRequested_yieldsFalseIfNotFound() {
         assertThat(sut.alreadyRequested(new Requester("OE5IDT", "test@nothing.com", "Max Mustermann"), new Candidate("OE5IDT", "1", Candidate.Category.CHASER, Candidate.Rank.BRONZE, Map.of()))).isFalse();
     }

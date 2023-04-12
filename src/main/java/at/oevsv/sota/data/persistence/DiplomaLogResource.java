@@ -25,6 +25,7 @@ import io.quarkus.panache.common.Parameters;
 import org.apache.commons.lang3.StringUtils;
 import org.jetbrains.annotations.VisibleForTesting;
 
+import javax.annotation.Nullable;
 import javax.annotation.security.PermitAll;
 import javax.annotation.security.RolesAllowed;
 import javax.enterprise.context.ApplicationScoped;
@@ -79,7 +80,7 @@ public final class DiplomaLogResource {
         final var entry = new DiplomaLog();
         entry.setMail(request.requester().mail);
         entry.setName(request.requester().name);
-        entry.setCallSign(request.requester().callSign);
+        entry.setCallSign(canonicalCallSign(request.requester().callSign));
         entry.setRank(candidate.rank());
         entry.setCreationDate(LocalDate.now());
         entry.setCategory(candidate.category());
@@ -98,6 +99,17 @@ public final class DiplomaLogResource {
             entry.setLanguage(request.language());
         }
         entry.persist();
+    }
+
+    @VisibleForTesting
+    @Nullable
+    static String canonicalCallSign(@Nullable String callSign) {
+        if (StringUtils.trimToNull(callSign) == null) {
+            return null;
+        }
+
+        final var lowered = StringUtils.toRootLowerCase(callSign);
+        return StringUtils.substringBefore(lowered, '/');
     }
 
     @GET
@@ -143,7 +155,7 @@ public final class DiplomaLogResource {
 
     @Transactional
     public boolean alreadyRequested(Requester requester, Candidate candidate) {
-        final var parameters = Parameters.with("callSign", requester.callSign).and("category", candidate.category()).and("rank", candidate.rank());
+        final var parameters = Parameters.with("callSign", canonicalCallSign(requester.callSign)).and("category", candidate.category()).and("rank", candidate.rank());
         return DiplomaLog.count("from DiplomaLog s where s.callSign=:callSign and s.category=:category and s.rank=:rank", parameters) >= 1L;
     }
 

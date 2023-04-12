@@ -49,9 +49,14 @@ public class WireMockExtension implements QuarkusTestResourceLifecycleManager {
         wireMockServer.stubFor(get(urlEqualTo("/admin/activator_log_by_id?id=11330&year=all")).willReturn(okJson(loadFrom("activator-log-oe5jfe-2022-08-12.json"))));
         wireMockServer.stubFor(get(urlEqualTo("/admin/chaser_log_by_id?id=11330&year=all")).willReturn(okJson(loadFrom("chaser-log-oe5jfe-2022-08-09.json"))));
         wireMockServer.stubFor(get(urlEqualTo("/admin/s2s_log_by_id?id=11330&year=all")).willReturn(okJson(loadFrom("s2s-log-oe5jfe-2022-08-14.json"))));
+        wireMockServer.stubFor(get(urlEqualTo("/admin/activator_log_by_id?id=11608&year=all")).willReturn(okJson(loadFrom("activator-log-ik2ley-2023-04-11.json"))));
+        wireMockServer.stubFor(get(urlEqualTo("/admin/chaser_log_by_id?id=11608&year=all")).willReturn(okJson(loadFrom("chaser-log-ik2ley-2023-04-11.json"))));
+        wireMockServer.stubFor(get(urlEqualTo("/admin/s2s_log_by_id?id=11608&year=all")).willReturn(okJson(loadFrom("s2s-log-ik2ley-2023-04-11.json"))));
         wireMockServer.stubFor(get(urlEqualTo("/admin/activator_log_by_id?id=52194&year=all")).willReturn(okJson(loadFrom("activator-log-oe9nat-2022-08-28.json"))));
         wireMockServer.stubFor(get(urlEqualTo("/admin/chaser_log_by_id?id=52194&year=all")).willReturn(okJson("[]")));
         wireMockServer.stubFor(get(urlEqualTo("/admin/s2s_log_by_id?id=52194&year=all")).willReturn(okJson("[]")));
+        wireMockServer.stubFor(get(urlEqualTo("/admin/swl_roll?associationID=-1")).willReturn(okJson(loadFrom("swl-2023-03-22.json"))));
+        wireMockServer.stubFor(get(urlEqualTo("/admin/swl_roll?associationID=0")).willReturn(okJson(loadFrom("swl-2023-03-22.json"))));
 
         wireMockServer.stubFor(get(urlEqualTo("/summitslist.csv")).withHeader("If-Modified-Since", matching(".+")).willReturn(aResponse().withStatus(Response.Status.NOT_MODIFIED.getStatusCode())));
         wireMockServer.stubFor(get(urlEqualTo("/summitslist.csv")).willReturn(okForContentType("text/csv", loadFrom("/summits-samples/summitslist-2022-09-30.csv"))));

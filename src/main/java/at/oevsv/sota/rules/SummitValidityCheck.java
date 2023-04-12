@@ -23,5 +23,5 @@ import java.time.LocalDate;
 
 public interface SummitValidityCheck {
 
-    boolean isValidAt(@Nullable Summit summit, LocalDate instant);
+    boolean isValidAt(@Nullable Summit summit, LocalDate instant, boolean defaultIfUnknown);
 }

@@ -22,6 +22,7 @@ import at.oevsv.sota.data.domain.ChaserLog;
 import at.oevsv.sota.data.domain.Summit;
 import at.oevsv.sota.data.domain.SummitListEntry;
 import at.oevsv.sota.data.domain.SummitToSummitLog;
+import io.quarkus.logging.Log;
 import org.jetbrains.annotations.VisibleForTesting;
 
 import javax.annotation.Nonnull;
@@ -65,7 +66,7 @@ public final class Rules {
                 activatorLogs.stream()
                         .filter(log -> log.points() > 0)
                         .filter(log -> isWithinTimeRange(log.activationDate(), common))
-                        .filter(log -> summitCheck.isValidAt(log.summit(), log.activationDate()))
+                        .filter(log -> summitCheck.isValidAt(log.summit(), log.activationDate(), false))
                         .map(ActivatorLog::summit)
                         .filter(Objects::nonNull)
                         .filter(summit -> summit.state() != null)
@@ -94,7 +95,7 @@ public final class Rules {
         final Map<Summit.State, Long> frequencies =
                 chaserLogs.stream()
                         .filter(log -> isWithinTimeRange(log.activationDate(), common))
-                        .filter(log -> summitCheck.isValidAt(log.summit(), log.activationDate()))
+                        .filter(log -> summitCheck.isValidAt(log.summit(), log.activationDate(), false))
                         .map(ChaserLog::summit)
                         .filter(Objects::nonNull)
                         .filter(summit -> summit.state() != null)
@@ -109,8 +110,8 @@ public final class Rules {
         final Map<Summit.State, Long> frequencies =
                 summitToSummitLogs.stream()
                         .filter(log -> isWithinTimeRange(log.activationDate(), common))
-                        .filter(log -> summitCheck.isValidAt(log.activatedSummit(), log.activationDate()))
-                        .filter(log -> summitCheck.isValidAt(log.chasedSummit(), log.activationDate()))
+                        .filter(log -> summitCheck.isValidAt(log.activatedSummit(), log.activationDate(), true))
+                        .filter(log -> summitCheck.isValidAt(log.chasedSummit(), log.activationDate(), true))
                         .map(Rules::pickSummitForState)
                         .filter(Objects::nonNull)
                         .collect(groupingBy(Summit::state, () -> new EnumMap<>(Summit.State.class), counting()));

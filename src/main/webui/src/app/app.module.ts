@@ -40,7 +40,7 @@ import {MatProgressBarModule} from "@angular/material/progress-bar";
 import {MatIconModule} from "@angular/material/icon";
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {SpinnerComponent} from './spinner/spinner.component';
-import {FlexLayoutModule, FlexModule} from "@angular/flex-layout";
+import {FlexLayoutModule} from "@angular/flex-layout";
 import {MatDividerModule} from "@angular/material/divider";
 
 export function httpTranslateLoaderFactory(http: HttpClient) {
@@ -76,6 +76,7 @@ export function httpTranslateLoaderFactory(http: HttpClient) {
     MatToolbarModule,
     MatButtonModule,
     FormsModule,
+    ReactiveFormsModule,
     FlexLayoutModule,
     MatCheckboxModule,
     MatCardModule,

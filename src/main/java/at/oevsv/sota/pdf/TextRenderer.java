@@ -74,7 +74,7 @@ final class TextRenderer {
         final String diplomaId = new DefaultDiplomaIdGenerator(candidate, sequence).generateId();
         writeDiplomaInfo(writer, smaller, LocalDate.now(), diplomaId);
 
-        final var copperplateGothic = Fonts.loadFont("coprgtb.ttf", 40, Font.BOLD);
+        final var copperplateGothic = Fonts.loadFont("tiffanygtcc.ttf", 40, Font.BOLD);
         copperplateGothic.setColor(britannic.getColor());
         writeMainBox(writer, consolas, copperplateGothic);
 

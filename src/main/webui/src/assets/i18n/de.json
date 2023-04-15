@@ -52,6 +52,19 @@
     "header": {
       "available": "Herzlichen Glückwunsch! Du kannst mindestens ein Diplom beantragen:",
       "overview": "Du hast diese Werte pro Bundesland erreicht:"
+    },
+    "total": {
+      "label": "Gesamt:",
+      "ACTIVATOR": {
+        "sum": "Gipfel"
+      },
+      "CHASER": {
+        "sum": "QSO"
+      },
+      "S2S": {
+        "sum": "QSO"
+      },
+      "states": "Bundesländer"
     }
   },
   "rank": {

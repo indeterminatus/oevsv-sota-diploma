@@ -91,4 +91,14 @@ export class CandidateDisplayComponent extends BaseComponent implements OnInit {
   getErrorMessage(): string {
     return this.lastError || '';
   }
+
+  getNumberOfStates(): number {
+    return Object.keys(this.signedCandidate?.candidate?.activations as Object).length || 0;
+  }
+
+  getTotalActivations(): number {
+    const summing = (sum: number, current: number) => sum + current;
+
+    return Object.values(this.signedCandidate?.candidate?.activations as Object).reduce(summing, 0);
+  }
 }

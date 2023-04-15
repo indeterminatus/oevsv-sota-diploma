@@ -31,6 +31,16 @@
         {{activation.key}}: {{activation.value}}
       </li>
     </ul>
+    <p>
+      {{'content.total.label' | translate}}<br/>
+      {{getTotalActivations()}} {{'content.total.' + getCategory() + '.sum' | translate}}<br/>
+      {{getNumberOfStates()}} {{'content.total.states' | translate}}<br/>
+    </p>
+    <p>
+      {{signedCandidate?.candidate?.callSign}}<br/>
+      {{requester?.name}}<br/>
+      {{requester?.mail}}
+    </p>
   </mat-card-content>
   <mat-card-actions>
     <button mat-raised-button class="mat-primary" (click)="requestDiploma()"

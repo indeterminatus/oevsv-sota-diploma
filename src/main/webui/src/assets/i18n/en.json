@@ -52,6 +52,19 @@
     "header": {
       "available": "Congratulations! There is at least one award for you to request:",
       "overview": "Your achievements per state:"
+    },
+    "total": {
+      "label": "Total:",
+      "ACTIVATOR": {
+        "sum": "summits"
+      },
+      "CHASER": {
+        "sum": "QSO"
+      },
+      "S2S": {
+        "sum": "QSO"
+      },
+      "states": "regions"
     }
   },
   "rank": {

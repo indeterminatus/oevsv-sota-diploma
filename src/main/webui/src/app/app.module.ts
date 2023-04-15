@@ -42,6 +42,7 @@ import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {SpinnerComponent} from './spinner/spinner.component';
 import {FlexLayoutModule} from "@angular/flex-layout";
 import {MatDividerModule} from "@angular/material/divider";
+import { BackButtonDirective } from './directives/back-button.directive';
 
 export function httpTranslateLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -56,7 +57,8 @@ export function httpTranslateLoaderFactory(http: HttpClient) {
     NameEditorComponent,
     CandidateDisplayComponent,
     BaseComponent,
-    SpinnerComponent
+    SpinnerComponent,
+    BackButtonDirective
   ],
   imports: [
     BrowserModule,

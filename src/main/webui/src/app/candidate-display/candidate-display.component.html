@@ -37,14 +37,15 @@
       {{getNumberOfStates()}} {{'content.total.states' | translate}}<br/>
     </p>
     <p>
-      {{signedCandidate?.candidate?.callSign}}<br/>
-      {{requester?.name}}<br/>
-      {{requester?.mail}}
+      {{'input.callsign.label' | translate}}: <strong>{{signedCandidate?.candidate?.callSign}}</strong><br/>
+      {{'input.name.label' | translate}}: <strong>{{requester?.name}}</strong><br/>
+      {{'input.email.label' | translate}}: <strong>{{requester?.mail}}</strong>
     </p>
   </mat-card-content>
   <mat-card-actions>
     <button mat-raised-button class="mat-primary" (click)="requestDiploma()"
             [disabled]="checked">{{'input.request.label' | translate}}</button>
+    <button mat-raised-button backButton style="margin-left: 10px">{{'input.back.label' | translate}}</button>
   </mat-card-actions>
   <mat-card-footer>
     <mat-progress-bar mode="indeterminate" *ngIf="checking"></mat-progress-bar>

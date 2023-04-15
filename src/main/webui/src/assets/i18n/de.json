@@ -35,6 +35,9 @@
     },
     "request": {
       "label": "Anfordern"
+    },
+    "back": {
+      "label": "Zurück"
     }
   },
   "api": {

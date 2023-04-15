@@ -17,6 +17,7 @@
 package at.oevsv.sota;
 
 import at.oevsv.sota.data.ExternalDataService;
+import at.oevsv.sota.data.YearAwareFetcher;
 import at.oevsv.sota.data.api.Candidate;
 import at.oevsv.sota.data.api.DiplomaRequest;
 import at.oevsv.sota.data.api.Requester;
@@ -72,6 +73,9 @@ public class DiplomaResource {
     @Inject
     @RestClient
     ExternalDataService externalDataService;
+
+    @Inject
+    YearAwareFetcher yearAwareFetcher;
 
     @Inject
     SummitList summitsService;
@@ -149,13 +153,13 @@ public class DiplomaResource {
         final var common = new Rules.CommonArguments(callSign, userId, summitList, checkAfter);
 
         final Collection<Candidate> result = new ArrayList<>();
-        final var activatorCandidate = Rules.determineDiplomaCandidateAsActivator(externalDataService.fetchActivatorLogsById(userId, "all"), common);
+        final var activatorCandidate = Rules.determineDiplomaCandidateAsActivator(yearAwareFetcher.fetchActivatorLogsById(userId, checkAfter), common);
         result.add(activatorCandidate);
 
-        final var chaserCandidate = Rules.determineDiplomaCandidateAsChaser(externalDataService.fetchChaserLogsById(userId, "all"), common);
+        final var chaserCandidate = Rules.determineDiplomaCandidateAsChaser(yearAwareFetcher.fetchChaserLogsById(userId, checkAfter), common);
         result.add(chaserCandidate);
 
-        final var summitToSummitCandidate = Rules.determineDiplomaCandidateForSummitToSummit(externalDataService.fetchSummitToSummitLogsById(userId, "all"), common);
+        final var summitToSummitCandidate = Rules.determineDiplomaCandidateForSummitToSummit(yearAwareFetcher.fetchSummitToSummitLogsById(userId, checkAfter), common);
         result.add(summitToSummitCandidate);
 
         final var requester = new Requester(callSign, null, null);

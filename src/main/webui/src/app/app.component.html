@@ -31,7 +31,10 @@
 </form>
 
 <div class="sota-form" *ngIf="checked">
-  <div class="mat-body" *ngIf="!candidates || candidates.length === 0">
+  <div class="mat-body" *ngIf="error">
+    {{'api.response.error.server' | translate}}
+  </div>
+  <div class="mat-body" *ngIf="!error && (!candidates || candidates.length === 0)">
     {{'api.response.error.none' | translate}}
   </div>
   <div *ngIf="candidates && candidates.length > 0">

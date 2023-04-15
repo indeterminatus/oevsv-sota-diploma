@@ -43,7 +43,8 @@
   "api": {
     "response": {
       "error": {
-        "none": "Derzeit gibt es kein Diplom, das du anfordern kannst."
+        "none": "Derzeit gibt es kein Diplom, das du anfordern kannst.",
+        "server": "Bei der Abfrage ist ein Fehler aufgetreten. Bitte versuche es später erneut."
       },
       "request": {
         "success": "Die Diplomanfrage ist aufgenommen und wird bearbeitet. Du erhältst das Diplom in nächster Zeit an deine E-Mail Adresse.",

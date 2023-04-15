@@ -31,6 +31,7 @@ export class AppComponent implements OnInit {
   title = 'webui';
 
   checked: boolean = false;
+  error: boolean = false;
 
   @Output()
   checkForm = this.formBuilder.group({});
@@ -59,8 +60,7 @@ export class AppComponent implements OnInit {
   }
 
   onSubmit(): void {
-    console.debug("SUBMITTED!", this.checkForm, this.candidates);
-
+    this.error = false;
     const requester: Requester = {
       callSign: this.checkForm.get<string>('callSign')?.value,
       name: this.checkForm.get<string>('name')?.value,
@@ -78,6 +78,7 @@ export class AppComponent implements OnInit {
         this.createComponentsFor([]);
         console.debug("Received error!", error);
         this.checked = true;
+        this.error = true;
       }).finally(() => {
       this.spinnerService.hideSpinner();
     });

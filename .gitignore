@@ -42,4 +42,5 @@ nb-configuration.xml
 /src/test/resources/temporary/*.pdf
 /src/main/resources/pdf/images/*.psd
 /src/main/docker/oevsv-sota-diploma/data/*
+/src/main/docker/oevsv-sota-diploma/logs/*
 /src/main/assets/*.psd

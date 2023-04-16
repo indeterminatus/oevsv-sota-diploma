@@ -31,11 +31,19 @@
 </form>
 
 <div class="sota-form" *ngIf="checked">
-  <div class="mat-body" *ngIf="error">
-    {{'api.response.error.server' | translate}}
-  </div>
-  <div class="mat-body" *ngIf="!error && (!candidates || candidates.length === 0)">
-    {{'api.response.error.none' | translate}}
+  <div class="mat-body" *ngIf="!candidates || candidates.length === 0">
+    <div class="mat-body" *ngIf="error">
+      {{'api.response.error.server' | translate}}
+    </div>
+    <div class="mat-body" *ngIf="!error">
+      {{'api.response.error.none' | translate}}
+    </div>
+    <p style="margin-top: 10px">
+      {{'input.callsign.label' | translate}}: <strong>{{requester?.callSign}}</strong><br/>
+      {{'input.name.label' | translate}}: <strong>{{requester?.name}}</strong><br/>
+      {{'input.email.label' | translate}}: <strong>{{requester?.mail}}</strong>
+    </p>
+    <button mat-raised-button backButton style="margin-left: 10px">{{'input.back.label' | translate}}</button>
   </div>
   <div *ngIf="candidates && candidates.length > 0">
     <mat-label>{{'content.header.available' | translate}}</mat-label>

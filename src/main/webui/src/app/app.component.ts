@@ -77,8 +77,11 @@ export class AppComponent implements OnInit {
       error => {
         this.createComponentsFor([]);
         console.debug("Received error!", error);
+        if (error.status !== 404) {
+          this.error = true;
+        }
         this.checked = true;
-        this.error = true;
+        this.requester = requester;
       }).finally(() => {
       this.spinnerService.hideSpinner();
     });

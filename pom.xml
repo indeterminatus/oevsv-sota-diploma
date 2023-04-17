@@ -21,7 +21,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>at.oevsv.sota</groupId>
     <artifactId>diploma</artifactId>
-    <version>1.8.0-SNAPSHOT</version>
+    <version>1.9.0-SNAPSHOT</version>
 
     <name>OE SOTA Awards</name>
     <description>A web application (including backend services and UI frontend) to handle requesting awards for

@@ -44,11 +44,13 @@ final class DefaultDiplomaIdGeneratorTest {
         assertThat(sut.generateId()).isEqualTo("S2S-BR-10000");
     }
 
+    @SuppressWarnings("DataFlowIssue") // justification: passing bad value is the point of this test
     @Test
     void negativeSequenceIsForbidden() {
         assertThatIllegalArgumentException().isThrownBy(() -> new DefaultDiplomaIdGenerator(candidate, -1));
     }
 
+    @SuppressWarnings("DataFlowIssue") // justification: passing bad value is the point of this test
     @Test
     void sequenceWithTooManyDigitsIsForbidden() {
         assertThatIllegalArgumentException().isThrownBy(() -> new DefaultDiplomaIdGenerator(candidate, 100_000));

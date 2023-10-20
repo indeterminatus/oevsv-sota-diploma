@@ -24,15 +24,15 @@ import io.opentelemetry.instrumentation.annotations.WithSpan;
 import io.quarkus.cache.CacheResult;
 import io.quarkus.logging.Log;
 import io.smallrye.common.annotation.Blocking;
-import jakarta.annotation.security.PermitAll;
-import org.eclipse.microprofile.rest.client.inject.RestClient;
-
-import javax.annotation.Nullable;
+import jakarta.annotation.security.RolesAllowed;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.PathParam;
 import jakarta.ws.rs.Produces;
+import org.eclipse.microprofile.rest.client.inject.RestClient;
+
+import javax.annotation.Nullable;
 import java.time.LocalDate;
 import java.util.Collection;
 import java.util.HashMap;
@@ -49,7 +49,7 @@ public class StatisticResource {
     SummitList summitsService;
 
     @GET
-    @PermitAll
+    @RolesAllowed("admin")
     @Path("/day/{day}")
     @Produces("application/json")
     @Blocking

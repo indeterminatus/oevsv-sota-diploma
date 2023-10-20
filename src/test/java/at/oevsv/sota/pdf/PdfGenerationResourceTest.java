@@ -19,17 +19,16 @@ package at.oevsv.sota.pdf;
 import at.oevsv.sota.data.WireMockExtension;
 import at.oevsv.sota.data.api.Candidate;
 import at.oevsv.sota.data.api.Requester;
-import com.github.attiand.assertj.jaxrs.asserts.ResponseAssert;
 import io.quarkus.test.common.QuarkusTestResource;
 import io.quarkus.test.junit.QuarkusTest;
 import io.quarkus.test.security.TestSecurity;
+import jakarta.inject.Inject;
+import jakarta.ws.rs.core.MediaType;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.EnumSource;
 
 import javax.annotation.Nonnull;
-import jakarta.inject.Inject;
-import jakarta.ws.rs.core.MediaType;
 import java.io.IOException;
 import java.util.Locale;
 import java.util.Map;
@@ -82,7 +81,7 @@ final class PdfGenerationResourceTest {
     @TestSecurity(user = "test", roles = "admin")
     void generatePdf() throws IOException {
         final var response = sut.generatePdf(new PdfGenerationResource.Generation(requester(), candidate(Candidate.Category.ACTIVATOR, Candidate.Rank.GOLD)));
-        ResponseAssert.assertThat(response).hasStatusCode(200).hasMediaType(MediaType.APPLICATION_OCTET_STREAM_TYPE).hasEntity();
+        assertThat(response).hasStatusCode(200).hasMediaType(MediaType.APPLICATION_OCTET_STREAM_TYPE).hasEntity();
     }
 
     // region Test helpers

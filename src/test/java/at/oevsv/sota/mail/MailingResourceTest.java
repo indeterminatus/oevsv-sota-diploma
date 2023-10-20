@@ -56,7 +56,7 @@ class MailingResourceTest {
 
         sut.sendDiplomaForReview(requester, new Candidate(requester.callSign, "12345", Candidate.Category.ACTIVATOR, Candidate.Rank.BRONZE, Map.of()), 9999, Locale.GERMAN);
 
-        final var mails = mailbox.getMessagesSentTo("oe5idt@oevsv.at");
+        final var mails = mailbox.getMailsSentTo("oe5idt@oevsv.at");
         assertThat(mails).hasSize(1);
         Mail actual = mails.get(0);
         assertThat(actual.getHtml()).contains(requester.callSign).contains(requester.name);

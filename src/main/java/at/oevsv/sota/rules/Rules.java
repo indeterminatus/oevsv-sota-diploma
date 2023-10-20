@@ -22,7 +22,6 @@ import at.oevsv.sota.data.domain.ChaserLog;
 import at.oevsv.sota.data.domain.Summit;
 import at.oevsv.sota.data.domain.SummitListEntry;
 import at.oevsv.sota.data.domain.SummitToSummitLog;
-import io.quarkus.logging.Log;
 import org.jetbrains.annotations.VisibleForTesting;
 
 import javax.annotation.Nonnull;

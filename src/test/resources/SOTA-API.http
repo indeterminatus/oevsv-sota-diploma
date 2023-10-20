@@ -25,6 +25,12 @@ GET https://api-db.sota.org.uk/admin/chaser_log_by_id?year=all&id=11330
 Accept: application/json
 
 ###
+# @name Alle Chases pro UserID (am Beispiel OE5JFE) für 2023:
+GET https://api-db.sota.org.uk/admin/chaser_log_by_id?year=2023&id=11330
+Accept: application/json
+Accept-Encoding: gzip, deflate, br
+
+###
 # @name Alle S2S pro UserID (am Beispiel OE5JFE):
 GET https://api-db.sota.org.uk/admin/s2s_log_by_id?year=all&id=11330
 Accept: application/json
@@ -35,10 +41,25 @@ GET https://api-db.sota.org.uk/admin/activator_log_by_id?year=all&id=52194
 Accept: application/json
 Accept-Encoding: gzip, deflate, br
 
+###
 # @name Alle Chases pro UserID (am Beispiel OE5JFE):
 GET https://api-db.sota.org.uk/admin/chaser_log_by_id?year=all&id=11330
 Accept: application/json
 
+###
+# @name Alle Aktivierungen (am Beispiel IK2LEY):
+GET https://api-db.sota.org.uk//admin/activator_log_by_id?id=11608&year=all
+Accept: application/json
+
+###
+# @name Alle Chases pro UserID (am Beispiel IK2LEY):
+GET https://api-db.sota.org.uk/admin/chaser_log_by_id?year=all&id=11608
+Accept: application/json
+
+###
+# @name Alle S2S pro UserID (am Beispiel IK2LEY):
+GET https://api-db.sota.org.uk/admin/s2s_log_by_id?year=all&id=11608
+Accept: application/json
 
 ###
 # @name Alle SWL

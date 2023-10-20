@@ -28,7 +28,7 @@ import org.eclipse.microprofile.rest.client.inject.RestClient;
 import org.intellij.lang.annotations.Language;
 import org.junit.jupiter.api.Test;
 
-import javax.inject.Inject;
+import jakarta.inject.Inject;
 import java.time.LocalDate;
 
 import static org.assertj.core.api.Assertions.assertThat;

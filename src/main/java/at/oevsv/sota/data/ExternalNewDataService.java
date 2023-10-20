@@ -16,26 +16,25 @@
 
 package at.oevsv.sota.data;
 
-import io.quarkus.cache.CacheResult;
+import at.oevsv.sota.data.domain.SummitActivationLog;
 import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
 import org.jboss.resteasy.annotations.GZIP;
 
 import jakarta.inject.Singleton;
 import jakarta.ws.rs.GET;
-import jakarta.ws.rs.HeaderParam;
 import jakarta.ws.rs.Path;
+import jakarta.ws.rs.PathParam;
 import jakarta.ws.rs.Produces;
-import java.io.InputStream;
+import java.util.Collection;
 
 @Singleton
-@Path("/")
-@RegisterRestClient(configKey = "summits")
-public interface ExternalSummitsListService {
+@Path("/api")
+@RegisterRestClient(configKey = "api2-db")
+public interface ExternalNewDataService {
 
-    @CacheResult(cacheName = "summits-list-cache", keyGenerator = DateOnlyCacheKeyGenerator.class)
     @GET
     @GZIP
-    @Path("/summitslist.csv")
-    @Produces("text/csv")
-    InputStream fetchSummitsList(@HeaderParam("If-Modified-Since") String ifModifiedSince);
+    @Path("/activations/{summit}")
+    @Produces("application/json")
+    Collection<SummitActivationLog> fetchActivationsForSummit(@PathParam("summit") String summit);
 }

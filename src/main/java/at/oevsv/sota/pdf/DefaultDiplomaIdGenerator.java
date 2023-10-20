@@ -18,8 +18,8 @@ package at.oevsv.sota.pdf;
 
 import at.oevsv.sota.data.api.Candidate;
 
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
 import java.util.Locale;
 import java.util.Objects;
 

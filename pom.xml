@@ -21,7 +21,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>at.oevsv.sota</groupId>
     <artifactId>diploma</artifactId>
-    <version>1.9.0-SNAPSHOT</version>
+    <version>1.10.0-SNAPSHOT</version>
 
     <name>OE SOTA Awards</name>
     <description>A web application (including backend services and UI frontend) to handle requesting awards for
@@ -41,12 +41,12 @@
         <compiler-plugin.version>3.8.1</compiler-plugin.version>
         <quarkus.platform.artifact-id>quarkus-bom</quarkus.platform.artifact-id>
         <quarkus.platform.group-id>io.quarkus.platform</quarkus.platform.group-id>
-        <quarkus.platform.version>2.16.6.Final</quarkus.platform.version>
+        <quarkus.platform.version>3.0.4.Final</quarkus.platform.version>
         <assertj.version>3.24.2</assertj.version>
         <skipITs>true</skipITs>
         <surefire-plugin.version>3.0.0-M7</surefire-plugin.version>
         <owasp-dependency-check-plugin.version>7.1.1</owasp-dependency-check-plugin.version>
-        <quarkus-quinoa.version>1.2.4</quarkus-quinoa.version>
+        <quarkus-quinoa.version>2.2.1</quarkus-quinoa.version>
     </properties>
 
     <licenses>
@@ -261,13 +261,13 @@
         <dependency>
             <groupId>com.github.attiand</groupId>
             <artifactId>assertj-jaxrs-core</artifactId>
-            <version>2.0.1</version>
+            <version>3.0.1</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>com.github.attiand</groupId>
             <artifactId>assertj-jaxrs-junit-jupiter</artifactId>
-            <version>2.0.1</version>
+            <version>3.0.1</version>
             <scope>test</scope>
         </dependency>
         <dependency>

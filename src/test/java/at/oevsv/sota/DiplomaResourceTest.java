@@ -32,8 +32,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import javax.annotation.concurrent.GuardedBy;
-import javax.inject.Inject;
-import javax.ws.rs.NotFoundException;
+import jakarta.inject.Inject;
+import jakarta.ws.rs.NotFoundException;
 import java.time.LocalDate;
 import java.time.Month;
 import java.util.Collection;

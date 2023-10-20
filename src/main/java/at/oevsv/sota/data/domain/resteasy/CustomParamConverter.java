@@ -14,19 +14,25 @@
  * limitations under the License.
  */
 
-package at.oevsv.sota.data.domain.jackson;
+package at.oevsv.sota.data.domain.resteasy;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
-import io.quarkus.jackson.ObjectMapperCustomizer;
+import jakarta.ws.rs.ext.ParamConverter;
+import jakarta.ws.rs.ext.ParamConverterProvider;
+import jakarta.ws.rs.ext.Provider;
+import java.lang.annotation.Annotation;
+import java.lang.reflect.Type;
+import java.time.LocalDate;
 
-import jakarta.inject.Singleton;
-
-@Singleton
-public class JacksonModuleCustomizer implements ObjectMapperCustomizer {
+@Provider
+public class CustomParamConverter implements ParamConverterProvider {
 
     @Override
-    public void customize(ObjectMapper objectMapper) {
-        objectMapper.registerModule(new JavaTimeModule());
+    public <T> ParamConverter<T> getConverter(Class<T> rawType, Type genericType, Annotation[] annotations) {
+        if (rawType == LocalDate.class) {
+            //noinspection unchecked
+            return (ParamConverter<T>) new LocalDateConverter();
+        }
+
+        return null;
     }
 }

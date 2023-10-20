@@ -14,23 +14,21 @@
  * limitations under the License.
  */
 
-package at.oevsv.sota.data;
+package at.oevsv.sota.data.domain.resteasy;
 
-import io.quarkus.test.common.QuarkusTestResource;
-import io.quarkus.test.junit.QuarkusTest;
-import org.junit.jupiter.api.Test;
+import jakarta.ws.rs.ext.ParamConverter;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
-import jakarta.inject.Inject;
+final class LocalDateConverter implements ParamConverter<LocalDate> {
 
-@QuarkusTest
-@QuarkusTestResource(WireMockExtension.class)
-final class CacheClearerTest {
+    @Override
+    public LocalDate fromString(String value) {
+        return LocalDate.parse(value);
+    }
 
-    @Inject
-    CacheClearer sut;
-
-    @Test
-    void clearingCachesInternallyIsAllowed() {
-        sut.doClearAllCaches();
+    @Override
+    public String toString(LocalDate value) {
+        return DateTimeFormatter.ISO_LOCAL_DATE.format(value);
     }
 }

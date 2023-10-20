@@ -14,23 +14,14 @@
  * limitations under the License.
  */
 
-package at.oevsv.sota.data;
+package at.oevsv.sota.data.domain;
 
-import io.quarkus.test.common.QuarkusTestResource;
-import io.quarkus.test.junit.QuarkusTest;
-import org.junit.jupiter.api.Test;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
-import jakarta.inject.Inject;
+import java.time.LocalDate;
 
-@QuarkusTest
-@QuarkusTestResource(WireMockExtension.class)
-final class CacheClearerTest {
-
-    @Inject
-    CacheClearer sut;
-
-    @Test
-    void clearingCachesInternallyIsAllowed() {
-        sut.doClearAllCaches();
-    }
+public record SummitActivationLog(
+        @JsonProperty("ownCallSign") String ownCallSign,
+        @JsonProperty("activationDate") LocalDate activationDate,
+        @JsonProperty("qsos") int totalQSO) {
 }

@@ -18,11 +18,11 @@ package at.oevsv.sota.data.persistence;
 
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
 
-import javax.persistence.Entity;
-import javax.persistence.LockModeType;
-import javax.persistence.NamedQuery;
-import javax.persistence.Version;
-import javax.transaction.Transactional;
+import jakarta.persistence.Entity;
+import jakarta.persistence.LockModeType;
+import jakarta.persistence.NamedQuery;
+import jakarta.persistence.Version;
+import jakarta.transaction.Transactional;
 import java.time.LocalDateTime;
 
 @Entity

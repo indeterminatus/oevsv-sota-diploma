@@ -30,6 +30,7 @@ import com.lowagie.text.pdf.PdfWriter;
 import org.apache.commons.lang3.StringUtils;
 
 import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 import java.awt.*;
 import java.io.IOException;
 import java.text.MessageFormat;
@@ -48,15 +49,17 @@ final class TextRenderer {
     private final ResourceBundle resourceBundle;
     private final String diplomaManager;
     private final int sequence;
+    private final String sequenceSuffix;
     private final boolean debugLayout;
 
-    TextRenderer(Candidate candidate, Locale locale, Requester requester, String diplomaManager, int sequence, boolean debugLayout) {
+    TextRenderer(Candidate candidate, Locale locale, Requester requester, String diplomaManager, int sequence, @Nullable String sequenceSuffix, boolean debugLayout) {
         this.candidate = Objects.requireNonNull(candidate);
         this.requester = Objects.requireNonNull(requester);
         this.locale = Objects.requireNonNull(locale);
         resourceBundle = ResourceBundle.getBundle("pdf.i18n.messages", locale, ResourceBundle.Control.getControl(ResourceBundle.Control.FORMAT_PROPERTIES));
         this.diplomaManager = Objects.requireNonNull(diplomaManager);
         this.sequence = sequence;
+        this.sequenceSuffix = sequenceSuffix;
         this.debugLayout = debugLayout;
     }
 
@@ -71,7 +74,7 @@ final class TextRenderer {
         smaller.setSize(8);
         writeDiplomaManager(writer, smaller);
 
-        final String diplomaId = new DefaultDiplomaIdGenerator(candidate, sequence).generateId();
+        final var diplomaId = new DefaultDiplomaIdGenerator(candidate, sequence, sequenceSuffix).generateId();
         writeDiplomaInfo(writer, smaller, LocalDate.now(), diplomaId);
 
         final var copperplateGothic = Fonts.loadFont("tiffanygtcc.ttf", 40, Font.BOLD);

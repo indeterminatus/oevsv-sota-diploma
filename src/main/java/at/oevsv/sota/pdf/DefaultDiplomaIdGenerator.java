@@ -17,9 +17,11 @@
 package at.oevsv.sota.pdf;
 
 import at.oevsv.sota.data.api.Candidate;
-
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
+import org.apache.commons.lang3.StringUtils;
+
+import javax.annotation.Nullable;
 import java.util.Locale;
 import java.util.Objects;
 
@@ -32,8 +34,14 @@ final class DefaultDiplomaIdGenerator implements DiplomaIdGenerator {
 
     private final Candidate candidate;
     private final int sequence;
+    private final String sequenceSuffix;
 
     public DefaultDiplomaIdGenerator(Candidate candidate, @Min(0L) @Max(99_999L) int sequence) {
+        this(candidate, sequence, null);
+    }
+
+    @SuppressWarnings("ConstantValue") // justification: not trusting validation enough
+    public DefaultDiplomaIdGenerator(Candidate candidate, @Min(0L) @Max(99_999L) int sequence, @Nullable String sequenceSuffix) {
         this.candidate = Objects.requireNonNull(candidate);
         if (sequence < 0) {
             throw new IllegalArgumentException(String.format("sequence must not be negative! Passed: %d", sequence));
@@ -43,6 +51,16 @@ final class DefaultDiplomaIdGenerator implements DiplomaIdGenerator {
         }
         // invariant: 0 <= sequence <= 99_999
         this.sequence = sequence;
+
+        if (sequenceSuffix != null && sequenceSuffix.length() > 1) {
+            throw new IllegalArgumentException(String.format("sequenceSuffix must not exceed one character! Passed: %s", sequenceSuffix));
+        }
+        // invariant: |sequenceSuffix| <= 1
+
+        if (sequenceSuffix != null && sequenceSuffix.matches("\\d")) {
+            throw new IllegalArgumentException(String.format("sequenceSuffix must not contain digits! Passed: %s", sequenceSuffix));
+        }
+        this.sequenceSuffix = sequenceSuffix;
     }
 
     @Override
@@ -50,6 +68,7 @@ final class DefaultDiplomaIdGenerator implements DiplomaIdGenerator {
         final var category = candidate.category().toString().substring(0, 3).toUpperCase(Locale.ROOT);
         final var rank = candidate.rank().toString().substring(0, 2).toUpperCase(Locale.ROOT);
 
-        return String.format(Locale.ROOT, "%s-%s-%04d", category, rank, sequence);
+        final var id = String.format(Locale.ROOT, "%s-%s-%04d", category, rank, sequence);
+        return StringUtils.appendIfMissing(id, sequenceSuffix);
     }
 }

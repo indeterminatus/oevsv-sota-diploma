@@ -145,6 +145,7 @@ public class MailingResource {
     private static PdfGenerationResource.Generation generationParameter(Requester requester, Candidate candidate, int sequence) {
         final var parameter = new PdfGenerationResource.Generation(requester, candidate);
         parameter.setSequence(sequence);
+        parameter.setSequenceSuffix(null);
         return parameter;
     }
 

@@ -29,10 +29,6 @@ import com.lowagie.text.pdf.PdfWriter;
 import io.quarkus.logging.Log;
 import io.quarkus.runtime.annotations.RegisterForReflection;
 import jakarta.annotation.security.RolesAllowed;
-import org.apache.commons.lang3.StringUtils;
-import org.eclipse.microprofile.config.inject.ConfigProperty;
-
-import javax.annotation.Nonnull;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.ws.rs.Consumes;
 import jakarta.ws.rs.DefaultValue;
@@ -41,6 +37,11 @@ import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
+import org.apache.commons.lang3.StringUtils;
+import org.eclipse.microprofile.config.inject.ConfigProperty;
+
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.util.Locale;
@@ -70,6 +71,10 @@ public class PdfGenerationResource {
         private int sequence;
 
         @JsonProperty
+        @Nullable
+        private String sequenceSuffix;
+
+        @JsonProperty
         @JsonDeserialize(converter = StringToLocaleConverter.class)
         @DefaultValue("de-AT")
         private Locale locale = Locale.GERMAN;
@@ -96,16 +101,16 @@ public class PdfGenerationResource {
             this.locale = locale;
         }
 
-        public float getQuality() {
-            return quality;
-        }
-
         public void setQuality(float quality) {
             this.quality = quality;
         }
 
         public void setSequence(int sequence) {
             this.sequence = sequence;
+        }
+
+        public void setSequenceSuffix(@Nullable String sequenceSuffix) {
+            this.sequenceSuffix = sequenceSuffix;
         }
     }
 
@@ -134,14 +139,14 @@ public class PdfGenerationResource {
     @Nonnull
     private byte[] generatePdfBytes(Generation generation, String fileName) throws IOException {
         Log.infof("Generating diploma %s", fileName);
-        byte[] bytes = generateBinary(generation.requester, generation.candidate, generation.sequence, generation.quality, generation.locale, diplomaManager, debugLayout);
+        byte[] bytes = generateBinary(generation.requester, generation.candidate, generation.sequence, generation.sequenceSuffix, generation.quality, generation.locale, diplomaManager, debugLayout);
         Log.infof("Generated diploma %s (%d bytes)", fileName, bytes.length);
 
         return bytes;
     }
 
     @VisibleForTesting
-    static byte[] generateBinary(Requester requester, Candidate candidate, int sequence, float quality, Locale locale, String diplomaManager, boolean debugLayout) throws IOException {
+    static byte[] generateBinary(Requester requester, Candidate candidate, int sequence, @Nullable String sequenceSuffix, float quality, Locale locale, String diplomaManager, boolean debugLayout) throws IOException {
         try (final var os = new ByteArrayOutputStream(EXPECTED_SIZE)) {
             try (final Document document = new Document()) {
                 document.setDocumentLanguage(locale.getLanguage());
@@ -154,11 +159,11 @@ public class PdfGenerationResource {
                 writer.setPageEvent(new PdfBackgroundSetter(new ImageRenderer(candidate, debugLayout), quality));
                 document.open();
 
-                final var textRenderer = new TextRenderer(candidate, locale, requester, diplomaManager, sequence, debugLayout);
+                final var textRenderer = new TextRenderer(candidate, locale, requester, diplomaManager, sequence, sequenceSuffix, debugLayout);
                 textRenderer.writeText(writer);
             }
 
-            // NB: document must be closed so the stream is properly finalized
+            // NB: the document must be closed so the stream is properly finalized
             return os.toByteArray();
         }
     }

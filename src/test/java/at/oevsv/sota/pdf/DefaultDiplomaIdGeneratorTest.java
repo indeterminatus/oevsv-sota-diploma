@@ -18,6 +18,8 @@ package at.oevsv.sota.pdf;
 
 import at.oevsv.sota.data.api.Candidate;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 import java.util.Map;
 
@@ -54,5 +56,22 @@ final class DefaultDiplomaIdGeneratorTest {
     @Test
     void sequenceWithTooManyDigitsIsForbidden() {
         assertThatIllegalArgumentException().isThrownBy(() -> new DefaultDiplomaIdGenerator(candidate, 100_000));
+    }
+
+    @Test
+    void checkSuffix() {
+        final var sut = new DefaultDiplomaIdGenerator(candidate, 10_000, "x");
+        assertThat(sut.generateId()).isEqualTo("S2S-BR-10000x");
+    }
+
+    @Test
+    void suffixCannotExceedLengthLimit() {
+        assertThatIllegalArgumentException().isThrownBy(() -> new DefaultDiplomaIdGenerator(candidate, 1, "xx"));
+    }
+
+    @ParameterizedTest
+    @ValueSource(ints = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9})
+    void suffixCannotContainDigits(int digit) {
+        assertThatIllegalArgumentException().isThrownBy(() -> new DefaultDiplomaIdGenerator(candidate, 1, "" + digit));
     }
 }

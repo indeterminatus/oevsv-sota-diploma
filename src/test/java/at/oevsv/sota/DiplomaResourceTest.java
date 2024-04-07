@@ -28,15 +28,17 @@ import at.oevsv.sota.data.persistence.SummitList;
 import at.oevsv.sota.data.persistence.SummitListTestSeam;
 import io.quarkus.test.common.QuarkusTestResource;
 import io.quarkus.test.junit.QuarkusTest;
+import jakarta.inject.Inject;
+import jakarta.ws.rs.NotFoundException;
+import org.awaitility.Awaitility;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import javax.annotation.concurrent.GuardedBy;
-import jakarta.inject.Inject;
-import jakarta.ws.rs.NotFoundException;
 import java.time.LocalDate;
 import java.time.Month;
 import java.util.Collection;
+import java.util.concurrent.TimeUnit;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
@@ -58,7 +60,8 @@ final class DiplomaResourceTest {
 
     @BeforeEach
     void synchronize() {
-        SummitListTestSeam.synchronizeOn(summitList);
+        Awaitility.await().atMost(10, TimeUnit.SECONDS).until(() -> SummitListTestSeam.isInitialSynchronizationCompleted(summitList));
+        // SummitListTestSeam.synchronizeOn(summitList);
     }
 
     @Test

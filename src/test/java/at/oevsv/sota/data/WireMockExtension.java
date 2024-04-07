@@ -66,7 +66,7 @@ public class WireMockExtension implements QuarkusTestResourceLifecycleManager {
         wireMockServer.checkForUnmatchedRequests();
 
         final Map<String, String> configuration = new HashMap<>();
-        configuration.put("quarkus.resteasy.gzip.max-input", "50M");
+        configuration.put("quarkus.http.compression-level", "6");
         configuration.put("quarkus.rest-client.api-db.url", wireMockServer.baseUrl());
         configuration.put("quarkus.rest-client.summits.url", wireMockServer.baseUrl());
         configuration.put("quarkus.rest-client.api2-db.url", wireMockServer.baseUrl());

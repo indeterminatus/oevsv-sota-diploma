@@ -17,14 +17,14 @@
 package at.oevsv.sota.data;
 
 import io.quarkus.cache.CacheResult;
-import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
-import org.jboss.resteasy.annotations.GZIP;
-
+import io.quarkus.vertx.http.Compressed;
 import jakarta.inject.Singleton;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.HeaderParam;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
+import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
+
 import java.io.InputStream;
 
 @Singleton
@@ -34,7 +34,7 @@ public interface ExternalSummitsListService {
 
     @CacheResult(cacheName = "summits-list-cache", keyGenerator = DateOnlyCacheKeyGenerator.class)
     @GET
-    @GZIP
+    @Compressed
     @Path("/summitslist.csv")
     @Produces("text/csv")
     InputStream fetchSummitsList(@HeaderParam("If-Modified-Since") String ifModifiedSince);

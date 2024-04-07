@@ -28,8 +28,10 @@ import com.lowagie.text.RectangleReadOnly;
 import com.lowagie.text.pdf.PdfWriter;
 import io.quarkus.logging.Log;
 import io.quarkus.runtime.annotations.RegisterForReflection;
+import io.smallrye.common.annotation.Blocking;
 import jakarta.annotation.security.RolesAllowed;
 import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.ws.rs.BeanParam;
 import jakarta.ws.rs.Consumes;
 import jakarta.ws.rs.DefaultValue;
 import jakarta.ws.rs.POST;
@@ -59,9 +61,10 @@ public class PdfGenerationResource {
     boolean debugLayout;
 
     @RegisterForReflection
-    public static final class Generation {
+    public static class Generation {
 
         @JsonProperty
+        @BeanParam
         private Requester requester;
 
         @JsonProperty
@@ -112,14 +115,44 @@ public class PdfGenerationResource {
         public void setSequenceSuffix(@Nullable String sequenceSuffix) {
             this.sequenceSuffix = sequenceSuffix;
         }
+
+        public Requester getRequester() {
+            return requester;
+        }
+
+        public Candidate getCandidate() {
+            return candidate;
+        }
+
+        public int getSequence() {
+            return sequence;
+        }
+
+        @Nullable
+        public String getSequenceSuffix() {
+            return sequenceSuffix;
+        }
+
+        public void setRequester(Requester requester) {
+            this.requester = requester;
+        }
+
+        public void setCandidate(Candidate candidate) {
+            this.candidate = candidate;
+        }
+
+        public float getQuality() {
+            return quality;
+        }
     }
 
     @POST
     @Path("/generate")
     @RolesAllowed("admin")
+    @Blocking
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_OCTET_STREAM)
-    public Response generatePdf(Generation generation) throws IOException {
+    public Response generatePdf(@BeanParam Generation generation) throws IOException {
         String fileName = fileNameFor(generation);
         byte[] bytes = generatePdfBytes(generation, fileName);
 

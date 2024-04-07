@@ -17,6 +17,7 @@
 package at.oevsv.sota.data.persistence;
 
 import at.oevsv.sota.data.ExternalSummitsListService;
+import at.oevsv.sota.data.MaxRequestBodySizeFilter;
 import at.oevsv.sota.data.domain.Summit;
 import at.oevsv.sota.data.domain.SummitListEntry;
 import com.opencsv.bean.CsvToBeanBuilder;
@@ -24,14 +25,9 @@ import io.opentelemetry.instrumentation.annotations.WithSpan;
 import io.quarkus.logging.Log;
 import io.quarkus.runtime.StartupEvent;
 import io.quarkus.scheduler.Scheduled;
+import io.smallrye.common.annotation.Blocking;
 import jakarta.annotation.security.PermitAll;
 import jakarta.annotation.security.RolesAllowed;
-import org.apache.commons.lang3.StringUtils;
-import org.eclipse.microprofile.faulttolerance.Bulkhead;
-import org.eclipse.microprofile.rest.client.inject.RestClient;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.VisibleForTesting;
-
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.enterprise.event.Observes;
 import jakarta.inject.Inject;
@@ -46,6 +42,14 @@ import jakarta.ws.rs.PathParam;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.RedirectionException;
 import jakarta.ws.rs.core.MediaType;
+import org.apache.commons.lang3.StringUtils;
+import org.eclipse.microprofile.context.ManagedExecutor;
+import org.eclipse.microprofile.faulttolerance.Bulkhead;
+import org.eclipse.microprofile.rest.client.annotation.RegisterProvider;
+import org.eclipse.microprofile.rest.client.inject.RestClient;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.VisibleForTesting;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -55,31 +59,47 @@ import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.function.Predicate;
 
 @Path("/api/summits")
 @ApplicationScoped
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
+@RegisterProvider(MaxRequestBodySizeFilter.class)
 public final class SummitList {
 
-    @Inject
     @RestClient
     ExternalSummitsListService externalSummitsListService;
 
+    @Inject
+    ManagedExecutor executorService;
+
+    private final AtomicBoolean initialSynchronizationCompleted = new AtomicBoolean(false);
+
     @POST
     @RolesAllowed("admin")
+    @Blocking
     @Path("/synchronize")
-    @Transactional
+    @Transactional(Transactional.TxType.REQUIRED)
     public void synchronize() {
         doSynchronize();
     }
 
-    @Transactional
     void onStart(@Observes StartupEvent event) {
-        Log.infof("Application initialized; synchronizing summit list...");
-        doSynchronize();
-        Log.infof("Summit list synchronization completed.");
+        Log.infof("Application initialized; scheduling synchronization of summit list.");
+        executorService.runAsync(() -> {
+            Log.infof("Application initialized; synchronizing summit list...");
+            doSynchronize();
+            Log.infof("Summit list synchronization completed.");
+            initialSynchronizationCompleted.set(true);
+        });
+        Log.infof("Summit list synchronization scheduled.");
+    }
+
+    @VisibleForTesting
+    boolean isInitialSynchronizationCompleted() {
+        return initialSynchronizationCompleted.get();
     }
 
     /**
@@ -179,7 +199,7 @@ public final class SummitList {
     @PUT
     @RolesAllowed("admin")
     @Path("/{code}")
-    @Transactional
+    @Transactional(Transactional.TxType.REQUIRED)
     @SuppressWarnings("java:S3252") // justification: SummitListEntry is better readable
     public SummitListEntry update(@PathParam("code") String summitCode, SummitListEntry entry) {
         final SummitListEntry entity = SummitListEntry.findById(summitCode);

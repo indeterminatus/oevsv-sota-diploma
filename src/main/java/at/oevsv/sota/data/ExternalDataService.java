@@ -23,10 +23,10 @@ import at.oevsv.sota.data.domain.ChaserLog;
 import at.oevsv.sota.data.domain.ShortWaveListener;
 import at.oevsv.sota.data.domain.SummitToSummitLog;
 import io.quarkus.cache.CacheResult;
+import io.quarkus.vertx.http.Compressed;
 import org.eclipse.microprofile.faulttolerance.Bulkhead;
 import org.eclipse.microprofile.faulttolerance.CircuitBreaker;
 import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
-import org.jboss.resteasy.annotations.GZIP;
 
 import jakarta.inject.Singleton;
 import jakarta.ws.rs.DefaultValue;
@@ -44,27 +44,27 @@ public interface ExternalDataService {
 
     @CacheResult(cacheName = "activator-cache")
     @GET
-    @GZIP
+    @Compressed
     @Path("/activator_roll")
     @Produces("application/json")
     Collection<Activator> fetchActivators(@DefaultValue("0") @QueryParam("associationID") String associationId);
 
     @CacheResult(cacheName = "chaser-cache")
     @GET
-    @GZIP
+    @Compressed
     @Path("/chaser_roll")
     @Produces("application/json")
     Collection<Chaser> fetchChasers(@DefaultValue("0") @QueryParam("associationID") String associationId);
 
     @CacheResult(cacheName = "swl-cache")
     @GET
-    @GZIP
+    @Compressed
     @Path("/swl_roll")
     @Produces("application/json")
     Collection<ShortWaveListener> fetchShortWaveListeners(@DefaultValue("0") @QueryParam("associationID") String associationId);
 
     @GET
-    @GZIP
+    @Compressed
     @Path("/activator_log_by_id")
     @Produces("application/json")
     @Bulkhead(value = 3)
@@ -72,7 +72,7 @@ public interface ExternalDataService {
     Collection<ActivatorLog> fetchActivatorLogsById(@QueryParam("id") String userId, @QueryParam("year") @DefaultValue("all") String year);
 
     @GET
-    @GZIP
+    @Compressed
     @Path("/chaser_log_by_id")
     @Produces("application/json")
     @Bulkhead(value = 3)
@@ -80,7 +80,7 @@ public interface ExternalDataService {
     Collection<ChaserLog> fetchChaserLogsById(@QueryParam("id") String userId, @QueryParam("year") @DefaultValue("all") String year);
 
     @GET
-    @GZIP
+    @Compressed
     @Path("/s2s_log_by_id")
     @Produces("application/json")
     @Bulkhead(value = 3)

@@ -17,8 +17,8 @@
 package at.oevsv.sota.data;
 
 import at.oevsv.sota.data.domain.SummitActivationLog;
+import io.quarkus.vertx.http.Compressed;
 import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
-import org.jboss.resteasy.annotations.GZIP;
 
 import jakarta.inject.Singleton;
 import jakarta.ws.rs.GET;
@@ -33,7 +33,7 @@ import java.util.Collection;
 public interface ExternalNewDataService {
 
     @GET
-    @GZIP
+    @Compressed
     @Path("/activations/{summit}")
     @Produces("application/json")
     Collection<SummitActivationLog> fetchActivationsForSummit(@PathParam("summit") String summit);

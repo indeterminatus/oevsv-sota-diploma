@@ -30,6 +30,7 @@ import io.quarkus.mailer.reactive.ReactiveMailer;
 import io.quarkus.scheduler.Scheduled;
 import io.smallrye.common.annotation.Blocking;
 import jakarta.annotation.security.RolesAllowed;
+import jakarta.transaction.Transactional;
 import org.eclipse.microprofile.config.inject.ConfigProperty;
 import org.eclipse.microprofile.faulttolerance.Bulkhead;
 
@@ -84,6 +85,7 @@ public class MailingResource {
     @Scheduled(cron = "{pending.requests.check.cron}")
     @Bulkhead(value = 1, waitingTaskQueue = 1)
     @Blocking
+    @Transactional
     @WithSpan(kind = SpanKind.SERVER, value = "sendPendingRequests")
     public void sendPendingRequests() {
         final var pendingRequests = diplomaLog.listPendingInternal();

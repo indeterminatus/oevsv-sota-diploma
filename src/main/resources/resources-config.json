@@ -12,6 +12,9 @@
       },
       {
         "pattern": "^com/lowagie/text/pdf/fonts/.*\\.afm"
+      },
+      {
+        "pattern": "^templates/.*$"
       }
     ]
   },

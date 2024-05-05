@@ -14,12 +14,13 @@
 # docker run -i --rm -p 8080:8080 quarkus/diploma
 #
 ###
-FROM registry.access.redhat.com/ubi8/ubi-minimal:8.5
+FROM registry.access.redhat.com/ubi8/ubi-minimal:8.9
 WORKDIR /work/
 RUN chown 1001 /work \
     && chmod "g+rwX" /work \
     && chown 1001:root /work
 RUN microdnf install freetype fontconfig
+COPY --chown=1001:root target/lib*.so /work/
 COPY --chown=1001:root target/*-runner /work/application
 
 EXPOSE 8080

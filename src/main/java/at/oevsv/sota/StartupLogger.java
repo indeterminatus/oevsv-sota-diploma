@@ -27,7 +27,7 @@ import org.eclipse.microprofile.config.inject.ConfigProperty;
 @RegisterForReflection
 public class StartupLogger {
 
-    @ConfigProperty(name = "quarkus.application.build.timestamp")
+    @ConfigProperty(name = "application.build.timestamp")
     String buildTimestamp;
 
     void onStart(@Observes StartupEvent ev) {

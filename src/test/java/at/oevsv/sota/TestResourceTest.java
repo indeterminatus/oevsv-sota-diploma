@@ -17,11 +17,13 @@
 package at.oevsv.sota;
 
 import io.quarkus.test.junit.QuarkusTest;
+import io.quarkus.test.security.TestSecurity;
+import jakarta.inject.Inject;
+import jakarta.ws.rs.WebApplicationException;
 import org.junit.jupiter.api.Test;
 
-import jakarta.inject.Inject;
-
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 
 @QuarkusTest
 final class TestResourceTest {
@@ -35,5 +37,24 @@ final class TestResourceTest {
         assertThat(sut.checkResourceBundle("/pdf/i18n/messages", "en", "diploma.title")).isEqualTo("AWARD");
         assertThat(sut.checkResourceBundle("pdf.i18n.messages", "de", "diploma.title")).isEqualTo("DIPLOM");
         assertThat(sut.checkResourceBundle("pdf.i18n.messages", "en", "diploma.title")).isEqualTo("AWARD");
+    }
+
+    @Test
+    void loadingCharsetWorks() {
+        assertThat(sut.checkCharset("Cp1252")).isEqualTo("windows-1252");
+        assertThat(sut.checkCharset("UTF-8")).isEqualTo("UTF-8");
+        assertThat(sut.checkCharset("bla")).contains("bla").contains("is not supported");
+    }
+
+    @Test
+    @TestSecurity(user = "test", roles = "admin")
+    void loadingResourceWorks() {
+        assertThat(sut.checkResource("/templates/reviewRequest.txt")).contains("Exists");
+    }
+
+    @Test
+    @TestSecurity(user = "test", roles = "admin")
+    void loadingNonExistingResource_404() {
+        assertThatExceptionOfType(WebApplicationException.class).isThrownBy(() -> sut.checkResource("/passwd"));
     }
 }

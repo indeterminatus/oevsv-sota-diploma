@@ -19,9 +19,7 @@ package at.oevsv.sota.data.domain;
 import com.opencsv.bean.CsvBindByName;
 import com.opencsv.bean.CsvDate;
 import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
-import io.quarkus.panache.common.Parameters;
 
-import javax.annotation.Nullable;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -106,15 +104,6 @@ public /*final*/ class SummitListEntry extends PanacheEntityBase {
 
     public void setValidTo(LocalDate validTo) {
         this.validTo = validTo;
-    }
-
-    public static boolean hasValidEntry(@Nullable Summit summit, @Nullable LocalDate date) {
-        if (summit == null || date == null) {
-            return false;
-        }
-
-        final var parameters = Parameters.with("summitCode", summit.code()).and("date", date);
-        return find("s.summitCode = :summitCode and s.validFrom >= :date and s.validTo <= :date", parameters).firstResultOptional().isPresent();
     }
 
     @Override

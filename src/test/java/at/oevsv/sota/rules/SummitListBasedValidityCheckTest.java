@@ -21,9 +21,11 @@ import at.oevsv.sota.data.WireMockExtension;
 import at.oevsv.sota.data.domain.Summit;
 import io.quarkus.test.common.QuarkusTestResource;
 import io.quarkus.test.junit.QuarkusTest;
-import org.junit.jupiter.api.Test;
-
 import jakarta.inject.Inject;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
+
 import java.time.LocalDate;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -41,7 +43,6 @@ final class SummitListBasedValidityCheckTest {
     @Test
     void oe_vb357_isRestrictedToDates() {
         final var map = sut.summitList();
-
         final var sut = new SummitListBasedValidityCheck(map);
         final var summit = new Summit("OE/VB-357", "Wannaköpfle");
 
@@ -57,11 +58,29 @@ final class SummitListBasedValidityCheckTest {
     @Test
     void unmanagedSummit_yieldsDefault() {
         final var map = sut.summitList();
-
         final var sut = new SummitListBasedValidityCheck(map);
         final var summit = new Summit("I/LO-422", "Monte Monarco");
 
         assertThat(sut.isValidAt(summit, LocalDate.of(2016, 1, 1), true)).isTrue();
         assertThat(sut.isValidAt(summit, LocalDate.of(2016, 1, 1), false)).isFalse();
+    }
+
+    @ParameterizedTest
+    @ValueSource(booleans = {true, false})
+    void noDate_yieldsDefault(boolean defaultValue) {
+        final var map = sut.summitList();
+        final var sut = new SummitListBasedValidityCheck(map);
+        final var summit = new Summit("OE/VB-357", "Wannaköpfle");
+
+        assertThat(sut.isValidAt(summit, null, defaultValue)).isEqualTo(defaultValue);
+    }
+
+    @ParameterizedTest
+    @ValueSource(booleans = {true, false})
+    void noSummit_yieldsDefault(boolean defaultValue) {
+        final var map = sut.summitList();
+        final var sut = new SummitListBasedValidityCheck(map);
+
+        assertThat(sut.isValidAt(null, LocalDate.of(2016, 1, 1), defaultValue)).isEqualTo(defaultValue);
     }
 }

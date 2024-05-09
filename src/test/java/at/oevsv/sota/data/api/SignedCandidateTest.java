@@ -48,6 +48,15 @@ final class SignedCandidateTest {
         assertThatException().isThrownBy(tampered::verifyIntegrity);
     }
 
+    @Test
+    void signedCandidate_signingNull() {
+        final var signed = SignedCandidate.sign(null);
+        assertThat(signed).isNotNull();
+        assertThat(signed.candidate()).isNull();
+        assertThat(signed.signature()).isNull();
+        assertThatNoException().isThrownBy(signed::verifyIntegrity);
+    }
+
     @NotNull
     private static Candidate candidate(String callSign) {
         return new Candidate(callSign, "123", Candidate.Category.S2S, Candidate.Rank.GOLD, Map.of());

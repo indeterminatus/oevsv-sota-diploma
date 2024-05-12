@@ -42,6 +42,7 @@ import java.util.concurrent.TimeUnit;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
+import static org.assertj.core.api.Assumptions.assumeThat;
 
 @QuarkusTest
 @QuarkusTestResource(WireMockExtension.class)
@@ -61,7 +62,6 @@ final class DiplomaResourceTest {
     @BeforeEach
     void synchronize() {
         Awaitility.await().atMost(10, TimeUnit.SECONDS).until(() -> SummitListTestSeam.isInitialSynchronizationCompleted(summitList));
-        // SummitListTestSeam.synchronizeOn(summitList);
     }
 
     @Test
@@ -82,6 +82,14 @@ final class DiplomaResourceTest {
     @Test
     void summitList_fetched() {
         assertThat(sut.summitList()).isNotEmpty();
+    }
+
+    @Test
+    void fetchingSpecificSummitEntry_works() {
+        final var summitCode = sut.summitList().keySet().stream().findAny().orElse(null);
+        assumeThat(summitCode).isNotNull();
+
+        assertThat(summitList.getSummitListEntry(summitCode)).isNotNull();
     }
 
     @Test
@@ -150,7 +158,7 @@ final class DiplomaResourceTest {
             DiplomaLogResourceTestSeam.deleteAllOn(logs);
         }
     }
-
+    
     @Test
     void candidates_nonExistingUser_throws() {
         assertThatExceptionOfType(NotFoundException.class).isThrownBy(() -> sut.checkCandidatesForUser("OE1QSO", null));

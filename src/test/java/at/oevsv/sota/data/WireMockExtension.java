@@ -18,10 +18,10 @@ package at.oevsv.sota.data;
 
 import com.github.tomakehurst.wiremock.WireMockServer;
 import io.quarkus.test.common.QuarkusTestResourceLifecycleManager;
+import jakarta.ws.rs.core.Response;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
 
-import jakarta.ws.rs.core.Response;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
@@ -56,7 +56,10 @@ public class WireMockExtension implements QuarkusTestResourceLifecycleManager {
         wireMockServer.stubFor(get(urlMatching("/admin/activator_log_by_id\\?id=52194&year=(all|[0-9]+)$")).willReturn(okJson(loadFrom("activator-log-oe9nat-2022-08-28.json"))));
         wireMockServer.stubFor(get(urlMatching("/admin/chaser_log_by_id\\?id=52194&year=(all|[0-9]+)$")).willReturn(okJson("[]")));
         wireMockServer.stubFor(get(urlMatching("/admin/s2s_log_by_id\\?id=52194&year=(all|[0-9]+)$")).willReturn(okJson("[]")));
-        wireMockServer.stubFor(get(urlEqualTo("/api/activations/oe/oo-006")).willReturn(okJson(loadFrom("/api2-db-samples/summit-activation-log-oe-oo-006-2023-05-09.json"))));
+        wireMockServer.stubFor(get(urlEqualTo("/api/activations/OE/OO-006")).willReturn(okJson(loadFrom("/api2-db-samples/summit-activation-log-oe-oo-006-2023-05-09.json"))));
+        wireMockServer.stubFor(get(urlMatching("/api/activations/.*")).willReturn(okJson("""
+                [{"activationDate":"2023-04-01","qsos":5},\
+                {"activationDate":"2023-04-02","qsos":10}]""")));
         wireMockServer.stubFor(get(urlEqualTo("/admin/swl_roll?associationID=-1")).willReturn(okJson(loadFrom("swl-2023-03-22.json"))));
         wireMockServer.stubFor(get(urlEqualTo("/admin/swl_roll?associationID=0")).willReturn(okJson(loadFrom("swl-2023-03-22.json"))));
 

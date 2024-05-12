@@ -81,7 +81,7 @@ public final class SummitList {
     @RolesAllowed("admin")
     @Blocking
     @Path("/synchronize")
-    @Transactional(Transactional.TxType.REQUIRED)
+    @Transactional
     public void synchronize() {
         doSynchronize();
     }
@@ -199,7 +199,7 @@ public final class SummitList {
     @PUT
     @RolesAllowed("admin")
     @Path("/{code}")
-    @Transactional(Transactional.TxType.REQUIRED)
+    @Transactional
     @SuppressWarnings("java:S3252") // justification: SummitListEntry is better readable
     public SummitListEntry update(@PathParam("code") String summitCode, SummitListEntry entry) {
         final SummitListEntry entity = SummitListEntry.findById(summitCode);

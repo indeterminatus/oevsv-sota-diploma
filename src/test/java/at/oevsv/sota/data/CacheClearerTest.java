@@ -16,11 +16,15 @@
 
 package at.oevsv.sota.data;
 
+import io.quarkus.security.UnauthorizedException;
 import io.quarkus.test.common.QuarkusTestResource;
 import io.quarkus.test.junit.QuarkusTest;
+import io.quarkus.test.security.TestSecurity;
+import jakarta.inject.Inject;
 import org.junit.jupiter.api.Test;
 
-import jakarta.inject.Inject;
+import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
+import static org.assertj.core.api.Assertions.assertThatNoException;
 
 @QuarkusTest
 @QuarkusTestResource(WireMockExtension.class)
@@ -31,6 +35,17 @@ final class CacheClearerTest {
 
     @Test
     void clearingCachesInternallyIsAllowed() {
-        sut.doClearAllCaches();
+        assertThatNoException().isThrownBy(() -> sut.doClearAllCaches());
+    }
+
+    @Test
+    @TestSecurity(user = "test", roles = "admin")
+    void clearingCachesWithAuthenticationIsAllowed() {
+        assertThatNoException().isThrownBy(() -> sut.clearAllCaches());
+    }
+
+    @Test
+    void clearingCachesWithoutAuthenticationIsForbidden() {
+        assertThatExceptionOfType(UnauthorizedException.class).isThrownBy(() -> sut.clearAllCaches());
     }
 }

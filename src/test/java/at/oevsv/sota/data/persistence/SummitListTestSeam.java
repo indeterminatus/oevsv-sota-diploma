@@ -21,10 +21,6 @@ package at.oevsv.sota.data.persistence;
  */
 public final class SummitListTestSeam {
 
-    public static void synchronizeOn(SummitList summitList) {
-        summitList.doSynchronize();
-    }
-
     public static boolean isInitialSynchronizationCompleted(SummitList summitList) {
         return summitList.isInitialSynchronizationCompleted();
     }

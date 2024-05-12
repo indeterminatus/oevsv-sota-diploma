@@ -30,6 +30,8 @@ import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.PathParam;
 import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.WebApplicationException;
+import jakarta.ws.rs.core.Response;
 import org.eclipse.microprofile.rest.client.inject.RestClient;
 
 import javax.annotation.Nullable;
@@ -59,7 +61,7 @@ public class StatisticResource {
         final Map<String, Collection<SummitActivationLog>> activationsPerSummit = new HashMap<>();
         for (final var summit : summits) {
             final var activationLogs = summitActivationLogs(summit.getSummitCode());
-            if (!activationLogs.isEmpty()) {
+            if (activationLogs != null && !activationLogs.isEmpty()) {
                 activationsPerSummit.put(summit.getSummitCode(), activationLogs);
             }
         }
@@ -81,6 +83,16 @@ public class StatisticResource {
     @Nullable
     @WithSpan(kind = SpanKind.SERVER, value = "Lookup summit activations")
     public Collection<SummitActivationLog> summitActivationLogs(String summitCode) {
-        return externalNewDataService.fetchActivationsForSummit(summitCode);
+        try {
+            return externalNewDataService.fetchActivationsForSummit(summitCode);
+        } catch (WebApplicationException e) {
+            if (e.getResponse().getStatus() != Response.Status.NOT_FOUND.getStatusCode()) {
+                Log.error("Error fetching activations for summit: " + summitCode, e);
+            }
+            return null;
+        } catch (Exception e) {
+            Log.error("Error fetching activations for summit: " + summitCode, e);
+            return null;
+        }
     }
 }

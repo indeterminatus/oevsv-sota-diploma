@@ -17,6 +17,7 @@
 package at.oevsv.sota.data;
 
 import com.github.tomakehurst.wiremock.WireMockServer;
+import com.github.tomakehurst.wiremock.common.ConsoleNotifier;
 import io.quarkus.test.common.QuarkusTestResourceLifecycleManager;
 import jakarta.ws.rs.core.Response;
 import org.apache.commons.io.IOUtils;
@@ -42,7 +43,7 @@ public class WireMockExtension implements QuarkusTestResourceLifecycleManager {
 
     @Override
     public Map<String, String> start() {
-        wireMockServer = new WireMockServer(wireMockConfig().gzipDisabled(true));
+        wireMockServer = new WireMockServer(wireMockConfig().gzipDisabled(true).notifier(new ConsoleNotifier(false)));
         wireMockServer.start();
 
         wireMockServer.stubFor(get(urlEqualTo("/admin/activator_roll?associationID=0")).willReturn(okJson(loadFrom("activators-2022-08-12.json"))));
@@ -63,8 +64,8 @@ public class WireMockExtension implements QuarkusTestResourceLifecycleManager {
         wireMockServer.stubFor(get(urlEqualTo("/admin/swl_roll?associationID=-1")).willReturn(okJson(loadFrom("swl-2023-03-22.json"))));
         wireMockServer.stubFor(get(urlEqualTo("/admin/swl_roll?associationID=0")).willReturn(okJson(loadFrom("swl-2023-03-22.json"))));
 
-        wireMockServer.stubFor(get(urlEqualTo("/summitslist.csv")).withHeader("If-Modified-Since", matching(".+")).willReturn(aResponse().withStatus(Response.Status.NOT_MODIFIED.getStatusCode())));
         wireMockServer.stubFor(get(urlEqualTo("/summitslist.csv")).willReturn(okForContentType("text/csv", loadFrom("/summits-samples/summitslist-2022-09-30.csv"))));
+        wireMockServer.stubFor(get(urlEqualTo("/summitslist.csv")).withHeader("If-Modified-Since", matching(".+")).willReturn(aResponse().withStatus(Response.Status.NOT_MODIFIED.getStatusCode())));
 
         wireMockServer.checkForUnmatchedRequests();
 

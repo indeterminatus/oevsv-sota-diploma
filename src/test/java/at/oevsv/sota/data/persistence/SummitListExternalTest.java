@@ -19,7 +19,11 @@ package at.oevsv.sota.data.persistence;
 import io.quarkus.test.junit.QuarkusTest;
 import io.quarkus.test.security.TestSecurity;
 import jakarta.inject.Inject;
+import org.awaitility.Awaitility;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import java.util.concurrent.TimeUnit;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -28,6 +32,11 @@ final class SummitListExternalTest {
 
     @Inject
     SummitList sut;
+
+    @BeforeEach
+    void synchronize() {
+        Awaitility.await().atMost(10, TimeUnit.SECONDS).until(() -> SummitListTestSeam.isInitialSynchronizationCompleted(sut));
+    }
 
     @Test
     @TestSecurity(user = "test", roles = "admin")

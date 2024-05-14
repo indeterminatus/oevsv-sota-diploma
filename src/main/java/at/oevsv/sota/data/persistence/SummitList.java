@@ -47,6 +47,7 @@ import org.eclipse.microprofile.context.ManagedExecutor;
 import org.eclipse.microprofile.faulttolerance.Bulkhead;
 import org.eclipse.microprofile.rest.client.annotation.RegisterProvider;
 import org.eclipse.microprofile.rest.client.inject.RestClient;
+import org.jboss.resteasy.reactive.ClientWebApplicationException;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.VisibleForTesting;
 
@@ -133,8 +134,8 @@ public final class SummitList {
             log.persistAndFlush();
         } catch (IOException e) {
             Log.warn("Could not update summit list.", e);
-        } catch (RedirectionException e) {
-            if (StringUtils.contains(e.getMessage(), "HTTP 304")) {
+        } catch (RedirectionException | ClientWebApplicationException e) {
+            if (e.getResponse().getStatus() == 304 || StringUtils.contains(e.getMessage(), "HTTP 304")) {
                 Log.info("No modifications since last check.");
             } else {
                 Log.warn("Could not update summit list.", e);

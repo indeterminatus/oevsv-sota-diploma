@@ -15,12 +15,48 @@
       },
       {
         "pattern": "^templates/.*$"
+      },
+      {
+        "pattern": "opencsv.*\\.properties$"
+      },
+      {
+        "pattern": "mustMatchRegex.*\\.properties$"
+      },
+      {
+        "pattern": "convertLanguageToBoolean.*\\.properties$"
       }
     ]
   },
   "bundles": [
     {
       "name": "pdf.i18n.messages",
+      "locales": [
+        "de",
+        "en",
+        "de-AT",
+        "en-US"
+      ]
+    },
+    {
+      "name": "opencsv",
+      "locales": [
+        "de",
+        "en",
+        "de-AT",
+        "en-US"
+      ]
+    },
+    {
+      "name": "mustMatchRegex",
+      "locales": [
+        "de",
+        "en",
+        "de-AT",
+        "en-US"
+      ]
+    },
+    {
+      "name": "convertLanguageToBoolean",
       "locales": [
         "de",
         "en",

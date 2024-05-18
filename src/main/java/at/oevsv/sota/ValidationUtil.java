@@ -26,9 +26,9 @@ import java.util.regex.Pattern;
  *
  * @author schwingenschloegl
  */
-final class ValidationUtil {
+public final class ValidationUtil {
 
-    private static final Pattern CALL_SIGN_PATTERN = Pattern.compile("^([A-Z0-9]+/)?[A-Z0-9]{1,2}\\d+[A-Z]+(/[A-Z0-9]+)?$", Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CASE);
+    private static final Pattern CALL_SIGN_PATTERN = Pattern.compile("^(?<country>[A-Z0-9]+/)?(?<sign>[A-Z0-9]{1,2}\\d+[A-Z]+)(?<suffix>/[A-Z0-9]+)?$", Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CASE);
 
     private ValidationUtil() {
         throw new AssertionError();
@@ -65,6 +65,19 @@ final class ValidationUtil {
             return true;
         }
 
-        return StringUtils.startsWithIgnoreCase(right, left) || StringUtils.startsWithIgnoreCase(left, right);
+        if (StringUtils.startsWithIgnoreCase(right, left) || StringUtils.startsWithIgnoreCase(left, right)) {
+            return true;
+        }
+
+        return StringUtils.equalsIgnoreCase(extractIdentifier(left), extractIdentifier(right));
+    }
+
+    @Nullable
+    public static String extractIdentifier(String callSign) {
+        final var matcher = CALL_SIGN_PATTERN.matcher(callSign);
+        if (matcher.matches()) {
+            return matcher.group("sign");
+        }
+        return null;
     }
 }

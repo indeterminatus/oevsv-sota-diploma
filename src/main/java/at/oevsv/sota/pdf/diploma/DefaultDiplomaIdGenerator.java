@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023 David Schwingenschlögl
+ * Copyright (C) 2024 David Schwingenschlögl
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package at.oevsv.sota.pdf;
+package at.oevsv.sota.pdf.diploma;
 
 import at.oevsv.sota.data.api.Candidate;
 import jakarta.validation.constraints.Max;
@@ -65,10 +65,16 @@ final class DefaultDiplomaIdGenerator implements DiplomaIdGenerator {
 
     @Override
     public String generateId() {
-        final var category = candidate.category().toString().substring(0, 3).toUpperCase(Locale.ROOT);
-        final var rank = candidate.rank().toString().substring(0, 2).toUpperCase(Locale.ROOT);
+        // TODO split this up, no need to branch in here
+        if (candidate.category() != Candidate.Category.OE20SOTA) {
+            final var category = candidate.category().toString().substring(0, 3).toUpperCase(Locale.ROOT);
+            final var rank = candidate.rank().toString().substring(0, 2).toUpperCase(Locale.ROOT);
 
-        final var id = String.format(Locale.ROOT, "%s-%s-%04d", category, rank, sequence);
-        return StringUtils.appendIfMissing(id, sequenceSuffix);
+            final var id = String.format(Locale.ROOT, "%s-%s-%04d", category, rank, sequence);
+            return StringUtils.appendIfMissing(id, sequenceSuffix);
+        } else {
+            final var id = String.format(Locale.ROOT, "OE20-%04d", sequence);
+            return StringUtils.appendIfMissing(id, sequenceSuffix);
+        }
     }
 }

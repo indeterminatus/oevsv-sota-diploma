@@ -16,9 +16,11 @@
 
 package at.oevsv.sota.rules;
 
+import at.oevsv.sota.ValidationUtil;
 import at.oevsv.sota.data.api.Candidate;
 import at.oevsv.sota.data.domain.ActivatorLog;
 import at.oevsv.sota.data.domain.ChaserLog;
+import at.oevsv.sota.data.domain.SpecialEntryOE20SOTA;
 import at.oevsv.sota.data.domain.Summit;
 import at.oevsv.sota.data.domain.SummitListEntry;
 import at.oevsv.sota.data.domain.SummitToSummitLog;
@@ -116,6 +118,24 @@ public final class Rules {
                         .collect(groupingBy(Summit::state, () -> new EnumMap<>(Summit.State.class), counting()));
 
         return createCandidate(common.callSign(), common.userId(), frequencies, Candidate.Category.S2S);
+    }
+
+    @Nonnull
+    public static Candidate determineDiplomaCandidateForSpecialOE20SOTA(Collection<ChaserLog> chaserLogs, CommonArguments common) {
+        final SummitValidityCheck summitCheck = new SummitListBasedValidityCheck(common.summitList());
+        final Map<Summit.State, Long> frequencies =
+                chaserLogs.stream()
+                        .filter(log -> isWithinTimeRange(log.activationDate(), common))
+                        .filter(log -> ValidationUtil.callSignsMatch(log.callSign(), "SpecialEntryOE20SOTA/P"))
+                        .filter(log -> summitCheck.isValidAt(log.summit(), log.activationDate(), true))
+                        .map(log -> new SpecialEntryOE20SOTA(log.activationDate(), log.summit()))
+                        .distinct()
+                        .map(SpecialEntryOE20SOTA::summit)
+                        .filter(Objects::nonNull)
+                        .filter(summit -> summit.state() != null)
+                        .collect(groupingBy(Summit::state, () -> new EnumMap<>(Summit.State.class), counting()));
+
+        return createCandidate(common.callSign(), common.userId(), frequencies, Candidate.Category.OE20SOTA);
     }
 
     @VisibleForTesting

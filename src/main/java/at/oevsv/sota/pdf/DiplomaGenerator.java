@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023 David Schwingenschlögl
+ * Copyright (C) 2024 David Schwingenschlögl
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,15 @@
 
 package at.oevsv.sota.pdf;
 
-public interface DiplomaIdGenerator {
+public interface DiplomaGenerator {
 
-    String generateId();
+    boolean canHandle(PdfGenerationResource.Generation generation);
+
+    String fileNameFor(PdfGenerationResource.Generation generation);
+
+    String idFor(PdfGenerationResource.Generation generation);
+
+    ImageRenderer createImageRenderer(PdfGenerationResource.Generation generation);
+
+    TextRenderer createTextRenderer(PdfGenerationResource.Generation generation);
 }

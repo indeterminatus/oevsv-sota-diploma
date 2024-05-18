@@ -72,7 +72,6 @@ public class StatisticResource {
             final var totalQso = activationLogs.stream().filter(log -> log.activationDate().isEqual(date)).mapToInt(SummitActivationLog::totalQSO).sum();
             if (totalQso > 0) {
                 qsoPerSummit.put(entry.getKey(), totalQso);
-                Log.infof("%5d QSO for summit %s", totalQso, entry.getKey());
             }
         }
 

@@ -19,6 +19,7 @@ package at.oevsv.sota.pdf;
 import at.oevsv.sota.data.api.Candidate;
 import at.oevsv.sota.data.api.Requester;
 import at.oevsv.sota.data.domain.jackson.StringToLocaleConverter;
+import at.oevsv.sota.pdf.diploma.DiplomaFormats;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.google.common.annotations.VisibleForTesting;
@@ -39,14 +40,13 @@ import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
-import org.apache.commons.lang3.StringUtils;
-import org.eclipse.microprofile.config.inject.ConfigProperty;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.util.Locale;
+import java.util.Objects;
 
 @ApplicationScoped
 @Path("/api/diploma/pdf")
@@ -54,11 +54,11 @@ public class PdfGenerationResource {
 
     private static final int EXPECTED_SIZE = 4 * 1024 * 1024;
 
-    @ConfigProperty(name = "diploma.manager", defaultValue = "Martin Reiter, OE5REO")
-    String diplomaManager;
+    private final DiplomaFormats diplomaFormats;
 
-    @ConfigProperty(name = "diploma.debug.layout", defaultValue = "false")
-    boolean debugLayout;
+    public PdfGenerationResource(DiplomaFormats diplomaFormats) {
+        this.diplomaFormats = Objects.requireNonNull(diplomaFormats);
+    }
 
     @RegisterForReflection
     public static class Generation {
@@ -162,37 +162,47 @@ public class PdfGenerationResource {
     }
 
     public String fileNameFor(Generation generation) {
-        return fileNameFor(generation.requester, generation.candidate);
+        DiplomaGenerator format = diplomaFormats.generationStrategyFor(generation);
+        if (format != null) {
+            return format.fileNameFor(generation);
+        }
+
+        throw new IllegalStateException(String.format("No format found for generation %s", generation));
     }
 
-    public byte[] generatePdfBytes(Generation generation) throws IOException {
-        return generatePdfBytes(generation, fileNameFor(generation));
+    public byte[] generatePdfBytes(Generation generation, String fileName) throws IOException {
+        return generateBinaryAsBytes(generation, fileName);
     }
 
     @Nonnull
-    private byte[] generatePdfBytes(Generation generation, String fileName) throws IOException {
+    private byte[] generateBinaryAsBytes(Generation generation, String fileName) throws IOException {
         Log.infof("Generating diploma %s", fileName);
-        byte[] bytes = generateBinary(generation.requester, generation.candidate, generation.sequence, generation.sequenceSuffix, generation.quality, generation.locale, diplomaManager, debugLayout);
-        Log.infof("Generated diploma %s (%d bytes)", fileName, bytes.length);
+        DiplomaGenerator format = diplomaFormats.generationStrategyFor(generation);
+        if (format != null) {
+            byte[] bytes = generateBinary(generation, format);
+            Log.infof("Generated diploma %s (%d bytes)", fileName, bytes.length);
 
-        return bytes;
+            return bytes;
+        } else {
+            throw new IOException(String.format("No format found for generation %s", generation));
+        }
     }
 
     @VisibleForTesting
-    static byte[] generateBinary(Requester requester, Candidate candidate, int sequence, @Nullable String sequenceSuffix, float quality, Locale locale, String diplomaManager, boolean debugLayout) throws IOException {
+    static byte[] generateBinary(Generation generation, DiplomaGenerator format) throws IOException {
         try (final var os = new ByteArrayOutputStream(EXPECTED_SIZE)) {
             try (final Document document = new Document()) {
-                document.setDocumentLanguage(locale.getLanguage());
+                document.setDocumentLanguage(generation.locale.getLanguage());
 
                 final Rectangle pageSize = highResA4Landscape();
                 document.setPageSize(pageSize);
                 document.setMargins(0, 0, 0, 0);
                 document.setPageCount(1);
                 final var writer = PdfWriter.getInstance(document, os);
-                writer.setPageEvent(new PdfBackgroundSetter(new ImageRenderer(candidate, debugLayout), quality));
+                writer.setPageEvent(new PdfBackgroundSetter(format.createImageRenderer(generation), generation.quality));
                 document.open();
 
-                final var textRenderer = new TextRenderer(candidate, locale, requester, diplomaManager, sequence, sequenceSuffix, debugLayout);
+                final var textRenderer = format.createTextRenderer(generation);
                 textRenderer.writeText(writer);
             }
 
@@ -211,19 +221,5 @@ public class PdfGenerationResource {
         float width = PdfUtils.millimetersToUserSpace(297.0f);
         float height = PdfUtils.millimetersToUserSpace(210.0f);
         return new RectangleReadOnly(width, height);
-    }
-
-    @VisibleForTesting
-    static String fileNameFor(Requester requester, Candidate candidate) {
-        final StringBuilder sb = new StringBuilder();
-        sb.append(StringUtils.toRootLowerCase(requester.callSign));
-        sb.append('_');
-        final var category = candidate.category().toString().substring(0, 3);
-        sb.append(StringUtils.toRootLowerCase(category));
-        sb.append('_');
-        final var rank = candidate.rank().toString();
-        sb.append(StringUtils.toRootLowerCase(rank));
-        sb.append(".pdf");
-        return sb.toString();
     }
 }

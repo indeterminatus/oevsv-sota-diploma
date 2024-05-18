@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023 David Schwingenschlögl
+ * Copyright (C) 2024 David Schwingenschlögl
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,19 +14,21 @@
  * limitations under the License.
  */
 
-package at.oevsv.sota.mail;
+package at.oevsv.sota.pdf.diploma;
 
-import io.smallrye.config.ConfigMapping;
-import org.eclipse.microprofile.config.inject.ConfigProperty;
+import com.lowagie.text.Font;
+import com.lowagie.text.pdf.BaseFont;
 
-import java.time.Duration;
-import java.util.Set;
+import java.io.IOException;
 
-@ConfigMapping(prefix = "diploma.mailing")
-public interface MailingConfiguration {
+final class Fonts {
 
-    Set<String> recipients();
+    private Fonts() {
+        throw new AssertionError();
+    }
 
-    @ConfigProperty(defaultValue = "PT10S")
-    Duration timeout();
+    public static Font loadFont(String resourceName, int size, int style) throws IOException {
+        final var base = BaseFont.createFont("/pdf/fonts/" + resourceName, BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
+        return new Font(base, size, style);
+    }
 }

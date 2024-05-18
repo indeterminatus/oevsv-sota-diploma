@@ -24,6 +24,9 @@
       },
       {
         "pattern": "convertLanguageToBoolean.*\\.properties$"
+      },
+      {
+        "pattern": "^banner.txt$"
       }
     ]
   },

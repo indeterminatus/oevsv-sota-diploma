@@ -26,12 +26,15 @@ import jakarta.inject.Inject;
 import jakarta.ws.rs.core.MediaType;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.EnumSource;
+import org.junit.jupiter.params.provider.MethodSource;
 
 import javax.annotation.Nonnull;
 import java.io.IOException;
 import java.util.Locale;
 import java.util.Map;
+import java.util.stream.Stream;
 
 import static com.github.attiand.assertj.jaxrs.asserts.ResponseAssert.assertThat;
 import static org.assertj.core.api.Assertions.assertThat;
@@ -49,31 +52,62 @@ final class PdfGenerationResourceTest {
     // region fileNameFor
     @Test
     void fileNameFor_matchesFully() {
-        assertThat(PdfGenerationResource.fileNameFor(requester(), candidate(Candidate.Category.S2S, Candidate.Rank.BRONZE))).isEqualTo("oe5idt_s2s_bronze.pdf");
+        final var generation = new PdfGenerationResource.Generation(requester(), candidate(Candidate.Category.S2S, Candidate.Rank.BRONZE));
+        assertThat(sut.fileNameFor(generation)).isEqualTo("oe5idt_s2s_bronze.pdf");
     }
 
     @Test
     void fileNameFor_contains_callSign() {
-        assertThat(PdfGenerationResource.fileNameFor(requester(), candidate(Candidate.Category.S2S, Candidate.Rank.BRONZE))).contains(CALL_SIGN);
+        final var generation = new PdfGenerationResource.Generation(requester(), candidate(Candidate.Category.S2S, Candidate.Rank.BRONZE));
+        assertThat(sut.fileNameFor(generation)).contains(CALL_SIGN);
     }
 
     @Test
     void fileNameFor_endsWith_pdf() {
-        assertThat(PdfGenerationResource.fileNameFor(requester(), candidate(Candidate.Category.S2S, Candidate.Rank.BRONZE))).endsWith(".pdf");
+        final var generation = new PdfGenerationResource.Generation(requester(), candidate(Candidate.Category.S2S, Candidate.Rank.BRONZE));
+        assertThat(sut.fileNameFor(generation)).endsWith(".pdf");
     }
 
     @ParameterizedTest
-    @EnumSource
+    @EnumSource(names = "OE20SOTA", mode = EnumSource.Mode.EXCLUDE)
     void fileNameFor_contains_category(Candidate.Category category) {
+        final var generation = new PdfGenerationResource.Generation(requester(), candidate(category, Candidate.Rank.BRONZE));
         final String expected = category.toString().substring(0, 3).toLowerCase(Locale.ROOT);
-        assertThat(PdfGenerationResource.fileNameFor(requester(), candidate(category, Candidate.Rank.BRONZE))).contains(expected);
+        assertThat(sut.fileNameFor(generation)).contains(expected);
     }
 
     @ParameterizedTest
     @EnumSource
-    void filaNameFor_contains_rank(Candidate.Rank rank) {
+    void fileNameFor_contains_rank(Candidate.Rank rank) {
+        final var generation = new PdfGenerationResource.Generation(requester(), candidate(Candidate.Category.S2S, rank));
         final String expected = rank.toString().toLowerCase(Locale.ROOT);
-        assertThat(PdfGenerationResource.fileNameFor(requester(), candidate(Candidate.Category.S2S, rank))).contains(expected);
+        assertThat(sut.fileNameFor(generation)).contains(expected);
+    }
+    // endregion
+
+    // region Special handling for OE20SOTA diploma
+    static Stream<Arguments> oe20_fileNames() {
+        // @formatter:off
+        return Stream.of(
+            Arguments.of(1, "x", "oe20_0001x_oe5idt.pdf"),
+            Arguments.of(1, null, "oe20_0001_oe5idt.pdf"),
+            Arguments.of(9999, null, "oe20_9999_oe5idt.pdf"),
+            Arguments.of(10_000, null, "oe20_10000_oe5idt.pdf"),
+            Arguments.of(-1, "x", "oe20_oe5idt.pdf"),
+            Arguments.of(0, null, "oe20_oe5idt.pdf")
+        );
+        // @formatter:on
+    }
+
+    @ParameterizedTest
+    @MethodSource("oe20_fileNames")
+    void oe20_fileNameFor_matchesFully(int sequence, String suffix, String expected) {
+        final var generation = new PdfGenerationResource.Generation(requester(), candidate(Candidate.Category.OE20SOTA, Candidate.Rank.NONE));
+        generation.setSequence(sequence);
+        generation.setSequenceSuffix(suffix);
+
+        final var fileName = sut.fileNameFor(generation);
+        assertThat(fileName).isEqualTo(expected);
     }
     // endregion
 

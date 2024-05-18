@@ -29,6 +29,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 import jakarta.persistence.Version;
+
 import java.time.LocalDate;
 
 /**
@@ -45,6 +46,9 @@ public class DiplomaLog extends PanacheEntityBase {
     @Id
     @GeneratedValue(generator = "diploma", strategy = GenerationType.SEQUENCE)
     public Long id;
+
+    @Column(name = "oe20")
+    private Long oe20;
 
     @Column(name = "reviewMailSent")
     private boolean reviewMailSent;
@@ -101,6 +105,14 @@ public class DiplomaLog extends PanacheEntityBase {
 
     @Version
     private int version;
+
+    public Long getOe20() {
+        return oe20;
+    }
+
+    public void setOe20(Long oe20) {
+        this.oe20 = oe20;
+    }
 
     public void setReviewMailSent(boolean reviewMailSent) {
         this.reviewMailSent = reviewMailSent;

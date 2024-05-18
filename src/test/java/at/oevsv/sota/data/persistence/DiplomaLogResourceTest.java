@@ -16,6 +16,7 @@
 
 package at.oevsv.sota.data.persistence;
 
+import at.oevsv.sota.ValidationUtil;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -24,6 +25,7 @@ import org.junit.jupiter.params.provider.MethodSource;
 import java.util.stream.Stream;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assumptions.assumeThat;
 
 final class DiplomaLogResourceTest {
 
@@ -32,10 +34,10 @@ final class DiplomaLogResourceTest {
         return Stream.of(
                 Arguments.of("OE5iDT", "oe5idt"),
                 Arguments.of("oe5idt", "oe5idt"),
-                Arguments.of("oe5idt/", "oe5idt"),
                 Arguments.of("oe5idt/p", "oe5idt"),
                 Arguments.of("oe5iDt/M", "oe5idt"),
-                Arguments.of("oe5iDt/4", "oe5idt")
+                Arguments.of("oe5iDt/4", "oe5idt"),
+                Arguments.of("dl/oe5iDt/4", "oe5idt")
         );
         // @formatter:on
     }
@@ -49,6 +51,12 @@ final class DiplomaLogResourceTest {
     @Test
     void canonicalCallSign_null_yieldsNull() {
         assertThat(DiplomaLogResource.canonicalCallSign(null)).isNull();
+    }
+
+    @Test
+    void canonicalCallSign_invalid_yieldsNull() {
+        assumeThat(ValidationUtil.isCallSign("oe5idt/")).isFalse();
+        assertThat(DiplomaLogResource.canonicalCallSign("oe5idt/")).isNull();
     }
 
     @Test

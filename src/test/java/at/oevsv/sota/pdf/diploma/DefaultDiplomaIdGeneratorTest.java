@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023 David Schwingenschlögl
+ * Copyright (C) 2024 David Schwingenschlögl
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package at.oevsv.sota.pdf;
+package at.oevsv.sota.pdf.diploma;
 
 import at.oevsv.sota.data.api.Candidate;
 import org.junit.jupiter.api.Test;
@@ -67,6 +67,13 @@ final class DefaultDiplomaIdGeneratorTest {
     @Test
     void suffixCannotExceedLengthLimit() {
         assertThatIllegalArgumentException().isThrownBy(() -> new DefaultDiplomaIdGenerator(candidate, 1, "xx"));
+    }
+
+    @Test
+    void specialDiplomaOE20SOTAWorks() {
+        final var special = new Candidate("XXX", null, Candidate.Category.OE20SOTA, Candidate.Rank.NONE, Map.of());
+        final var sut = new DefaultDiplomaIdGenerator(special, 1, "x");
+        assertThat(sut.generateId()).isEqualTo("OE20-0001x");
     }
 
     @ParameterizedTest

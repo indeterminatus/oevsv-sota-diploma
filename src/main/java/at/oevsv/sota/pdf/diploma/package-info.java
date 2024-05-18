@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023 David Schwingenschlögl
+ * Copyright (C) 2024 David Schwingenschlögl
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,22 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+/**
+ * This package contains the specific renderings for different diploma formats. This emerged when we had to deal with a
+ * special OE20SOTA diploma.
+ */
+@ParametersAreNonnullByDefault
+package at.oevsv.sota.pdf.diploma;
 
-package at.oevsv.sota.pdf;
-
-import com.lowagie.text.Font;
-import com.lowagie.text.pdf.BaseFont;
-
-import java.io.IOException;
-
-final class Fonts {
-
-    private Fonts() {
-        throw new AssertionError();
-    }
-
-    public static Font loadFont(String resourceName, int size, int style) throws IOException {
-        final var base = BaseFont.createFont("/pdf/fonts/" + resourceName, BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
-        return new Font(base, size, style);
-    }
-}
+import javax.annotation.ParametersAreNonnullByDefault;

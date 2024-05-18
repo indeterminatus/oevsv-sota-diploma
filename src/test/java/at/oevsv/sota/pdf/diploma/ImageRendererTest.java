@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023 David Schwingenschlögl
+ * Copyright (C) 2024 David Schwingenschlögl
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package at.oevsv.sota.pdf;
+package at.oevsv.sota.pdf.diploma;
 
 import org.assertj.core.data.Percentage;
 import org.junit.jupiter.api.Test;
@@ -27,8 +27,8 @@ final class ImageRendererTest {
 
     @Test
     void curvedPlacement() {
-        assertThat(ImageRenderer.StateLayoutMode.CURVED.heightFor(0, 0, 100)).as("start").isCloseTo(0, PRECISION);
-        assertThat(ImageRenderer.StateLayoutMode.CURVED.heightFor(4, 0, 100)).as("middle").isCloseTo(100, PRECISION);
-        assertThat(ImageRenderer.StateLayoutMode.CURVED.heightFor(8, 0, 100)).as("end").isCloseTo(0, PRECISION);
+        assertThat(DefaultImageRenderer.StateLayoutMode.CURVED.heightFor(0, 0, 100)).as("start").isCloseTo(0, PRECISION);
+        assertThat(DefaultImageRenderer.StateLayoutMode.CURVED.heightFor(4, 0, 100)).as("middle").isCloseTo(100, PRECISION);
+        assertThat(DefaultImageRenderer.StateLayoutMode.CURVED.heightFor(8, 0, 100)).as("end").isCloseTo(0, PRECISION);
     }
 }

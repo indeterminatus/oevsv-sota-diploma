@@ -28,7 +28,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 class ValidationUtilTest {
 
     private static List<String> callSigns_valid() {
-        return List.of("OE5IDT", "OE5IDT/p", "oe5idt", "W2AEW");
+        return List.of("OE5IDT", "OE5IDT/p", "oe5idt", "W2AEW", "OE20SOTA/P", "OE/OK2QA/P");
     }
 
     private static List<String> callSigns_invalid() {
@@ -38,14 +38,30 @@ class ValidationUtilTest {
     private static Stream<Arguments> callSign_pairs() {
         //@formatter:off
         return Stream.of(
-                Arguments.of("OE5IDT", "OE5IDT/p", true),
-                Arguments.of("OE5IDT", "OE5JFE", false),
-                Arguments.of("oe5idt", "OE5IDT", true),
-                Arguments.of("OE5IDT", "OE5", false),
-                Arguments.of("OE5IDT", null, false),
-                Arguments.of(null, null, false),
-                Arguments.of("OE5IDT", "", false),
-                Arguments.of(null, "", false)
+            Arguments.of("OE5IDT", "OE5IDT/p", true),
+            Arguments.of("OE5IDT", "OE5JFE", false),
+            Arguments.of("oe5idt", "OE5IDT", true),
+            Arguments.of("OE5IDT", "OE5", false),
+            Arguments.of("OE5IDT", null, false),
+            Arguments.of("OE20SOTA", "OE20SOTA/p", true),
+            Arguments.of("OE20SOTA", "OE20SOTA/P", true),
+            Arguments.of("oe20sota/p", "OE20SOTA/P", true),
+            Arguments.of("HB9/OE5IDT/p", "oe5idt/p", true),
+            Arguments.of(null, null, false),
+            Arguments.of("OE5IDT", "", false),
+            Arguments.of(null, "", false)
+        );
+        //@formatter:on
+    }
+
+    private static Stream<Arguments> callSign_identifiers() {
+        //@formatter:off
+        return Stream.of(
+            Arguments.of("OE5IDT", "OE5IDT"),
+            Arguments.of("OE5IDT/p", "OE5IDT"),
+            Arguments.of("OE5IDT/am", "OE5IDT"),
+            Arguments.of("DL/OE5IDT/am", "OE5IDT"),
+            Arguments.of("HB9/OE5IDT/p", "OE5IDT")
         );
         //@formatter:on
     }
@@ -67,5 +83,11 @@ class ValidationUtilTest {
     void callSignsMatch(String left, String right, boolean expectedMatch) {
         assertThat(ValidationUtil.callSignsMatch(left, right)).as("normal order").isEqualTo(expectedMatch);
         assertThat(ValidationUtil.callSignsMatch(right, left)).as("reverse order").isEqualTo(expectedMatch);
+    }
+
+    @ParameterizedTest
+    @MethodSource("callSign_identifiers")
+    void callSignIdentifiersAreExtracted(String callSign, String identifier) {
+        assertThat(ValidationUtil.extractIdentifier(callSign)).isEqualTo(identifier);
     }
 }

@@ -36,7 +36,12 @@ public record Candidate(String callSign, String userID, Category category, Rank 
     public enum Category {
         ACTIVATOR(40, 20, 10),
         CHASER(40, 20, 10),
-        S2S(40, 20, 10);
+        S2S(40, 20, 10),
+        /**
+         * Special occasion: from 2024-05-01 to 2024-10-31 there is OE20SOTA/P; chasers working that
+         * call-sign are eligible for this diploma.
+         */
+        OE20SOTA(20, 20, 20);
 
         private final int goldRequirement;
         private final int silverRequirement;
@@ -60,7 +65,15 @@ public record Candidate(String callSign, String userID, Category category, Rank 
             return bronzeRequirement;
         }
 
+        public boolean isSpecialDiploma() {
+            return goldRequirement == silverRequirement && silverRequirement == bronzeRequirement;
+        }
+
         public int getRequirementFor(Rank rank) {
+            if (isSpecialDiploma()) {
+                return goldRequirement; // all choices are equal
+            }
+
             return switch (rank) {
                 case GOLD -> getGoldRequirement();
                 case SILVER -> getSilverRequirement();

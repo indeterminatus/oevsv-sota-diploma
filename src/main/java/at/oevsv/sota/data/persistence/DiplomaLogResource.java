@@ -16,6 +16,7 @@
 
 package at.oevsv.sota.data.persistence;
 
+import at.oevsv.sota.ValidationUtil;
 import at.oevsv.sota.data.api.Candidate;
 import at.oevsv.sota.data.api.DiplomaRequest;
 import at.oevsv.sota.data.api.Requester;
@@ -24,10 +25,6 @@ import at.oevsv.sota.data.domain.Summit;
 import io.quarkus.panache.common.Parameters;
 import jakarta.annotation.security.PermitAll;
 import jakarta.annotation.security.RolesAllowed;
-import org.apache.commons.lang3.StringUtils;
-import org.jetbrains.annotations.VisibleForTesting;
-
-import javax.annotation.Nullable;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.transaction.Transactional;
 import jakarta.ws.rs.Consumes;
@@ -39,6 +36,10 @@ import jakarta.ws.rs.Path;
 import jakarta.ws.rs.PathParam;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
+import org.apache.commons.lang3.StringUtils;
+import org.jetbrains.annotations.VisibleForTesting;
+
+import javax.annotation.Nullable;
 import java.time.LocalDate;
 import java.util.EnumMap;
 import java.util.List;
@@ -109,7 +110,7 @@ public final class DiplomaLogResource {
         }
 
         final var lowered = StringUtils.toRootLowerCase(callSign);
-        return StringUtils.substringBefore(lowered, '/');
+        return ValidationUtil.extractIdentifier(lowered);
     }
 
     @GET

@@ -19,6 +19,7 @@ package at.oevsv.sota.mail;
 import at.oevsv.sota.data.api.Candidate;
 import at.oevsv.sota.data.api.Requester;
 import at.oevsv.sota.data.domain.Summit;
+import at.oevsv.sota.data.persistence.DiplomaLog;
 import at.oevsv.sota.data.persistence.DiplomaLogResource;
 import at.oevsv.sota.pdf.PdfGenerationResource;
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
@@ -30,13 +31,9 @@ import io.quarkus.mailer.reactive.ReactiveMailer;
 import io.quarkus.scheduler.Scheduled;
 import io.smallrye.common.annotation.Blocking;
 import jakarta.annotation.security.RolesAllowed;
-import jakarta.transaction.Transactional;
-import org.eclipse.microprofile.config.inject.ConfigProperty;
-import org.eclipse.microprofile.faulttolerance.Bulkhead;
-
-import javax.annotation.Nonnull;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
+import jakarta.transaction.Transactional;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 import jakarta.ws.rs.Consumes;
@@ -46,6 +43,10 @@ import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.QueryParam;
 import jakarta.ws.rs.core.MediaType;
+import org.eclipse.microprofile.config.inject.ConfigProperty;
+import org.eclipse.microprofile.faulttolerance.Bulkhead;
+
+import javax.annotation.Nonnull;
 import java.io.IOException;
 import java.text.MessageFormat;
 import java.time.Duration;
@@ -99,7 +100,8 @@ public class MailingResource {
             final var locale = DiplomaLogResource.toRequestedLocale(pending);
 
             try {
-                sendDiplomaForReview(requester, candidate, pending.id.intValue(), locale);
+                final int sequence = sequenceOf(pending);
+                sendDiplomaForReview(requester, candidate, sequence, locale);
                 Log.debugf("Marking request with ID %d as review-mail-sent", pending.id);
                 diplomaLog.markReviewMailSent(pending.id);
                 Log.debugf("Marked request with ID %d as review-mail-sent", pending.id);
@@ -113,12 +115,20 @@ public class MailingResource {
         }
     }
 
+    private int sequenceOf(DiplomaLog pending) {
+        if (pending.getCategory() == Candidate.Category.OE20SOTA) {
+            return pending.getOe20().intValue();
+        }
+        return pending.id.intValue();
+    }
+
     @WithSpan(kind = SpanKind.SERVER, value = "sendDiplomaForReview")
     public void sendDiplomaForReview(Requester requester, Candidate candidate, int sequence, Locale locale) throws IOException {
         final var template = Templates.reviewRequest(requester, List.of(candidate));
         final var mail = new Mail();
-        final var generatedPdf = generatePreviewPdf(requester, candidate, sequence, locale);
-        mail.addAttachment(generator.fileNameFor(generationParameter(requester, candidate, sequence)), generatedPdf, "application/pdf");
+        final var fileName = generator.fileNameFor(generationParameter(requester, candidate, sequence));
+        final var generatedPdf = generatePreviewPdf(requester, candidate, sequence, locale, fileName);
+        mail.addAttachment(fileName, generatedPdf, "application/pdf");
         template.mail(mail);
 
         template.subject(MessageFormat.format("Diplom-Anfrage von {0} ({1})", requester.name, requester.callSign));
@@ -131,16 +141,16 @@ public class MailingResource {
                 .onFailure().invoke(throwable -> Log.warn("Could not send mail.", throwable))
                 .onItem().invoke(() -> Log.info("Successfully sent mail."))
                 .onCancellation().invoke(() -> Log.warn("Sending mail cancelled."))
-                .await().atMost(Duration.ofSeconds(10L));
+                .await().atMost(configuration.timeout());
         Log.debug("Mail sent.");
     }
 
     @Nonnull
-    private byte[] generatePreviewPdf(Requester requester, Candidate candidate, int sequence, Locale locale) throws IOException {
+    private byte[] generatePreviewPdf(Requester requester, Candidate candidate, int sequence, Locale locale, String fileName) throws IOException {
         final PdfGenerationResource.Generation parameter = generationParameter(requester, candidate, sequence);
         parameter.setQuality(previewQuality / 100.0f);
         parameter.setLocale(locale);
-        return generator.generatePdfBytes(parameter);
+        return generator.generatePdfBytes(parameter, fileName);
     }
 
     @Nonnull
@@ -164,7 +174,7 @@ public class MailingResource {
             sendDiplomaForReview(requester, candidate, 9999, Locale.GERMAN);
         } else {
             mailer.send(new Mail().setSubject("ÖVSV Mailing Test").addTo(recipient).setText("Auto-generated test mail")
-                    .addAttachment("test.pdf", generatePreviewPdf(requester, candidate, 9999, Locale.GERMAN), "application/pdf")).await().atMost(Duration.ofMinutes(5L));
+                    .addAttachment("test.pdf", generatePreviewPdf(requester, candidate, 9999, Locale.GERMAN, "test.pdf"), "application/pdf")).await().atMost(Duration.ofMinutes(5L));
         }
     }
 }

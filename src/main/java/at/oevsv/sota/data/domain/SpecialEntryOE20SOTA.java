@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023 David Schwingenschlögl
+ * Copyright (C) 2024 David Schwingenschlögl
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,19 +14,17 @@
  * limitations under the License.
  */
 
-package at.oevsv.sota.mail;
+package at.oevsv.sota.data.domain;
 
-import io.smallrye.config.ConfigMapping;
-import org.eclipse.microprofile.config.inject.ConfigProperty;
+import javax.annotation.Nullable;
+import java.time.LocalDate;
 
-import java.time.Duration;
-import java.util.Set;
-
-@ConfigMapping(prefix = "diploma.mailing")
-public interface MailingConfiguration {
-
-    Set<String> recipients();
-
-    @ConfigProperty(defaultValue = "PT10S")
-    Duration timeout();
+/**
+ * The primary intent is to determine the uniqueness-trait of chaser log entries with respect to the rules of
+ * the special diploma SpecialEntryOE20SOTA.
+ *
+ * @param activationDate
+ * @param summit
+ */
+public record SpecialEntryOE20SOTA(LocalDate activationDate, @Nullable Summit summit) {
 }

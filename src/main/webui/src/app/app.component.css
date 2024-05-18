@@ -27,3 +27,8 @@
 .form-element {
   margin: 10px;
 }
+
+.divider-spacing {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}

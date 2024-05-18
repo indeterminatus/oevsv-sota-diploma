@@ -1,0 +1,55 @@
+<!--
+  ~ Copyright (C) 2023 David Schwingenschlögl
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<mat-card class="mat-elevation-z4">
+  <mat-card-header>
+    <mat-card-title>
+      <fa-icon [icon]="categoryIcon"></fa-icon>
+      {{ 'content.special.label' | translate }} {{ 'category.' + getCategory() | translate }}
+    </mat-card-title>
+    <mat-card-subtitle>
+      <fa-icon [icon]="wipIcon"></fa-icon>
+      {{ 'content.special.' + getCategory() + '.ongoing' | translate }}
+    </mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-divider vertical="false"></mat-divider>
+    <p style="margin-top: 10px">{{ 'content.special.' + getCategory() + '.header.overview' | translate }}</p>
+    <p>
+      {{ 'content.special.' + getCategory() + '.header.progress' | translate }}<br/>
+      {{ getTotalActivations() }} {{ 'content.total.' + getCategory() + '.sum' | translate }}<br/>
+      {{ 'content.special.' + getCategory() + '.header.required' | translate }}
+    </p>
+    <p>
+      {{ 'input.callsign.label' | translate }}: <strong>{{ signedCandidate?.candidate?.callSign }}</strong><br/>
+      {{ 'input.name.label' | translate }}: <strong>{{ requester?.name }}</strong><br/>
+      {{ 'input.email.label' | translate }}: <strong>{{ requester?.mail }}</strong>
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button class="mat-primary" (click)="requestDiploma()"
+            [disabled]="checked" *ngIf="getTotalActivations() >= 20">{{ 'input.request.label' | translate }}
+    </button>
+    <button mat-raised-button backButton style="margin-left: 10px">{{ 'input.back.label' | translate }}</button>
+  </mat-card-actions>
+  <mat-card-footer>
+    <mat-progress-bar mode="indeterminate" *ngIf="checking"></mat-progress-bar>
+    <div class="mat-body" *ngIf="checked && success">
+      <fa-icon [icon]="checkIcon"></fa-icon>&nbsp;{{ 'api.response.request.success' | translate }}
+    </div>
+    <mat-error *ngIf="getErrorMessage()">{{ getErrorMessage() | translate }}</mat-error>
+  </mat-card-footer>
+</mat-card>

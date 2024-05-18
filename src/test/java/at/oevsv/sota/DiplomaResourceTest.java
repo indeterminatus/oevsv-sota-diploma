@@ -39,6 +39,7 @@ import java.time.LocalDate;
 import java.time.Month;
 import java.util.Collection;
 import java.util.concurrent.TimeUnit;
+import java.util.stream.Collectors;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
@@ -158,7 +159,22 @@ final class DiplomaResourceTest {
             DiplomaLogResourceTestSeam.deleteAllOn(logs);
         }
     }
-    
+
+    @Test
+    @GuardedBy("LOCK")
+    void candidateForOE20SOTA_requestDiploma_failsIfNotApplicable() {
+        synchronized (LOCK) {
+            final var candidates = sut.checkCandidatesForUser("OE5JFE", null);
+            final var filtered = candidates.stream().filter(candidate -> candidate.candidate().category().isSpecialDiploma()).collect(Collectors.toSet());
+
+            final var request = sut.requestDiploma("OE5JFE", new DiplomaRequest(new Requester("OE5JFE", "noreply@nothing.com", "Dip-Dip Dabbadudei"), filtered, "de"));
+            assertThat(request).isFalse();
+
+            assertThat(DiplomaLogResourceTestSeam.listPendingOn(logs)).isEmpty();
+            DiplomaLogResourceTestSeam.deleteAllOn(logs);
+        }
+    }
+
     @Test
     void candidates_nonExistingUser_throws() {
         assertThatExceptionOfType(NotFoundException.class).isThrownBy(() -> sut.checkCandidatesForUser("OE1QSO", null));

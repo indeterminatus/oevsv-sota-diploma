@@ -15,7 +15,7 @@
   -->
 
 <mat-toolbar>
-  <span>{{'application.title' | translate}}</span>
+  <span>{{ 'application.title' | translate }}</span>
   <span class="toolbar-spacer"></span>
   <app-language-switch></app-language-switch>
 </mat-toolbar>
@@ -26,32 +26,47 @@
     <app-email-editor [target]="checkForm" class="form-element"></app-email-editor>
     <app-name-editor [target]="checkForm" class="form-element"></app-name-editor>
     <button mat-raised-button class="mat-primary" type="submit"
-            [disabled]="!checkForm.valid">{{'input.check.label' | translate}}</button>
+            [disabled]="!checkForm.valid">{{ 'input.check.label' | translate }}
+    </button>
   </div>
 </form>
 
 <div class="sota-form" *ngIf="checked">
   <div class="mat-body" *ngIf="!candidates || candidates.length === 0">
     <div class="mat-body" *ngIf="error">
-      {{'api.response.error.server' | translate}}
+      {{ 'api.response.error.server' | translate }}
     </div>
     <div class="mat-body" *ngIf="!error">
-      {{'api.response.error.none' | translate}}
+      {{ 'api.response.error.none' | translate }}
     </div>
     <p style="margin-top: 10px">
-      {{'input.callsign.label' | translate}}: <strong>{{requester?.callSign}}</strong><br/>
-      {{'input.name.label' | translate}}: <strong>{{requester?.name}}</strong><br/>
-      {{'input.email.label' | translate}}: <strong>{{requester?.mail}}</strong>
+      {{ 'input.callsign.label' | translate }}: <strong>{{ requester?.callSign }}</strong><br/>
+      {{ 'input.name.label' | translate }}: <strong>{{ requester?.name }}</strong><br/>
+      {{ 'input.email.label' | translate }}: <strong>{{ requester?.mail }}</strong>
     </p>
-    <button mat-raised-button backButton style="margin-left: 10px">{{'input.back.label' | translate}}</button>
+    <button mat-raised-button backButton style="margin-left: 10px">{{ 'input.back.label' | translate }}</button>
   </div>
   <div *ngIf="candidates && candidates.length > 0">
-    <mat-label>{{'content.header.available' | translate}}</mat-label>
+    <mat-label>{{ 'content.header.available' | translate }}</mat-label>
     <div style="overflow: hidden; padding-top: 10px; padding-bottom: 10px">
       <div fxLayout="row wrap" fxLayout.sm="column" fxLayoutGap="16px grid">
         <div fxFlex="33%" fxFlex.xs="100%" fxFlex.sm="50%" *ngFor="let candidate of candidates">
           <app-candidate-display [requester]="requester" [ngForAs]="candidate">
           </app-candidate-display>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mat-body" *ngIf="specials && specials.length > 0">
+    <div class="divider-spacing"></div>
+    <mat-divider></mat-divider>
+    <div class="divider-spacing"></div>
+    <mat-label>{{ 'content.special.available' | translate }}</mat-label>
+    <div style="overflow: hidden; padding-top: 10px; padding-bottom: 10px">
+      <div fxLayout="row wrap" fxLayout.sm="column" fxLayoutGap="16px grid">
+        <div fxFlex="100%" fxFlex.xs="100%" fxFlex.sm="100%" *ngFor="let candidate of specials">
+          <app-oe20sota-candidate-display [requester]="requester" [ngForAs]="candidate">
+          </app-oe20sota-candidate-display>
         </div>
       </div>
     </div>

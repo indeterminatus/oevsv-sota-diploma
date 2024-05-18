@@ -40,6 +40,9 @@ export class AppComponent implements OnInit {
   candidates: SignedCandidate[] = [];
 
   @Output()
+  specials: SignedCandidate[] = [];
+
+  @Output()
   requester: Requester | undefined = undefined;
 
   showSpinner = false;
@@ -69,7 +72,7 @@ export class AppComponent implements OnInit {
 
     this.spinnerService.showSpinner();
     this.dataService.check(requester).then(data => {
-        const filtered: SignedCandidate[] = data.filter((value) => value.candidate.rank !== 'NONE');
+        const filtered: SignedCandidate[] = data.filter((value) => value.candidate.category === 'OE20SOTA' || value.candidate.rank !== 'NONE');
         this.createComponentsFor(filtered);
         this.requester = requester;
         this.checked = true;
@@ -89,6 +92,13 @@ export class AppComponent implements OnInit {
 
   private createComponentsFor(data: SignedCandidate[]): void {
     this.candidates = [];
-    data.forEach(candidate => this.candidates.push(candidate));
+    this.specials = [];
+    data.forEach(candidate => {
+      if (candidate.candidate.category === 'OE20SOTA') {
+        this.specials.push(candidate);
+      } else {
+        this.candidates.push(candidate);
+      }
+    });
   }
 }

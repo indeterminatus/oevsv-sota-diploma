@@ -18,7 +18,6 @@ package at.oevsv.sota.data.persistence;
 
 import at.oevsv.sota.data.api.Candidate;
 import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -48,7 +47,7 @@ public class DiplomaLog extends PanacheEntityBase {
     public Long id;
 
     @Column(name = "oe20")
-    private Long oe20;
+    private Integer oe20;
 
     @Column(name = "reviewMailSent")
     private boolean reviewMailSent;
@@ -106,11 +105,11 @@ public class DiplomaLog extends PanacheEntityBase {
     @Version
     private int version;
 
-    public Long getOe20() {
+    public Integer getOe20() {
         return oe20;
     }
 
-    public void setOe20(Long oe20) {
+    public void setOe20(Integer oe20) {
         this.oe20 = oe20;
     }
 

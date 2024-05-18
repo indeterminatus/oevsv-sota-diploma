@@ -39,12 +39,6 @@ import io.smallrye.mutiny.Uni;
 import io.vertx.core.http.HttpServerRequest;
 import io.vertx.mutiny.redis.client.RedisAPI;
 import jakarta.annotation.security.PermitAll;
-import org.apache.commons.lang3.StringUtils;
-import org.eclipse.microprofile.config.inject.ConfigProperty;
-import org.eclipse.microprofile.rest.client.inject.RestClient;
-
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.Consumes;
 import jakarta.ws.rs.GET;
@@ -56,6 +50,12 @@ import jakarta.ws.rs.QueryParam;
 import jakarta.ws.rs.WebApplicationException;
 import jakarta.ws.rs.core.Context;
 import jakarta.ws.rs.core.Response;
+import org.apache.commons.lang3.StringUtils;
+import org.eclipse.microprofile.config.inject.ConfigProperty;
+import org.eclipse.microprofile.rest.client.inject.RestClient;
+
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -156,11 +156,15 @@ public class DiplomaResource {
         final var activatorCandidate = Rules.determineDiplomaCandidateAsActivator(yearAwareFetcher.fetchActivatorLogsById(userId, checkAfter), common);
         result.add(activatorCandidate);
 
-        final var chaserCandidate = Rules.determineDiplomaCandidateAsChaser(yearAwareFetcher.fetchChaserLogsById(userId, checkAfter), common);
+        final var chaserLogs = yearAwareFetcher.fetchChaserLogsById(userId, checkAfter);
+        final var chaserCandidate = Rules.determineDiplomaCandidateAsChaser(chaserLogs, common);
         result.add(chaserCandidate);
 
         final var summitToSummitCandidate = Rules.determineDiplomaCandidateForSummitToSummit(yearAwareFetcher.fetchSummitToSummitLogsById(userId, checkAfter), common);
         result.add(summitToSummitCandidate);
+
+        final var oe20SpecialCandidate = Rules.determineDiplomaCandidateForSpecialOE20SOTA(chaserLogs, common);
+        result.add(oe20SpecialCandidate);
 
         final var requester = new Requester(callSign, null, null);
         return result.stream()

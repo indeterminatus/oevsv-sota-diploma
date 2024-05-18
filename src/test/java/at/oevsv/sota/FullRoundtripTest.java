@@ -81,7 +81,9 @@ final class FullRoundtripTest {
             mailingResource.sendPendingRequests();
 
             final var mails = mailbox.getMailsSentTo("oe5idt@oevsv.at");
-            assertThat(mails).hasSameSizeAs(candidates);
+            // We assume 3 basic awards, and probably one OE20SOTA that is not applicable; either way, 3 mails should be
+            // sent!
+            assertThat(mails).hasSize(3);
             Mail actual = mails.get(0);
             assertThat(actual.getHtml()).containsIgnoringCase(requester.callSign).contains(requester.name);
             assertThat(actual.getText()).containsIgnoringCase(requester.callSign).contains(requester.name);

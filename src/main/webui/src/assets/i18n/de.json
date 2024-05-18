@@ -57,6 +57,19 @@
       "available": "Herzlichen Glückwunsch! Du kannst mindestens ein Diplom beantragen:",
       "overview": "Du hast diese Werte pro Bundesland erreicht:"
     },
+    "special": {
+      "available": "Aktuell erreichbare Spezialdiplome:",
+      "label": "Spezialdiplom",
+      "OE20SOTA": {
+        "ongoing": "In Arbeit",
+        "available": "Verfügbar",
+        "header": {
+          "overview": "Vom 1. Mai 2024 bis zum 31. Oktober 2024 kann das Spezialrufzeichen OE20SOTA/p gearbeitet werden.",
+          "progress": "Bislang erreicht:",
+          "required": "Du benötigst 20 protokollierte QSO mit OE20SOTA/p."
+        }
+      }
+    },
     "total": {
       "label": "Gesamt:",
       "ACTIVATOR": {
@@ -67,6 +80,9 @@
       },
       "S2S": {
         "sum": "QSO"
+      },
+      "OE20SOTA": {
+        "sum": "QSO mit OE20SOTA/p"
       },
       "states": "Bundesländer"
     }
@@ -82,7 +98,8 @@
     "label": "Kategorie",
     "ACTIVATOR": "Aktivierer",
     "CHASER": "Chaser",
-    "S2S": "S2S"
+    "S2S": "S2S",
+    "OE20SOTA": "OE20SOTA"
   },
   "i18n": {
     "language": "Select language"

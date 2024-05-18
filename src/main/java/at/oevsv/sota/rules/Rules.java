@@ -126,7 +126,7 @@ public final class Rules {
         final Map<Summit.State, Long> frequencies =
                 chaserLogs.stream()
                         .filter(log -> isWithinTimeRange(log.activationDate(), common))
-                        .filter(log -> ValidationUtil.callSignsMatch(log.callSign(), "SpecialEntryOE20SOTA/P"))
+                        .filter(log -> ValidationUtil.callSignsMatch(log.callSign(), "OE20SOTA/P"))
                         .filter(log -> summitCheck.isValidAt(log.summit(), log.activationDate(), true))
                         .map(log -> new SpecialEntryOE20SOTA(log.activationDate(), log.summit()))
                         .distinct()

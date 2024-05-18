@@ -57,6 +57,19 @@
       "available": "Congratulations! There is at least one award for you to request:",
       "overview": "Your achievements per region:"
     },
+    "special": {
+      "available": "Currently achievable special awards:",
+      "label": "Special Award",
+      "OE20SOTA": {
+        "ongoing": "On-Going",
+        "available": "Available",
+        "header": {
+          "overview": "From May 1st 2024 to October 31st 2024 you can work the special callsign OE20SOTA/p.",
+          "progress": "Your progress so far:",
+          "required": "You need 20 logged QSO with OE20SOTA/p."
+        }
+      }
+    },
     "total": {
       "label": "Total:",
       "ACTIVATOR": {
@@ -67,6 +80,9 @@
       },
       "S2S": {
         "sum": "QSO"
+      },
+      "OE20SOTA": {
+        "sum": "QSO with OE20SOTA/p"
       },
       "states": "regions"
     }
@@ -82,7 +98,8 @@
     "label": "Category",
     "ACTIVATOR": "Activator",
     "CHASER": "Chaser",
-    "S2S": "S2S"
+    "S2S": "S2S",
+    "OE20SOTA": "OE20SOTA"
   },
   "i18n": {
     "language": "Sprache auswählen"

@@ -68,13 +68,22 @@ public final class DiplomaLogResource {
         int totalCreated = 0;
         final var candidates = signedCandidates.stream().map(SignedCandidate::candidate).toList();
         for (final var candidate : candidates) {
-            if (!alreadyRequested(request.requester(), candidate)) {
+            if (satisfiesRequirements(candidate) && !alreadyRequested(request.requester(), candidate)) {
                 createEntryInDatabase(request, candidate);
                 ++totalCreated;
             }
         }
 
         return totalCreated > 0;
+    }
+
+    private static boolean satisfiesRequirements(Candidate candidate) {
+        if (candidate.category().isSpecialDiploma()) {
+            final var requiredTotal = candidate.category().getRequirementFor(candidate.rank());
+            return requiredTotal <= 0 || candidate.activations().values().stream().mapToLong(Long::longValue).sum() >= requiredTotal;
+        }
+
+        return true;
     }
 
     private static void createEntryInDatabase(DiplomaRequest request, Candidate candidate) {

@@ -17,7 +17,7 @@
 export interface Candidate {
   callSign: string;
   userID: string;
-  category: 'ACTIVATOR' | 'CHASER' | 'S2S';
+  category: 'ACTIVATOR' | 'CHASER' | 'S2S' | 'OE20SOTA';
   rank: 'GOLD' | 'SILVER' | 'BRONZE' | 'NONE';
   activations: Map<State, number>;
 }

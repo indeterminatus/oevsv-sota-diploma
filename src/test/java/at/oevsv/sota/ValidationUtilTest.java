@@ -25,14 +25,14 @@ import java.util.stream.Stream;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-class ValidationUtilTest {
+final class ValidationUtilTest {
 
     private static List<String> callSigns_valid() {
         return List.of("OE5IDT", "OE5IDT/p", "oe5idt", "W2AEW", "OE20SOTA/P", "OE/OK2QA/P");
     }
 
     private static List<String> callSigns_invalid() {
-        return List.of("", "IDT");
+        return List.of("", "IDT", "OE/WAYTOOLONGCALLSIGN/am");
     }
 
     private static Stream<Arguments> callSign_pairs() {

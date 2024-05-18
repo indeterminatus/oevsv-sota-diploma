@@ -28,6 +28,12 @@ import java.util.regex.Pattern;
  */
 public final class ValidationUtil {
 
+    /**
+     * The maximum number of characters a sensible callsign may have.
+     * Any callsign longer than this is considered invalid before even performing detailed checks.
+     * This is to mitigate DoS attacks via regex validation.
+     */
+    private static final int MAXIMUM_CALL_SIGN_LENGTH = 20;
     private static final Pattern CALL_SIGN_PATTERN = Pattern.compile("^(?<country>[A-Z0-9]+/)?(?<sign>[A-Z0-9]{1,2}\\d+[A-Z]+)(?<suffix>/[A-Z0-9]+)?$", Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CASE);
 
     private ValidationUtil() {
@@ -41,7 +47,7 @@ public final class ValidationUtil {
      * @return true iff a syntactically valid call sign is passed
      */
     public static boolean isCallSign(@Nullable String check) {
-        if (check == null || check.isBlank()) {
+        if (check == null || check.isBlank() || check.length() > MAXIMUM_CALL_SIGN_LENGTH) {
             return false;
         }
 
@@ -72,6 +78,23 @@ public final class ValidationUtil {
         return StringUtils.equalsIgnoreCase(extractIdentifier(left), extractIdentifier(right));
     }
 
+    /**
+     * Extracts the identifying part of the callsign string.
+     * It is expected that callSign already passes the basic syntax criteria;
+     * if it does not, <code>null</code> is returned.
+     * <p>Examples:
+     * <ul>
+     *     <li>OE5IDT -> OE5IDT</li>
+     *     <li>DL/OE5IDT -> OE5IDT</li>
+     *     <li>DL/OE5IDT/am -> OE5IDT</li>
+     *     <li>IDT -> null</li>
+     * </ul>
+     * </p>
+     *
+     * @param callSign the callsign with potential country prefix and suffix
+     * @return the identifying part (no country prefix, no suffix) of the callSign, or <code>null</code> if it does not match
+     * the expected syntax.
+     */
     @Nullable
     public static String extractIdentifier(String callSign) {
         final var matcher = CALL_SIGN_PATTERN.matcher(callSign);

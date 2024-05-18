@@ -43,6 +43,7 @@ import {SpinnerComponent} from './spinner/spinner.component';
 import {FlexLayoutModule} from "@angular/flex-layout";
 import {MatDividerModule} from "@angular/material/divider";
 import { BackButtonDirective } from './directives/back-button.directive';
+import { Oe20sotaCandidateDisplayComponent } from './oe20sota-candidate-display/oe20sota-candidate-display.component';
 
 export function httpTranslateLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -58,7 +59,8 @@ export function httpTranslateLoaderFactory(http: HttpClient) {
     CandidateDisplayComponent,
     BaseComponent,
     SpinnerComponent,
-    BackButtonDirective
+    BackButtonDirective,
+    Oe20sotaCandidateDisplayComponent
   ],
   imports: [
     BrowserModule,

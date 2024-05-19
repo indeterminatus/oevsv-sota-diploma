@@ -52,14 +52,12 @@ final class OE20TextRenderer implements TextRenderer {
 
     @Override
     public void writeText(PdfWriter writer) throws IOException {
-        final var consolas = Fonts.loadFont("consola.ttf", 11, Font.NORMAL);
+        final var consolas = Fonts.loadFont("consola.ttf", 8, Font.NORMAL);
         consolas.setColor(new Color(200, 200, 200));
-        final var smaller = new Font(consolas);
-        smaller.setSize(8);
-        writeDiplomaManager(writer, smaller);
+        writeDiplomaManager(writer, consolas);
 
         final var diplomaId = idGenerator.generateId();
-        writeDiplomaInfo(writer, smaller, LocalDate.now(), diplomaId);
+        writeDiplomaInfo(writer, consolas, LocalDate.now(), diplomaId);
 
         final var copperplateGothic = Fonts.loadFont("tiffanygtcc.ttf", 40, Font.BOLD);
         copperplateGothic.setColor(new Color(254, 253, 3));
@@ -69,6 +67,7 @@ final class OE20TextRenderer implements TextRenderer {
     private void writeDiplomaManager(PdfWriter writer, Font font) {
         final var paragraph = new Paragraph();
         paragraph.setAlignment(Element.ALIGN_CENTER);
+        paragraph.setMultipliedLeading(1.1f);
         paragraph.add(new Chunk(resourceBundle.getString("diploma.manager.label"), font));
         paragraph.add(Chunk.NEWLINE);
         paragraph.add(new Chunk(diplomaManager, font));
@@ -76,7 +75,7 @@ final class OE20TextRenderer implements TextRenderer {
         final var bounds = writer.getPageSize();
         final var llx = bounds.getLeft(20.0f);
         // NB: 100.0f is the top line of the box; subtracting a bit because vertical alignment does not work properly
-        final var lly = bounds.getBottom(100.0f - 20.0f);
+        final var lly = bounds.getBottom(100.0f - 35.0f);
         final var urx = bounds.getLeft(140.0f);
         final var ury = bounds.getBottom(25.0f);
 
@@ -110,6 +109,7 @@ final class OE20TextRenderer implements TextRenderer {
     private void writeDiplomaInfo(PdfWriter writer, Font font, LocalDate date, String diplomaId) {
         final var paragraph = new Paragraph();
         paragraph.setAlignment(Element.ALIGN_CENTER);
+        paragraph.setMultipliedLeading(1.1f);
         paragraph.add(new Chunk(resourceBundle.getString("diploma.id.label"), font));
         paragraph.add(new Chunk(" " + diplomaId, font));
         paragraph.add(Chunk.NEWLINE);
@@ -120,7 +120,7 @@ final class OE20TextRenderer implements TextRenderer {
         final var bounds = writer.getPageSize();
         final var llx = bounds.getRight(140.0f);
         // NB: 100.0f is the top line of the box; subtracting a bit because vertical alignment does not work properly
-        final var lly = bounds.getBottom(100.0f - 20.0f);
+        final var lly = bounds.getBottom(100.0f - 35.0f);
         final var urx = bounds.getRight(20.0f);
         final var ury = bounds.getBottom(25.0f);
 

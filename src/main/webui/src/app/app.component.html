@@ -32,7 +32,7 @@
 </form>
 
 <div class="sota-form" *ngIf="checked">
-  <div class="mat-body" *ngIf="!candidates || candidates.length === 0">
+  <div class="mat-body" *ngIf="(!candidates || candidates.length === 0) && (!specials || specials.length === 0)">
     <div class="mat-body" *ngIf="error">
       {{ 'api.response.error.server' | translate }}
     </div>
@@ -58,9 +58,11 @@
     </div>
   </div>
   <div class="mat-body" *ngIf="specials && specials.length > 0">
-    <div class="divider-spacing"></div>
-    <mat-divider></mat-divider>
-    <div class="divider-spacing"></div>
+    <ng-container *ngIf="candidates && candidates.length > 0">
+      <div class="divider-spacing"></div>
+      <mat-divider></mat-divider>
+      <div class="divider-spacing"></div>
+    </ng-container>
     <mat-label>{{ 'content.special.available' | translate }}</mat-label>
     <div style="overflow: hidden; padding-top: 10px; padding-bottom: 10px">
       <div fxLayout="row wrap" fxLayout.sm="column" fxLayoutGap="16px grid">

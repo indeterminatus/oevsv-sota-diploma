@@ -16,25 +16,18 @@
 
 package at.oevsv.sota.pdf;
 
-import at.oevsv.sota.data.api.Candidate;
-import at.oevsv.sota.data.api.Requester;
-import at.oevsv.sota.data.domain.jackson.StringToLocaleConverter;
+import at.oevsv.sota.data.api.Generation;
 import at.oevsv.sota.pdf.diploma.DiplomaFormats;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.google.common.annotations.VisibleForTesting;
 import com.lowagie.text.Document;
 import com.lowagie.text.Rectangle;
 import com.lowagie.text.RectangleReadOnly;
 import com.lowagie.text.pdf.PdfWriter;
 import io.quarkus.logging.Log;
-import io.quarkus.runtime.annotations.RegisterForReflection;
 import io.smallrye.common.annotation.Blocking;
 import jakarta.annotation.security.RolesAllowed;
-import jakarta.enterprise.context.ApplicationScoped;
-import jakarta.ws.rs.BeanParam;
+import jakarta.inject.Inject;
 import jakarta.ws.rs.Consumes;
-import jakarta.ws.rs.DefaultValue;
 import jakarta.ws.rs.POST;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
@@ -42,13 +35,10 @@ import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 
 import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.util.Locale;
 import java.util.Objects;
 
-@ApplicationScoped
 @Path("/api/diploma/pdf")
 public class PdfGenerationResource {
 
@@ -56,94 +46,9 @@ public class PdfGenerationResource {
 
     private final DiplomaFormats diplomaFormats;
 
+    @Inject
     public PdfGenerationResource(DiplomaFormats diplomaFormats) {
         this.diplomaFormats = Objects.requireNonNull(diplomaFormats);
-    }
-
-    @RegisterForReflection
-    public static class Generation {
-
-        @JsonProperty
-        @BeanParam
-        private Requester requester;
-
-        @JsonProperty
-        private Candidate candidate;
-
-        @JsonProperty
-        private int sequence;
-
-        @JsonProperty
-        @Nullable
-        private String sequenceSuffix;
-
-        @JsonProperty
-        @JsonDeserialize(converter = StringToLocaleConverter.class)
-        @DefaultValue("de-AT")
-        private Locale locale = Locale.GERMAN;
-
-        @JsonProperty
-        @DefaultValue("0.95")
-        private float quality = 0.95f;
-
-        @SuppressWarnings("unused")
-        public Generation() {
-            // Required for bean contract.
-        }
-
-        public Generation(Requester requester, Candidate candidate) {
-            this.requester = requester;
-            this.candidate = candidate;
-        }
-
-        public Locale getLocale() {
-            return locale;
-        }
-
-        public void setLocale(Locale locale) {
-            this.locale = locale;
-        }
-
-        public void setQuality(float quality) {
-            this.quality = quality;
-        }
-
-        public void setSequence(int sequence) {
-            this.sequence = sequence;
-        }
-
-        public void setSequenceSuffix(@Nullable String sequenceSuffix) {
-            this.sequenceSuffix = sequenceSuffix;
-        }
-
-        public Requester getRequester() {
-            return requester;
-        }
-
-        public Candidate getCandidate() {
-            return candidate;
-        }
-
-        public int getSequence() {
-            return sequence;
-        }
-
-        @Nullable
-        public String getSequenceSuffix() {
-            return sequenceSuffix;
-        }
-
-        public void setRequester(Requester requester) {
-            this.requester = requester;
-        }
-
-        public void setCandidate(Candidate candidate) {
-            this.candidate = candidate;
-        }
-
-        public float getQuality() {
-            return quality;
-        }
     }
 
     @POST
@@ -151,12 +56,12 @@ public class PdfGenerationResource {
     @RolesAllowed("admin")
     @Blocking
     @Consumes(MediaType.APPLICATION_JSON)
-    @Produces(MediaType.APPLICATION_OCTET_STREAM)
-    public Response generatePdf(@BeanParam Generation generation) throws IOException {
+    @Produces("application/pdf")
+    public Response generatePdf(Generation generation) throws IOException {
         String fileName = fileNameFor(generation);
         byte[] bytes = generatePdfBytes(generation, fileName);
 
-        return Response.ok(bytes, MediaType.APPLICATION_OCTET_STREAM)
+        return Response.ok(bytes, "application/pdf")
                 .header("Content-Disposition", "attachment;filename=" + fileName)
                 .build();
     }
@@ -192,14 +97,14 @@ public class PdfGenerationResource {
     static byte[] generateBinary(Generation generation, DiplomaGenerator format) throws IOException {
         try (final var os = new ByteArrayOutputStream(EXPECTED_SIZE)) {
             try (final Document document = new Document()) {
-                document.setDocumentLanguage(generation.locale.getLanguage());
+                document.setDocumentLanguage(generation.getLocale().getLanguage());
 
                 final Rectangle pageSize = highResA4Landscape();
                 document.setPageSize(pageSize);
                 document.setMargins(0, 0, 0, 0);
                 document.setPageCount(1);
                 final var writer = PdfWriter.getInstance(document, os);
-                writer.setPageEvent(new PdfBackgroundSetter(format.createImageRenderer(generation), generation.quality));
+                writer.setPageEvent(new PdfBackgroundSetter(format.createImageRenderer(generation), generation.getQuality()));
                 document.open();
 
                 final var textRenderer = format.createTextRenderer(generation);

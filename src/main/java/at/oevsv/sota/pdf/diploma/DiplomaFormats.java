@@ -17,7 +17,7 @@
 package at.oevsv.sota.pdf.diploma;
 
 import at.oevsv.sota.pdf.DiplomaGenerator;
-import at.oevsv.sota.pdf.PdfGenerationResource;
+import at.oevsv.sota.data.api.Generation;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.enterprise.inject.Instance;
 import jakarta.inject.Inject;
@@ -38,7 +38,7 @@ public final class DiplomaFormats {
     }
 
     @Nullable
-    public DiplomaGenerator generationStrategyFor(PdfGenerationResource.Generation generationType) {
+    public DiplomaGenerator generationStrategyFor(Generation generationType) {
         for (final var strategy : strategies) {
             if (strategy.canHandle(generationType)) {
                 return strategy;

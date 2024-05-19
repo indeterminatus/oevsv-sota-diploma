@@ -18,11 +18,12 @@ package at.oevsv.sota.pdf.diploma;
 
 import at.oevsv.sota.data.api.Candidate;
 import at.oevsv.sota.pdf.DiplomaGenerator;
+import at.oevsv.sota.data.api.Generation;
 import at.oevsv.sota.pdf.ImageRenderer;
-import at.oevsv.sota.pdf.PdfGenerationResource;
 import at.oevsv.sota.pdf.TextRenderer;
 import jakarta.enterprise.context.ApplicationScoped;
 import org.apache.commons.lang3.StringUtils;
+import org.eclipse.microprofile.config.inject.ConfigProperty;
 
 import java.util.Locale;
 
@@ -32,13 +33,19 @@ import java.util.Locale;
 @ApplicationScoped
 final class OE20SOTADiploma implements DiplomaGenerator {
 
+    @ConfigProperty(name = "diploma.manager", defaultValue = "Martin Reiter, OE5REO")
+    String diplomaManager;
+
+    @ConfigProperty(name = "diploma.debug.layout", defaultValue = "false")
+    boolean debugLayout;
+
     @Override
-    public boolean canHandle(PdfGenerationResource.Generation generation) {
+    public boolean canHandle(Generation generation) {
         return generation.getCandidate().category() == Candidate.Category.OE20SOTA;
     }
 
     @Override
-    public String fileNameFor(PdfGenerationResource.Generation generation) {
+    public String fileNameFor(Generation generation) {
         final StringBuilder sb = new StringBuilder();
         sb.append("oe20_");
         if (generation.getSequence() > 0) {
@@ -52,17 +59,17 @@ final class OE20SOTADiploma implements DiplomaGenerator {
     }
 
     @Override
-    public String idFor(PdfGenerationResource.Generation generation) {
+    public String idFor(Generation generation) {
         return new DefaultDiplomaIdGenerator(generation.getCandidate(), generation.getSequence(), generation.getSequenceSuffix()).generateId();
     }
 
     @Override
-    public ImageRenderer createImageRenderer(PdfGenerationResource.Generation generation) {
-        return null;
+    public ImageRenderer createImageRenderer(Generation generation) {
+        return new OE20ImageRenderer(generation.getLocale(), debugLayout);
     }
 
     @Override
-    public TextRenderer createTextRenderer(PdfGenerationResource.Generation generation) {
-        return null;
+    public TextRenderer createTextRenderer(Generation generation) {
+        return new OE20TextRenderer(generation, diplomaManager, debugLayout, () -> idFor(generation));
     }
 }

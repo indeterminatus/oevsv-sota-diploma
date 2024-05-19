@@ -18,6 +18,7 @@ package at.oevsv.sota.pdf;
 
 import at.oevsv.sota.data.WireMockExtension;
 import at.oevsv.sota.data.api.Candidate;
+import at.oevsv.sota.data.api.Generation;
 import at.oevsv.sota.data.api.Requester;
 import io.quarkus.test.common.QuarkusTestResource;
 import io.quarkus.test.junit.QuarkusTest;
@@ -52,26 +53,26 @@ final class PdfGenerationResourceTest {
     // region fileNameFor
     @Test
     void fileNameFor_matchesFully() {
-        final var generation = new PdfGenerationResource.Generation(requester(), candidate(Candidate.Category.S2S, Candidate.Rank.BRONZE));
+        final var generation = new Generation(requester(), candidate(Candidate.Category.S2S, Candidate.Rank.BRONZE));
         assertThat(sut.fileNameFor(generation)).isEqualTo("oe5idt_s2s_bronze.pdf");
     }
 
     @Test
     void fileNameFor_contains_callSign() {
-        final var generation = new PdfGenerationResource.Generation(requester(), candidate(Candidate.Category.S2S, Candidate.Rank.BRONZE));
+        final var generation = new Generation(requester(), candidate(Candidate.Category.S2S, Candidate.Rank.BRONZE));
         assertThat(sut.fileNameFor(generation)).contains(CALL_SIGN);
     }
 
     @Test
     void fileNameFor_endsWith_pdf() {
-        final var generation = new PdfGenerationResource.Generation(requester(), candidate(Candidate.Category.S2S, Candidate.Rank.BRONZE));
+        final var generation = new Generation(requester(), candidate(Candidate.Category.S2S, Candidate.Rank.BRONZE));
         assertThat(sut.fileNameFor(generation)).endsWith(".pdf");
     }
 
     @ParameterizedTest
     @EnumSource(names = "OE20SOTA", mode = EnumSource.Mode.EXCLUDE)
     void fileNameFor_contains_category(Candidate.Category category) {
-        final var generation = new PdfGenerationResource.Generation(requester(), candidate(category, Candidate.Rank.BRONZE));
+        final var generation = new Generation(requester(), candidate(category, Candidate.Rank.BRONZE));
         final String expected = category.toString().substring(0, 3).toLowerCase(Locale.ROOT);
         assertThat(sut.fileNameFor(generation)).contains(expected);
     }
@@ -79,7 +80,7 @@ final class PdfGenerationResourceTest {
     @ParameterizedTest
     @EnumSource
     void fileNameFor_contains_rank(Candidate.Rank rank) {
-        final var generation = new PdfGenerationResource.Generation(requester(), candidate(Candidate.Category.S2S, rank));
+        final var generation = new Generation(requester(), candidate(Candidate.Category.S2S, rank));
         final String expected = rank.toString().toLowerCase(Locale.ROOT);
         assertThat(sut.fileNameFor(generation)).contains(expected);
     }
@@ -102,7 +103,7 @@ final class PdfGenerationResourceTest {
     @ParameterizedTest
     @MethodSource("oe20_fileNames")
     void oe20_fileNameFor_matchesFully(int sequence, String suffix, String expected) {
-        final var generation = new PdfGenerationResource.Generation(requester(), candidate(Candidate.Category.OE20SOTA, Candidate.Rank.NONE));
+        final var generation = new Generation(requester(), candidate(Candidate.Category.OE20SOTA, Candidate.Rank.NONE));
         generation.setSequence(sequence);
         generation.setSequenceSuffix(suffix);
 
@@ -114,8 +115,8 @@ final class PdfGenerationResourceTest {
     @Test
     @TestSecurity(user = "test", roles = "admin")
     void generatePdf() throws IOException {
-        final var response = sut.generatePdf(new PdfGenerationResource.Generation(requester(), candidate(Candidate.Category.ACTIVATOR, Candidate.Rank.GOLD)));
-        assertThat(response).hasStatusCode(200).hasMediaType(MediaType.APPLICATION_OCTET_STREAM_TYPE).hasEntity();
+        final var response = sut.generatePdf(new Generation(requester(), candidate(Candidate.Category.ACTIVATOR, Candidate.Rank.GOLD)));
+        assertThat(response).hasStatusCode(200).hasMediaType(MediaType.valueOf("application/pdf")).hasEntity();
     }
 
     // region Test helpers

@@ -18,7 +18,7 @@ package at.oevsv.sota.pdf.diploma;
 
 import at.oevsv.sota.data.api.Candidate;
 import at.oevsv.sota.data.api.Requester;
-import at.oevsv.sota.pdf.PdfGenerationResource;
+import at.oevsv.sota.data.api.Generation;
 import at.oevsv.sota.pdf.TextRenderer;
 import com.ibm.icu.text.RuleBasedNumberFormat;
 import com.lowagie.text.Chunk;
@@ -52,7 +52,7 @@ final class DefaultTextRenderer implements TextRenderer {
     private final boolean debugLayout;
     private final DiplomaIdGenerator idGenerator;
 
-    DefaultTextRenderer(PdfGenerationResource.Generation generation, String diplomaManager, boolean debugLayout, DiplomaIdGenerator idGenerator) {
+    DefaultTextRenderer(Generation generation, String diplomaManager, boolean debugLayout, DiplomaIdGenerator idGenerator) {
         this.candidate = Objects.requireNonNull(generation.getCandidate());
         this.requester = Objects.requireNonNull(generation.getRequester());
         this.locale = Objects.requireNonNull(generation.getLocale());

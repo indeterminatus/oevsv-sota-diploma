@@ -21,6 +21,7 @@ import at.oevsv.sota.data.api.Requester;
 import at.oevsv.sota.data.domain.Summit;
 import at.oevsv.sota.data.persistence.DiplomaLog;
 import at.oevsv.sota.data.persistence.DiplomaLogResource;
+import at.oevsv.sota.data.api.Generation;
 import at.oevsv.sota.pdf.PdfGenerationResource;
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import io.opentelemetry.api.trace.SpanKind;
@@ -147,15 +148,15 @@ public class MailingResource {
 
     @Nonnull
     private byte[] generatePreviewPdf(Requester requester, Candidate candidate, int sequence, Locale locale, String fileName) throws IOException {
-        final PdfGenerationResource.Generation parameter = generationParameter(requester, candidate, sequence);
+        final Generation parameter = generationParameter(requester, candidate, sequence);
         parameter.setQuality(previewQuality / 100.0f);
         parameter.setLocale(locale);
         return generator.generatePdfBytes(parameter, fileName);
     }
 
     @Nonnull
-    private static PdfGenerationResource.Generation generationParameter(Requester requester, Candidate candidate, int sequence) {
-        final var parameter = new PdfGenerationResource.Generation(requester, candidate);
+    private static Generation generationParameter(Requester requester, Candidate candidate, int sequence) {
+        final var parameter = new Generation(requester, candidate);
         parameter.setSequence(sequence);
         parameter.setSequenceSuffix(null);
         return parameter;

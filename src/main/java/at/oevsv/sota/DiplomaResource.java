@@ -153,18 +153,12 @@ public class DiplomaResource {
         final var common = new Rules.CommonArguments(callSign, userId, summitList, checkAfter);
 
         final Collection<Candidate> result = new ArrayList<>();
-        final var activatorCandidate = Rules.determineDiplomaCandidateAsActivator(yearAwareFetcher.fetchActivatorLogsById(userId, checkAfter), common);
-        result.add(activatorCandidate);
+        result.add(Rules.determineDiplomaCandidateAsActivator(yearAwareFetcher.fetchActivatorLogsById(userId, checkAfter), common));
 
         final var chaserLogs = yearAwareFetcher.fetchChaserLogsById(userId, checkAfter);
-        final var chaserCandidate = Rules.determineDiplomaCandidateAsChaser(chaserLogs, common);
-        result.add(chaserCandidate);
-
-        final var summitToSummitCandidate = Rules.determineDiplomaCandidateForSummitToSummit(yearAwareFetcher.fetchSummitToSummitLogsById(userId, checkAfter), common);
-        result.add(summitToSummitCandidate);
-
-        final var oe20SpecialCandidate = Rules.determineDiplomaCandidateForSpecialOE20SOTA(chaserLogs, common);
-        result.add(oe20SpecialCandidate);
+        result.add(Rules.determineDiplomaCandidateAsChaser(chaserLogs, common));
+        result.add(Rules.determineDiplomaCandidateForSummitToSummit(yearAwareFetcher.fetchSummitToSummitLogsById(userId, checkAfter), common));
+        result.add(Rules.determineDiplomaCandidateForSpecialOE20SOTA(chaserLogs, common));
 
         final var requester = new Requester(callSign, null, null);
         return result.stream()
@@ -182,7 +176,7 @@ public class DiplomaResource {
      */
     private void enforceRateLimit(@Nullable HttpServerRequest request) {
         final var now = LocalDateTime.now();
-        final String throttlingKey = getThrottlingKey(request) + ":" + now.getMinute();
+        final var throttlingKey = getThrottlingKey(request) + ":" + now.getMinute();
         final var requests = await(redis.get(throttlingKey));
         final int requestNumber = (requests != null) ? requests.toInteger() : 0;
         if (requestNumber >= requestsPerMinute) {

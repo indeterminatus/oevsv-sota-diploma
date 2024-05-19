@@ -16,15 +16,17 @@
 
 package at.oevsv.sota.pdf;
 
+import at.oevsv.sota.data.api.Generation;
+
 public interface DiplomaGenerator {
 
-    boolean canHandle(PdfGenerationResource.Generation generation);
+    boolean canHandle(Generation generation);
 
-    String fileNameFor(PdfGenerationResource.Generation generation);
+    String fileNameFor(Generation generation);
 
-    String idFor(PdfGenerationResource.Generation generation);
+    String idFor(Generation generation);
 
-    ImageRenderer createImageRenderer(PdfGenerationResource.Generation generation);
+    ImageRenderer createImageRenderer(Generation generation);
 
-    TextRenderer createTextRenderer(PdfGenerationResource.Generation generation);
+    TextRenderer createTextRenderer(Generation generation);
 }

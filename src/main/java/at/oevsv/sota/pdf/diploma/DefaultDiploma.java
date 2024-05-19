@@ -17,8 +17,8 @@
 package at.oevsv.sota.pdf.diploma;
 
 import at.oevsv.sota.pdf.DiplomaGenerator;
+import at.oevsv.sota.data.api.Generation;
 import at.oevsv.sota.pdf.ImageRenderer;
-import at.oevsv.sota.pdf.PdfGenerationResource;
 import at.oevsv.sota.pdf.TextRenderer;
 import jakarta.enterprise.context.ApplicationScoped;
 import org.apache.commons.lang3.StringUtils;
@@ -37,12 +37,12 @@ final class DefaultDiploma implements DiplomaGenerator {
     boolean debugLayout;
 
     @Override
-    public boolean canHandle(PdfGenerationResource.Generation generation) {
+    public boolean canHandle(Generation generation) {
         return !generation.getCandidate().category().isSpecialDiploma();
     }
 
     @Override
-    public String fileNameFor(PdfGenerationResource.Generation generation) {
+    public String fileNameFor(Generation generation) {
         final StringBuilder sb = new StringBuilder();
         sb.append(StringUtils.toRootLowerCase(generation.getRequester().callSign));
         sb.append('_');
@@ -56,17 +56,17 @@ final class DefaultDiploma implements DiplomaGenerator {
     }
 
     @Override
-    public String idFor(PdfGenerationResource.Generation generation) {
+    public String idFor(Generation generation) {
         return new DefaultDiplomaIdGenerator(generation.getCandidate(), generation.getSequence(), generation.getSequenceSuffix()).generateId();
     }
 
     @Override
-    public ImageRenderer createImageRenderer(PdfGenerationResource.Generation generation) {
+    public ImageRenderer createImageRenderer(Generation generation) {
         return new DefaultImageRenderer(generation.getCandidate(), debugLayout);
     }
 
     @Override
-    public TextRenderer createTextRenderer(PdfGenerationResource.Generation generation) {
+    public TextRenderer createTextRenderer(Generation generation) {
         return new DefaultTextRenderer(generation, diplomaManager, debugLayout, () -> idFor(generation));
     }
 }

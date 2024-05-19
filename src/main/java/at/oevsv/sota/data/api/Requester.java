@@ -17,7 +17,9 @@
 package at.oevsv.sota.data.api;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import io.quarkus.runtime.annotations.RegisterForReflection;
 
+@RegisterForReflection
 public class Requester {
 
     @JsonProperty

@@ -70,13 +70,16 @@ import java.util.function.Predicate;
 @RegisterProvider(MaxRequestBodySizeFilter.class)
 public final class SummitList {
 
-    @RestClient
-    ExternalSummitsListService externalSummitsListService;
-
-    @Inject
-    ManagedExecutor executorService;
+    private final ExternalSummitsListService externalSummitsListService;
+    private final ManagedExecutor executorService;
 
     private final AtomicBoolean initialSynchronizationCompleted = new AtomicBoolean(false);
+
+    @Inject
+    public SummitList(@RestClient ExternalSummitsListService externalSummitsListService, ManagedExecutor executorService) {
+        this.externalSummitsListService = externalSummitsListService;
+        this.executorService = executorService;
+    }
 
     @POST
     @RolesAllowed("admin")

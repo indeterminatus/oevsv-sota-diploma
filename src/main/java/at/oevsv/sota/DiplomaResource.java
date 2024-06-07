@@ -70,27 +70,26 @@ import static at.oevsv.sota.ValidationUtil.callSignsMatch;
 @Path("/api/diploma")
 public class DiplomaResource {
 
-    @Inject
-    @RestClient
-    ExternalDataService externalDataService;
-
-    @Inject
-    YearAwareFetcher yearAwareFetcher;
-
-    @Inject
-    SummitList summitsService;
-
-    @Inject
-    DiplomaLogResource logs;
-
-    @Inject
-    RedisAPI redis;
-
     @ConfigProperty(name = "requests.per.minute", defaultValue = "5")
     int requestsPerMinute;
 
     @ConfigProperty(name = "check.after.date", defaultValue = "2023-01-01")
     LocalDate checkAfter;
+
+    private final ExternalDataService externalDataService;
+    private final YearAwareFetcher yearAwareFetcher;
+    private final SummitList summitsService;
+    private final DiplomaLogResource logs;
+    private final RedisAPI redis;
+
+    @Inject
+    public DiplomaResource(@RestClient ExternalDataService externalDataService, YearAwareFetcher yearAwareFetcher, SummitList summitsService, DiplomaLogResource logs, RedisAPI redis) {
+        this.externalDataService = externalDataService;
+        this.yearAwareFetcher = yearAwareFetcher;
+        this.summitsService = summitsService;
+        this.logs = logs;
+        this.redis = redis;
+    }
 
     Collection<Activator> fetchActivators() {
         return externalDataService.fetchActivators("0");
@@ -130,7 +129,8 @@ public class DiplomaResource {
                 .filter(chaser -> callSignsMatch(callSign, chaser.callSign()))
                 .findAny()
                 .map(Chaser::userId);
-        // TODO: check SWL
+
+        // NB: we could check SWL here, but it was decided that we do not need to support them.
         return chaserId.orElse(null);
     }
 

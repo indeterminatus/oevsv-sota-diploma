@@ -19,12 +19,12 @@ package at.oevsv.sota.data;
 import at.oevsv.sota.data.domain.ActivatorLog;
 import at.oevsv.sota.data.domain.ChaserLog;
 import at.oevsv.sota.data.domain.SummitToSummitLog;
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.inject.Inject;
 import org.eclipse.microprofile.rest.client.inject.RestClient;
 import org.jetbrains.annotations.VisibleForTesting;
 
 import javax.annotation.Nullable;
-import jakarta.enterprise.context.ApplicationScoped;
-import jakarta.inject.Inject;
 import java.time.LocalDate;
 import java.time.Period;
 import java.util.Collection;
@@ -35,9 +35,12 @@ import java.util.stream.IntStream;
 @ApplicationScoped
 public class YearAwareFetcher {
 
+    private final ExternalDataService externalDataService;
+
     @Inject
-    @RestClient
-    ExternalDataService externalDataService;
+    public YearAwareFetcher(@RestClient ExternalDataService externalDataService) {
+        this.externalDataService = externalDataService;
+    }
 
     public Collection<ActivatorLog> fetchActivatorLogsById(String userId, @Nullable LocalDate checkAfter) {
         return combineResultsForEveryYear(checkAfter, year -> externalDataService.fetchActivatorLogsById(userId, year));

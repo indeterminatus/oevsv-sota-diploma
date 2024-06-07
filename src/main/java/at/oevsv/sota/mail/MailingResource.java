@@ -17,11 +17,11 @@
 package at.oevsv.sota.mail;
 
 import at.oevsv.sota.data.api.Candidate;
+import at.oevsv.sota.data.api.Generation;
 import at.oevsv.sota.data.api.Requester;
 import at.oevsv.sota.data.domain.Summit;
 import at.oevsv.sota.data.persistence.DiplomaLog;
 import at.oevsv.sota.data.persistence.DiplomaLogResource;
-import at.oevsv.sota.data.api.Generation;
 import at.oevsv.sota.pdf.PdfGenerationResource;
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import io.opentelemetry.api.trace.SpanKind;
@@ -63,18 +63,6 @@ import java.util.concurrent.ThreadFactory;
 @Path("/api/mail")
 public class MailingResource {
 
-    @Inject
-    MailingConfiguration configuration;
-
-    @Inject
-    PdfGenerationResource generator;
-
-    @Inject
-    DiplomaLogResource diplomaLog;
-
-    @Inject
-    ReactiveMailer mailer;
-
     @ConfigProperty(name = "pdf.preview.quality", defaultValue = "95")
     @Min(1L)
     @Max(100L)
@@ -83,6 +71,19 @@ public class MailingResource {
     private final ThreadFactory threadFactory =
             new ThreadFactoryBuilder().setNameFormat("mailing-worker-%d").build();
     private final ExecutorService executor = Executors.newFixedThreadPool(1, threadFactory);
+
+    private final MailingConfiguration configuration;
+    private final PdfGenerationResource generator;
+    private final DiplomaLogResource diplomaLog;
+    private final ReactiveMailer mailer;
+
+    @Inject
+    public MailingResource(MailingConfiguration configuration, PdfGenerationResource generator, DiplomaLogResource diplomaLog, ReactiveMailer mailer) {
+        this.configuration = configuration;
+        this.generator = generator;
+        this.diplomaLog = diplomaLog;
+        this.mailer = mailer;
+    }
 
     @Scheduled(cron = "{pending.requests.check.cron}")
     @Bulkhead(value = 1, waitingTaskQueue = 1)
@@ -118,7 +119,7 @@ public class MailingResource {
 
     private int sequenceOf(DiplomaLog pending) {
         if (pending.getCategory() == Candidate.Category.OE20SOTA) {
-            return pending.getOe20().intValue();
+            return pending.getOe20();
         }
         return pending.id.intValue();
     }

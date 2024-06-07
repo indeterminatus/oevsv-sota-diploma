@@ -20,7 +20,6 @@ import io.opentelemetry.instrumentation.annotations.WithSpan;
 import io.quarkus.cache.CacheManager;
 import io.quarkus.scheduler.Scheduled;
 import jakarta.annotation.security.RolesAllowed;
-
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.Consumes;
@@ -28,7 +27,9 @@ import jakarta.ws.rs.POST;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
+
 import java.time.Duration;
+import java.util.Objects;
 
 @Path("/api/cache")
 @Consumes(MediaType.APPLICATION_JSON)
@@ -36,8 +37,12 @@ import java.time.Duration;
 @ApplicationScoped
 public class CacheClearer {
 
+    private final CacheManager cacheManager;
+
     @Inject
-    CacheManager cacheManager;
+    public CacheClearer(CacheManager cacheManager) {
+        this.cacheManager = Objects.requireNonNull(cacheManager);
+    }
 
     @POST
     @Path("/cache/invalidate")

@@ -43,12 +43,14 @@ import java.util.Map;
 @Path("/api/statistic")
 public class StatisticResource {
 
-    @Inject
-    @RestClient
-    ExternalNewDataService externalNewDataService;
+    private final ExternalNewDataService externalNewDataService;
+    private final SummitList summitsService;
 
     @Inject
-    SummitList summitsService;
+    public StatisticResource(@RestClient ExternalNewDataService externalNewDataService, SummitList summitsService) {
+        this.externalNewDataService = externalNewDataService;
+        this.summitsService = summitsService;
+    }
 
     @GET
     @RolesAllowed("admin")

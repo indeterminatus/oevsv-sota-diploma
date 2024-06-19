@@ -17,8 +17,8 @@
 package at.oevsv.sota.pdf.diploma;
 
 import at.oevsv.sota.data.api.Candidate;
-import at.oevsv.sota.pdf.DiplomaGenerator;
 import at.oevsv.sota.data.api.Generation;
+import at.oevsv.sota.pdf.DiplomaGenerator;
 import at.oevsv.sota.pdf.ImageRenderer;
 import at.oevsv.sota.pdf.TextRenderer;
 import jakarta.enterprise.context.ApplicationScoped;
@@ -60,7 +60,7 @@ final class OE20SOTADiploma implements DiplomaGenerator {
 
     @Override
     public String idFor(Generation generation) {
-        return new DefaultDiplomaIdGenerator(generation.getCandidate(), generation.getSequence(), generation.getSequenceSuffix()).generateId();
+        return new OE20DiplomaIdGenerator(generation.getCandidate(), generation.getSequence(), generation.getSequenceSuffix()).generateId();
     }
 
     @Override

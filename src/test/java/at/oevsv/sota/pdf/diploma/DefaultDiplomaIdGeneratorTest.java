@@ -69,13 +69,6 @@ final class DefaultDiplomaIdGeneratorTest {
         assertThatIllegalArgumentException().isThrownBy(() -> new DefaultDiplomaIdGenerator(candidate, 1, "xx"));
     }
 
-    @Test
-    void specialDiplomaOE20SOTAWorks() {
-        final var special = new Candidate("XXX", null, Candidate.Category.OE20SOTA, Candidate.Rank.NONE, Map.of());
-        final var sut = new DefaultDiplomaIdGenerator(special, 1, "x");
-        assertThat(sut.generateId()).isEqualTo("OE20-0001x");
-    }
-
     @ParameterizedTest
     @ValueSource(ints = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9})
     void suffixCannotContainDigits(int digit) {

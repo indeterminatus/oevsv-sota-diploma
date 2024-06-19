@@ -24,27 +24,15 @@ import org.apache.commons.lang3.StringUtils;
 import javax.annotation.Nullable;
 import java.util.Locale;
 
-/**
- * Generate a stable ID from provided data.
- *
- * @author schwingenschloegl
- */
-final class DefaultDiplomaIdGenerator extends AbstractDiplomaIdGenerator implements DiplomaIdGenerator {
+final class OE20DiplomaIdGenerator extends AbstractDiplomaIdGenerator {
 
-    public DefaultDiplomaIdGenerator(Candidate candidate, @Min(0L) @Max(99_999L) int sequence) {
-        this(candidate, sequence, null);
-    }
-
-    public DefaultDiplomaIdGenerator(Candidate candidate, @Min(0L) @Max(99_999L) int sequence, @Nullable String sequenceSuffix) {
+    public OE20DiplomaIdGenerator(Candidate candidate, @Min(0L) @Max(99_999L) int sequence, @Nullable String sequenceSuffix) {
         super(candidate, sequence, sequenceSuffix);
     }
 
     @Override
     public String generateId() {
-        final var category = candidate.category().toString().substring(0, 3).toUpperCase(Locale.ROOT);
-        final var rank = candidate.rank().toString().substring(0, 2).toUpperCase(Locale.ROOT);
-
-        final var id = String.format(Locale.ROOT, "%s-%s-%04d", category, rank, sequence);
+        final var id = String.format(Locale.ROOT, "OE20-%04d", sequence);
         return StringUtils.appendIfMissing(id, sequenceSuffix);
     }
 }

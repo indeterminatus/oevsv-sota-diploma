@@ -165,8 +165,13 @@ public final class DiplomaLogResource {
 
     @Transactional
     public boolean alreadyRequested(Requester requester, Candidate candidate) {
-        final var parameters = Parameters.with("callSign", canonicalCallSign(requester.callSign)).and("category", candidate.category()).and("rank", candidate.rank());
-        return DiplomaLog.count("from DiplomaLog s where s.callSign=:callSign and s.category=:category and s.rank=:rank", parameters) >= 1L;
+        if (candidate.category().isSpecialDiploma()) {
+            final var parameters = Parameters.with("callSign", canonicalCallSign(requester.callSign)).and("category", candidate.category());
+            return DiplomaLog.count("from DiplomaLog s where s.callSign=:callSign and s.category=:category", parameters) >= 1L;
+        } else {
+            final var parameters = Parameters.with("callSign", canonicalCallSign(requester.callSign)).and("category", candidate.category()).and("rank", candidate.rank());
+            return DiplomaLog.count("from DiplomaLog s where s.callSign=:callSign and s.category=:category and s.rank=:rank", parameters) >= 1L;
+        }
     }
 
     public static Requester toRequester(DiplomaLog diplomaLog) {

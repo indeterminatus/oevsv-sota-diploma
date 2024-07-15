@@ -57,6 +57,9 @@ public class WireMockExtension implements QuarkusTestResourceLifecycleManager {
         wireMockServer.stubFor(get(urlMatching("/admin/activator_log_by_id\\?id=52194&year=(all|[0-9]+)$")).willReturn(okJson(loadFrom("activator-log-oe9nat-2022-08-28.json"))));
         wireMockServer.stubFor(get(urlMatching("/admin/chaser_log_by_id\\?id=52194&year=(all|[0-9]+)$")).willReturn(okJson("[]")));
         wireMockServer.stubFor(get(urlMatching("/admin/s2s_log_by_id\\?id=52194&year=(all|[0-9]+)$")).willReturn(okJson("[]")));
+        wireMockServer.stubFor(get(urlMatching("/admin/chaser_log_by_id\\?id=79437&year=(all|[0-9]+)$")).willReturn(okJson(loadFrom("chaser-log-oe5hkt-2024-07-15.json"))));
+        wireMockServer.stubFor(get(urlMatching("/admin/activator_log_by_id\\?id=79437&year=(all|[0-9]+)$")).willReturn(okJson("[]")));
+        wireMockServer.stubFor(get(urlMatching("/admin/s2s_log_by_id\\?id=79437&year=(all|[0-9]+)$")).willReturn(okJson("[]")));
         wireMockServer.stubFor(get(urlEqualTo("/api/activations/OE/OO-006")).willReturn(okJson(loadFrom("/api2-db-samples/summit-activation-log-oe-oo-006-2023-05-09.json"))));
         wireMockServer.stubFor(get(urlMatching("/api/activations/.*")).willReturn(okJson("""
                 [{"activationDate":"2023-04-01","qsos":5},\

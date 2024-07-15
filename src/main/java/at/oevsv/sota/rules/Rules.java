@@ -81,6 +81,10 @@ public final class Rules {
         final int differentStates = frequencies.size();
         final long activations = frequencies.values().stream().reduce(0L, Long::sum);
 
+        if (category.isSpecialDiploma() && activations >= category.getRequirementFor(Candidate.Rank.GOLD)) {
+            return new Candidate(callSign, userId, category, Candidate.Rank.NONE, frequencies);
+        }
+
         for (final var rank : Candidate.Rank.values()) {
             if (differentStates >= rank.getRequiredStates() && activations >= category.getRequirementFor(rank)) {
                 return new Candidate(callSign, userId, category, rank, frequencies);

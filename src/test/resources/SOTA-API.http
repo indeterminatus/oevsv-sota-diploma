@@ -25,6 +25,11 @@ GET https://api-db.sota.org.uk/admin/chaser_log_by_id?year=all&id=11330
 Accept: application/json
 
 ###
+# @name Alle Chases pro UserID (am Beispiel OE5HKT):
+GET https://api-db.sota.org.uk/admin/chaser_log_by_id?year=all&id=79437
+Accept: application/json
+
+###
 # @name Alle Chases pro UserID (am Beispiel OE5JFE) für 2023:
 GET https://api-db.sota.org.uk/admin/chaser_log_by_id?year=2023&id=11330
 Accept: application/json

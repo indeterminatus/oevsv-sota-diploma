@@ -1,0 +1,4902 @@
+[
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7188153,
+    "ActivationDate": "2023-01-07",
+    "OtherCallsign": "OE6NOA\/P",
+    "Points": 8,
+    "SummitCode": "OE\/ST-084",
+    "SummitName": "Zeiritzkampel",
+    "Total": 8
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 6594049,
+    "ActivationDate": "2023-06-19",
+    "OtherCallsign": "OE6PGM\/P",
+    "Points": 4,
+    "SummitCode": "OE\/ST-576",
+    "SummitName": "Hochtratten",
+    "Total": 12
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 6626205,
+    "ActivationDate": "2023-07-02",
+    "OtherCallsign": "OE6ADE\/P",
+    "Points": 10,
+    "SummitCode": "OE\/SB-049",
+    "SummitName": "Zwölferkogel",
+    "Total": 22
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 6626249,
+    "ActivationDate": "2023-07-02",
+    "OtherCallsign": "DK1TBL\/P",
+    "Points": 4,
+    "SummitCode": "DM\/SR-075",
+    "SummitName": "Langensteinchen",
+    "Total": 26
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 6648190,
+    "ActivationDate": "2023-07-06",
+    "OtherCallsign": "OE6PGM\/P",
+    "Points": 4,
+    "SummitCode": "OE\/ST-375",
+    "SummitName": "Stroßberg",
+    "Total": 30
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 6648239,
+    "ActivationDate": "2023-07-06",
+    "OtherCallsign": "OE5HPE\/P",
+    "Points": 8,
+    "SummitCode": "OE\/ST-082",
+    "SummitName": "Elm",
+    "Total": 38
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 6650611,
+    "ActivationDate": "2023-07-07",
+    "OtherCallsign": "OE3GVM\/P",
+    "Points": 4,
+    "SummitCode": "OE\/OO-073",
+    "SummitName": "Schoberstein",
+    "Total": 42
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 6655811,
+    "ActivationDate": "2023-07-09",
+    "OtherCallsign": "OE5EEP\/P",
+    "Points": 2,
+    "SummitCode": "OE\/OO-117",
+    "SummitName": "Buchberg",
+    "Total": 44
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 6656158,
+    "ActivationDate": "2023-07-09",
+    "OtherCallsign": "OE6NOA\/P",
+    "Points": 10,
+    "SummitCode": "OE\/ST-040",
+    "SummitName": "Hochschwab",
+    "Total": 54
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 6710790,
+    "ActivationDate": "2023-07-29",
+    "OtherCallsign": "OE3JPD\/P",
+    "Points": 2,
+    "SummitCode": "OE\/NO-312",
+    "SummitName": "Richtereck",
+    "Total": 56
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 6771944,
+    "ActivationDate": "2023-08-20",
+    "OtherCallsign": "OE5JFE\/P",
+    "Points": 8,
+    "SummitCode": "OE\/ST-123",
+    "SummitName": "Blaseneck",
+    "Total": 64
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 6817678,
+    "ActivationDate": "2023-09-05",
+    "OtherCallsign": "OE5AKN\/P",
+    "Points": 4,
+    "SummitCode": "OE\/OO-298",
+    "SummitName": "Spadenberg",
+    "Total": 68
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 6860726,
+    "ActivationDate": "2023-09-17",
+    "OtherCallsign": "OE9TKH\/P",
+    "Points": 4,
+    "SummitCode": "OE\/SB-271",
+    "SummitName": "Lidaunberg",
+    "Total": 72
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 6901365,
+    "ActivationDate": "2023-09-30",
+    "OtherCallsign": "OE\/HB9EIZ\/P",
+    "Points": 2,
+    "SummitCode": "OE\/SB-289",
+    "SummitName": "Heuberg",
+    "Total": 74
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 6901367,
+    "ActivationDate": "2023-10-01",
+    "OtherCallsign": "OE5GFI\/P",
+    "Points": 6,
+    "SummitCode": "OE\/OO-248",
+    "SummitName": "Wasserklotz",
+    "Total": 80
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 6901382,
+    "ActivationDate": "2023-10-01",
+    "OtherCallsign": "OE5REO\/P",
+    "Points": 4,
+    "SummitCode": "OE\/OO-084",
+    "SummitName": "Eiskogel",
+    "Total": 84
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 6902654,
+    "ActivationDate": "2023-10-01",
+    "OtherCallsign": "OE5GFI\/P",
+    "Points": 6,
+    "SummitCode": "OE\/OO-397",
+    "SummitName": "Zeitschenberg",
+    "Total": 90
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 6903658,
+    "ActivationDate": "2023-10-01",
+    "OtherCallsign": "OE5JFE\/P",
+    "Points": 4,
+    "SummitCode": "OE\/OO-399",
+    "SummitName": "Schrabachauerkogel",
+    "Total": 94
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 6903645,
+    "ActivationDate": "2023-10-01",
+    "OtherCallsign": "OE6CBX\/P",
+    "Points": 10,
+    "SummitCode": "OE\/ST-035",
+    "SummitName": "Kegeleck",
+    "Total": 104
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 6903650,
+    "ActivationDate": "2023-10-01",
+    "OtherCallsign": "OE9NAT\/P",
+    "Points": 0,
+    "SummitCode": "OE\/ST-035",
+    "SummitName": "Kegeleck",
+    "Total": 104
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 6903653,
+    "ActivationDate": "2023-10-01",
+    "OtherCallsign": "OE6NOA\/P",
+    "Points": 0,
+    "SummitCode": "OE\/ST-035",
+    "SummitName": "Kegeleck",
+    "Total": 104
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 6903774,
+    "ActivationDate": "2023-10-01",
+    "OtherCallsign": "OE\/OM1ALT\/P",
+    "Points": 2,
+    "SummitCode": "OE\/OO-129",
+    "SummitName": "Pfenningberg",
+    "Total": 106
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 6917973,
+    "ActivationDate": "2023-10-05",
+    "OtherCallsign": "OE5RTP\/P",
+    "Points": 4,
+    "SummitCode": "OE\/OO-277",
+    "SummitName": "Schieferstein",
+    "Total": 110
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 6923103,
+    "ActivationDate": "2023-10-07",
+    "OtherCallsign": "OE5GFI\/P",
+    "Points": 6,
+    "SummitCode": "OE\/OO-340",
+    "SummitName": "Tamberg",
+    "Total": 116
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 6923648,
+    "ActivationDate": "2023-10-07",
+    "OtherCallsign": "OE5JFE\/P",
+    "Points": 4,
+    "SummitCode": "OE\/OO-366",
+    "SummitName": "Hoher Krahberg",
+    "Total": 120
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 6924306,
+    "ActivationDate": "2023-10-07",
+    "OtherCallsign": "DK2JK\/P",
+    "Points": 6,
+    "SummitCode": "DM\/NW-193",
+    "SummitName": "Steinmarkskopf",
+    "Total": 126
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 6924381,
+    "ActivationDate": "2023-10-07",
+    "OtherCallsign": "F\/DL7BC\/P",
+    "Points": 10,
+    "SummitCode": "FL\/VO-017",
+    "SummitName": "Le Molkenrain",
+    "Total": 136
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 6934456,
+    "ActivationDate": "2023-10-09",
+    "OtherCallsign": "HB9OME\/P",
+    "Points": 6,
+    "SummitCode": "HB\/BE-150",
+    "SummitName": "Abendberg",
+    "Total": 142
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 6940869,
+    "ActivationDate": "2023-10-11",
+    "OtherCallsign": "OE5GAL\/P",
+    "Points": 4,
+    "SummitCode": "OE\/OO-073",
+    "SummitName": "Schoberstein",
+    "Total": 146
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 6940871,
+    "ActivationDate": "2023-10-11",
+    "OtherCallsign": "OE5AKN\/P",
+    "Points": 0,
+    "SummitCode": "OE\/OO-073",
+    "SummitName": "Schoberstein",
+    "Total": 146
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 6950053,
+    "ActivationDate": "2023-10-14",
+    "OtherCallsign": "OE1JLN\/P",
+    "Points": 1,
+    "SummitCode": "OE\/NO-171",
+    "SummitName": "Troppberg",
+    "Total": 147
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 6966569,
+    "ActivationDate": "2023-10-19",
+    "OtherCallsign": "IK6BAK\/P",
+    "Points": 1,
+    "SummitCode": "I\/MC-109",
+    "SummitName": "Montaione",
+    "Total": 148
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 6966581,
+    "ActivationDate": "2023-10-19",
+    "OtherCallsign": "SV2RUJ\/P",
+    "Points": 2,
+    "SummitCode": "SV\/TL-087",
+    "SummitName": "Podariko",
+    "Total": 150
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 6969177,
+    "ActivationDate": "2023-10-20",
+    "OtherCallsign": "OE5RTP\/P",
+    "Points": 2,
+    "SummitCode": "OE\/OO-375",
+    "SummitName": "Plachwitz",
+    "Total": 152
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 6972767,
+    "ActivationDate": "2023-10-21",
+    "OtherCallsign": "OE5GFI\/P",
+    "Points": 6,
+    "SummitCode": "OE\/OO-031",
+    "SummitName": "Kasberg",
+    "Total": 158
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 6972614,
+    "ActivationDate": "2023-10-21",
+    "OtherCallsign": "OE5JFE\/P",
+    "Points": 4,
+    "SummitCode": "OE\/OO-413",
+    "SummitName": "Brenntenkogel",
+    "Total": 162
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 6972643,
+    "ActivationDate": "2023-10-21",
+    "OtherCallsign": "DF7TF\/P",
+    "Points": 10,
+    "SummitCode": "DM\/BW-147",
+    "SummitName": "Gespaltener Fels",
+    "Total": 172
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 6975404,
+    "ActivationDate": "2023-10-22",
+    "OtherCallsign": "OE6TTF\/P",
+    "Points": 2,
+    "SummitCode": "OE\/NO-109",
+    "SummitName": "Gösing",
+    "Total": 174
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 6979089,
+    "ActivationDate": "2023-10-23",
+    "OtherCallsign": "OE5REO\/P",
+    "Points": 6,
+    "SummitCode": "OE\/OO-227",
+    "SummitName": "Großer Größtenberg",
+    "Total": 180
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 6995681,
+    "ActivationDate": "2023-10-29",
+    "OtherCallsign": "OE6MHO\/P",
+    "Points": 6,
+    "SummitCode": "OE\/NO-209",
+    "SummitName": "Schmalzmauer",
+    "Total": 186
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 6995682,
+    "ActivationDate": "2023-10-29",
+    "OtherCallsign": "OE5YYN\/P",
+    "Points": 2,
+    "SummitCode": "OE\/OO-424",
+    "SummitName": "Windhagberg",
+    "Total": 188
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 6995683,
+    "ActivationDate": "2023-10-29",
+    "OtherCallsign": "DJ6TB\/P",
+    "Points": 4,
+    "SummitCode": "DL\/CG-119",
+    "SummitName": "Haargassberg",
+    "Total": 192
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 6995684,
+    "ActivationDate": "2023-10-29",
+    "OtherCallsign": "OE5AKM\/P",
+    "Points": 8,
+    "SummitCode": "OE\/ST-083",
+    "SummitName": "Schoberspitze",
+    "Total": 200
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 6995451,
+    "ActivationDate": "2023-10-29",
+    "OtherCallsign": "OE6MHO\/P",
+    "Points": 8,
+    "SummitCode": "OE\/NO-006",
+    "SummitName": "Hochkar",
+    "Total": 208
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 6995459,
+    "ActivationDate": "2023-10-29",
+    "OtherCallsign": "OE7RDI\/P",
+    "Points": 4,
+    "SummitCode": "OE\/TL-049",
+    "SummitName": "Fiechter Köpfl",
+    "Total": 212
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 6995660,
+    "ActivationDate": "2023-10-29",
+    "OtherCallsign": "OE5LAE\/P",
+    "Points": 2,
+    "SummitCode": "OE\/TL-052",
+    "SummitName": "Wöhrer Köpfl",
+    "Total": 214
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7001542,
+    "ActivationDate": "2023-10-30",
+    "OtherCallsign": "OE5GFI\/P",
+    "Points": 6,
+    "SummitCode": "OE\/OO-050",
+    "SummitName": "Kremsmauer",
+    "Total": 220
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 6998511,
+    "ActivationDate": "2023-10-30",
+    "OtherCallsign": "OE9HRV\/P",
+    "Points": 1,
+    "SummitCode": "OE\/OO-135",
+    "SummitName": "Kürnberg (Kürnbergburg)",
+    "Total": 221
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7070854,
+    "ActivationDate": "2023-11-01",
+    "OtherCallsign": "OE3JPD\/P",
+    "Points": 2,
+    "SummitCode": "OE\/NO-261",
+    "SummitName": "Schwarzenberg",
+    "Total": 223
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7051308,
+    "ActivationDate": "2023-11-01",
+    "OtherCallsign": "OE5YYN\/P",
+    "Points": 1,
+    "SummitCode": "OE\/NO-174",
+    "SummitName": "Brandstetterkogel (Brandstetterkogelhütte)",
+    "Total": 224
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7051309,
+    "ActivationDate": "2023-11-01",
+    "OtherCallsign": "OE6NOA\/P",
+    "Points": 10,
+    "SummitCode": "OE\/ST-023",
+    "SummitName": "Geierhaupt",
+    "Total": 234
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7051310,
+    "ActivationDate": "2023-11-01",
+    "OtherCallsign": "OE1GIU\/P",
+    "Points": 8,
+    "SummitCode": "OE\/NO-001",
+    "SummitName": "Klosterwappen",
+    "Total": 242
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7051311,
+    "ActivationDate": "2023-11-01",
+    "OtherCallsign": "OE5JFE\/P",
+    "Points": 6,
+    "SummitCode": "OE\/OO-254",
+    "SummitName": "Alpstein",
+    "Total": 248
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7051312,
+    "ActivationDate": "2023-11-01",
+    "OtherCallsign": "DL\/OK1MCS\/P",
+    "Points": 10,
+    "SummitCode": "DM\/BM-274",
+    "SummitName": "Großer Rachel",
+    "Total": 258
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7051313,
+    "ActivationDate": "2023-11-01",
+    "OtherCallsign": "OE5DIN\/P",
+    "Points": 2,
+    "SummitCode": "OE\/OO-415",
+    "SummitName": "Weißes Kreuz",
+    "Total": 260
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7051314,
+    "ActivationDate": "2023-11-01",
+    "OtherCallsign": "OE5AKN\/P",
+    "Points": 6,
+    "SummitCode": "OE\/OO-340",
+    "SummitName": "Tamberg",
+    "Total": 266
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7051315,
+    "ActivationDate": "2023-11-01",
+    "OtherCallsign": "OE5GAL\/P",
+    "Points": 0,
+    "SummitCode": "OE\/OO-340",
+    "SummitName": "Tamberg",
+    "Total": 266
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7051316,
+    "ActivationDate": "2023-11-01",
+    "OtherCallsign": "F4IVI\/P",
+    "Points": 4,
+    "SummitCode": "F\/AM-456",
+    "SummitName": "La Berque",
+    "Total": 270
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7020557,
+    "ActivationDate": "2023-11-06",
+    "OtherCallsign": "EA8\/OE5JFE\/P",
+    "Points": 10,
+    "SummitCode": "EA8\/TF-002",
+    "SummitName": "Guajara",
+    "Total": 280
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7020556,
+    "ActivationDate": "2023-11-07",
+    "OtherCallsign": "EA8\/OE5JFE\/P",
+    "Points": 10,
+    "SummitCode": "EA8\/TF-004",
+    "SummitName": "El Sombrero",
+    "Total": 290
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7029169,
+    "ActivationDate": "2023-11-11",
+    "OtherCallsign": "OE6ADE\/P",
+    "Points": 4,
+    "SummitCode": "OE\/SB-445",
+    "SummitName": "Jägerköpfl",
+    "Total": 294
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7031787,
+    "ActivationDate": "2023-11-11",
+    "OtherCallsign": "EA8\/OE5JFE\/P",
+    "Points": 8,
+    "SummitCode": "EA8\/TF-008",
+    "SummitName": "Taborno",
+    "Total": 302
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7032887,
+    "ActivationDate": "2023-11-12",
+    "OtherCallsign": "OE6TTF\/P",
+    "Points": 8,
+    "SummitCode": "OE\/ST-121",
+    "SummitName": "Hohe Veitsch",
+    "Total": 310
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7039318,
+    "ActivationDate": "2023-11-12",
+    "OtherCallsign": "OE5GFI\/P",
+    "Points": 4,
+    "SummitCode": "OE\/OO-280",
+    "SummitName": "Sonnkogel",
+    "Total": 314
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7039319,
+    "ActivationDate": "2023-11-12",
+    "OtherCallsign": "OE5TSO\/P",
+    "Points": 4,
+    "SummitCode": "OE\/OO-080",
+    "SummitName": "Sternstein",
+    "Total": 318
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7039320,
+    "ActivationDate": "2023-11-12",
+    "OtherCallsign": "OE5LFM\/P",
+    "Points": 0,
+    "SummitCode": "OE\/OO-080",
+    "SummitName": "Sternstein",
+    "Total": 318
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7034008,
+    "ActivationDate": "2023-11-12",
+    "OtherCallsign": "OE5DRO\/P",
+    "Points": 4,
+    "SummitCode": "OE\/OO-084",
+    "SummitName": "Eiskogel",
+    "Total": 322
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7036054,
+    "ActivationDate": "2023-11-13",
+    "OtherCallsign": "EA8\/OE5JFE\/P",
+    "Points": 4,
+    "SummitCode": "EA8\/TF-014",
+    "SummitName": "Roque de Jama",
+    "Total": 326
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7037894,
+    "ActivationDate": "2023-11-14",
+    "OtherCallsign": "OE5HCE\/P",
+    "Points": 1,
+    "SummitCode": "OE\/ST-320",
+    "SummitName": "Königsberg",
+    "Total": 327
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7037893,
+    "ActivationDate": "2023-11-14",
+    "OtherCallsign": "OE5HCE\/P",
+    "Points": 2,
+    "SummitCode": "OE\/ST-308",
+    "SummitName": "Stradner Kogel",
+    "Total": 329
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7042829,
+    "ActivationDate": "2023-11-17",
+    "OtherCallsign": "EA8\/OE5JFE\/P",
+    "Points": 2,
+    "SummitCode": "EA8\/TF-015",
+    "SummitName": "Roque Chiguel",
+    "Total": 331
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7050842,
+    "ActivationDate": "2023-11-20",
+    "OtherCallsign": "OE7RGF\/P",
+    "Points": 8,
+    "SummitCode": "OE\/TI-436",
+    "SummitName": "Hochunnutz",
+    "Total": 339
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7050887,
+    "ActivationDate": "2023-11-20",
+    "OtherCallsign": "DL\/HB9HXJ\/P",
+    "Points": 10,
+    "SummitCode": "DM\/BW-233",
+    "SummitName": "Buchberg",
+    "Total": 349
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7050888,
+    "ActivationDate": "2023-11-20",
+    "OtherCallsign": "DL\/HB9EVF\/P",
+    "Points": 0,
+    "SummitCode": "DM\/BW-233",
+    "SummitName": "Buchberg",
+    "Total": 349
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7057196,
+    "ActivationDate": "2023-11-23",
+    "OtherCallsign": "OE6STD\/P",
+    "Points": 2,
+    "SummitCode": "OE\/ST-302",
+    "SummitName": "Demmerkogel",
+    "Total": 351
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7057246,
+    "ActivationDate": "2023-11-23",
+    "OtherCallsign": "HB9BCK\/P",
+    "Points": 2,
+    "SummitCode": "HB\/AR-005",
+    "SummitName": "Horst",
+    "Total": 353
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7058220,
+    "ActivationDate": "2023-11-23",
+    "OtherCallsign": "OE5HCE\/P",
+    "Points": 4,
+    "SummitCode": "OE\/ST-372",
+    "SummitName": "Katerloch",
+    "Total": 357
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7063455,
+    "ActivationDate": "2023-11-26",
+    "OtherCallsign": "OE5EEP\/P",
+    "Points": 2,
+    "SummitCode": "OE\/OO-106",
+    "SummitName": "Gmundnerberg",
+    "Total": 359
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7070853,
+    "ActivationDate": "2023-11-29",
+    "OtherCallsign": "OE3JPD\/P",
+    "Points": 2,
+    "SummitCode": "OE\/NO-312",
+    "SummitName": "Richtereck",
+    "Total": 361
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7077714,
+    "ActivationDate": "2023-12-03",
+    "OtherCallsign": "OE5GFI\/P",
+    "Points": 4,
+    "SummitCode": "OE\/OO-452",
+    "SummitName": "Steinmühlen",
+    "Total": 365
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7077717,
+    "ActivationDate": "2023-12-03",
+    "OtherCallsign": "OE5JFE\/P",
+    "Points": 6,
+    "SummitCode": "OE\/OO-397",
+    "SummitName": "Zeitschenberg",
+    "Total": 371
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7086781,
+    "ActivationDate": "2023-12-08",
+    "OtherCallsign": "OE5JFE\/P",
+    "Points": 6,
+    "SummitCode": "OE\/OO-063",
+    "SummitName": "Hochsalm",
+    "Total": 377
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7090826,
+    "ActivationDate": "2023-12-09",
+    "OtherCallsign": "OE\/DK1ZX\/P",
+    "Points": 2,
+    "SummitCode": "OE\/SB-294",
+    "SummitName": "Haunsberg",
+    "Total": 379
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7090117,
+    "ActivationDate": "2023-12-10",
+    "OtherCallsign": "OE6TTF\/P",
+    "Points": 4,
+    "SummitCode": "OE\/ST-266",
+    "SummitName": "Röthelstein",
+    "Total": 383
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7103048,
+    "ActivationDate": "2023-12-16",
+    "OtherCallsign": "DL\/HB9CRY\/P",
+    "Points": 10,
+    "SummitCode": "DM\/BW-055",
+    "SummitName": "Hohe Möhr",
+    "Total": 393
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7103054,
+    "ActivationDate": "2023-12-16",
+    "OtherCallsign": "OE6TTF\/P",
+    "Points": 4,
+    "SummitCode": "OE\/ST-373",
+    "SummitName": "Buchwald",
+    "Total": 397
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7103744,
+    "ActivationDate": "2023-12-16",
+    "OtherCallsign": "OE6TTF\/P",
+    "Points": 4,
+    "SummitCode": "OE\/ST-268",
+    "SummitName": "Wildwiesen",
+    "Total": 401
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7104120,
+    "ActivationDate": "2023-12-16",
+    "OtherCallsign": "OE6TTF\/P",
+    "Points": 4,
+    "SummitCode": "OE\/ST-267",
+    "SummitName": "Masenberg",
+    "Total": 405
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7104252,
+    "ActivationDate": "2023-12-16",
+    "OtherCallsign": "F\/N1CFO\/P",
+    "Points": 1,
+    "SummitCode": "F\/AM-617",
+    "SummitName": "Mont Chauve d'Aspremont",
+    "Total": 406
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7108337,
+    "ActivationDate": "2023-12-17",
+    "OtherCallsign": "OE6PGM\/P",
+    "Points": 6,
+    "SummitCode": "OE\/ST-598",
+    "SummitName": "Gipfel östlich vom Kletschachkogel",
+    "Total": 412
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7108338,
+    "ActivationDate": "2023-12-17",
+    "OtherCallsign": "OE5EIN\/P",
+    "Points": 2,
+    "SummitCode": "OE\/OO-436",
+    "SummitName": "Kempfendorfer Berg",
+    "Total": 414
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7108341,
+    "ActivationDate": "2023-12-17",
+    "OtherCallsign": "OE5JFE\/P",
+    "Points": 6,
+    "SummitCode": "OE\/OO-062",
+    "SummitName": "Steineck",
+    "Total": 420
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7110159,
+    "ActivationDate": "2023-12-18",
+    "OtherCallsign": "OE5REO\/P",
+    "Points": 4,
+    "SummitCode": "OE\/OO-073",
+    "SummitName": "Schoberstein",
+    "Total": 424
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7125085,
+    "ActivationDate": "2023-12-25",
+    "OtherCallsign": "OE6TTF\/P",
+    "Points": 4,
+    "SummitCode": "OE\/ST-496",
+    "SummitName": "Lukaskogel",
+    "Total": 428
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7125347,
+    "ActivationDate": "2023-12-25",
+    "OtherCallsign": "DL3TU\/P",
+    "Points": 4,
+    "SummitCode": "DM\/BW-110",
+    "SummitName": "Limburg",
+    "Total": 432
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7125376,
+    "ActivationDate": "2023-12-25",
+    "OtherCallsign": "OE6TTF\/P",
+    "Points": 2,
+    "SummitCode": "OE\/ST-379",
+    "SummitName": "Hochkogel",
+    "Total": 434
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7125424,
+    "ActivationDate": "2023-12-25",
+    "OtherCallsign": "HB9EIZ\/P",
+    "Points": 1,
+    "SummitCode": "HB\/TG-002",
+    "SummitName": "Imebärg",
+    "Total": 435
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7125674,
+    "ActivationDate": "2023-12-25",
+    "OtherCallsign": "OE6TTF\/P",
+    "Points": 2,
+    "SummitCode": "OE\/ST-599",
+    "SummitName": "Krienzerkogel",
+    "Total": 437
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7126671,
+    "ActivationDate": "2023-12-26",
+    "OtherCallsign": "OE5JFE\/P",
+    "Points": 4,
+    "SummitCode": "OE\/OO-452",
+    "SummitName": "Steinmühlen",
+    "Total": 441
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7126811,
+    "ActivationDate": "2023-12-26",
+    "OtherCallsign": "OE6NOA\/P",
+    "Points": 10,
+    "SummitCode": "OE\/ST-043",
+    "SummitName": "Schießeck",
+    "Total": 451
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7126805,
+    "ActivationDate": "2023-12-26",
+    "OtherCallsign": "OE6CBX\/P",
+    "Points": 0,
+    "SummitCode": "OE\/ST-043",
+    "SummitName": "Schießeck",
+    "Total": 451
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7126838,
+    "ActivationDate": "2023-12-26",
+    "OtherCallsign": "OE5YYN\/P",
+    "Points": 4,
+    "SummitCode": "OE\/OO-450",
+    "SummitName": "Hochfora",
+    "Total": 455
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7126870,
+    "ActivationDate": "2023-12-26",
+    "OtherCallsign": "OE6TTF\/P",
+    "Points": 6,
+    "SummitCode": "OE\/NO-011",
+    "SummitName": "Hochwechsel",
+    "Total": 461
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7126945,
+    "ActivationDate": "2023-12-26",
+    "OtherCallsign": "OE5JKL\/P",
+    "Points": 2,
+    "SummitCode": "OE\/OO-129",
+    "SummitName": "Pfenningberg",
+    "Total": 463
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7127102,
+    "ActivationDate": "2023-12-26",
+    "OtherCallsign": "OE\/DK1ZX\/P",
+    "Points": 4,
+    "SummitCode": "OE\/SB-271",
+    "SummitName": "Lidaunberg",
+    "Total": 467
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7129142,
+    "ActivationDate": "2023-12-27",
+    "OtherCallsign": "OE6TTF\/P",
+    "Points": 1,
+    "SummitCode": "OE\/ST-320",
+    "SummitName": "Königsberg",
+    "Total": 468
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7130346,
+    "ActivationDate": "2023-12-27",
+    "OtherCallsign": "OE5GFI\/P",
+    "Points": 1,
+    "SummitCode": "OE\/OO-135",
+    "SummitName": "Kürnberg (Kürnbergburg)",
+    "Total": 469
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7130351,
+    "ActivationDate": "2023-12-27",
+    "OtherCallsign": "OE6TTF\/P",
+    "Points": 1,
+    "SummitCode": "OE\/ST-309",
+    "SummitName": "Gleichenberger Kogel",
+    "Total": 470
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7130372,
+    "ActivationDate": "2023-12-27",
+    "OtherCallsign": "OE5GFI\/P",
+    "Points": 0,
+    "SummitCode": "OE\/OO-135",
+    "SummitName": "Kürnberg (Kürnbergburg)",
+    "Total": 470
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7130417,
+    "ActivationDate": "2023-12-27",
+    "OtherCallsign": "OE5GFI\/P",
+    "Points": 0,
+    "SummitCode": "OE\/OO-135",
+    "SummitName": "Kürnberg (Kürnbergburg)",
+    "Total": 470
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7130534,
+    "ActivationDate": "2023-12-27",
+    "OtherCallsign": "OE5GFI\/P",
+    "Points": 0,
+    "SummitCode": "OE\/OO-135",
+    "SummitName": "Kürnberg (Kürnbergburg)",
+    "Total": 470
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7130580,
+    "ActivationDate": "2023-12-27",
+    "OtherCallsign": "OE5GFI\/P",
+    "Points": 0,
+    "SummitCode": "OE\/OO-135",
+    "SummitName": "Kürnberg (Kürnbergburg)",
+    "Total": 470
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7133974,
+    "ActivationDate": "2023-12-28",
+    "OtherCallsign": "OM1DK",
+    "Points": 4,
+    "SummitCode": "OM\/BB-021",
+    "SummitName": "Paradajs",
+    "Total": 474
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7133975,
+    "ActivationDate": "2023-12-28",
+    "OtherCallsign": "OK\/SP9LPK\/P",
+    "Points": 8,
+    "SummitCode": "OK\/JC-040",
+    "SummitName": "Poluška",
+    "Total": 482
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7133976,
+    "ActivationDate": "2023-12-28",
+    "OtherCallsign": "OK\/SP9MPS\/P",
+    "Points": 0,
+    "SummitCode": "OK\/JC-040",
+    "SummitName": "Poluška",
+    "Total": 482
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7133977,
+    "ActivationDate": "2023-12-28",
+    "OtherCallsign": "OE5JFE\/P",
+    "Points": 6,
+    "SummitCode": "OE\/SB-336",
+    "SummitName": "Eibleck",
+    "Total": 488
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7133978,
+    "ActivationDate": "2023-12-28",
+    "OtherCallsign": "OE6MHO\/P",
+    "Points": 2,
+    "SummitCode": "OE\/OO-419",
+    "SummitName": "Lugberg",
+    "Total": 490
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7133979,
+    "ActivationDate": "2023-12-28",
+    "OtherCallsign": "DL\/OE5WFN\/P",
+    "Points": 10,
+    "SummitCode": "DM\/BM-036",
+    "SummitName": "Großer Riedelstein",
+    "Total": 500
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7135498,
+    "ActivationDate": "2023-12-29",
+    "OtherCallsign": "OE6TTF\/P",
+    "Points": 2,
+    "SummitCode": "OE\/NO-303",
+    "SummitName": "Kühriegel",
+    "Total": 502
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7135994,
+    "ActivationDate": "2023-12-29",
+    "OtherCallsign": "OE\/DK3RN\/P",
+    "Points": 6,
+    "SummitCode": "OE\/VB-491",
+    "SummitName": "Schwarzenberg",
+    "Total": 508
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7143139,
+    "ActivationDate": "2023-12-30",
+    "OtherCallsign": "OE6MHO\/P",
+    "Points": 4,
+    "SummitCode": "OE\/OO-091",
+    "SummitName": "Roßmoos",
+    "Total": 512
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7143140,
+    "ActivationDate": "2023-12-30",
+    "OtherCallsign": "OE1IAH\/P",
+    "Points": 1,
+    "SummitCode": "OE\/NO-171",
+    "SummitName": "Troppberg",
+    "Total": 513
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7143141,
+    "ActivationDate": "2023-12-30",
+    "OtherCallsign": "OE3BAJ\/P",
+    "Points": 0,
+    "SummitCode": "OE\/NO-171",
+    "SummitName": "Troppberg",
+    "Total": 513
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7146146,
+    "ActivationDate": "2023-12-31",
+    "OtherCallsign": "EA3\/HB9EAJ\/P",
+    "Points": 1,
+    "SummitCode": "EA3\/BC-080",
+    "SummitName": "Turó de Can Pascual",
+    "Total": 514
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7146233,
+    "ActivationDate": "2023-12-31",
+    "OtherCallsign": "OE6MHO\/P",
+    "Points": 2,
+    "SummitCode": "OE\/OO-380",
+    "SummitName": "Hieselberg",
+    "Total": 516
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7147150,
+    "ActivationDate": "2023-12-31",
+    "OtherCallsign": "OE1IAH\/P",
+    "Points": 4,
+    "SummitCode": "OE\/SB-268",
+    "SummitName": "Gaisberg",
+    "Total": 520
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7147211,
+    "ActivationDate": "2023-12-31",
+    "OtherCallsign": "DL\/SP9LPK\/P",
+    "Points": 10,
+    "SummitCode": "DM\/BM-268",
+    "SummitName": "Hochberg",
+    "Total": 530
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7154178,
+    "ActivationDate": "2024-01-01",
+    "OtherCallsign": "OE1UHU\/P",
+    "Points": 1,
+    "SummitCode": "OE\/OO-139",
+    "SummitName": "Gobel (Gobelwarte)",
+    "Total": 531
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7154179,
+    "ActivationDate": "2024-01-01",
+    "OtherCallsign": "OE1IAH\/P",
+    "Points": 0,
+    "SummitCode": "OE\/OO-139",
+    "SummitName": "Gobel (Gobelwarte)",
+    "Total": 531
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7154180,
+    "ActivationDate": "2024-01-01",
+    "OtherCallsign": "OE3TBU\/P",
+    "Points": 0,
+    "SummitCode": "OE\/OO-139",
+    "SummitName": "Gobel (Gobelwarte)",
+    "Total": 531
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7154181,
+    "ActivationDate": "2024-01-01",
+    "OtherCallsign": "OE1UHU\/P",
+    "Points": 0,
+    "SummitCode": "OE\/OO-139",
+    "SummitName": "Gobel (Gobelwarte)",
+    "Total": 531
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7154182,
+    "ActivationDate": "2024-01-01",
+    "OtherCallsign": "OE1IAH\/P",
+    "Points": 0,
+    "SummitCode": "OE\/OO-139",
+    "SummitName": "Gobel (Gobelwarte)",
+    "Total": 531
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7154183,
+    "ActivationDate": "2024-01-01",
+    "OtherCallsign": "OE3TBU\/P",
+    "Points": 0,
+    "SummitCode": "OE\/OO-139",
+    "SummitName": "Gobel (Gobelwarte)",
+    "Total": 531
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7159142,
+    "ActivationDate": "2024-01-02",
+    "OtherCallsign": "OE5WFN\/P",
+    "Points": 2,
+    "SummitCode": "OE\/OO-330",
+    "SummitName": "Mayrhofberg",
+    "Total": 533
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7168071,
+    "ActivationDate": "2024-01-04",
+    "OtherCallsign": "DL\/OE5EEP\/P",
+    "Points": 1,
+    "SummitCode": "DL\/CG-107",
+    "SummitName": "Högl",
+    "Total": 534
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7175892,
+    "ActivationDate": "2024-01-05",
+    "OtherCallsign": "OE5GFI\/P",
+    "Points": 4,
+    "SummitCode": "OE\/OO-084",
+    "SummitName": "Eiskogel",
+    "Total": 538
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7182223,
+    "ActivationDate": "2024-01-07",
+    "OtherCallsign": "OE\/DM1DF\/P",
+    "Points": 4,
+    "SummitCode": "OE\/OO-069",
+    "SummitName": "Hochficht",
+    "Total": 542
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7185859,
+    "ActivationDate": "2024-01-09",
+    "OtherCallsign": "OE6PGM\/P",
+    "Points": 2,
+    "SummitCode": "OE\/OO-385",
+    "SummitName": "Gunst",
+    "Total": 544
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7188997,
+    "ActivationDate": "2024-01-11",
+    "OtherCallsign": "OE6PGM\/P",
+    "Points": 2,
+    "SummitCode": "OE\/ST-480",
+    "SummitName": "Reiterer Kogel",
+    "Total": 546
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7189313,
+    "ActivationDate": "2024-01-11",
+    "OtherCallsign": "DA20XOTA",
+    "Points": 1,
+    "SummitCode": "DL\/BE-094",
+    "SummitName": "Irschenhausen",
+    "Total": 547
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7191802,
+    "ActivationDate": "2024-01-12",
+    "OtherCallsign": "DF1AKR\/P",
+    "Points": 10,
+    "SummitCode": "DM\/BW-009",
+    "SummitName": "Kandel",
+    "Total": 557
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7191816,
+    "ActivationDate": "2024-01-12",
+    "OtherCallsign": "DL\/HB9EIZ\/P",
+    "Points": 10,
+    "SummitCode": "DM\/BW-193",
+    "SummitName": "Schächer",
+    "Total": 567
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7196971,
+    "ActivationDate": "2024-01-13",
+    "OtherCallsign": "OE5JKL\/P",
+    "Points": 2,
+    "SummitCode": "OE\/OO-129",
+    "SummitName": "Pfenningberg",
+    "Total": 569
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7196972,
+    "ActivationDate": "2024-01-13",
+    "OtherCallsign": "OE1IAH\/P",
+    "Points": 1,
+    "SummitCode": "OE\/NO-207",
+    "SummitName": "Buschberg",
+    "Total": 570
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7196973,
+    "ActivationDate": "2024-01-13",
+    "OtherCallsign": "OE3BAJ\/P",
+    "Points": 0,
+    "SummitCode": "OE\/NO-207",
+    "SummitName": "Buschberg",
+    "Total": 570
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7196974,
+    "ActivationDate": "2024-01-13",
+    "OtherCallsign": "OE1UHU\/P",
+    "Points": 0,
+    "SummitCode": "OE\/NO-207",
+    "SummitName": "Buschberg",
+    "Total": 570
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7196975,
+    "ActivationDate": "2024-01-13",
+    "OtherCallsign": "OE3JPD\/P",
+    "Points": 2,
+    "SummitCode": "OE\/NO-312",
+    "SummitName": "Richtereck",
+    "Total": 572
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7196976,
+    "ActivationDate": "2024-01-13",
+    "OtherCallsign": "OE5JFE\/P",
+    "Points": 6,
+    "SummitCode": "OE\/OO-345",
+    "SummitName": "Hochedl",
+    "Total": 578
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7196977,
+    "ActivationDate": "2024-01-13",
+    "OtherCallsign": "OE5DZL\/P",
+    "Points": 4,
+    "SummitCode": "OE\/OO-452",
+    "SummitName": "Steinmühlen",
+    "Total": 582
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7196978,
+    "ActivationDate": "2024-01-13",
+    "OtherCallsign": "OE6MHO\/P",
+    "Points": 2,
+    "SummitCode": "OE\/OO-094",
+    "SummitName": "Kollmannsberg",
+    "Total": 584
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7196979,
+    "ActivationDate": "2024-01-13",
+    "OtherCallsign": "OE1UHU\/P",
+    "Points": 0,
+    "SummitCode": "OE\/NO-207",
+    "SummitName": "Buschberg",
+    "Total": 584
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7196980,
+    "ActivationDate": "2024-01-13",
+    "OtherCallsign": "OE3BAJ\/P",
+    "Points": 0,
+    "SummitCode": "OE\/NO-207",
+    "SummitName": "Buschberg",
+    "Total": 584
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7196981,
+    "ActivationDate": "2024-01-13",
+    "OtherCallsign": "OE1IAH\/P",
+    "Points": 0,
+    "SummitCode": "OE\/NO-207",
+    "SummitName": "Buschberg",
+    "Total": 584
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7196982,
+    "ActivationDate": "2024-01-13",
+    "OtherCallsign": "OE5GFI\/P",
+    "Points": 6,
+    "SummitCode": "OE\/OO-340",
+    "SummitName": "Tamberg",
+    "Total": 590
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7201383,
+    "ActivationDate": "2024-01-14",
+    "OtherCallsign": "OE5YYN\/P",
+    "Points": 4,
+    "SummitCode": "OE\/OO-293",
+    "SummitName": "Richtberg",
+    "Total": 594
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7201384,
+    "ActivationDate": "2024-01-14",
+    "OtherCallsign": "IZ1DNQ\/P",
+    "Points": 1,
+    "SummitCode": "I\/PM-263",
+    "SummitName": "Monte Cuneo \/ Moncuni",
+    "Total": 595
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7204312,
+    "ActivationDate": "2024-01-15",
+    "OtherCallsign": "OM1ALT\/P",
+    "Points": 4,
+    "SummitCode": "OM\/ZA-096",
+    "SummitName": "Slamená",
+    "Total": 599
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7218145,
+    "ActivationDate": "2024-01-20",
+    "OtherCallsign": "OE3JPD\/P",
+    "Points": 6,
+    "SummitCode": "OE\/OO-248",
+    "SummitName": "Wasserklotz",
+    "Total": 605
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7218146,
+    "ActivationDate": "2024-01-20",
+    "OtherCallsign": "OE5HWM\/P",
+    "Points": 4,
+    "SummitCode": "OE\/OO-277",
+    "SummitName": "Schieferstein",
+    "Total": 609
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7218154,
+    "ActivationDate": "2024-01-20",
+    "OtherCallsign": "OE5GFI\/P",
+    "Points": 6,
+    "SummitCode": "OE\/OO-397",
+    "SummitName": "Zeitschenberg",
+    "Total": 615
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7220498,
+    "ActivationDate": "2024-01-21",
+    "OtherCallsign": "OE5JFE\/P",
+    "Points": 6,
+    "SummitCode": "OE\/OO-447",
+    "SummitName": "Langfirst",
+    "Total": 621
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7220599,
+    "ActivationDate": "2024-01-21",
+    "OtherCallsign": "OE5JFE\/P",
+    "Points": 0,
+    "SummitCode": "OE\/OO-447",
+    "SummitName": "Langfirst",
+    "Total": 621
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7221659,
+    "ActivationDate": "2024-01-21",
+    "OtherCallsign": "OE5EEP\/P",
+    "Points": 4,
+    "SummitCode": "OE\/OO-084",
+    "SummitName": "Eiskogel",
+    "Total": 625
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7223462,
+    "ActivationDate": "2024-01-22",
+    "OtherCallsign": "OE6WSD\/P",
+    "Points": 2,
+    "SummitCode": "OE\/BL-020",
+    "SummitName": "Rosalienkapelle (Rosalia)",
+    "Total": 627
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7231443,
+    "ActivationDate": "2024-01-26",
+    "OtherCallsign": "OE5HWM\/P",
+    "Points": 4,
+    "SummitCode": "OE\/OO-080",
+    "SummitName": "Sternstein",
+    "Total": 631
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7235628,
+    "ActivationDate": "2024-01-27",
+    "OtherCallsign": "OE5GFI\/P",
+    "Points": 6,
+    "SummitCode": "OE\/OO-447",
+    "SummitName": "Langfirst",
+    "Total": 637
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7235635,
+    "ActivationDate": "2024-01-27",
+    "OtherCallsign": "OE5YYN\/P",
+    "Points": 6,
+    "SummitCode": "OE\/OO-340",
+    "SummitName": "Tamberg",
+    "Total": 643
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7235881,
+    "ActivationDate": "2024-01-27",
+    "OtherCallsign": "SV2RUJ\/P",
+    "Points": 2,
+    "SummitCode": "SV\/TL-072",
+    "SummitName": "Orfanos",
+    "Total": 645
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7235882,
+    "ActivationDate": "2024-01-27",
+    "OtherCallsign": "IK2LEY\/P",
+    "Points": 4,
+    "SummitCode": "I\/LO-222",
+    "SummitName": "Monte Tesoro",
+    "Total": 649
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7235883,
+    "ActivationDate": "2024-01-27",
+    "OtherCallsign": "IN3ADF\/P",
+    "Points": 8,
+    "SummitCode": "I\/AA-189",
+    "SummitName": "Corno Renon \/ Rittner Horn",
+    "Total": 657
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7235884,
+    "ActivationDate": "2024-01-27",
+    "OtherCallsign": "DB7MM\/P",
+    "Points": 10,
+    "SummitCode": "DM\/TH-001",
+    "SummitName": "Großer Beerberg",
+    "Total": 667
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7239515,
+    "ActivationDate": "2024-01-28",
+    "OtherCallsign": "OK\/OE5OBI\/P",
+    "Points": 10,
+    "SummitCode": "OK\/JC-020",
+    "SummitName": "Kamenec",
+    "Total": 677
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7239510,
+    "ActivationDate": "2024-01-28",
+    "OtherCallsign": "DL7BC\/P",
+    "Points": 10,
+    "SummitCode": "DM\/BW-008",
+    "SummitName": "Schauinsland",
+    "Total": 687
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7239255,
+    "ActivationDate": "2024-01-28",
+    "OtherCallsign": "OE5JFE\/P",
+    "Points": 6,
+    "SummitCode": "OE\/ST-185",
+    "SummitName": "Pleschberg",
+    "Total": 693
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7239591,
+    "ActivationDate": "2024-01-28",
+    "OtherCallsign": "DG4SFF\/P",
+    "Points": 10,
+    "SummitCode": "DM\/BW-058",
+    "SummitName": "Burg",
+    "Total": 703
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7239630,
+    "ActivationDate": "2024-01-28",
+    "OtherCallsign": "DK1ZX\/P",
+    "Points": 10,
+    "SummitCode": "DM\/BM-002",
+    "SummitName": "Pröller",
+    "Total": 713
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7239663,
+    "ActivationDate": "2024-01-28",
+    "OtherCallsign": "OE5CPH\/P",
+    "Points": 2,
+    "SummitCode": "OE\/OO-119",
+    "SummitName": "Göblberg",
+    "Total": 715
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7243038,
+    "ActivationDate": "2024-01-29",
+    "OtherCallsign": "DL\/HB9EVF\/P",
+    "Points": 10,
+    "SummitCode": "DM\/BW-235",
+    "SummitName": "Hoher Randen",
+    "Total": 725
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7243036,
+    "ActivationDate": "2024-01-29",
+    "OtherCallsign": "DL\/HB9HXJ\/P",
+    "Points": 0,
+    "SummitCode": "DM\/BW-235",
+    "SummitName": "Hoher Randen",
+    "Total": 725
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7243076,
+    "ActivationDate": "2024-01-29",
+    "OtherCallsign": "OE5BAY\/P",
+    "Points": 2,
+    "SummitCode": "OE\/OO-451",
+    "SummitName": "Schönlehnerkogel",
+    "Total": 727
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7243108,
+    "ActivationDate": "2024-01-29",
+    "OtherCallsign": "DF1AKR",
+    "Points": 10,
+    "SummitCode": "DM\/BW-228",
+    "SummitName": "Hummelsberg",
+    "Total": 737
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7243190,
+    "ActivationDate": "2024-01-29",
+    "OtherCallsign": "DB4LL\/P",
+    "Points": 6,
+    "SummitCode": "DM\/HE-046",
+    "SummitName": "Hohes Gras",
+    "Total": 743
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7243312,
+    "ActivationDate": "2024-01-29",
+    "OtherCallsign": "DL6FBK\/P",
+    "Points": 6,
+    "SummitCode": "DM\/HE-053",
+    "SummitName": "Neunkircher Höhe",
+    "Total": 749
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7246973,
+    "ActivationDate": "2024-01-30",
+    "OtherCallsign": "OE5EIN\/P",
+    "Points": 4,
+    "SummitCode": "OE\/OO-287",
+    "SummitName": "Viehberg",
+    "Total": 753
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7246974,
+    "ActivationDate": "2024-01-30",
+    "OtherCallsign": "DL1CR\/P",
+    "Points": 2,
+    "SummitCode": "DM\/NS-122",
+    "SummitName": "Bröhn",
+    "Total": 755
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7246975,
+    "ActivationDate": "2024-01-30",
+    "OtherCallsign": "HB9JAY\/P",
+    "Points": 4,
+    "SummitCode": "HB\/NW-018",
+    "SummitName": "Klewenstock",
+    "Total": 759
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7246976,
+    "ActivationDate": "2024-01-30",
+    "OtherCallsign": "OE7RDI\/P",
+    "Points": 6,
+    "SummitCode": "OE\/TL-030",
+    "SummitName": "Zinsberg",
+    "Total": 765
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7246977,
+    "ActivationDate": "2024-01-30",
+    "OtherCallsign": "DD2TC\/P",
+    "Points": 10,
+    "SummitCode": "DM\/BW-014",
+    "SummitName": "Weisstannenhöhe",
+    "Total": 775
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7246987,
+    "ActivationDate": "2024-01-30",
+    "OtherCallsign": "OE5CSP\/P",
+    "Points": 6,
+    "SummitCode": "OE\/SB-242",
+    "SummitName": "Labenberg",
+    "Total": 781
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7259329,
+    "ActivationDate": "2024-02-03",
+    "OtherCallsign": "OE5HWM\/P",
+    "Points": 6,
+    "SummitCode": "OE\/OO-062",
+    "SummitName": "Steineck",
+    "Total": 787
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7259406,
+    "ActivationDate": "2024-02-03",
+    "OtherCallsign": "OE5JKL\/P",
+    "Points": 4,
+    "SummitCode": "OE\/SB-268",
+    "SummitName": "Gaisberg",
+    "Total": 791
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7259407,
+    "ActivationDate": "2024-02-03",
+    "OtherCallsign": "OE5FFE\/P",
+    "Points": 6,
+    "SummitCode": "OE\/SB-257",
+    "SummitName": "Zwölferhorn",
+    "Total": 797
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7261781,
+    "ActivationDate": "2024-02-03",
+    "OtherCallsign": "OE\/OM4MX",
+    "Points": 8,
+    "SummitCode": "OE\/OO-012",
+    "SummitName": "Hoher Krippenstein",
+    "Total": 805
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7261782,
+    "ActivationDate": "2024-02-03",
+    "OtherCallsign": "OE\/OM1OW",
+    "Points": 0,
+    "SummitCode": "OE\/OO-012",
+    "SummitName": "Hoher Krippenstein",
+    "Total": 805
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7261783,
+    "ActivationDate": "2024-02-03",
+    "OtherCallsign": "OE9HRV\/P",
+    "Points": 6,
+    "SummitCode": "OE\/VB-491",
+    "SummitName": "Schwarzenberg",
+    "Total": 811
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7261644,
+    "ActivationDate": "2024-02-04",
+    "OtherCallsign": "IK2LEY\/P",
+    "Points": 4,
+    "SummitCode": "I\/LO-234",
+    "SummitName": "Monte Poieto",
+    "Total": 815
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7265389,
+    "ActivationDate": "2024-02-04",
+    "OtherCallsign": "OE5WFN\/P",
+    "Points": 2,
+    "SummitCode": "OE\/OO-110",
+    "SummitName": "Hansberg",
+    "Total": 817
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7265478,
+    "ActivationDate": "2024-02-05",
+    "OtherCallsign": "DM1CM\/P",
+    "Points": 1,
+    "SummitCode": "DL\/BE-093",
+    "SummitName": "Buchberg",
+    "Total": 818
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7265509,
+    "ActivationDate": "2024-02-05",
+    "OtherCallsign": "DD2TC\/P",
+    "Points": 10,
+    "SummitCode": "DM\/BW-009",
+    "SummitName": "Kandel",
+    "Total": 828
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7266024,
+    "ActivationDate": "2024-02-05",
+    "OtherCallsign": "OE7RGF\/P",
+    "Points": 10,
+    "SummitCode": "OE\/TI-331",
+    "SummitName": "Große Beil",
+    "Total": 838
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7266308,
+    "ActivationDate": "2024-02-05",
+    "OtherCallsign": "OE\/HB9DIZ\/P",
+    "Points": 8,
+    "SummitCode": "OE\/VB-473",
+    "SummitName": "Diedamskopf",
+    "Total": 846
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7266598,
+    "ActivationDate": "2024-02-05",
+    "OtherCallsign": "S5\/IV3GVY",
+    "Points": 8,
+    "SummitCode": "S5\/TK-002",
+    "SummitName": "Matajur",
+    "Total": 854
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7266601,
+    "ActivationDate": "2024-02-05",
+    "OtherCallsign": "HB9EVF\/P",
+    "Points": 2,
+    "SummitCode": "HB\/BL-004",
+    "SummitName": "Ruchen",
+    "Total": 856
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7267069,
+    "ActivationDate": "2024-02-05",
+    "OtherCallsign": "DL\/OE9HRV\/P",
+    "Points": 1,
+    "SummitCode": "DL\/AL-276",
+    "SummitName": "Attensberg",
+    "Total": 857
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7269146,
+    "ActivationDate": "2024-02-06",
+    "OtherCallsign": "OE5AKM\/P",
+    "Points": 4,
+    "SummitCode": "OE\/OO-452",
+    "SummitName": "Steinmühlen",
+    "Total": 861
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7271053,
+    "ActivationDate": "2024-02-06",
+    "OtherCallsign": "OE7RDI\/P",
+    "Points": 6,
+    "SummitCode": "OE\/TI-690",
+    "SummitName": "Gschwandtkopf",
+    "Total": 867
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7271235,
+    "ActivationDate": "2024-02-06",
+    "OtherCallsign": "OE5YYN\/P",
+    "Points": 2,
+    "SummitCode": "OE\/OO-330",
+    "SummitName": "Mayrhofberg",
+    "Total": 869
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7277563,
+    "ActivationDate": "2024-02-09",
+    "OtherCallsign": "OE5JFE\/P",
+    "Points": 2,
+    "SummitCode": "OE\/OO-427",
+    "SummitName": "Michaelsberg",
+    "Total": 871
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7277572,
+    "ActivationDate": "2024-02-09",
+    "OtherCallsign": "OE5REO\/P",
+    "Points": 0,
+    "SummitCode": "OE\/OO-427",
+    "SummitName": "Michaelsberg",
+    "Total": 871
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7277590,
+    "ActivationDate": "2024-02-09",
+    "OtherCallsign": "OE5YYN\/P",
+    "Points": 0,
+    "SummitCode": "OE\/OO-427",
+    "SummitName": "Michaelsberg",
+    "Total": 871
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7277629,
+    "ActivationDate": "2024-02-09",
+    "OtherCallsign": "OE5YYN\/P",
+    "Points": 0,
+    "SummitCode": "OE\/OO-427",
+    "SummitName": "Michaelsberg",
+    "Total": 871
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7277639,
+    "ActivationDate": "2024-02-09",
+    "OtherCallsign": "OE5REO\/P",
+    "Points": 0,
+    "SummitCode": "OE\/OO-427",
+    "SummitName": "Michaelsberg",
+    "Total": 871
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7283931,
+    "ActivationDate": "2024-02-10",
+    "OtherCallsign": "OE5FSM\/P",
+    "Points": 10,
+    "SummitCode": "OK\/JC-001",
+    "SummitName": "Plechý",
+    "Total": 881
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7312653,
+    "ActivationDate": "2024-02-16",
+    "OtherCallsign": "OE5REO\/P",
+    "Points": 4,
+    "SummitCode": "OE\/OO-353",
+    "SummitName": "Schneeberg",
+    "Total": 885
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7314572,
+    "ActivationDate": "2024-02-18",
+    "OtherCallsign": "OE5AKM\/P",
+    "Points": 2,
+    "SummitCode": "OE\/ST-294",
+    "SummitName": "Kulm",
+    "Total": 887
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7314573,
+    "ActivationDate": "2024-02-18",
+    "OtherCallsign": "OE5LAE\/P",
+    "Points": 2,
+    "SummitCode": "OE\/OO-381",
+    "SummitName": "Wurberg",
+    "Total": 889
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7314574,
+    "ActivationDate": "2024-02-18",
+    "OtherCallsign": "OE5CAC\/P",
+    "Points": 0,
+    "SummitCode": "OE\/OO-381",
+    "SummitName": "Wurberg",
+    "Total": 889
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7314575,
+    "ActivationDate": "2024-02-18",
+    "OtherCallsign": "OE6TTF\/P",
+    "Points": 6,
+    "SummitCode": "OE\/ST-205",
+    "SummitName": "Rennfeld",
+    "Total": 895
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7314576,
+    "ActivationDate": "2024-02-18",
+    "OtherCallsign": "IN3ADF\/P",
+    "Points": 6,
+    "SummitCode": "I\/TN-319",
+    "SummitName": "Monte Penegal",
+    "Total": 901
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7314577,
+    "ActivationDate": "2024-02-18",
+    "OtherCallsign": "IK2LEY\/P",
+    "Points": 6,
+    "SummitCode": "I\/LO-182",
+    "SummitName": "Monte Croce di Muggio",
+    "Total": 907
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7314578,
+    "ActivationDate": "2024-02-18",
+    "OtherCallsign": "HB9FUE\/P",
+    "Points": 4,
+    "SummitCode": "HB\/SG-039",
+    "SummitName": "Spicher",
+    "Total": 911
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7314579,
+    "ActivationDate": "2024-02-18",
+    "OtherCallsign": "OE6UVG\/P",
+    "Points": 6,
+    "SummitCode": "OE\/ST-227",
+    "SummitName": "Plankogel",
+    "Total": 917
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7314580,
+    "ActivationDate": "2024-02-18",
+    "OtherCallsign": "OM\/SP9LPK\/P",
+    "Points": 4,
+    "SummitCode": "OM\/TN-031",
+    "SummitName": "Vápec",
+    "Total": 921
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7314581,
+    "ActivationDate": "2024-02-18",
+    "OtherCallsign": "OE6TTF\/P",
+    "Points": 0,
+    "SummitCode": "OE\/ST-205",
+    "SummitName": "Rennfeld",
+    "Total": 921
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7314582,
+    "ActivationDate": "2024-02-18",
+    "OtherCallsign": "OE5EEP\/P",
+    "Points": 4,
+    "SummitCode": "OE\/ST-290",
+    "SummitName": "Hohe Rannach",
+    "Total": 925
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7312683,
+    "ActivationDate": "2024-02-18",
+    "OtherCallsign": "OE5BAY\/P",
+    "Points": 2,
+    "SummitCode": "OE\/OO-446",
+    "SummitName": "Seekogel",
+    "Total": 927
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7319056,
+    "ActivationDate": "2024-02-21",
+    "OtherCallsign": "OE5REO\/P",
+    "Points": 4,
+    "SummitCode": "OE\/OO-283",
+    "SummitName": "Hochplettspitz",
+    "Total": 931
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7319061,
+    "ActivationDate": "2024-02-21",
+    "OtherCallsign": "OE5BAY\/P",
+    "Points": 4,
+    "SummitCode": "OE\/OO-082",
+    "SummitName": "Lindaumauer",
+    "Total": 935
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7319113,
+    "ActivationDate": "2024-02-21",
+    "OtherCallsign": "OE5REO\/P",
+    "Points": 4,
+    "SummitCode": "OE\/OO-091",
+    "SummitName": "Roßmoos",
+    "Total": 939
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7333179,
+    "ActivationDate": "2024-02-24",
+    "OtherCallsign": "DO4AF\/P",
+    "Points": 8,
+    "SummitCode": "DM\/BM-019",
+    "SummitName": "Butzen",
+    "Total": 947
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7333180,
+    "ActivationDate": "2024-02-24",
+    "OtherCallsign": "DB5TR\/P",
+    "Points": 10,
+    "SummitCode": "DM\/BM-010",
+    "SummitName": "Vogelsang",
+    "Total": 957
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7333181,
+    "ActivationDate": "2024-02-24",
+    "OtherCallsign": "DD2LL\/P",
+    "Points": 0,
+    "SummitCode": "DM\/BM-010",
+    "SummitName": "Vogelsang",
+    "Total": 957
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7333182,
+    "ActivationDate": "2024-02-24",
+    "OtherCallsign": "CT7\/DH7FK\/P",
+    "Points": 1,
+    "SummitCode": "CT\/AL-007",
+    "SummitName": "Serra da Rocha da Pena",
+    "Total": 958
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7332984,
+    "ActivationDate": "2024-02-24",
+    "OtherCallsign": "OE5JFE\/P",
+    "Points": 4,
+    "SummitCode": "OE\/OO-073",
+    "SummitName": "Schoberstein",
+    "Total": 962
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7338319,
+    "ActivationDate": "2024-02-25",
+    "OtherCallsign": "OE5JFE\/P",
+    "Points": 4,
+    "SummitCode": "OE\/OO-075",
+    "SummitName": "Hochbuchberg",
+    "Total": 966
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7341622,
+    "ActivationDate": "2024-02-26",
+    "OtherCallsign": "OE5REO\/P",
+    "Points": 4,
+    "SummitCode": "OE\/OO-363",
+    "SummitName": "Eibling",
+    "Total": 970
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7341719,
+    "ActivationDate": "2024-02-26",
+    "OtherCallsign": "OE6STD\/P",
+    "Points": 4,
+    "SummitCode": "OE\/ST-290",
+    "SummitName": "Hohe Rannach",
+    "Total": 974
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7341772,
+    "ActivationDate": "2024-02-26",
+    "OtherCallsign": "DL\/OE5LXR\/P",
+    "Points": 6,
+    "SummitCode": "DM\/BM-210",
+    "SummitName": "Moritzberg",
+    "Total": 980
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7342299,
+    "ActivationDate": "2024-02-26",
+    "OtherCallsign": "OK\/OE5HPE\/P",
+    "Points": 10,
+    "SummitCode": "OK\/JC-001",
+    "SummitName": "Plechý",
+    "Total": 990
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7342902,
+    "ActivationDate": "2024-02-26",
+    "OtherCallsign": "DK3RN\/P",
+    "Points": 10,
+    "SummitCode": "DM\/HE-003",
+    "SummitName": "Großer Feldberg",
+    "Total": 1000
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7345682,
+    "ActivationDate": "2024-02-27",
+    "OtherCallsign": "K2CZH",
+    "Points": 10,
+    "SummitCode": "W4V\/SH-001",
+    "SummitName": "Hawksbill",
+    "Total": 1010
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7347980,
+    "ActivationDate": "2024-02-28",
+    "OtherCallsign": "N6AN",
+    "Points": 2,
+    "SummitCode": "W6\/CT-273",
+    "SummitName": "Agua Dulce Benchmark",
+    "Total": 1012
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7356608,
+    "ActivationDate": "2024-03-02",
+    "OtherCallsign": "F4JYM\/P",
+    "Points": 4,
+    "SummitCode": "F\/AM-449",
+    "SummitName": "Les Gros Roucas",
+    "Total": 1016
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7356609,
+    "ActivationDate": "2024-03-02",
+    "OtherCallsign": "IN3ADF\/P",
+    "Points": 4,
+    "SummitCode": "I\/AA-216",
+    "SummitName": "Monte Abete \/ Kienberg",
+    "Total": 1020
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7356610,
+    "ActivationDate": "2024-03-02",
+    "OtherCallsign": "OM\/SP9LPK\/P",
+    "Points": 4,
+    "SummitCode": "OM\/PO-032",
+    "SummitName": "Busov",
+    "Total": 1024
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7356611,
+    "ActivationDate": "2024-03-02",
+    "OtherCallsign": "OE3JPD\/P",
+    "Points": 10,
+    "SummitCode": "OE\/ST-389",
+    "SummitName": "Hochmölbing",
+    "Total": 1034
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7356612,
+    "ActivationDate": "2024-03-02",
+    "OtherCallsign": "DK3RN\/P",
+    "Points": 6,
+    "SummitCode": "DM\/RP-001",
+    "SummitName": "Hohe Acht",
+    "Total": 1040
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7356613,
+    "ActivationDate": "2024-03-02",
+    "OtherCallsign": "OK\/OE1UHU\/P",
+    "Points": 10,
+    "SummitCode": "OK\/JC-020",
+    "SummitName": "Kamenec",
+    "Total": 1050
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7356614,
+    "ActivationDate": "2024-03-02",
+    "OtherCallsign": "OE\/HB9FUE\/P",
+    "Points": 6,
+    "SummitCode": "OE\/VB-488",
+    "SummitName": "Schöner Mann",
+    "Total": 1056
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7356615,
+    "ActivationDate": "2024-03-02",
+    "OtherCallsign": "OE6MHO\/P",
+    "Points": 6,
+    "SummitCode": "OE\/ST-407",
+    "SummitName": "Hirschriedel",
+    "Total": 1062
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7356616,
+    "ActivationDate": "2024-03-02",
+    "OtherCallsign": "EA8\/DL2DXA\/P",
+    "Points": 10,
+    "SummitCode": "EA8\/GC-001",
+    "SummitName": "Pico de Las Nieves",
+    "Total": 1072
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7356617,
+    "ActivationDate": "2024-03-02",
+    "OtherCallsign": "OE3REC",
+    "Points": 4,
+    "SummitCode": "OE\/NO-050",
+    "SummitName": "Hinteralm",
+    "Total": 1076
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7356618,
+    "ActivationDate": "2024-03-02",
+    "OtherCallsign": "OE5JFE\/P",
+    "Points": 4,
+    "SummitCode": "OE\/OO-287",
+    "SummitName": "Viehberg",
+    "Total": 1080
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7357191,
+    "ActivationDate": "2024-03-03",
+    "OtherCallsign": "OE5JFE\/P",
+    "Points": 8,
+    "SummitCode": "OE\/OO-012",
+    "SummitName": "Hoher Krippenstein",
+    "Total": 1088
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7356820,
+    "ActivationDate": "2024-03-03",
+    "OtherCallsign": "OM\/SO9P\/P",
+    "Points": 4,
+    "SummitCode": "OM\/ZA-061",
+    "SummitName": "Hruba Bučina",
+    "Total": 1092
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7356895,
+    "ActivationDate": "2024-03-03",
+    "OtherCallsign": "OE5LXR\/P",
+    "Points": 2,
+    "SummitCode": "OE\/OO-433",
+    "SummitName": "Zeißberg",
+    "Total": 1094
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7357027,
+    "ActivationDate": "2024-03-03",
+    "OtherCallsign": "OE5HCE\/P",
+    "Points": 6,
+    "SummitCode": "OE\/OO-028",
+    "SummitName": "Stubwieswipfel",
+    "Total": 1100
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7357268,
+    "ActivationDate": "2024-03-03",
+    "OtherCallsign": "DO6PJK\/P",
+    "Points": 6,
+    "SummitCode": "DL\/BG-001",
+    "SummitName": "Zwiesel",
+    "Total": 1106
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7359388,
+    "ActivationDate": "2024-03-03",
+    "OtherCallsign": "OE5JFE\/M",
+    "Points": 8,
+    "SummitCode": "OE\/OO-190",
+    "SummitName": "Speikberg",
+    "Total": 1114
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7359604,
+    "ActivationDate": "2024-03-03",
+    "OtherCallsign": "OE5YYN\/P",
+    "Points": 6,
+    "SummitCode": "OE\/ST-405",
+    "SummitName": "Rauchschober",
+    "Total": 1120
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7359605,
+    "ActivationDate": "2024-03-03",
+    "OtherCallsign": "DB7MM\/P",
+    "Points": 4,
+    "SummitCode": "DM\/BM-334",
+    "SummitName": "Kesselleite",
+    "Total": 1124
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7359606,
+    "ActivationDate": "2024-03-03",
+    "OtherCallsign": "IN3ADF\/P",
+    "Points": 6,
+    "SummitCode": "I\/AA-207",
+    "SummitName": "Planbühel",
+    "Total": 1130
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7359607,
+    "ActivationDate": "2024-03-03",
+    "OtherCallsign": "S56SEA\/P",
+    "Points": 6,
+    "SummitCode": "S5\/KS-029",
+    "SummitName": "Kranjska Reber",
+    "Total": 1136
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7359608,
+    "ActivationDate": "2024-03-03",
+    "OtherCallsign": "EA8\/DL2DXA\/P",
+    "Points": 1,
+    "SummitCode": "EA8\/GC-026",
+    "SummitName": "Montaña de Arucas",
+    "Total": 1137
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7359609,
+    "ActivationDate": "2024-03-03",
+    "OtherCallsign": "EA8\/G4JXP\/P",
+    "Points": 1,
+    "SummitCode": "EA8\/LA-019",
+    "SummitName": "Montaña Tahiche",
+    "Total": 1138
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7362414,
+    "ActivationDate": "2024-03-04",
+    "OtherCallsign": "OE5BAY\/P",
+    "Points": 4,
+    "SummitCode": "OE\/OO-298",
+    "SummitName": "Spadenberg",
+    "Total": 1142
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7362448,
+    "ActivationDate": "2024-03-04",
+    "OtherCallsign": "OE7RDI\/P",
+    "Points": 8,
+    "SummitCode": "OE\/TI-517",
+    "SummitName": "Hohe Salve",
+    "Total": 1150
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7362417,
+    "ActivationDate": "2024-03-04",
+    "OtherCallsign": "OE5REO\/P",
+    "Points": 4,
+    "SummitCode": "OE\/OO-402",
+    "SummitName": "Zöbel",
+    "Total": 1154
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7362420,
+    "ActivationDate": "2024-03-04",
+    "OtherCallsign": "OE5REO\/P",
+    "Points": 0,
+    "SummitCode": "OE\/OO-402",
+    "SummitName": "Zöbel",
+    "Total": 1154
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7362990,
+    "ActivationDate": "2024-03-04",
+    "OtherCallsign": "OE5BAY\/P",
+    "Points": 2,
+    "SummitCode": "OE\/OO-380",
+    "SummitName": "Hieselberg",
+    "Total": 1156
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7372444,
+    "ActivationDate": "2024-03-08",
+    "OtherCallsign": "OE5BAY\/P",
+    "Points": 4,
+    "SummitCode": "OE\/OO-362",
+    "SummitName": "Feichteck",
+    "Total": 1160
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7372445,
+    "ActivationDate": "2024-03-08",
+    "OtherCallsign": "DL\/HB9RYV\/P",
+    "Points": 10,
+    "SummitCode": "DM\/BM-261",
+    "SummitName": "Wolfgangriegel",
+    "Total": 1170
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7374673,
+    "ActivationDate": "2024-03-09",
+    "OtherCallsign": "F\/DL7BC\/P",
+    "Points": 10,
+    "SummitCode": "FL\/VO-007",
+    "SummitName": "Le Grand Brézouard",
+    "Total": 1180
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7375104,
+    "ActivationDate": "2024-03-09",
+    "OtherCallsign": "OE5JFE\/P",
+    "Points": 6,
+    "SummitCode": "OE\/OO-062",
+    "SummitName": "Steineck",
+    "Total": 1186
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7383881,
+    "ActivationDate": "2024-03-11",
+    "OtherCallsign": "MM0YCJ\/P",
+    "Points": 4,
+    "SummitCode": "GM\/WS-207",
+    "SummitName": "Glas Bheinn",
+    "Total": 1190
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7383953,
+    "ActivationDate": "2024-03-11",
+    "OtherCallsign": "OE6ADE\/P",
+    "Points": 8,
+    "SummitCode": "OE\/VB-376",
+    "SummitName": "Walmendinger Horn",
+    "Total": 1198
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7395368,
+    "ActivationDate": "2024-03-15",
+    "OtherCallsign": "SV2RUJ\/P",
+    "Points": 4,
+    "SummitCode": "SV\/TL-060",
+    "SummitName": "Ag. Sostis",
+    "Total": 1202
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7395369,
+    "ActivationDate": "2024-03-15",
+    "OtherCallsign": "OE5BAY\/P",
+    "Points": 4,
+    "SummitCode": "OE\/OO-277",
+    "SummitName": "Schieferstein",
+    "Total": 1206
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7395370,
+    "ActivationDate": "2024-03-15",
+    "OtherCallsign": "IK6BAK\/P",
+    "Points": 4,
+    "SummitCode": "I\/TO-026",
+    "SummitName": "Monte il Castello",
+    "Total": 1210
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7395371,
+    "ActivationDate": "2024-03-15",
+    "OtherCallsign": "OE5BAY\/P",
+    "Points": 0,
+    "SummitCode": "OE\/OO-277",
+    "SummitName": "Schieferstein",
+    "Total": 1210
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7400296,
+    "ActivationDate": "2024-03-17",
+    "OtherCallsign": "OE5JFE\/P",
+    "Points": 6,
+    "SummitCode": "OE\/OO-340",
+    "SummitName": "Tamberg",
+    "Total": 1216
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7400783,
+    "ActivationDate": "2024-03-17",
+    "OtherCallsign": "OE5EEP\/P",
+    "Points": 4,
+    "SummitCode": "OE\/OO-450",
+    "SummitName": "Hochfora",
+    "Total": 1220
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7400776,
+    "ActivationDate": "2024-03-17",
+    "OtherCallsign": "OE5JFE\/P",
+    "Points": 0,
+    "SummitCode": "OE\/OO-340",
+    "SummitName": "Tamberg",
+    "Total": 1220
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7400881,
+    "ActivationDate": "2024-03-17",
+    "OtherCallsign": "OE5HCE\/P",
+    "Points": 10,
+    "SummitCode": "OE\/OO-006",
+    "SummitName": "Warscheneck",
+    "Total": 1230
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7405361,
+    "ActivationDate": "2024-03-17",
+    "OtherCallsign": "OK\/OE5WFN\/P",
+    "Points": 10,
+    "SummitCode": "OK\/JC-028",
+    "SummitName": "Vítkův Kámen",
+    "Total": 1240
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7405362,
+    "ActivationDate": "2024-03-17",
+    "OtherCallsign": "OE5FFE\/P",
+    "Points": 6,
+    "SummitCode": "OE\/SB-432",
+    "SummitName": "Wieserhörndl",
+    "Total": 1246
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7405363,
+    "ActivationDate": "2024-03-17",
+    "OtherCallsign": "OE5JFE\/P",
+    "Points": 4,
+    "SummitCode": "OE\/OO-371",
+    "SummitName": "Steyrsberg",
+    "Total": 1250
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7405364,
+    "ActivationDate": "2024-03-17",
+    "OtherCallsign": "OE6PID\/P",
+    "Points": 6,
+    "SummitCode": "OE\/ST-466",
+    "SummitName": "Sauernkogel",
+    "Total": 1256
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7405365,
+    "ActivationDate": "2024-03-17",
+    "OtherCallsign": "OE6BID\/P",
+    "Points": 0,
+    "SummitCode": "OE\/ST-466",
+    "SummitName": "Sauernkogel",
+    "Total": 1256
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7405366,
+    "ActivationDate": "2024-03-17",
+    "OtherCallsign": "G5OLD\/P",
+    "Points": 1,
+    "SummitCode": "G\/SC-010",
+    "SummitName": "Dundry Down",
+    "Total": 1257
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7405367,
+    "ActivationDate": "2024-03-17",
+    "OtherCallsign": "LA9PJA\/P",
+    "Points": 2,
+    "SummitCode": "LA\/BU-027",
+    "SummitName": "Gyrihaugen",
+    "Total": 1259
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7405368,
+    "ActivationDate": "2024-03-17",
+    "OtherCallsign": "DG3GAI",
+    "Points": 10,
+    "SummitCode": "DM\/BW-058",
+    "SummitName": "Burg",
+    "Total": 1269
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7406944,
+    "ActivationDate": "2024-03-19",
+    "OtherCallsign": "OE5BAY\/P",
+    "Points": 2,
+    "SummitCode": "OE\/OO-418",
+    "SummitName": "Bertelkogel",
+    "Total": 1271
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7406980,
+    "ActivationDate": "2024-03-19",
+    "OtherCallsign": "F4JYM\/P",
+    "Points": 10,
+    "SummitCode": "FL\/VO-170",
+    "SummitName": "Le Rainkopf",
+    "Total": 1281
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7417671,
+    "ActivationDate": "2024-03-20",
+    "OtherCallsign": "OE5MMP\/P",
+    "Points": 8,
+    "SummitCode": "OE\/OO-022",
+    "SummitName": "Großer Höllkogel",
+    "Total": 1289
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7416619,
+    "ActivationDate": "2024-03-23",
+    "OtherCallsign": "IK2LEY\/P",
+    "Points": 4,
+    "SummitCode": "I\/LO-238",
+    "SummitName": "Monte Bronzone",
+    "Total": 1293
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7416620,
+    "ActivationDate": "2024-03-23",
+    "OtherCallsign": "OK1CS\/P",
+    "Points": 1,
+    "SummitCode": "OK\/US-081",
+    "SummitName": "Doubravská hora",
+    "Total": 1294
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7423227,
+    "ActivationDate": "2024-03-26",
+    "OtherCallsign": "OE5HWM\/P",
+    "Points": 4,
+    "SummitCode": "OE\/OO-073",
+    "SummitName": "Schoberstein",
+    "Total": 1298
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7423223,
+    "ActivationDate": "2024-03-26",
+    "OtherCallsign": "OE5YYN\/P",
+    "Points": 6,
+    "SummitCode": "OE\/OO-447",
+    "SummitName": "Langfirst",
+    "Total": 1304
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7428984,
+    "ActivationDate": "2024-03-29",
+    "OtherCallsign": "OE5DZL\/P",
+    "Points": 4,
+    "SummitCode": "OE\/OO-371",
+    "SummitName": "Steyrsberg",
+    "Total": 1308
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7428985,
+    "ActivationDate": "2024-03-29",
+    "OtherCallsign": "DL3EC\/P",
+    "Points": 2,
+    "SummitCode": "DL\/AL-169",
+    "SummitName": "Auerberg",
+    "Total": 1310
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7428986,
+    "ActivationDate": "2024-03-29",
+    "OtherCallsign": "DL\/HB9FUE\/P",
+    "Points": 10,
+    "SummitCode": "DM\/BW-057",
+    "SummitName": "Lupfen",
+    "Total": 1320
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7428987,
+    "ActivationDate": "2024-03-29",
+    "OtherCallsign": "DL\/HB9HOR\/P",
+    "Points": 0,
+    "SummitCode": "DM\/BW-057",
+    "SummitName": "Lupfen",
+    "Total": 1320
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7428988,
+    "ActivationDate": "2024-03-29",
+    "OtherCallsign": "OE\/DK1ZX\/P",
+    "Points": 4,
+    "SummitCode": "OE\/OO-080",
+    "SummitName": "Sternstein",
+    "Total": 1324
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7428989,
+    "ActivationDate": "2024-03-29",
+    "OtherCallsign": "OE\/DK1ZX\/P",
+    "Points": 0,
+    "SummitCode": "OE\/OO-080",
+    "SummitName": "Sternstein",
+    "Total": 1324
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7435124,
+    "ActivationDate": "2024-03-31",
+    "OtherCallsign": "SP9MPZ\/P",
+    "Points": 1,
+    "SummitCode": "SP\/BP-002",
+    "SummitName": "Liwocz",
+    "Total": 1325
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7435125,
+    "ActivationDate": "2024-03-31",
+    "OtherCallsign": "DL\/IN3ADF\/P",
+    "Points": 4,
+    "SummitCode": "DL\/AM-151",
+    "SummitName": "Schafkopf",
+    "Total": 1329
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7435126,
+    "ActivationDate": "2024-03-31",
+    "OtherCallsign": "DL\/HB9EVF\/P",
+    "Points": 10,
+    "SummitCode": "DM\/BW-055",
+    "SummitName": "Hohe Möhr",
+    "Total": 1339
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7435127,
+    "ActivationDate": "2024-03-31",
+    "OtherCallsign": "DL\/HB9HXJ\/P",
+    "Points": 0,
+    "SummitCode": "DM\/BW-055",
+    "SummitName": "Hohe Möhr",
+    "Total": 1339
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7437892,
+    "ActivationDate": "2024-04-01",
+    "OtherCallsign": "OE5YYN\/P",
+    "Points": 4,
+    "SummitCode": "OE\/NO-229",
+    "SummitName": "Prochenberg",
+    "Total": 1343
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7446279,
+    "ActivationDate": "2024-04-06",
+    "OtherCallsign": "OE5JFE\/P",
+    "Points": 4,
+    "SummitCode": "OE\/NO-218",
+    "SummitName": "Friesling",
+    "Total": 1347
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7451553,
+    "ActivationDate": "2024-04-07",
+    "OtherCallsign": "OE6NOA\/P",
+    "Points": 10,
+    "SummitCode": "OE\/ST-004",
+    "SummitName": "Preber",
+    "Total": 1357
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7451554,
+    "ActivationDate": "2024-04-07",
+    "OtherCallsign": "OE5REO\/P",
+    "Points": 4,
+    "SummitCode": "OE\/OO-408",
+    "SummitName": "Hochbrand",
+    "Total": 1361
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7451555,
+    "ActivationDate": "2024-04-07",
+    "OtherCallsign": "OE2HRO\/P",
+    "Points": 6,
+    "SummitCode": "OE\/SB-250",
+    "SummitName": "Faistenauer Schafberg",
+    "Total": 1367
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7451556,
+    "ActivationDate": "2024-04-07",
+    "OtherCallsign": "OE6UVG\/P",
+    "Points": 6,
+    "SummitCode": "OE\/ST-448",
+    "SummitName": "Gipfel zwischen Fensteralm und Polsterkogel",
+    "Total": 1373
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7451557,
+    "ActivationDate": "2024-04-07",
+    "OtherCallsign": "OE5FFE\/P",
+    "Points": 6,
+    "SummitCode": "OE\/SB-337",
+    "SummitName": "Trattberg",
+    "Total": 1379
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7451558,
+    "ActivationDate": "2024-04-07",
+    "OtherCallsign": "OE5REO\/P",
+    "Points": 0,
+    "SummitCode": "OE\/OO-408",
+    "SummitName": "Hochbrand",
+    "Total": 1379
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7451559,
+    "ActivationDate": "2024-04-07",
+    "OtherCallsign": "OE5JKL\/P",
+    "Points": 1,
+    "SummitCode": "OE\/NO-183",
+    "SummitName": "Galgenberg",
+    "Total": 1380
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7451560,
+    "ActivationDate": "2024-04-07",
+    "OtherCallsign": "OE\/OM1ST\/P",
+    "Points": 6,
+    "SummitCode": "OE\/ST-537",
+    "SummitName": "Kleiner Proles",
+    "Total": 1386
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7451543,
+    "ActivationDate": "2024-04-07",
+    "OtherCallsign": "OE1RIG\/P",
+    "Points": 6,
+    "SummitCode": "OE\/NO-032",
+    "SummitName": "Obersberg (Ahornberg)",
+    "Total": 1392
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7451561,
+    "ActivationDate": "2024-04-07",
+    "OtherCallsign": "DB7MM\/P",
+    "Points": 6,
+    "SummitCode": "DM\/BM-344",
+    "SummitName": "Kleiner Kulm",
+    "Total": 1398
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7451562,
+    "ActivationDate": "2024-04-07",
+    "OtherCallsign": "YO5MCM\/P",
+    "Points": 4,
+    "SummitCode": "YO\/WC-026",
+    "SummitName": "Dealul Sândului",
+    "Total": 1402
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7453305,
+    "ActivationDate": "2024-04-08",
+    "OtherCallsign": "OE5BAY\/P",
+    "Points": 6,
+    "SummitCode": "OE\/OO-249",
+    "SummitName": "Hühnerkogel",
+    "Total": 1408
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7455484,
+    "ActivationDate": "2024-04-09",
+    "OtherCallsign": "OE5CSP\/P",
+    "Points": 6,
+    "SummitCode": "OE\/OO-346",
+    "SummitName": "Breitenberg",
+    "Total": 1414
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7455566,
+    "ActivationDate": "2024-04-09",
+    "OtherCallsign": "SV2RUJ\/P",
+    "Points": 4,
+    "SummitCode": "SV\/MC-076",
+    "SummitName": "Gurnes",
+    "Total": 1418
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7459106,
+    "ActivationDate": "2024-04-11",
+    "OtherCallsign": "IW3AGO\/P",
+    "Points": 4,
+    "SummitCode": "I\/TN-174",
+    "SummitName": "Monte Ozol",
+    "Total": 1422
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7459107,
+    "ActivationDate": "2024-04-11",
+    "OtherCallsign": "DL1CR\/P",
+    "Points": 2,
+    "SummitCode": "DM\/NS-122",
+    "SummitName": "Bröhn",
+    "Total": 1424
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7459103,
+    "ActivationDate": "2024-04-11",
+    "OtherCallsign": "DF7TF\/P",
+    "Points": 10,
+    "SummitCode": "DM\/BW-038",
+    "SummitName": "Lemberg",
+    "Total": 1434
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7459104,
+    "ActivationDate": "2024-04-11",
+    "OtherCallsign": "HB9HCS\/P",
+    "Points": 1,
+    "SummitCode": "HB\/AG-004",
+    "SummitName": "Heitersberg",
+    "Total": 1435
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7459105,
+    "ActivationDate": "2024-04-11",
+    "OtherCallsign": "LA7MHA",
+    "Points": 1,
+    "SummitCode": "LA\/VF-017",
+    "SummitName": "Storås",
+    "Total": 1436
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7462433,
+    "ActivationDate": "2024-04-13",
+    "OtherCallsign": "OE5JKL\/P",
+    "Points": 1,
+    "SummitCode": "OE\/OO-135",
+    "SummitName": "Kürnberg (Kürnbergburg)",
+    "Total": 1437
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7462497,
+    "ActivationDate": "2024-04-13",
+    "OtherCallsign": "OE5JKL\/P",
+    "Points": 0,
+    "SummitCode": "OE\/OO-135",
+    "SummitName": "Kürnberg (Kürnbergburg)",
+    "Total": 1437
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7471974,
+    "ActivationDate": "2024-04-14",
+    "OtherCallsign": "OE6HMM\/P",
+    "Points": 6,
+    "SummitCode": "OE\/ST-171",
+    "SummitName": "Stuhleck",
+    "Total": 1443
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7471975,
+    "ActivationDate": "2024-04-14",
+    "OtherCallsign": "OK\/OE5JKL\/P",
+    "Points": 10,
+    "SummitCode": "OK\/JC-018",
+    "SummitName": "Kleť",
+    "Total": 1453
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7471976,
+    "ActivationDate": "2024-04-14",
+    "OtherCallsign": "IK2LEY\/P",
+    "Points": 4,
+    "SummitCode": "I\/LO-226",
+    "SummitName": "Monte Preaola",
+    "Total": 1457
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7471977,
+    "ActivationDate": "2024-04-14",
+    "OtherCallsign": "DL\/HB9CRY\/P",
+    "Points": 10,
+    "SummitCode": "DM\/BW-002",
+    "SummitName": "Herzogenhorn",
+    "Total": 1467
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7471978,
+    "ActivationDate": "2024-04-14",
+    "OtherCallsign": "EA2EYI\/P",
+    "Points": 2,
+    "SummitCode": "EA2\/VI-026",
+    "SummitName": "Arrieta",
+    "Total": 1469
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7471979,
+    "ActivationDate": "2024-04-14",
+    "OtherCallsign": "OK\/OE5JKL\/P",
+    "Points": 0,
+    "SummitCode": "OK\/JC-018",
+    "SummitName": "Kleť",
+    "Total": 1469
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7471980,
+    "ActivationDate": "2024-04-14",
+    "OtherCallsign": "OE5EEP\/P",
+    "Points": 6,
+    "SummitCode": "OE\/NO-215",
+    "SummitName": "Alpl",
+    "Total": 1475
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7471981,
+    "ActivationDate": "2024-04-14",
+    "OtherCallsign": "HB9HCS\/P",
+    "Points": 4,
+    "SummitCode": "HB\/AI-007",
+    "SummitName": "Kronberg",
+    "Total": 1479
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7471982,
+    "ActivationDate": "2024-04-14",
+    "OtherCallsign": "EA2EXN",
+    "Points": 6,
+    "SummitCode": "EA1\/CT-130",
+    "SummitName": "Sobrecomillas",
+    "Total": 1485
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7471983,
+    "ActivationDate": "2024-04-14",
+    "OtherCallsign": "DL8MEK\/P",
+    "Points": 4,
+    "SummitCode": "DL\/CG-089",
+    "SummitName": "Hochscharten",
+    "Total": 1489
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7471984,
+    "ActivationDate": "2024-04-14",
+    "OtherCallsign": "OE5DZL\/P",
+    "Points": 6,
+    "SummitCode": "OE\/OO-261",
+    "SummitName": "Gschirreck",
+    "Total": 1495
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7471985,
+    "ActivationDate": "2024-04-14",
+    "OtherCallsign": "OE6MHO\/P",
+    "Points": 4,
+    "SummitCode": "OE\/OO-449",
+    "SummitName": "Hoher Rosenkogel",
+    "Total": 1499
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7471986,
+    "ActivationDate": "2024-04-14",
+    "OtherCallsign": "SV2RUJ\/P",
+    "Points": 2,
+    "SummitCode": "SV\/MC-078",
+    "SummitName": "882",
+    "Total": 1501
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7471987,
+    "ActivationDate": "2024-04-14",
+    "OtherCallsign": "OE6ADE\/P",
+    "Points": 10,
+    "SummitCode": "OE\/SB-016",
+    "SummitName": "Kreuzkogel",
+    "Total": 1511
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7471988,
+    "ActivationDate": "2024-04-14",
+    "OtherCallsign": "OE6ADE\/P",
+    "Points": 0,
+    "SummitCode": "OE\/SB-016",
+    "SummitName": "Kreuzkogel",
+    "Total": 1511
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7471989,
+    "ActivationDate": "2024-04-14",
+    "OtherCallsign": "HB9HUT\/P",
+    "Points": 2,
+    "SummitCode": "HB\/SG-060",
+    "SummitName": "Tweralpspitz",
+    "Total": 1513
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7471990,
+    "ActivationDate": "2024-04-14",
+    "OtherCallsign": "EB2DJB\/P",
+    "Points": 4,
+    "SummitCode": "EA2\/BI-011",
+    "SummitName": "Leungana",
+    "Total": 1517
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7471991,
+    "ActivationDate": "2024-04-14",
+    "OtherCallsign": "OE7RDI\/P",
+    "Points": 4,
+    "SummitCode": "OE\/TL-041",
+    "SummitName": "Pasterkopf",
+    "Total": 1521
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7471992,
+    "ActivationDate": "2024-04-14",
+    "OtherCallsign": "OE5FFE\/P",
+    "Points": 6,
+    "SummitCode": "OE\/SB-250",
+    "SummitName": "Faistenauer Schafberg",
+    "Total": 1527
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7471993,
+    "ActivationDate": "2024-04-14",
+    "OtherCallsign": "OK\/SQ9MDF\/P",
+    "Points": 10,
+    "SummitCode": "OK\/PL-007",
+    "SummitName": "Poledník",
+    "Total": 1537
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7468965,
+    "ActivationDate": "2024-04-14",
+    "OtherCallsign": "DK3RN\/P",
+    "Points": 8,
+    "SummitCode": "DM\/BW-348",
+    "SummitName": "Gehrenberg",
+    "Total": 1545
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7482386,
+    "ActivationDate": "2024-04-21",
+    "OtherCallsign": "OE5JFE\/P",
+    "Points": 4,
+    "SummitCode": "OE\/OO-412",
+    "SummitName": "Gaflenzer Kaibling",
+    "Total": 1549
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7483785,
+    "ActivationDate": "2024-04-21",
+    "OtherCallsign": "OE5YYN\/P",
+    "Points": 2,
+    "SummitCode": "OE\/OO-415",
+    "SummitName": "Weißes Kreuz",
+    "Total": 1551
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7493418,
+    "ActivationDate": "2024-04-26",
+    "OtherCallsign": "OE5BAY\/P",
+    "Points": 2,
+    "SummitCode": "OE\/NO-310",
+    "SummitName": "Briefberg",
+    "Total": 1553
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7494274,
+    "ActivationDate": "2024-04-26",
+    "OtherCallsign": "OE5BAY\/P",
+    "Points": 2,
+    "SummitCode": "OE\/NO-128",
+    "SummitName": "Schusserberg",
+    "Total": 1555
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7496911,
+    "ActivationDate": "2024-04-27",
+    "OtherCallsign": "OE6MHO\/P",
+    "Points": 4,
+    "SummitCode": "OE\/OO-074",
+    "SummitName": "Predigstuhl",
+    "Total": 1559
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7496912,
+    "ActivationDate": "2024-04-27",
+    "OtherCallsign": "OE3JPD\/P",
+    "Points": 2,
+    "SummitCode": "OE\/OO-415",
+    "SummitName": "Weißes Kreuz",
+    "Total": 1561
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7496913,
+    "ActivationDate": "2024-04-27",
+    "OtherCallsign": "OE1IAH\/P",
+    "Points": 4,
+    "SummitCode": "OE\/OO-287",
+    "SummitName": "Viehberg",
+    "Total": 1565
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7496914,
+    "ActivationDate": "2024-04-27",
+    "OtherCallsign": "OE1UHU\/P",
+    "Points": 0,
+    "SummitCode": "OE\/OO-287",
+    "SummitName": "Viehberg",
+    "Total": 1565
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7496915,
+    "ActivationDate": "2024-04-27",
+    "OtherCallsign": "OE3IPU\/P",
+    "Points": 4,
+    "SummitCode": "OE\/NO-071",
+    "SummitName": "Kieneck",
+    "Total": 1569
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7496916,
+    "ActivationDate": "2024-04-27",
+    "OtherCallsign": "OE1IAH\/P",
+    "Points": 0,
+    "SummitCode": "OE\/OO-287",
+    "SummitName": "Viehberg",
+    "Total": 1569
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7496917,
+    "ActivationDate": "2024-04-27",
+    "OtherCallsign": "OE1UHU\/P",
+    "Points": 0,
+    "SummitCode": "OE\/OO-287",
+    "SummitName": "Viehberg",
+    "Total": 1569
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7496918,
+    "ActivationDate": "2024-04-27",
+    "OtherCallsign": "OE5JFE\/P",
+    "Points": 2,
+    "SummitCode": "OE\/OO-432",
+    "SummitName": "Schweizersberg",
+    "Total": 1571
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7496965,
+    "ActivationDate": "2024-04-27",
+    "OtherCallsign": "OE1IAH\/P",
+    "Points": 2,
+    "SummitCode": "OE\/OO-438",
+    "SummitName": "Ruine Ruttenstein",
+    "Total": 1573
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7510037,
+    "ActivationDate": "2024-05-01",
+    "OtherCallsign": "OE20SOTA\/P",
+    "Points": 2,
+    "SummitCode": "OE\/NO-312",
+    "SummitName": "Richtereck",
+    "Total": 1575
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7510025,
+    "ActivationDate": "2024-05-01",
+    "OtherCallsign": "OE6MHO\/P",
+    "Points": 4,
+    "SummitCode": "OE\/OO-398",
+    "SummitName": "Höherstein",
+    "Total": 1579
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7510026,
+    "ActivationDate": "2024-05-01",
+    "OtherCallsign": "DL\/HB9EVF\/P",
+    "Points": 10,
+    "SummitCode": "DM\/BW-293",
+    "SummitName": "Zeller Blauen",
+    "Total": 1589
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7510027,
+    "ActivationDate": "2024-05-01",
+    "OtherCallsign": "DL\/HB9HXJ\/P",
+    "Points": 0,
+    "SummitCode": "DM\/BW-293",
+    "SummitName": "Zeller Blauen",
+    "Total": 1589
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7510028,
+    "ActivationDate": "2024-05-01",
+    "OtherCallsign": "DL\/ON4UP\/P",
+    "Points": 6,
+    "SummitCode": "DM\/BM-339",
+    "SummitName": "Rauher Kulm",
+    "Total": 1595
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7510029,
+    "ActivationDate": "2024-05-01",
+    "OtherCallsign": "HB9CYX\/P",
+    "Points": 2,
+    "SummitCode": "HB\/BL-004",
+    "SummitName": "Ruchen",
+    "Total": 1597
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7510030,
+    "ActivationDate": "2024-05-01",
+    "OtherCallsign": "SQ9BQW\/P",
+    "Points": 6,
+    "SummitCode": "SP\/BZ-039",
+    "SummitName": "Lubogoszcz",
+    "Total": 1603
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7510031,
+    "ActivationDate": "2024-05-01",
+    "OtherCallsign": "SP9BIJ\/P",
+    "Points": 0,
+    "SummitCode": "SP\/BZ-039",
+    "SummitName": "Lubogoszcz",
+    "Total": 1603
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7510032,
+    "ActivationDate": "2024-05-01",
+    "OtherCallsign": "DG9SFS\/P",
+    "Points": 2,
+    "SummitCode": "DM\/RP-150",
+    "SummitName": "Kinheimer Berg",
+    "Total": 1605
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7510033,
+    "ActivationDate": "2024-05-01",
+    "OtherCallsign": "9A6CW",
+    "Points": 6,
+    "SummitCode": "9A\/DH-037",
+    "SummitName": "Glavica",
+    "Total": 1611
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7510034,
+    "ActivationDate": "2024-05-01",
+    "OtherCallsign": "OE2GXL\/P",
+    "Points": 4,
+    "SummitCode": "OE\/SB-450",
+    "SummitName": "Gurlspitze",
+    "Total": 1615
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7510035,
+    "ActivationDate": "2024-05-01",
+    "OtherCallsign": "OE3JPD\/P",
+    "Points": 4,
+    "SummitCode": "OE\/NO-229",
+    "SummitName": "Prochenberg",
+    "Total": 1619
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7510036,
+    "ActivationDate": "2024-05-01",
+    "OtherCallsign": "OE5WFN\/P",
+    "Points": 2,
+    "SummitCode": "OE\/OO-097",
+    "SummitName": "Ameisberg",
+    "Total": 1621
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7514519,
+    "ActivationDate": "2024-05-04",
+    "OtherCallsign": "OE20SOTA\/P",
+    "Points": 2,
+    "SummitCode": "OE\/OO-378",
+    "SummitName": "Rinnerberg",
+    "Total": 1623
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7514550,
+    "ActivationDate": "2024-05-04",
+    "OtherCallsign": "OE20SOTA\/P",
+    "Points": 0,
+    "SummitCode": "OE\/OO-378",
+    "SummitName": "Rinnerberg",
+    "Total": 1623
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7517474,
+    "ActivationDate": "2024-05-04",
+    "OtherCallsign": "DL5RCN\/P",
+    "Points": 10,
+    "SummitCode": "DM\/BM-065",
+    "SummitName": "Haidel",
+    "Total": 1633
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7517465,
+    "ActivationDate": "2024-05-04",
+    "OtherCallsign": "OE5JKL\/P",
+    "Points": 4,
+    "SummitCode": "OE\/OO-080",
+    "SummitName": "Sternstein",
+    "Total": 1637
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7517503,
+    "ActivationDate": "2024-05-04",
+    "OtherCallsign": "OE5OBI\/P",
+    "Points": 2,
+    "SummitCode": "OE\/OO-119",
+    "SummitName": "Göblberg",
+    "Total": 1639
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7521180,
+    "ActivationDate": "2024-05-05",
+    "OtherCallsign": "OE5WFN\/P",
+    "Points": 1,
+    "SummitCode": "OE\/OO-135",
+    "SummitName": "Kürnberg (Kürnbergburg)",
+    "Total": 1640
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7559620,
+    "ActivationDate": "2024-05-09",
+    "OtherCallsign": "DO4AF\/P",
+    "Points": 10,
+    "SummitCode": "DM\/BM-006",
+    "SummitName": "Hirschenstein",
+    "Total": 1650
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7559621,
+    "ActivationDate": "2024-05-09",
+    "OtherCallsign": "OE20SOTA\/P",
+    "Points": 2,
+    "SummitCode": "OE\/NO-149",
+    "SummitName": "Höllenstein",
+    "Total": 1652
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7559622,
+    "ActivationDate": "2024-05-09",
+    "OtherCallsign": "OE3AOC\/P",
+    "Points": 2,
+    "SummitCode": "OE\/NO-261",
+    "SummitName": "Schwarzenberg",
+    "Total": 1654
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7559623,
+    "ActivationDate": "2024-05-09",
+    "OtherCallsign": "OE3AOC\/P",
+    "Points": 0,
+    "SummitCode": "OE\/NO-261",
+    "SummitName": "Schwarzenberg",
+    "Total": 1654
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7530225,
+    "ActivationDate": "2024-05-10",
+    "OtherCallsign": "OE20SOTA\/P",
+    "Points": 6,
+    "SummitCode": "OE\/ST-173",
+    "SummitName": "Großes Maiereck",
+    "Total": 1660
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7532324,
+    "ActivationDate": "2024-05-11",
+    "OtherCallsign": "OE6UVG\/P",
+    "Points": 8,
+    "SummitCode": "OE\/NO-006",
+    "SummitName": "Hochkar",
+    "Total": 1668
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7532562,
+    "ActivationDate": "2024-05-11",
+    "OtherCallsign": "OE5DZL",
+    "Points": 6,
+    "SummitCode": "OE\/SB-232",
+    "SummitName": "Pitscherberg",
+    "Total": 1674
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7535584,
+    "ActivationDate": "2024-05-13",
+    "OtherCallsign": "OE20SOTA\/P",
+    "Points": 2,
+    "SummitCode": "OE\/OO-429",
+    "SummitName": "Hochmauer",
+    "Total": 1676
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7535735,
+    "ActivationDate": "2024-05-13",
+    "OtherCallsign": "OE20SOTA\/P",
+    "Points": 1,
+    "SummitCode": "OE\/NO-174",
+    "SummitName": "Brandstetterkogel (Brandstetterkogelhütte)",
+    "Total": 1677
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7537006,
+    "ActivationDate": "2024-05-14",
+    "OtherCallsign": "OE20SOTA\/P",
+    "Points": 2,
+    "SummitCode": "OE\/OO-119",
+    "SummitName": "Göblberg",
+    "Total": 1679
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7537046,
+    "ActivationDate": "2024-05-14",
+    "OtherCallsign": "OE20SOTA\/P",
+    "Points": 0,
+    "SummitCode": "OE\/OO-119",
+    "SummitName": "Göblberg",
+    "Total": 1679
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7537069,
+    "ActivationDate": "2024-05-14",
+    "OtherCallsign": "OE20SOTA\/P",
+    "Points": 0,
+    "SummitCode": "OE\/OO-119",
+    "SummitName": "Göblberg",
+    "Total": 1679
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7537123,
+    "ActivationDate": "2024-05-14",
+    "OtherCallsign": "OE5FFE\/P",
+    "Points": 6,
+    "SummitCode": "OE\/SB-260",
+    "SummitName": "Bergköpfel",
+    "Total": 1685
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7538178,
+    "ActivationDate": "2024-05-15",
+    "OtherCallsign": "OE5AKM\/P",
+    "Points": 2,
+    "SummitCode": "OE\/OO-374",
+    "SummitName": "Hochstein",
+    "Total": 1687
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7538179,
+    "ActivationDate": "2024-05-15",
+    "OtherCallsign": "OE5FFE\/P",
+    "Points": 6,
+    "SummitCode": "OE\/SB-425",
+    "SummitName": "Schmittenstein",
+    "Total": 1693
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7538180,
+    "ActivationDate": "2024-05-15",
+    "OtherCallsign": "DK8OA\/P",
+    "Points": 4,
+    "SummitCode": "DM\/SX-045",
+    "SummitName": "Papststein",
+    "Total": 1697
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7538181,
+    "ActivationDate": "2024-05-15",
+    "OtherCallsign": "DL1CR\/P",
+    "Points": 0,
+    "SummitCode": "DM\/SX-045",
+    "SummitName": "Papststein",
+    "Total": 1697
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7538182,
+    "ActivationDate": "2024-05-15",
+    "OtherCallsign": "DL2DXA\/P",
+    "Points": 0,
+    "SummitCode": "DM\/SX-045",
+    "SummitName": "Papststein",
+    "Total": 1697
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7538183,
+    "ActivationDate": "2024-05-15",
+    "OtherCallsign": "OE5FFE\/P",
+    "Points": 0,
+    "SummitCode": "OE\/SB-425",
+    "SummitName": "Schmittenstein",
+    "Total": 1697
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7539108,
+    "ActivationDate": "2024-05-16",
+    "OtherCallsign": "IS0\/DJ2TG\/P",
+    "Points": 10,
+    "SummitCode": "IS0\/IS-009",
+    "SummitName": "Monte Armario",
+    "Total": 1707
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7542358,
+    "ActivationDate": "2024-05-17",
+    "OtherCallsign": "OE20SOTA\/P",
+    "Points": 1,
+    "SummitCode": "OE\/OO-135",
+    "SummitName": "Kürnberg (Kürnbergburg)",
+    "Total": 1708
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7544925,
+    "ActivationDate": "2024-05-18",
+    "OtherCallsign": "SV2HJW\/P",
+    "Points": 10,
+    "SummitCode": "SV\/MC-073",
+    "SummitName": "Siniatsiko",
+    "Total": 1718
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7544926,
+    "ActivationDate": "2024-05-18",
+    "OtherCallsign": "SV2NCH\/P",
+    "Points": 0,
+    "SummitCode": "SV\/MC-073",
+    "SummitName": "Siniatsiko",
+    "Total": 1718
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7544927,
+    "ActivationDate": "2024-05-18",
+    "OtherCallsign": "DL\/IN3ADF\/P",
+    "Points": 8,
+    "SummitCode": "DL\/MF-079",
+    "SummitName": "Wendelstein",
+    "Total": 1726
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7544928,
+    "ActivationDate": "2024-05-18",
+    "OtherCallsign": "OE1UHU",
+    "Points": 2,
+    "SummitCode": "OE\/NO-277",
+    "SummitName": "Sobetsberg",
+    "Total": 1728
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7544929,
+    "ActivationDate": "2024-05-18",
+    "OtherCallsign": "OE1UHU\/P",
+    "Points": 0,
+    "SummitCode": "OE\/NO-277",
+    "SummitName": "Sobetsberg",
+    "Total": 1728
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7544930,
+    "ActivationDate": "2024-05-18",
+    "OtherCallsign": "OE3JPD\/P",
+    "Points": 4,
+    "SummitCode": "OE\/NO-218",
+    "SummitName": "Friesling",
+    "Total": 1732
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7544931,
+    "ActivationDate": "2024-05-18",
+    "OtherCallsign": "OE5HWM\/P",
+    "Points": 6,
+    "SummitCode": "OE\/OO-033",
+    "SummitName": "Brunnkogel",
+    "Total": 1738
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7544932,
+    "ActivationDate": "2024-05-18",
+    "OtherCallsign": "OE6UVG\/P",
+    "Points": 8,
+    "SummitCode": "OE\/ST-129",
+    "SummitName": "Rappoldkogel",
+    "Total": 1746
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7544933,
+    "ActivationDate": "2024-05-18",
+    "OtherCallsign": "OE6STD\/P",
+    "Points": 0,
+    "SummitCode": "OE\/ST-129",
+    "SummitName": "Rappoldkogel",
+    "Total": 1746
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7544934,
+    "ActivationDate": "2024-05-18",
+    "OtherCallsign": "OE6HMM\/P",
+    "Points": 0,
+    "SummitCode": "OE\/ST-129",
+    "SummitName": "Rappoldkogel",
+    "Total": 1746
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7544924,
+    "ActivationDate": "2024-05-18",
+    "OtherCallsign": "OM1ACK\/P",
+    "Points": 2,
+    "SummitCode": "OM\/TT-002",
+    "SummitName": "Marhát",
+    "Total": 1748
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7545170,
+    "ActivationDate": "2024-05-18",
+    "OtherCallsign": "OE20SOTA\/P",
+    "Points": 2,
+    "SummitCode": "OE\/OO-330",
+    "SummitName": "Mayrhofberg",
+    "Total": 1750
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7547815,
+    "ActivationDate": "2024-05-19",
+    "OtherCallsign": "OE5OBI\/P",
+    "Points": 6,
+    "SummitCode": "OE\/SB-253",
+    "SummitName": "Bleckwand",
+    "Total": 1756
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7547932,
+    "ActivationDate": "2024-05-19",
+    "OtherCallsign": "IK2LEY\/P",
+    "Points": 6,
+    "SummitCode": "I\/LO-178",
+    "SummitName": "Monte Pilastro",
+    "Total": 1762
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7547933,
+    "ActivationDate": "2024-05-19",
+    "OtherCallsign": "DL\/IN3ADF\/P",
+    "Points": 4,
+    "SummitCode": "DL\/MF-107",
+    "SummitName": "Duempfel",
+    "Total": 1766
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7547934,
+    "ActivationDate": "2024-05-19",
+    "OtherCallsign": "OM\/OK4SU\/P",
+    "Points": 1,
+    "SummitCode": "OM\/TN-045",
+    "SummitName": "Bradlo",
+    "Total": 1767
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7547935,
+    "ActivationDate": "2024-05-19",
+    "OtherCallsign": "DG9MDM\/P",
+    "Points": 4,
+    "SummitCode": "DL\/CG-116",
+    "SummitName": "Mehrentaler Wand",
+    "Total": 1771
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7547936,
+    "ActivationDate": "2024-05-19",
+    "OtherCallsign": "OE20SOTA\/P",
+    "Points": 6,
+    "SummitCode": "OE\/SB-216",
+    "SummitName": "Schafberg",
+    "Total": 1777
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7547931,
+    "ActivationDate": "2024-05-19",
+    "OtherCallsign": "OE2CKF\/P",
+    "Points": 6,
+    "SummitCode": "OE\/SB-257",
+    "SummitName": "Zwölferhorn",
+    "Total": 1783
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7547937,
+    "ActivationDate": "2024-05-19",
+    "OtherCallsign": "OE5HCE\/P",
+    "Points": 4,
+    "SummitCode": "OE\/OO-452",
+    "SummitName": "Steinmühlen",
+    "Total": 1787
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7547938,
+    "ActivationDate": "2024-05-19",
+    "OtherCallsign": "YO5IA\/P",
+    "Points": 8,
+    "SummitCode": "YO\/WC-041",
+    "SummitName": "Muntele Mare",
+    "Total": 1795
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7547939,
+    "ActivationDate": "2024-05-19",
+    "OtherCallsign": "YO5MCM\/P",
+    "Points": 0,
+    "SummitCode": "YO\/WC-041",
+    "SummitName": "Muntele Mare",
+    "Total": 1795
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7549302,
+    "ActivationDate": "2024-05-20",
+    "OtherCallsign": "OE5EEP\/P",
+    "Points": 2,
+    "SummitCode": "OE\/OO-384",
+    "SummitName": "Kienberg",
+    "Total": 1797
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7549313,
+    "ActivationDate": "2024-05-20",
+    "OtherCallsign": "OE20SOTA\/P",
+    "Points": 4,
+    "SummitCode": "OE\/OO-271",
+    "SummitName": "Gaisberg",
+    "Total": 1801
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7549606,
+    "ActivationDate": "2024-05-20",
+    "OtherCallsign": "OK\/DB7MM\/P",
+    "Points": 6,
+    "SummitCode": "OK\/PL-021",
+    "SummitName": "Borek",
+    "Total": 1807
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7554534,
+    "ActivationDate": "2024-05-23",
+    "OtherCallsign": "OE5FFE\/P",
+    "Points": 6,
+    "SummitCode": "OE\/SB-220",
+    "SummitName": "Hoher Zinken",
+    "Total": 1813
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7554557,
+    "ActivationDate": "2024-05-23",
+    "OtherCallsign": "OE5FFE\/P",
+    "Points": 0,
+    "SummitCode": "OE\/SB-220",
+    "SummitName": "Hoher Zinken",
+    "Total": 1813
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7557818,
+    "ActivationDate": "2024-05-25",
+    "OtherCallsign": "OE5AKR\/P",
+    "Points": 4,
+    "SummitCode": "OE\/OO-080",
+    "SummitName": "Sternstein",
+    "Total": 1817
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7557819,
+    "ActivationDate": "2024-05-25",
+    "OtherCallsign": "OE5JFE\/P",
+    "Points": 4,
+    "SummitCode": "OE\/OO-356",
+    "SummitName": "Annasberg",
+    "Total": 1821
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7557820,
+    "ActivationDate": "2024-05-25",
+    "OtherCallsign": "OE5REO\/P",
+    "Points": 0,
+    "SummitCode": "OE\/OO-356",
+    "SummitName": "Annasberg",
+    "Total": 1821
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7557821,
+    "ActivationDate": "2024-05-25",
+    "OtherCallsign": "EA6\/HB9EVF\/P",
+    "Points": 2,
+    "SummitCode": "EA6\/MA-058",
+    "SummitName": "Coll de sa Canal",
+    "Total": 1823
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7557822,
+    "ActivationDate": "2024-05-25",
+    "OtherCallsign": "EA6\/HB9HXJ\/P",
+    "Points": 2,
+    "SummitCode": "EA6\/MA-048",
+    "SummitName": "Fumat",
+    "Total": 1825
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7557823,
+    "ActivationDate": "2024-05-25",
+    "OtherCallsign": "OE5JFE\/P",
+    "Points": 0,
+    "SummitCode": "OE\/OO-356",
+    "SummitName": "Annasberg",
+    "Total": 1825
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7557857,
+    "ActivationDate": "2024-05-25",
+    "OtherCallsign": "OE5BPA\/P",
+    "Points": 2,
+    "SummitCode": "OE\/OO-383",
+    "SummitName": "Oberriedel",
+    "Total": 1827
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7558097,
+    "ActivationDate": "2024-05-25",
+    "OtherCallsign": "OE5EDR\/P",
+    "Points": 2,
+    "SummitCode": "OE\/OO-119",
+    "SummitName": "Göblberg",
+    "Total": 1829
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7570266,
+    "ActivationDate": "2024-05-29",
+    "OtherCallsign": "OE5JFE\/P",
+    "Points": 2,
+    "SummitCode": "OE\/OO-437",
+    "SummitName": "Kienastberg",
+    "Total": 1831
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7575424,
+    "ActivationDate": "2024-06-01",
+    "OtherCallsign": "OE\/OM1ALT\/P",
+    "Points": 1,
+    "SummitCode": "OE\/BL-012",
+    "SummitName": "Sonnenberg",
+    "Total": 1832
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7583530,
+    "ActivationDate": "2024-06-05",
+    "OtherCallsign": "OE20SOTA\/P",
+    "Points": 6,
+    "SummitCode": "OE\/OO-345",
+    "SummitName": "Hochedl",
+    "Total": 1838
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7588303,
+    "ActivationDate": "2024-06-08",
+    "OtherCallsign": "OE20SOTA\/P",
+    "Points": 2,
+    "SummitCode": "OE\/OO-384",
+    "SummitName": "Kienberg",
+    "Total": 1840
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7588521,
+    "ActivationDate": "2024-06-08",
+    "OtherCallsign": "OE20SOTA\/P",
+    "Points": 0,
+    "SummitCode": "OE\/OO-384",
+    "SummitName": "Kienberg",
+    "Total": 1840
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7589676,
+    "ActivationDate": "2024-06-08",
+    "OtherCallsign": "OE20SOTA\/P",
+    "Points": 4,
+    "SummitCode": "OE\/OO-084",
+    "SummitName": "Eiskogel",
+    "Total": 1844
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7589942,
+    "ActivationDate": "2024-06-08",
+    "OtherCallsign": "OE20SOTA\/P",
+    "Points": 0,
+    "SummitCode": "OE\/OO-084",
+    "SummitName": "Eiskogel",
+    "Total": 1844
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7605080,
+    "ActivationDate": "2024-06-14",
+    "OtherCallsign": "IN3ADF\/P",
+    "Points": 6,
+    "SummitCode": "I\/TN-156",
+    "SummitName": "Monte Cuc",
+    "Total": 1850
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7605081,
+    "ActivationDate": "2024-06-14",
+    "OtherCallsign": "EA6\/M0JIA\/P",
+    "Points": 6,
+    "SummitCode": "EA6\/MA-018",
+    "SummitName": "Puig de sa Bassa",
+    "Total": 1856
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7605082,
+    "ActivationDate": "2024-06-14",
+    "OtherCallsign": "OE\/DG2GTG\/P",
+    "Points": 10,
+    "SummitCode": "OE\/TI-358",
+    "SummitName": "Patscherkofel",
+    "Total": 1866
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7605083,
+    "ActivationDate": "2024-06-14",
+    "OtherCallsign": "OE\/DL1STN\/P",
+    "Points": 0,
+    "SummitCode": "OE\/TI-358",
+    "SummitName": "Patscherkofel",
+    "Total": 1866
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7605084,
+    "ActivationDate": "2024-06-14",
+    "OtherCallsign": "DM1DF\/P",
+    "Points": 6,
+    "SummitCode": "DL\/EW-020",
+    "SummitName": "Rotwandkopf",
+    "Total": 1872
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7605085,
+    "ActivationDate": "2024-06-14",
+    "OtherCallsign": "S57MS\/P",
+    "Points": 2,
+    "SummitCode": "S5\/BI-076",
+    "SummitName": "Gavžna gora",
+    "Total": 1874
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7619985,
+    "ActivationDate": "2024-06-21",
+    "OtherCallsign": "OE20SOTA\/P",
+    "Points": 8,
+    "SummitCode": "OE\/SB-158",
+    "SummitName": "Lackenkogel",
+    "Total": 1882
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7620155,
+    "ActivationDate": "2024-06-21",
+    "OtherCallsign": "OE20SOTA\/P",
+    "Points": 8,
+    "SummitCode": "OE\/SB-174",
+    "SummitName": "Vorderkogel",
+    "Total": 1890
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7624138,
+    "ActivationDate": "2024-06-22",
+    "OtherCallsign": "CT2HOV\/P",
+    "Points": 10,
+    "SummitCode": "CT\/DL-001",
+    "SummitName": "Serra do Marão",
+    "Total": 1900
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7624139,
+    "ActivationDate": "2024-06-22",
+    "OtherCallsign": "CR7BJF\/P",
+    "Points": 0,
+    "SummitCode": "CT\/DL-001",
+    "SummitName": "Serra do Marão",
+    "Total": 1900
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7627047,
+    "ActivationDate": "2024-06-23",
+    "OtherCallsign": "OE5OBI\/P",
+    "Points": 1,
+    "SummitCode": "OE\/WI-001",
+    "SummitName": "Hermannskogel",
+    "Total": 1901
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7627048,
+    "ActivationDate": "2024-06-23",
+    "OtherCallsign": "OE5OBI\/P",
+    "Points": 0,
+    "SummitCode": "OE\/WI-001",
+    "SummitName": "Hermannskogel",
+    "Total": 1901
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7627049,
+    "ActivationDate": "2024-06-23",
+    "OtherCallsign": "OE3TBU\/P",
+    "Points": 8,
+    "SummitCode": "OE\/ST-127",
+    "SummitName": "Dreimarkstein",
+    "Total": 1909
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7627050,
+    "ActivationDate": "2024-06-23",
+    "OtherCallsign": "OE20SOTA\/P",
+    "Points": 1,
+    "SummitCode": "OE\/NO-181",
+    "SummitName": "Rudolfshöhe",
+    "Total": 1910
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7627115,
+    "ActivationDate": "2024-06-23",
+    "OtherCallsign": "OE20SOTA\/P",
+    "Points": 1,
+    "SummitCode": "OE\/NO-206",
+    "SummitName": "Feuersteinberg",
+    "Total": 1911
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7627051,
+    "ActivationDate": "2024-06-23",
+    "OtherCallsign": "OE\/OM1ACK\/P",
+    "Points": 1,
+    "SummitCode": "OE\/NO-197",
+    "SummitName": "Braunsberg",
+    "Total": 1912
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7627052,
+    "ActivationDate": "2024-06-23",
+    "OtherCallsign": "OE5OBI\/P",
+    "Points": 2,
+    "SummitCode": "OE\/BL-020",
+    "SummitName": "Rosalienkapelle (Rosalia)",
+    "Total": 1914
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7627053,
+    "ActivationDate": "2024-06-23",
+    "OtherCallsign": "OE\/OM1ACK\/P",
+    "Points": 0,
+    "SummitCode": "OE\/NO-197",
+    "SummitName": "Braunsberg",
+    "Total": 1914
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7627054,
+    "ActivationDate": "2024-06-23",
+    "OtherCallsign": "OE20SOTA\/P",
+    "Points": 1,
+    "SummitCode": "OE\/NO-323",
+    "SummitName": "Wurzenberg",
+    "Total": 1915
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7627055,
+    "ActivationDate": "2024-06-23",
+    "OtherCallsign": "DL\/ON7DQ\/P",
+    "Points": 6,
+    "SummitCode": "DM\/BW-131",
+    "SummitName": "Ipf",
+    "Total": 1921
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7627056,
+    "ActivationDate": "2024-06-23",
+    "OtherCallsign": "DL3SBA\/P",
+    "Points": 6,
+    "SummitCode": "DM\/NW-193",
+    "SummitName": "Steinmarkskopf",
+    "Total": 1927
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7630201,
+    "ActivationDate": "2024-06-25",
+    "OtherCallsign": "OE20SOTA\/P",
+    "Points": 8,
+    "SummitCode": "OE\/NO-003",
+    "SummitName": "Ötscher",
+    "Total": 1935
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7632175,
+    "ActivationDate": "2024-06-26",
+    "OtherCallsign": "OE20SOTA\/P",
+    "Points": 8,
+    "SummitCode": "OE\/TL-001",
+    "SummitName": "Haidachstellwand",
+    "Total": 1943
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7662629,
+    "ActivationDate": "2024-07-09",
+    "OtherCallsign": "OE20SOTA\/P",
+    "Points": 6,
+    "SummitCode": "OE\/OO-050",
+    "SummitName": "Kremsmauer",
+    "Total": 1949
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7669736,
+    "ActivationDate": "2024-07-13",
+    "OtherCallsign": "GW\/OE5RTP\/P",
+    "Points": 1,
+    "SummitCode": "GW\/NW-070",
+    "SummitName": "Great Orme - Y Gogarth",
+    "Total": 1950
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7669740,
+    "ActivationDate": "2024-07-13",
+    "OtherCallsign": "GW\/OE5IRO\/P",
+    "Points": 0,
+    "SummitCode": "GW\/NW-070",
+    "SummitName": "Great Orme - Y Gogarth",
+    "Total": 1950
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7669743,
+    "ActivationDate": "2024-07-13",
+    "OtherCallsign": "OE20SOTA\/P",
+    "Points": 6,
+    "SummitCode": "OE\/KT-409",
+    "SummitName": "Kuster",
+    "Total": 1956
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7670030,
+    "ActivationDate": "2024-07-13",
+    "OtherCallsign": "OE5GFI\/P",
+    "Points": 8,
+    "SummitCode": "OE\/OO-183",
+    "SummitName": "Scheiblingstein",
+    "Total": 1964
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7670611,
+    "ActivationDate": "2024-07-13",
+    "OtherCallsign": "OE3AOC\/P",
+    "Points": 2,
+    "SummitCode": "OE\/NO-317",
+    "SummitName": "Hubberg",
+    "Total": 1966
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7676504,
+    "ActivationDate": "2024-07-14",
+    "OtherCallsign": "S58C\/P",
+    "Points": 10,
+    "SummitCode": "S5\/JA-002",
+    "SummitName": "Škrlatica",
+    "Total": 1976
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7676505,
+    "ActivationDate": "2024-07-14",
+    "OtherCallsign": "OE6TTF\/P",
+    "Points": 8,
+    "SummitCode": "OE\/ST-137",
+    "SummitName": "Windberg",
+    "Total": 1984
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7676506,
+    "ActivationDate": "2024-07-14",
+    "OtherCallsign": "OE6SLU\/P",
+    "Points": 0,
+    "SummitCode": "OE\/ST-137",
+    "SummitName": "Windberg",
+    "Total": 1984
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7676507,
+    "ActivationDate": "2024-07-14",
+    "OtherCallsign": "OE8TIR\/P",
+    "Points": 10,
+    "SummitCode": "OE\/KT-256",
+    "SummitName": "Staff",
+    "Total": 1994
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7676508,
+    "ActivationDate": "2024-07-14",
+    "OtherCallsign": "OK1NYD\/P",
+    "Points": 10,
+    "SummitCode": "OK\/PL-003",
+    "SummitName": "Jezerní hora",
+    "Total": 2004
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7676509,
+    "ActivationDate": "2024-07-14",
+    "OtherCallsign": "DL\/OE5WFN\/P",
+    "Points": 10,
+    "SummitCode": "DM\/BM-288",
+    "SummitName": "Frauenwald",
+    "Total": 2014
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7676510,
+    "ActivationDate": "2024-07-14",
+    "OtherCallsign": "OE5FFE\/P",
+    "Points": 10,
+    "SummitCode": "OE\/KT-002",
+    "SummitName": "Johannisberg",
+    "Total": 2024
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7676511,
+    "ActivationDate": "2024-07-14",
+    "OtherCallsign": "OE6AHF\/P",
+    "Points": 8,
+    "SummitCode": "OE\/KT-077",
+    "SummitName": "Großer Speikkogel",
+    "Total": 2032
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7676512,
+    "ActivationDate": "2024-07-14",
+    "OtherCallsign": "OE6UVG\/P",
+    "Points": 10,
+    "SummitCode": "OE\/ST-027",
+    "SummitName": "Zirbitzkogel",
+    "Total": 2042
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7676619,
+    "ActivationDate": "2024-07-15",
+    "OtherCallsign": "OK1JHR\/P",
+    "Points": 10,
+    "SummitCode": "OK\/KR-008",
+    "SummitName": "Velká Deštná",
+    "Total": 2052
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7677295,
+    "ActivationDate": "2024-07-15",
+    "OtherCallsign": "MD\/OE5RTP\/P",
+    "Points": 8,
+    "SummitCode": "GD\/GD-001",
+    "SummitName": "Snaefell",
+    "Total": 2060
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7677298,
+    "ActivationDate": "2024-07-15",
+    "OtherCallsign": "GW\/OE5IRO\/P",
+    "Points": 0,
+    "SummitCode": "GD\/GD-001",
+    "SummitName": "Snaefell",
+    "Total": 2060
+  },
+  {
+    "Confirmed": 0,
+    "ChaserLogID": 7677308,
+    "ActivationDate": "2024-07-15",
+    "OtherCallsign": "OE20SOTA\/P",
+    "Points": 8,
+    "SummitCode": "OE\/ST-158",
+    "SummitName": "Eiblkogel",
+    "Total": 2068
+  }
+]

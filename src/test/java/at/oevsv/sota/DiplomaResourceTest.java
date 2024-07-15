@@ -176,6 +176,21 @@ final class DiplomaResourceTest {
     }
 
     @Test
+    @GuardedBy("LOCK")
+    void candidateForOE20SOTA_requestDiploma_worksIfApplicable() {
+        synchronized (LOCK) {
+            final var candidates = sut.checkCandidatesForUser("OE5HKT", null);
+            final var filtered = candidates.stream().filter(candidate -> candidate.candidate().category().isSpecialDiploma()).collect(Collectors.toSet());
+
+            final var request = sut.requestDiploma("OE5HKT", new DiplomaRequest(new Requester("OE5HKT", "noreply@nothing.com", "Dip-Dip Dabbadudei"), filtered, "de"));
+            assertThat(request).isTrue();
+
+            assertThat(DiplomaLogResourceTestSeam.listPendingOn(logs)).isNotEmpty();
+            DiplomaLogResourceTestSeam.deleteAllOn(logs);
+        }
+    }
+
+    @Test
     void candidates_nonExistingUser_throws() {
         assertThatExceptionOfType(NotFoundException.class).isThrownBy(() -> sut.checkCandidatesForUser("OE1QSO", null));
     }

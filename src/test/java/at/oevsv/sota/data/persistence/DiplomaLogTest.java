@@ -21,11 +21,12 @@ import at.oevsv.sota.data.api.Candidate;
 import at.oevsv.sota.data.api.DiplomaRequest;
 import at.oevsv.sota.data.api.Requester;
 import at.oevsv.sota.data.api.SignedCandidate;
+import at.oevsv.sota.data.domain.Summit;
 import io.quarkus.test.common.QuarkusTestResource;
 import io.quarkus.test.junit.QuarkusTest;
+import jakarta.inject.Inject;
 import org.junit.jupiter.api.Test;
 
-import jakarta.inject.Inject;
 import java.util.Map;
 import java.util.Set;
 
@@ -46,6 +47,17 @@ final class DiplomaLogTest {
         sut.create(new DiplomaRequest(requester, Set.of(SignedCandidate.sign(candidate)), null));
 
         assertThat(sut.alreadyRequested(requester, candidate)).isTrue();
+    }
+
+    @Test
+    void alreadyRequested_specialDiploma_yieldsTrueAfterCreateEvenIfRankMayChange() {
+        final var requester = new Requester("OE5IDT", "test@nothing.com", "Max Mustermann");
+        final var candidate = new Candidate("OE5IDT", "1", Candidate.Category.OE20SOTA, Candidate.Rank.BRONZE, Map.of(Summit.State.OE1, 20L));
+
+        sut.create(new DiplomaRequest(requester, Set.of(SignedCandidate.sign(candidate)), null));
+
+        assertThat(sut.alreadyRequested(requester, candidate)).isTrue();
+        assertThat(sut.alreadyRequested(requester, new Candidate("OE5IDT", "1", Candidate.Category.OE20SOTA, Candidate.Rank.GOLD, Map.of(Summit.State.OE1, 20L, Summit.State.OE2, 1L)))).isTrue();
     }
 
     @Test

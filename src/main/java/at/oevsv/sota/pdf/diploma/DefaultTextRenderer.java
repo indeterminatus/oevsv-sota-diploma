@@ -204,7 +204,7 @@ final class DefaultTextRenderer implements TextRenderer {
         header.add(new Chunk(resourceBundle.getString("diploma.category." + candidate.category().name().toLowerCase(Locale.ROOT)), normalFont));
         writeColumn(writer, header, new Rectangle(llx, lly, urx, lly + height / 3.0f));
 
-        final var name = new Paragraph();
+        final var name = new Paragraph(20f);
         name.setAlignment(Element.ALIGN_CENTER);
         name.add(new Chunk(requester.callSign, highlightFont));
         name.add(Chunk.NEWLINE);

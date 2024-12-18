@@ -85,7 +85,6 @@ public final class SummitList {
     @RolesAllowed("admin")
     @Blocking
     @Path("/synchronize")
-    @Transactional
     public void synchronize() {
         doSynchronize();
     }

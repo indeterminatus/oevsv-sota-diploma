@@ -1,0 +1,10 @@
+SOTA Summits List (Date=30/09/2022)
+SummitCode,AssociationName,RegionName,SummitName,AltM,AltFt,GridRef1,GridRef2,Longitude,Latitude,Points,BonusPoints,ValidFrom,ValidTo,ActivationCount,ActivationDate,ActivationCall
+3Y/BV-001,"Bouvet Island","Bouvetøya (Bouvet Island)",Olavtoppen,780,2559,3.3565,-54.4104,3.35650,-54.41040,10,3,01/03/2018,31/12/2099,0,,
+OE/NO-325,Austria,Niederösterreich,Hochwald,920,3018,15.9813,47.9344,15.98130,47.93440,2,0,01/12/2016,31/12/2099,10,12/05/2022,OE/OM1ALT/P
+OE/NO-326,Austria,Niederösterreich,Doerrkogel,814,2670,14.8267,47.81,14.82670,47.81000,2,0,01/12/2016,31/12/2099,2,12/08/2020,OE5AUL/P
+OE/NO-327,Austria,Niederösterreich,Urmannsberg,794,2604,15.1191,47.9276,15.11910,47.92760,2,0,01/12/2016,31/12/2099,1,23/08/2018,OE3HPU/P
+OE/OO-001,Austria,Oberösterreich,"Hoher Dachstein",2995,9826,13.6056,47.4750,13.60560,47.47500,10,3,01/01/2004,31/12/2099,17,14/08/2022,OE5HDX/P
+OE/OO-002,Austria,Oberösterreich,"Hoher Gjaidstein",2794,9167,13.6322,47.4817,13.63220,47.48170,10,3,01/01/2004,31/12/2099,16,23/09/2022,OE/OK2QA/P
+OE/OO-003,Austria,Oberösterreich,Hunerkogel,2687,8816,13.6261,47.4675,13.62610,47.46750,10,3,01/01/2004,31/03/2011,5,26/02/2011,OE5HCE/P
+I/VE-283, Italy, Veneto, Monte Lozzo, 323, 1060, 11.6215, 45.2954, 11.62150, 45.29540, 1, 0, 01/10/2017, 31/12/2099, 8, 05/05/2024, IU3GKJ/P

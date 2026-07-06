@@ -16,6 +16,24 @@
 
 package at.oevsv.sota;
 
+import static at.oevsv.sota.ValidationUtil.callSignsMatch;
+
+import java.time.Duration;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
+
+import org.apache.commons.lang3.StringUtils;
+import org.eclipse.microprofile.config.inject.ConfigProperty;
+import org.eclipse.microprofile.rest.client.inject.RestClient;
+
 import at.oevsv.sota.data.ExternalDataService;
 import at.oevsv.sota.data.YearAwareFetcher;
 import at.oevsv.sota.data.api.Candidate;
@@ -50,185 +68,185 @@ import jakarta.ws.rs.QueryParam;
 import jakarta.ws.rs.WebApplicationException;
 import jakarta.ws.rs.core.Context;
 import jakarta.ws.rs.core.Response;
-import org.apache.commons.lang3.StringUtils;
-import org.eclipse.microprofile.config.inject.ConfigProperty;
-import org.eclipse.microprofile.rest.client.inject.RestClient;
-
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
-import java.time.Duration;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
-
-import static at.oevsv.sota.ValidationUtil.callSignsMatch;
 
 @Path("/api/diploma")
 public class DiplomaResource {
 
-    @ConfigProperty(name = "requests.per.minute", defaultValue = "5")
-    int requestsPerMinute;
+	@ConfigProperty(name = "requests.per.minute", defaultValue = "5")
+	int requestsPerMinute;
 
-    @ConfigProperty(name = "check.after.date", defaultValue = "2023-01-01")
-    LocalDate checkAfter;
+	@ConfigProperty(name = "check.after.date", defaultValue = "2023-01-01")
+	LocalDate checkAfter;
 
-    private final ExternalDataService externalDataService;
-    private final YearAwareFetcher yearAwareFetcher;
-    private final SummitList summitsService;
-    private final DiplomaLogResource logs;
-    private final RedisAPI redis;
+	private final ExternalDataService externalDataService;
+	private final YearAwareFetcher yearAwareFetcher;
+	private final SummitList summitsService;
+	private final DiplomaLogResource logs;
+	private final RedisAPI redis;
 
-    @Inject
-    public DiplomaResource(@RestClient ExternalDataService externalDataService, YearAwareFetcher yearAwareFetcher, SummitList summitsService, DiplomaLogResource logs, RedisAPI redis) {
-        this.externalDataService = externalDataService;
-        this.yearAwareFetcher = yearAwareFetcher;
-        this.summitsService = summitsService;
-        this.logs = logs;
-        this.redis = redis;
-    }
+	@Inject
+	public DiplomaResource(@RestClient ExternalDataService externalDataService, YearAwareFetcher yearAwareFetcher,
+			SummitList summitsService, DiplomaLogResource logs, RedisAPI redis) {
+		this.externalDataService = externalDataService;
+		this.yearAwareFetcher = yearAwareFetcher;
+		this.summitsService = summitsService;
+		this.logs = logs;
+		this.redis = redis;
+	}
 
-    Collection<Activator> fetchActivators() {
-        return externalDataService.fetchActivators("0");
-    }
+	Collection<Activator> fetchActivators() {
+		return externalDataService.fetchActivators("-1", 0);
+	}
 
-    Collection<Chaser> fetchChasers() {
-        return externalDataService.fetchChasers("0");
-    }
+	Collection<Chaser> fetchChasers() {
+		return externalDataService.fetchChasers("-1", 0);
+	}
 
-    Collection<ShortWaveListener> fetchShortWaveListeners() {
-        return externalDataService.fetchShortWaveListeners("0");
-    }
+	Collection<ShortWaveListener> fetchShortWaveListeners() {
+		return externalDataService.fetchShortWaveListeners("-1", 0);
+	}
 
-    @WithSpan(kind = SpanKind.SERVER, value = "Fetch complete summit list")
-    public Map<String, SummitListEntry> summitList() {
-        return summitsService.list().stream().collect(Collectors.toMap(SummitListEntry::getSummitCode, x -> x));
-    }
+	@WithSpan(kind = SpanKind.SERVER, value = "Fetch complete summit list")
+	public Map<String, SummitListEntry> summitList() {
+		return summitsService.list().stream().collect(Collectors.toMap(SummitListEntry::getSummitCode, x -> x));
+	}
 
-    @CacheResult(cacheName = "userid-cache")
-    @Nullable
-    @WithSpan(kind = SpanKind.SERVER, value = "Lookup UserID")
-    public String userIdForCallSign(@SpanAttribute("callSign") @Nullable String callSign) {
-        if (!ValidationUtil.isCallSign(callSign)) {
-            return null;
-        }
+	@CacheResult(cacheName = "userid-cache")
+	@Nullable
+	@WithSpan(kind = SpanKind.SERVER, value = "Lookup UserID")
+	public String userIdForCallSign(@SpanAttribute("callSign") @Nullable String callSign) {
+		if (!ValidationUtil.isCallSign(callSign)) {
+			return null;
+		}
 
-        // invariant: callSign is syntactically correct
-        final var activatorId = fetchActivators().stream()
-                .filter(activator -> callSignsMatch(callSign, activator.callSign()))
-                .findAny()
-                .map(Activator::userId);
-        if (activatorId.isPresent()) {
-            return activatorId.get();
-        }
+		// invariant: callSign is syntactically correct
+		final var activatorId = fetchActivators().stream()
+				.filter(activator -> callSignsMatch(callSign, activator.callSign()))
+				.findAny()
+				.map(Activator::userId);
+		if (activatorId.isPresent()) {
+			return activatorId.get();
+		}
 
-        final var chaserId = fetchChasers().stream()
-                .filter(chaser -> callSignsMatch(callSign, chaser.callSign()))
-                .findAny()
-                .map(Chaser::userId);
+		final var chaserId = fetchChasers().stream()
+				.filter(chaser -> callSignsMatch(callSign, chaser.callSign()))
+				.findAny()
+				.map(Chaser::userId);
 
-        // NB: we could check SWL here, but it was decided that we do not need to support them.
-        return chaserId.orElse(null);
-    }
+		// NB: we could check SWL here, but it was decided that we do not need to support them.
+		return chaserId.orElse(null);
+	}
 
-    @GET
-    @PermitAll
-    @Path("/candidates")
-    @Produces("application/json")
-    @Blocking
-    @WithSpan(kind = SpanKind.SERVER, value = "Check Diploma")
-    public Collection<SignedCandidate> checkCandidatesForUser(@SpanAttribute("callSign") @QueryParam("callsign") String callSign, @Context HttpServerRequest request) {
-        enforceRateLimit(request);
+	@GET
+	@PermitAll
+	@Path("/candidates")
+	@Produces("application/json")
+	@Blocking
+	@WithSpan(kind = SpanKind.SERVER, value = "Check Diploma")
+	public Collection<SignedCandidate> checkCandidatesForUser(
+			@SpanAttribute("callSign") @QueryParam("callsign") String callSign, @Context HttpServerRequest request) {
+		enforceRateLimit(request);
 
-        Log.infof("Retrieving candidates for user %s since %s", callSign, checkAfter);
-        final var userId = userIdForCallSign(callSign);
-        if (userId == null) {
-            throw new NotFoundException("No user found for callsign.");
-        }
+		Log.infof("Retrieving candidates for user %s since %s", callSign, checkAfter);
+		final var userId = userIdForCallSign(callSign);
+		if (userId == null) {
+			throw new NotFoundException("No user found for callsign.");
+		}
 
-        final var summitList = summitList();
-        final var common = new Rules.CommonArguments(callSign, userId, summitList, checkAfter);
+		final var summitList = summitList();
+		final var common = new Rules.CommonArguments(callSign, userId, summitList, checkAfter);
 
-        final Collection<Candidate> result = new ArrayList<>();
-        result.add(Rules.determineDiplomaCandidateAsActivator(yearAwareFetcher.fetchActivatorLogsById(userId, checkAfter), common));
+		final Collection<Candidate> result = new ArrayList<>();
+		result.add(
+				Rules.determineDiplomaCandidateAsActivator(yearAwareFetcher.fetchActivatorLogsById(userId, checkAfter),
+						common));
 
-        final var chaserLogs = yearAwareFetcher.fetchChaserLogsById(userId, checkAfter);
-        result.add(Rules.determineDiplomaCandidateAsChaser(chaserLogs, common));
-        result.add(Rules.determineDiplomaCandidateForSummitToSummit(yearAwareFetcher.fetchSummitToSummitLogsById(userId, checkAfter), common));
-        result.add(Rules.determineDiplomaCandidateForSpecialOE20SOTA(chaserLogs, common));
+		final var chaserLogs = yearAwareFetcher.fetchChaserLogsById(userId, checkAfter);
+		result.add(Rules.determineDiplomaCandidateAsChaser(chaserLogs, common));
+		result.add(Rules.determineDiplomaCandidateForSummitToSummit(
+				yearAwareFetcher.fetchSummitToSummitLogsById(userId, checkAfter), common));
+		result.add(Rules.determineDiplomaCandidateForSpecialOE20SOTA(chaserLogs, common));
 
-        final var requester = new Requester(callSign, null, null);
-        return result.stream()
-                .filter(candidate -> !logs.alreadyRequested(requester, candidate))
-                .map(SignedCandidate::sign)
-                .toList();
-    }
+		final var requester = new Requester(callSign, null, null);
+		return result.stream()
+				.filter(candidate -> !logs.alreadyRequested(requester, candidate))
+				.map(SignedCandidate::sign)
+				.toList();
+	}
 
-    /**
-     * This is a stateful operation that enforces a server-side rate limit. If control returns normally, the request rate is in lieu with the limits. If a threshold is violated, a {@link WebApplicationException} is thrown.
-     *
-     * @param request the request context if available
-     * @throws WebApplicationException if the rate limit is exceeded
-     * @implNote since the bucket used does not depend on the URL be careful where this method is invoked!
-     */
-    private void enforceRateLimit(@Nullable HttpServerRequest request) {
-        final var now = LocalDateTime.now();
-        final var throttlingKey = getThrottlingKey(request) + ":" + now.getMinute();
-        final var requests = await(redis.get(throttlingKey));
-        final int requestNumber = (requests != null) ? requests.toInteger() : 0;
-        if (requestNumber >= requestsPerMinute) {
-            Log.warnf("Exceeded %d requests per minute; key: %s", requestsPerMinute, throttlingKey);
-            throw new WebApplicationException(Response.status(Response.Status.TOO_MANY_REQUESTS).header("X-Rate-Limit-Retry-After-Seconds", 60 - now.getSecond()).build());
-        }
+	/**
+	 * This is a stateful operation that enforces a server-side rate limit. If control returns normally, the request rate is in lieu with the limits. If a threshold is violated, a {@link WebApplicationException} is thrown.
+	 *
+	 * @param request
+	 * 		the request context if available
+	 * @throws WebApplicationException
+	 * 		if the rate limit is exceeded
+	 * @implNote since the bucket used does not depend on the URL be careful where this method is invoked!
+	 */
+	private void enforceRateLimit(@Nullable HttpServerRequest request) {
+		final var now = LocalDateTime.now();
+		final var throttlingKey = getThrottlingKey(request) + ":" + now.getMinute();
+		final var script = """
+				local current = redis.call('INCR', KEYS[1])
+				if current == 1 then
+				  redis.call('EXPIRE', KEYS[1], ARGV[1])
+				end
+				return current
+				""";
 
-        await(redis.multi());
-        try {
-            await(redis.incr(throttlingKey));
-            await(redis.expire(List.of(throttlingKey, "60")));
-        } finally {
-            await(redis.exec());
-        }
-    }
+		final var response = await(redis.eval(List.of(script, "1", throttlingKey, "60")));
 
-    /**
-     * Determines the key relevant to throttling; for now, we try to determine the caller's IP, and fall back to a universal value if that fails.
-     * This is not the most solid approach and might lock out NATed users, but quite frankly this ought to be good enough. If there are many
-     * complaints that the service appears to be down, we can refine here.
-     *
-     * @param request the request context if available
-     * @return a non-null key to use as "bucket" for server-side rate-limiting
-     */
-    @Nonnull
-    private static String getThrottlingKey(@Nullable HttpServerRequest request) {
-        if (request != null) {
-            final var ip = request.remoteAddress().host();
-            if (StringUtils.isNotBlank(ip)) {
-                return ip;
-            }
-        }
-        return "global";
-    }
+		final int requestNumber = (response != null) ? response.toInteger() : 0;
+		if (requestNumber >= requestsPerMinute) {
+			/* NB: strictly speaking, we may report a different value than is used by redis TTL.
+			 * This is because for redis we use a 60-second sliding window, here we rely on wall-clock time.
+			 * However, since we don't expect this service to be called from scripted clients, this should be fine!
+			 */
+			Log.warnf("Exceeded %d requests per minute; key: %s", requestsPerMinute, throttlingKey);
+			throw new WebApplicationException(Response.status(Response.Status.TOO_MANY_REQUESTS)
+					.header("X-Rate-Limit-Retry-After-Seconds", 60 - now.getSecond())
+					.build());
+		}
+	}
 
-    @Nullable
-    private io.vertx.redis.client.Response await(Uni<io.vertx.mutiny.redis.client.Response> mutinyResponse) {
-        final var response = mutinyResponse.await().atMost(Duration.ofSeconds(20L));
-        if (response == null) {
-            return null;
-        }
-        return response.getDelegate();
-    }
+	/**
+	 * Determines the key relevant to throttling; for now, we try to determine the caller's IP, and fall back to a universal value if that fails.
+	 * This is not the most solid approach and might lock out NATed users, but quite frankly this ought to be good enough. If there are many
+	 * complaints that the service appears to be down, we can refine here.
+	 *
+	 * @param request
+	 * 		the request context if available
+	 * @return a non-null key to use as "bucket" for server-side rate-limiting
+	 */
+	@Nonnull
+	private static String getThrottlingKey(@Nullable HttpServerRequest request) {
+		if (request != null) {
+			final var ip = request.remoteAddress().host();
+			if (StringUtils.isNotBlank(ip)) {
+				return ip;
+			}
+		}
+		return "global";
+	}
 
-    @POST
-    @PermitAll
-    @Path("/request")
-    @Produces("application/json")
-    @Consumes("application/json")
-    @Blocking
-    @WithSpan(kind = SpanKind.SERVER, value = "Request Diploma")
-    public boolean requestDiploma(@SpanAttribute("callSign") @QueryParam("callsign") String callSign, DiplomaRequest request) {
-        return logs.create(request);
-    }
+	@Nullable
+	private io.vertx.redis.client.Response await(Uni<io.vertx.mutiny.redis.client.Response> mutinyResponse) {
+		final var response = mutinyResponse.await().atMost(Duration.ofSeconds(20L));
+		if (response == null) {
+			return null;
+		}
+		return response.getDelegate();
+	}
+
+	@POST
+	@PermitAll
+	@Path("/request")
+	@Produces("application/json")
+	@Consumes("application/json")
+	@Blocking
+	@WithSpan(kind = SpanKind.SERVER, value = "Request Diploma")
+	public boolean requestDiploma(@SpanAttribute("callSign") @QueryParam("callsign") String callSign,
+			DiplomaRequest request) {
+		return logs.create(request);
+	}
 }

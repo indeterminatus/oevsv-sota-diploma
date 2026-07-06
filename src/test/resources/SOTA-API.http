@@ -1,17 +1,17 @@
 ###
 # @name JSON aller Aktivierer
-GET https://api-db.sota.org.uk/admin/activator_roll?associationID=0
+GET https://api-db2.sota.org.uk/rolls/activator/-1/2026/all/all
 Accept: application/json
 Accept-Encoding: gzip
 
 ###
 # @name JSON aller Chaser
-GET https://api-db.sota.org.uk/admin/chaser_roll?associationID=0
+GET https://api-db2.sota.org.uk/rolls/chaser/-1/2026/all/all
 Accept: application/json
 
 ###
 # @name JSON aller SWL
-GET https://api-db.sota.org.uk/admin/swl_roll?associationID=-1
+GET https://api-db2.sota.org.uk/rolls/swl/-1/2026/all/all
 Accept: application/json
 
 ###

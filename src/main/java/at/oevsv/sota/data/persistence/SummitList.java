@@ -31,7 +31,9 @@ import jakarta.annotation.security.RolesAllowed;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.enterprise.event.Observes;
 import jakarta.inject.Inject;
+import jakarta.transaction.SystemException;
 import jakarta.transaction.Transactional;
+import jakarta.transaction.UserTransaction;
 import jakarta.ws.rs.Consumes;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.NotFoundException;
@@ -72,13 +74,15 @@ public final class SummitList {
 
     private final ExternalSummitsListService externalSummitsListService;
     private final ManagedExecutor executorService;
+    private final UserTransaction userTransaction;
 
     private final AtomicBoolean initialSynchronizationCompleted = new AtomicBoolean(false);
 
     @Inject
-    public SummitList(@RestClient ExternalSummitsListService externalSummitsListService, ManagedExecutor executorService) {
+    public SummitList(@RestClient ExternalSummitsListService externalSummitsListService, ManagedExecutor executorService, UserTransaction userTransaction) {
         this.externalSummitsListService = externalSummitsListService;
         this.executorService = executorService;
+        this.userTransaction = userTransaction;
     }
 
     @POST
@@ -136,15 +140,25 @@ public final class SummitList {
             log.persistAndFlush();
         } catch (IOException e) {
             Log.warn("Could not update summit list.", e);
+            markTransactionForRollback();
         } catch (RedirectionException | ClientWebApplicationException e) {
             if (e.getResponse().getStatus() == 304 || StringUtils.contains(e.getMessage(), "HTTP 304")) {
                 Log.info("No modifications since last check.");
             } else {
                 Log.warn("Could not update summit list.", e);
+                markTransactionForRollback();
             }
         }
 
         Log.infof("Last update: %s", lastSummitListFetch);
+    }
+
+    private void markTransactionForRollback() {
+        try {
+            userTransaction.setRollbackOnly();
+        } catch (SystemException e) {
+            Log.error("Failed to mark transaction for rollback", e);
+        }
     }
 
     @WithSpan(value = "Persist All Summits")
@@ -164,7 +178,6 @@ public final class SummitList {
                     source.persist();
                 }
             } else {
-                entity.setSummitCode(source.getSummitCode());
                 entity.setSummitName(source.getSummitName());
                 entity.setValidTo(source.getValidTo());
                 entity.setValidFrom(source.getValidFrom());

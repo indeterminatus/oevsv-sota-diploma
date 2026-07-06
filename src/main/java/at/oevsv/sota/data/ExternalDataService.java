@@ -16,6 +16,13 @@
 
 package at.oevsv.sota.data;
 
+import java.time.temporal.ChronoUnit;
+import java.util.Collection;
+
+import org.eclipse.microprofile.faulttolerance.Bulkhead;
+import org.eclipse.microprofile.faulttolerance.CircuitBreaker;
+import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
+
 import at.oevsv.sota.data.domain.Activator;
 import at.oevsv.sota.data.domain.ActivatorLog;
 import at.oevsv.sota.data.domain.Chaser;
@@ -24,66 +31,68 @@ import at.oevsv.sota.data.domain.ShortWaveListener;
 import at.oevsv.sota.data.domain.SummitToSummitLog;
 import io.quarkus.cache.CacheResult;
 import io.quarkus.vertx.http.Compressed;
-import org.eclipse.microprofile.faulttolerance.Bulkhead;
-import org.eclipse.microprofile.faulttolerance.CircuitBreaker;
-import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
-
 import jakarta.inject.Singleton;
 import jakarta.ws.rs.DefaultValue;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
+import jakarta.ws.rs.PathParam;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.QueryParam;
-import java.time.temporal.ChronoUnit;
-import java.util.Collection;
 
 @Singleton
-@Path("/admin")
-@RegisterRestClient(configKey = "api-db")
+@Path("/")
+@RegisterRestClient(configKey = "api-db2")
 public interface ExternalDataService {
 
-    @CacheResult(cacheName = "activator-cache")
-    @GET
-    @Compressed
-    @Path("/activator_roll")
-    @Produces("application/json")
-    Collection<Activator> fetchActivators(@DefaultValue("0") @QueryParam("associationID") String associationId);
+	@CacheResult(cacheName = "activator-cache")
+	@GET
+	@Compressed
+	@Path("/rolls/activator/{associationID}/{year}/all/all")
+	@Produces("application/json")
+	Collection<Activator> fetchActivators(@DefaultValue("-1") @PathParam("associationID") String associationId,
+			@DefaultValue("0") @PathParam("year") int year);
 
-    @CacheResult(cacheName = "chaser-cache")
-    @GET
-    @Compressed
-    @Path("/chaser_roll")
-    @Produces("application/json")
-    Collection<Chaser> fetchChasers(@DefaultValue("0") @QueryParam("associationID") String associationId);
+	@CacheResult(cacheName = "chaser-cache")
+	@GET
+	@Compressed
+	@Path("/rolls/activator/{associationID}/{year}/all/all")
+	@Produces("application/json")
+	Collection<Chaser> fetchChasers(@DefaultValue("-1") @PathParam("associationID") String associationId,
+			@DefaultValue("0") @PathParam("year") int year);
 
-    @CacheResult(cacheName = "swl-cache")
-    @GET
-    @Compressed
-    @Path("/swl_roll")
-    @Produces("application/json")
-    Collection<ShortWaveListener> fetchShortWaveListeners(@DefaultValue("0") @QueryParam("associationID") String associationId);
+	@CacheResult(cacheName = "swl-cache")
+	@GET
+	@Compressed
+	@Path("/rolls/swl/{associationID}/{year}/all/all")
+	@Produces("application/json")
+	Collection<ShortWaveListener> fetchShortWaveListeners(
+			@DefaultValue("-1") @PathParam("associationID") String associationId,
+			@DefaultValue("0") @PathParam("year") int year);
 
-    @GET
-    @Compressed
-    @Path("/activator_log_by_id")
-    @Produces("application/json")
-    @Bulkhead(value = 3)
-    @CircuitBreaker(requestVolumeThreshold = 4, successThreshold = 10, delay = 10L, delayUnit = ChronoUnit.SECONDS)
-    Collection<ActivatorLog> fetchActivatorLogsById(@QueryParam("id") String userId, @QueryParam("year") @DefaultValue("all") String year);
+	@GET
+	@Compressed
+	@Path("/admin/activator_log_by_id")
+	@Produces("application/json")
+	@Bulkhead(value = 3)
+	@CircuitBreaker(requestVolumeThreshold = 4, successThreshold = 10, delay = 10L, delayUnit = ChronoUnit.SECONDS)
+	Collection<ActivatorLog> fetchActivatorLogsById(@QueryParam("id") String userId,
+			@QueryParam("year") @DefaultValue("all") String year);
 
-    @GET
-    @Compressed
-    @Path("/chaser_log_by_id")
-    @Produces("application/json")
-    @Bulkhead(value = 3)
-    @CircuitBreaker(requestVolumeThreshold = 4, successThreshold = 10, delay = 10L, delayUnit = ChronoUnit.SECONDS)
-    Collection<ChaserLog> fetchChaserLogsById(@QueryParam("id") String userId, @QueryParam("year") @DefaultValue("all") String year);
+	@GET
+	@Compressed
+	@Path("/admin/chaser_log_by_id")
+	@Produces("application/json")
+	@Bulkhead(value = 3)
+	@CircuitBreaker(requestVolumeThreshold = 4, successThreshold = 10, delay = 10L, delayUnit = ChronoUnit.SECONDS)
+	Collection<ChaserLog> fetchChaserLogsById(@QueryParam("id") String userId,
+			@QueryParam("year") @DefaultValue("all") String year);
 
-    @GET
-    @Compressed
-    @Path("/s2s_log_by_id")
-    @Produces("application/json")
-    @Bulkhead(value = 3)
-    @CircuitBreaker(requestVolumeThreshold = 4, successThreshold = 10, delay = 10L, delayUnit = ChronoUnit.SECONDS)
-    Collection<SummitToSummitLog> fetchSummitToSummitLogsById(@QueryParam("id") String userId, @QueryParam("year") @DefaultValue("all") String year);
+	@GET
+	@Compressed
+	@Path("/admin/s2s_log_by_id")
+	@Produces("application/json")
+	@Bulkhead(value = 3)
+	@CircuitBreaker(requestVolumeThreshold = 4, successThreshold = 10, delay = 10L, delayUnit = ChronoUnit.SECONDS)
+	Collection<SummitToSummitLog> fetchSummitToSummitLogsById(@QueryParam("id") String userId,
+			@QueryParam("year") @DefaultValue("all") String year);
 }

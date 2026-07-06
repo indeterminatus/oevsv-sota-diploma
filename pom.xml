@@ -21,7 +21,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>at.oevsv.sota</groupId>
     <artifactId>diploma</artifactId>
-    <version>1.15.0-SNAPSHOT</version>
+    <version>1.17.0-SNAPSHOT</version>
 
     <name>OE SOTA Awards</name>
     <description>A web application (including backend services and UI frontend) to handle requesting awards for
@@ -42,12 +42,12 @@
         <compiler-plugin.version>3.12.1</compiler-plugin.version>
         <quarkus.platform.artifact-id>quarkus-bom</quarkus.platform.artifact-id>
         <quarkus.platform.group-id>io.quarkus.platform</quarkus.platform.group-id>
-        <quarkus.platform.version>3.14.4</quarkus.platform.version>
+        <quarkus.platform.version>3.32.2</quarkus.platform.version>
         <assertj.version>3.24.2</assertj.version>
         <skipITs>true</skipITs>
         <surefire-plugin.version>3.2.3</surefire-plugin.version>
         <owasp-dependency-check-plugin.version>7.1.1</owasp-dependency-check-plugin.version>
-        <quarkus-quinoa.version>2.3.6</quarkus-quinoa.version>
+        <quarkus-quinoa.version>2.7.2</quarkus-quinoa.version>
 
         <build.timestamp>${maven.build.timestamp}</build.timestamp>
         <maven.build.timestamp.format>yyyy-MM-dd HH:mm:ss</maven.build.timestamp.format>
@@ -162,6 +162,7 @@
                         <java.util.logging.manager>org.jboss.logmanager.LogManager</java.util.logging.manager>
                         <maven.home>${maven.home}</maven.home>
                     </systemPropertyVariables>
+                    <argLine>@{argLine}</argLine>
                 </configuration>
             </plugin>
             <plugin>
@@ -183,6 +184,9 @@
                         </configuration>
                     </execution>
                 </executions>
+                <configuration>
+                    <argLine>@{argLine}</argLine>
+                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.cyclonedx</groupId>
@@ -248,7 +252,7 @@
         <dependency>
             <groupId>com.opencsv</groupId>
             <artifactId>opencsv</artifactId>
-            <version>5.7.1</version>
+            <version>5.9</version>
             <exclusions>
                 <exclusion>
                     <artifactId>commons-logging</artifactId>
@@ -364,7 +368,7 @@
         <!-- Test dependencies -->
         <dependency>
             <groupId>io.quarkus</groupId>
-            <artifactId>quarkus-junit5</artifactId>
+            <artifactId>quarkus-junit</artifactId>
             <scope>test</scope>
         </dependency>
         <dependency>

@@ -54,7 +54,7 @@ public interface ExternalDataService {
 	@CacheResult(cacheName = "chaser-cache")
 	@GET
 	@Compressed
-	@Path("/rolls/activator/{associationID}/{year}/all/all")
+	@Path("/rolls/chaser/{associationID}/{year}/all/all")
 	@Produces("application/json")
 	Collection<Chaser> fetchChasers(@DefaultValue("-1") @PathParam("associationID") String associationId,
 			@DefaultValue("0") @PathParam("year") int year);

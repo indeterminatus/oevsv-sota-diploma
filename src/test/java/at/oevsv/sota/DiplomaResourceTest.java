@@ -108,6 +108,15 @@ final class DiplomaResourceTest {
         assertThat(sut.userIdForCallSign("OE5JFE/p")).isEqualTo("11330");
     }
 
+    /**
+     * OE6KPE is present in the chaser roll sample only (not in the activator roll); resolving it proves the
+     * chaser-roll fallback actually queries the chaser roll endpoint.
+     */
+    @Test
+    void userId_chaserOnlyCallSign_resolvedViaChaserRoll() {
+        assertThat(sut.userIdForCallSign("OE6KPE")).isEqualTo("46822");
+    }
+
     @Test
     @GuardedBy("LOCK")
     void candidates_OE5JFE_yieldExpectedResults() {

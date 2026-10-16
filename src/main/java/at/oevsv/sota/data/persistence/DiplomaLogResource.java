@@ -37,6 +37,7 @@ import jakarta.ws.rs.PathParam;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.Strings;
 import org.jetbrains.annotations.VisibleForTesting;
 
 import javax.annotation.Nullable;
@@ -105,7 +106,7 @@ public final class DiplomaLogResource {
         entry.setActivationsOE7(candidate.activations().getOrDefault(Summit.State.OE7, 0L).intValue());
         entry.setActivationsOE8(candidate.activations().getOrDefault(Summit.State.OE8, 0L).intValue());
         entry.setActivationsOE9(candidate.activations().getOrDefault(Summit.State.OE9, 0L).intValue());
-        if (StringUtils.equalsIgnoreCase(request.language(), "en")) {
+        if (Strings.CI.equals(request.language(), "en")) {
             entry.setLanguage(request.language());
         }
         entry.persist();
@@ -193,7 +194,7 @@ public final class DiplomaLogResource {
     }
 
     public static Locale toRequestedLocale(DiplomaLog diplomaLog) {
-        return StringUtils.equalsIgnoreCase(diplomaLog.getLanguage(), "en") ? Locale.ENGLISH : Locale.GERMAN;
+        return Strings.CI.equals(diplomaLog.getLanguage(), "en") ? Locale.ENGLISH : Locale.GERMAN;
     }
 
     private static void checkAndAdd(IntSupplier check, Summit.State state, Map<Summit.State, Long> target) {

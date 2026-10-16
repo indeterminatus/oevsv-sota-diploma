@@ -16,15 +16,7 @@
 
 package at.oevsv.sota.data;
 
-import at.oevsv.sota.data.domain.ActivatorLog;
-import at.oevsv.sota.data.domain.ChaserLog;
-import at.oevsv.sota.data.domain.SummitToSummitLog;
-import jakarta.enterprise.context.ApplicationScoped;
-import jakarta.inject.Inject;
-import org.eclipse.microprofile.rest.client.inject.RestClient;
-import org.jetbrains.annotations.VisibleForTesting;
-
-import javax.annotation.Nullable;
+import java.time.Clock;
 import java.time.LocalDate;
 import java.time.Period;
 import java.util.Collection;
@@ -32,63 +24,72 @@ import java.util.List;
 import java.util.function.Function;
 import java.util.stream.IntStream;
 
+import javax.annotation.Nullable;
+
+import org.eclipse.microprofile.rest.client.inject.RestClient;
+import org.jetbrains.annotations.VisibleForTesting;
+
+import at.oevsv.sota.data.domain.ActivatorLog;
+import at.oevsv.sota.data.domain.ChaserLog;
+import at.oevsv.sota.data.domain.SummitToSummitLog;
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.inject.Inject;
+
 @ApplicationScoped
 public class YearAwareFetcher {
 
-    private final ExternalDataService externalDataService;
+	private final ExternalDataService externalDataService;
 
-    @Inject
-    public YearAwareFetcher(@RestClient ExternalDataService externalDataService) {
-        this.externalDataService = externalDataService;
-    }
+	@Inject
+	public YearAwareFetcher(@RestClient ExternalDataService externalDataService) {
+		this.externalDataService = externalDataService;
+	}
 
-    public Collection<ActivatorLog> fetchActivatorLogsById(String userId, @Nullable LocalDate checkAfter) {
-        return combineResultsForEveryYear(checkAfter, year -> externalDataService.fetchActivatorLogsById(userId, year));
-    }
+	public Collection<ActivatorLog> fetchActivatorLogsById(String userId, @Nullable LocalDate checkAfter) {
+		return combineResultsForEveryYear(checkAfter, year -> externalDataService.fetchActivatorLogsById(userId, year));
+	}
 
-    public Collection<ChaserLog> fetchChaserLogsById(String userId, @Nullable LocalDate checkAfter) {
-        return combineResultsForEveryYear(checkAfter, year -> externalDataService.fetchChaserLogsById(userId, year));
-    }
+	public Collection<ChaserLog> fetchChaserLogsById(String userId, @Nullable LocalDate checkAfter) {
+		return combineResultsForEveryYear(checkAfter, year -> externalDataService.fetchChaserLogsById(userId, year));
+	}
 
-    public Collection<SummitToSummitLog> fetchSummitToSummitLogsById(String userId, @Nullable LocalDate checkAfter) {
-        return combineResultsForEveryYear(checkAfter, year -> externalDataService.fetchSummitToSummitLogsById(userId, year));
-    }
+	public Collection<SummitToSummitLog> fetchSummitToSummitLogsById(String userId, @Nullable LocalDate checkAfter) {
+		return combineResultsForEveryYear(checkAfter,
+				year -> externalDataService.fetchSummitToSummitLogsById(userId, year));
+	}
 
-    private static <T> Collection<T> combineResultsForEveryYear(@Nullable LocalDate checkAfter, Function<String, Collection<T>> supplier) {
-        return combineResultsForEveryYear(checkAfter, LocalDate.now(), supplier);
-    }
+	private static <T> Collection<T> combineResultsForEveryYear(@Nullable LocalDate checkAfter,
+			Function<String, Collection<T>> supplier) {
+		return combineResultsForEveryYear(checkAfter, LocalDate.now(Clock.systemUTC()), supplier);
+	}
 
-    @VisibleForTesting
-    static <T> Collection<T> combineResultsForEveryYear(@Nullable LocalDate checkAfter, LocalDate reference, Function<String, Collection<T>> supplier) {
-        return combineAll(yearParametersFor(checkAfter, reference), supplier);
-    }
+	@VisibleForTesting
+	static <T> Collection<T> combineResultsForEveryYear(@Nullable LocalDate checkAfter, LocalDate reference,
+			Function<String, Collection<T>> supplier) {
+		return combineAll(yearParametersFor(checkAfter, reference), supplier);
+	}
 
-    @VisibleForTesting
-    static List<String> yearParametersFor(@Nullable LocalDate checkAfter, LocalDate reference) {
-        if (checkAfter == null || checkAfter.isAfter(reference)) {
-            return List.of("all");
-        }
+	@VisibleForTesting
+	static List<String> yearParametersFor(@Nullable LocalDate checkAfter, LocalDate reference) {
+		if (checkAfter == null || checkAfter.isAfter(reference)) {
+			return List.of("9999");
+		}
 
-        final var spannedYears = Period.between(checkAfter, reference).getYears();
-        // invariant: checkAfter is always before reference; thus, spannedYears >= 0
-        if (spannedYears == 0) {
-            return List.of(String.valueOf(checkAfter.getYear()));
-        }
-        if (spannedYears > 10) {
-            return List.of("all");
-        }
+		final var spannedYears = Period.between(checkAfter, reference).getYears();
+		// invariant: checkAfter is always before reference; thus, spannedYears >= 0
+		if (spannedYears == 0) {
+			return List.of(String.valueOf(checkAfter.getYear()));
+		}
+		if (spannedYears > 10) {
+			return List.of("9999");
+		}
 
-        // invariant: multiple years to cover
-        return IntStream.rangeClosed(checkAfter.getYear(), reference.getYear())
-                .mapToObj(String::valueOf)
-                .toList();
-    }
+		// invariant: multiple years to cover
+		return IntStream.rangeClosed(checkAfter.getYear(), reference.getYear()).mapToObj(String::valueOf).toList();
+	}
 
-    @VisibleForTesting
-    static <T> Collection<T> combineAll(List<String> parameters, Function<String, Collection<T>> supplier) {
-        return parameters.stream()
-                .map(supplier)
-                .flatMap(Collection::stream)
-                .toList();
-    }
+	@VisibleForTesting
+	static <T> Collection<T> combineAll(List<String> parameters, Function<String, Collection<T>> supplier) {
+		return parameters.stream().map(supplier).flatMap(Collection::stream).toList();
+	}
 }

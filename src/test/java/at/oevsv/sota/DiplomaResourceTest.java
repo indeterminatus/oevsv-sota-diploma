@@ -164,10 +164,10 @@ final class DiplomaResourceTest {
     @GuardedBy("LOCK")
     void candidateForOE20SOTA_requestDiploma_failsIfNotApplicable() {
         synchronized (LOCK) {
-            final var candidates = sut.checkCandidatesForUser("OE5JFE", null);
+            final var candidates = sut.checkCandidatesForUser("W0TZ", null);
             final var filtered = candidates.stream().filter(candidate -> candidate.candidate().category().isSpecialDiploma()).collect(Collectors.toSet());
 
-            final var request = sut.requestDiploma("OE5JFE", new DiplomaRequest(new Requester("OE5JFE", "noreply@nothing.com", "Dip-Dip Dabbadudei"), filtered, "de"));
+            final var request = sut.requestDiploma("W0TZ", new DiplomaRequest(new Requester("OE5JFE", "noreply@nothing.com", "Dip-Dip Dabbadudei"), filtered, "de"));
             assertThat(request).isFalse();
 
             assertThat(DiplomaLogResourceTestSeam.listPendingOn(logs)).isEmpty();
@@ -202,14 +202,14 @@ final class DiplomaResourceTest {
             assertThat(candidate).extracting(Candidate::callSign).isEqualTo("OE5JFE");
             assertThat(candidate).extracting(Candidate::userID).isEqualTo("11330");
             assertThat(candidate.activations()).containsEntry(Summit.State.OE1, 1L);
-            assertThat(candidate.activations()).containsEntry(Summit.State.OE2, 19L);
-            assertThat(candidate.activations()).containsEntry(Summit.State.OE3, 11L);
+            assertThat(candidate.activations()).containsEntry(Summit.State.OE2, 38L);
+            assertThat(candidate.activations()).containsEntry(Summit.State.OE3, 21L);
             assertThat(candidate.activations()).containsEntry(Summit.State.OE4, 1L);
-            assertThat(candidate.activations()).containsEntry(Summit.State.OE5, 212L);
-            assertThat(candidate.activations()).containsEntry(Summit.State.OE6, 39L);
-            assertThat(candidate.activations()).containsEntry(Summit.State.OE7, 5L);
+            assertThat(candidate.activations()).containsEntry(Summit.State.OE5, 355L);
+            assertThat(candidate.activations()).containsEntry(Summit.State.OE6, 80L);
+            assertThat(candidate.activations()).containsEntry(Summit.State.OE7, 8L);
             assertThat(candidate.activations()).containsEntry(Summit.State.OE8, 7L);
-            assertThat(candidate.activations()).containsEntry(Summit.State.OE9, 1L);
+            assertThat(candidate.activations()).containsEntry(Summit.State.OE9, 2L);
         });
     }
 
@@ -219,15 +219,15 @@ final class DiplomaResourceTest {
             assertThat(candidate).extracting(Candidate::category).isEqualTo(Candidate.Category.CHASER);
             assertThat(candidate).extracting(Candidate::callSign).isEqualTo("OE5JFE");
             assertThat(candidate).extracting(Candidate::userID).isEqualTo("11330");
-            assertThat(candidate.activations()).containsEntry(Summit.State.OE1, 7L);
-            assertThat(candidate.activations()).containsEntry(Summit.State.OE2, 90L);
-            assertThat(candidate.activations()).containsEntry(Summit.State.OE3, 141L);
+            assertThat(candidate.activations()).containsEntry(Summit.State.OE1, 8L);
+            assertThat(candidate.activations()).containsEntry(Summit.State.OE2, 176L);
+            assertThat(candidate.activations()).containsEntry(Summit.State.OE3, 219L);
             assertThat(candidate.activations()).doesNotContainKey(Summit.State.OE4);
-            assertThat(candidate.activations()).containsEntry(Summit.State.OE5, 420L);
-            assertThat(candidate.activations()).containsEntry(Summit.State.OE6, 107L);
-            assertThat(candidate.activations()).containsEntry(Summit.State.OE7, 17L);
-            assertThat(candidate.activations()).containsEntry(Summit.State.OE8, 9L);
-            assertThat(candidate.activations()).containsEntry(Summit.State.OE9, 4L);
+            assertThat(candidate.activations()).containsEntry(Summit.State.OE5, 718L);
+            assertThat(candidate.activations()).containsEntry(Summit.State.OE6, 252L);
+            assertThat(candidate.activations()).containsEntry(Summit.State.OE7, 33L);
+            assertThat(candidate.activations()).containsEntry(Summit.State.OE8, 17L);
+            assertThat(candidate.activations()).containsEntry(Summit.State.OE9, 8L);
         });
     }
 }

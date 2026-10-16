@@ -46,7 +46,7 @@ final class JacksonDeserializationTest {
 
     @Test
     void deserializationTest() {
-        assertThat(service.fetchActivatorLogsById("11330", "all")).extracting("summit").doesNotContainNull();
+        assertThat(service.fetchActivatorLogsById("11330", "0")).extracting("summit").doesNotContainNull();
     }
 
     @Test

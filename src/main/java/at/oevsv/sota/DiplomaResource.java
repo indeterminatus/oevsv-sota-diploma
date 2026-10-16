@@ -18,6 +18,7 @@ package at.oevsv.sota;
 
 import static at.oevsv.sota.ValidationUtil.callSignsMatch;
 
+import java.time.Clock;
 import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -58,6 +59,7 @@ import io.vertx.core.http.HttpServerRequest;
 import io.vertx.mutiny.redis.client.RedisAPI;
 import jakarta.annotation.security.PermitAll;
 import jakarta.inject.Inject;
+import jakarta.ws.rs.BadRequestException;
 import jakarta.ws.rs.Consumes;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.NotFoundException;
@@ -148,6 +150,9 @@ public class DiplomaResource {
 		enforceRateLimit(request);
 
 		Log.infof("Retrieving candidates for user %s since %s", callSign, checkAfter);
+		if (callSign == null) {
+			throw new BadRequestException("Missing callsign parameter.");
+		}
 		final var userId = userIdForCallSign(callSign);
 		if (userId == null) {
 			throw new NotFoundException("No user found for callsign.");
@@ -184,7 +189,7 @@ public class DiplomaResource {
 	 * @implNote since the bucket used does not depend on the URL be careful where this method is invoked!
 	 */
 	private void enforceRateLimit(@Nullable HttpServerRequest request) {
-		final var now = LocalDateTime.now();
+		final var now = LocalDateTime.now(Clock.systemUTC());
 		final var throttlingKey = getThrottlingKey(request) + ":" + now.getMinute();
 		final var script = """
 				local current = redis.call('INCR', KEYS[1])

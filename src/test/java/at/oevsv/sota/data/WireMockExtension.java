@@ -32,7 +32,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.apache.commons.io.IOUtils;
-import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.Strings;
 
 import com.github.tomakehurst.wiremock.WireMockServer;
 import com.github.tomakehurst.wiremock.common.ConsoleNotifier;
@@ -59,30 +59,35 @@ public class WireMockExtension implements QuarkusTestResourceLifecycleManager {
 		wireMockServer.stubFor(get(urlMatching("/rolls/swl/-1/[0-9]+/all/all$")).willReturn(
 				okJson(loadFrom("/api-db2-samples/swl-2026-03-03.json"))));
 
-		wireMockServer.stubFor(get(urlMatching("/admin/activator_log_by_id\\?id=11330&year=(all|[0-9]+)$")).willReturn(
-				okJson(loadFrom("activator-log-oe5jfe-2022-08-12.json"))));
-		wireMockServer.stubFor(get(urlMatching("/admin/chaser_log_by_id\\?id=11330&year=(all|[0-9]+)$")).willReturn(
-				okJson(loadFrom("chaser-log-oe5jfe-2022-08-09.json"))));
-		wireMockServer.stubFor(get(urlMatching("/admin/s2s_log_by_id\\?id=11330&year=(all|[0-9]+)$")).willReturn(
-				okJson(loadFrom("s2s-log-oe5jfe-2022-08-14.json"))));
-		wireMockServer.stubFor(get(urlMatching("/admin/activator_log_by_id\\?id=11608&year=(all|[0-9]+)$")).willReturn(
-				okJson(loadFrom("activator-log-ik2ley-2023-04-11.json"))));
-		wireMockServer.stubFor(get(urlMatching("/admin/chaser_log_by_id\\?id=11608&year=(all|[0-9]+)$")).willReturn(
-				okJson(loadFrom("chaser-log-ik2ley-2023-04-11.json"))));
-		wireMockServer.stubFor(get(urlMatching("/admin/s2s_log_by_id\\?id=11608&year=(all|[0-9]+)$")).willReturn(
-				okJson(loadFrom("s2s-log-ik2ley-2023-04-11.json"))));
-		wireMockServer.stubFor(get(urlMatching("/admin/activator_log_by_id\\?id=52194&year=(all|[0-9]+)$")).willReturn(
-				okJson(loadFrom("activator-log-oe9nat-2022-08-28.json"))));
-		wireMockServer.stubFor(
-				get(urlMatching("/admin/chaser_log_by_id\\?id=52194&year=(all|[0-9]+)$")).willReturn(okJson("[]")));
-		wireMockServer.stubFor(
-				get(urlMatching("/admin/s2s_log_by_id\\?id=52194&year=(all|[0-9]+)$")).willReturn(okJson("[]")));
-		wireMockServer.stubFor(get(urlMatching("/admin/chaser_log_by_id\\?id=79437&year=(all|[0-9]+)$")).willReturn(
-				okJson(loadFrom("chaser-log-oe5hkt-2024-07-15.json"))));
-		wireMockServer.stubFor(
-				get(urlMatching("/admin/activator_log_by_id\\?id=79437&year=(all|[0-9]+)$")).willReturn(okJson("[]")));
-		wireMockServer.stubFor(
-				get(urlMatching("/admin/s2s_log_by_id\\?id=79437&year=(all|[0-9]+)$")).willReturn(okJson("[]")));
+		wireMockServer.stubFor(get(urlMatching("/logs/activator/11330/([0-9]+)/1$")).willReturn(
+				okJson(loadFrom("/api-db2-samples/activator-log-oe5jfe-2026-10-16.json"))));
+		wireMockServer.stubFor(get(urlMatching("/logs/chaser/11330/([0-9]+)/1$")).willReturn(
+				okJson(loadFrom("/api-db2-samples/chaser-log-oe5jfe-2026-10-16.json"))));
+		wireMockServer.stubFor(get(urlMatching("/logs/s2s/11330/([0-9]+)/1$")).willReturn(
+				okJson(loadFrom("/api-db2-samples/s2s-log-oe5jfe-2026-10-16.json"))));
+
+		wireMockServer.stubFor(get(urlMatching("/logs/activator/11608/([0-9]+)/1$")).willReturn(
+				okJson(loadFrom("/api-db2-samples/activator-log-ik2ley-2026-10-16.json"))));
+		wireMockServer.stubFor(get(urlMatching("/logs/chaser/11608/([0-9]+)/1$")).willReturn(
+				okJson(loadFrom("/api-db2-samples/chaser-log-ik2ley-2026-10-16.json"))));
+		wireMockServer.stubFor(get(urlMatching("/logs/s2s/11608/([0-9]+)/1$")).willReturn(
+				okJson(loadFrom("/api-db2-samples/s2s-log-ik2ley-2026-10-16.json"))));
+
+		wireMockServer.stubFor(get(urlMatching("/logs/chaser/79437/([0-9]+)/1$")).willReturn(
+				okJson(loadFrom("/api-db2-samples/chaser-log-oe5hkt-2026-10-16.json"))));
+		wireMockServer.stubFor(get(urlMatching("/logs/activator/79437/([0-9]+)/1$")).willReturn(okJson("[]")));
+		wireMockServer.stubFor(get(urlMatching("/logs/s2s/79437/([0-9]+)/1$")).willReturn(okJson("[]")));
+
+		wireMockServer.stubFor(get(urlMatching("/logs/activator/52194/([0-9]+)/1$")).willReturn(
+				okJson(loadFrom("/api-db2-samples/activator-log-oe9nat-2026-10-16.json"))));
+		wireMockServer.stubFor(get(urlMatching("/logs/chaser/52194/([0-9]+)/1$")).willReturn(okJson("[]")));
+		wireMockServer.stubFor(get(urlMatching("/logs/s2s/52194/([0-9]+)/1$")).willReturn(okJson("[]")));
+
+		wireMockServer.stubFor(get(urlMatching("/logs/chaser/46145/([0-9]+)/1$")).willReturn(
+				okJson(loadFrom("/api-db2-samples/chaser-log-w0tz-2026-10-16.json"))));
+		wireMockServer.stubFor(get(urlMatching("/logs/activator/46145/([0-9]+)/1$")).willReturn(okJson("[]")));
+		wireMockServer.stubFor(get(urlMatching("/logs/s2s/46145/([0-9]+)/1$")).willReturn(okJson("[]")));
+
 		wireMockServer.stubFor(get(urlEqualTo("/api/activations/OE/OO-006")).willReturn(
 				okJson(loadFrom("/api2-db-samples/summit-activation-log-oe-oo-006-2023-05-09.json"))));
 		wireMockServer.stubFor(get(urlMatching("/api/activations/.*")).willReturn(okJson("""
@@ -119,7 +124,7 @@ public class WireMockExtension implements QuarkusTestResourceLifecycleManager {
 	}
 
 	private static String testingResourceName(String resource) {
-		if (StringUtils.startsWith(resource, "/")) {
+		if (Strings.CS.startsWith(resource, "/")) {
 			return resource;
 		} else {
 			return "/api-db-samples/" + resource;

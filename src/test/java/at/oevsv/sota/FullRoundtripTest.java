@@ -16,7 +16,16 @@
 
 package at.oevsv.sota;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
+import java.util.concurrent.TimeUnit;
+
+import org.awaitility.Awaitility;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
 import at.oevsv.sota.data.WireMockExtension;
+import at.oevsv.sota.data.api.Candidate;
 import at.oevsv.sota.data.api.DiplomaRequest;
 import at.oevsv.sota.data.api.Requester;
 import at.oevsv.sota.data.persistence.DiplomaLogResource;
@@ -29,68 +38,74 @@ import io.quarkus.mailer.MockMailbox;
 import io.quarkus.test.common.QuarkusTestResource;
 import io.quarkus.test.junit.QuarkusTest;
 import jakarta.inject.Inject;
-import org.awaitility.Awaitility;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-
-import java.util.concurrent.TimeUnit;
-
-import static org.assertj.core.api.Assertions.assertThat;
 
 @QuarkusTest
 @QuarkusTestResource(WireMockExtension.class)
 final class FullRoundtripTest {
 
-    @Inject
-    DiplomaResource diplomaResource;
+	@Inject
+	DiplomaResource diplomaResource;
 
-    @Inject
-    SummitList summitList;
+	@Inject
+	SummitList summitList;
 
-    @Inject
-    DiplomaLogResource logs;
+	@Inject
+	DiplomaLogResource logs;
 
-    @Inject
-    MockMailbox mailbox;
+	@Inject
+	MockMailbox mailbox;
 
-    @Inject
-    MailingResource mailingResource;
+	@Inject
+	MailingResource mailingResource;
 
-    private static final Object LOCK = new Object();
+	private static final Object LOCK = new Object();
 
-    @BeforeEach
-    void init() {
-        mailbox.clear();
-    }
+	@BeforeEach
+	void init() {
+		mailbox.clear();
+	}
 
-    @BeforeEach
-    void synchronize() {
-        Awaitility.await().atMost(10, TimeUnit.SECONDS).until(() -> SummitListTestSeam.isInitialSynchronizationCompleted(summitList));
-    }
+	@BeforeEach
+	void synchronize() {
+		Awaitility.await()
+				.atMost(10, TimeUnit.SECONDS)
+				.until(() -> SummitListTestSeam.isInitialSynchronizationCompleted(summitList));
+	}
 
-    @Test
-    void requestingDiplomaSendsMail() {
-        synchronized (LOCK) {
-            final var candidates = diplomaResource.checkCandidatesForUser("OE5JFE", null);
-            final var requester = new Requester("OE5JFE", "noreply@nothing.com", "Dip-Dip Dabbadudei");
-            final var request = diplomaResource.requestDiploma("OE5JFE", new DiplomaRequest(requester, candidates, "de"));
-            assertThat(request).isTrue();
+	@Test
+	void requestingDiplomaSendsMail() {
+		synchronized (LOCK) {
+			/*
+			NB: We filter out OE20SOTA candidates because they currently have problems with H2 DB in test environments.
+			This is unfortunate, but for this alone we don't need a full-fledged PostgreSQL database, and making H2
+			work with flyway to install the triggers is not worth the effort.
+			 */
+			final var candidates = diplomaResource.checkCandidatesForUser("OE5JFE", null)
+					.stream()
+					.filter(signed -> signed.candidate().category() != Candidate.Category.OE20SOTA)
+					.toList();
+			final var requester = new Requester("OE5JFE", "noreply@nothing.com", "Dip-Dip Dabbadudei");
+			final var request =
+					diplomaResource.requestDiploma("OE5JFE", new DiplomaRequest(requester, candidates, "de"));
+			assertThat(request).isTrue();
 
-            assertThat(DiplomaLogResourceTestSeam.listPendingOn(logs)).isNotEmpty();
+			assertThat(DiplomaLogResourceTestSeam.listPendingOn(logs)).isNotEmpty();
 
-            mailingResource.sendPendingRequests();
+			mailingResource.sendPendingRequests();
 
-            final var mails = mailbox.getMailsSentTo("oe5idt@oevsv.at");
-            // We assume 3 basic awards, and probably one OE20SOTA that is not applicable; either way, 3 mails should be
-            // sent!
-            assertThat(mails).hasSize(3);
-            Mail actual = mails.get(0);
-            assertThat(actual.getHtml()).containsIgnoringCase(requester.callSign).contains(requester.name);
-            assertThat(actual.getText()).containsIgnoringCase(requester.callSign).contains(requester.name);
-            assertThat(actual.getSubject()).containsIgnoringCase(requester.callSign).contains(requester.name);
-            assertThat(actual.getAttachments()).hasSize(1).singleElement().hasFieldOrPropertyWithValue("contentType", "application/pdf");
+			final var mails = mailbox.getMailsSentTo("oe5idt@oevsv.at");
+			// We assume 3 basic awards, and probably one OE20SOTA that is not applicable; either way, 3 mails should be
+			// sent!
+			assertThat(mails).hasSize(3);
+			Mail actual = mails.get(0);
+			assertThat(actual.getHtml()).containsIgnoringCase(requester.callSign).contains(requester.name);
+			assertThat(actual.getText()).containsIgnoringCase(requester.callSign).contains(requester.name);
+			assertThat(actual.getSubject()).containsIgnoringCase(requester.callSign).contains(requester.name);
+			assertThat(actual.getAttachments()).hasSize(1)
+					.singleElement()
+					.hasFieldOrPropertyWithValue("contentType", "application/pdf");
 
-            DiplomaLogResourceTestSeam.deleteAllOn(logs);
-        }
-    }
+			DiplomaLogResourceTestSeam.deleteAllOn(logs);
+		}
+	}
 }

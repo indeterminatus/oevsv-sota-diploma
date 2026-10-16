@@ -37,7 +37,6 @@ import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.PathParam;
 import jakarta.ws.rs.Produces;
-import jakarta.ws.rs.QueryParam;
 
 @Singleton
 @Path("/")
@@ -71,28 +70,28 @@ public interface ExternalDataService {
 
 	@GET
 	@Compressed
-	@Path("/admin/activator_log_by_id")
+	@Path("/logs/activator/{id}/{year}/1")
 	@Produces("application/json")
 	@Bulkhead(value = 3)
 	@CircuitBreaker(requestVolumeThreshold = 4, successThreshold = 10, delay = 10L, delayUnit = ChronoUnit.SECONDS)
-	Collection<ActivatorLog> fetchActivatorLogsById(@QueryParam("id") String userId,
-			@QueryParam("year") @DefaultValue("all") String year);
+	Collection<ActivatorLog> fetchActivatorLogsById(@PathParam("id") String userId,
+			@PathParam("year") @DefaultValue("9999") String year);
 
 	@GET
 	@Compressed
-	@Path("/admin/chaser_log_by_id")
+	@Path("/logs/chaser/{id}/{year}/1")
 	@Produces("application/json")
 	@Bulkhead(value = 3)
 	@CircuitBreaker(requestVolumeThreshold = 4, successThreshold = 10, delay = 10L, delayUnit = ChronoUnit.SECONDS)
-	Collection<ChaserLog> fetchChaserLogsById(@QueryParam("id") String userId,
-			@QueryParam("year") @DefaultValue("all") String year);
+	Collection<ChaserLog> fetchChaserLogsById(@PathParam("id") String userId,
+			@PathParam("year") @DefaultValue("9999") String year);
 
 	@GET
 	@Compressed
-	@Path("/admin/s2s_log_by_id")
+	@Path("/logs/s2s/{id}/{year}/1")
 	@Produces("application/json")
 	@Bulkhead(value = 3)
 	@CircuitBreaker(requestVolumeThreshold = 4, successThreshold = 10, delay = 10L, delayUnit = ChronoUnit.SECONDS)
-	Collection<SummitToSummitLog> fetchSummitToSummitLogsById(@QueryParam("id") String userId,
-			@QueryParam("year") @DefaultValue("all") String year);
+	Collection<SummitToSummitLog> fetchSummitToSummitLogsById(@PathParam("id") String userId,
+			@PathParam("year") @DefaultValue("9999") String year);
 }

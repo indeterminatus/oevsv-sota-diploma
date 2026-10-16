@@ -16,54 +16,62 @@ Accept: application/json
 
 ###
 # @name Alle Aktivierungen pro UserID (am Beispiel OE5JFE):
-GET https://api-db.sota.org.uk/admin/activator_log_by_id?year=all&id=11330
+# UserID for OE5JFE: 11330
+# Next argument is date-range: 0 = previous 6 months, 2026 = specific year, 9999 = all entries
+# Last argument is order: 0 or 1 (descending or ascending, does not really matter for us)
+GET https://api-db2.sota.org.uk/logs/activator/11330/9999/1
 Accept: application/json
 
 ###
 # @name Alle Chases pro UserID (am Beispiel OE5JFE):
-GET https://api-db.sota.org.uk/admin/chaser_log_by_id?year=all&id=11330
+GET https://api-db2.sota.org.uk/logs/chaser/11330/9999/1
 Accept: application/json
 
 ###
 # @name Alle Chases pro UserID (am Beispiel OE5HKT):
-GET https://api-db.sota.org.uk/admin/chaser_log_by_id?year=all&id=79437
+GET https://api-db2.sota.org.uk/logs/chaser/79437/9999/1
 Accept: application/json
 
 ###
 # @name Alle Chases pro UserID (am Beispiel OE5JFE) für 2023:
-GET https://api-db.sota.org.uk/admin/chaser_log_by_id?year=2023&id=11330
+GET https://api-db2.sota.org.uk/logs/chaser/11330/2023/1
 Accept: application/json
 Accept-Encoding: gzip, deflate, br
 
 ###
 # @name Alle S2S pro UserID (am Beispiel OE5JFE):
-GET https://api-db.sota.org.uk/admin/s2s_log_by_id?year=all&id=11330
+GET https://api-db2.sota.org.uk/logs/s2s/11330/9999/1
 Accept: application/json
 
 ###
 # @name Alle Aktivierungen pro UserID (am Beispiel OE9NAT):
-GET https://api-db.sota.org.uk/admin/activator_log_by_id?year=all&id=52194
+GET https://api-db2.sota.org.uk/logs/activator/52194/9999/1
 Accept: application/json
 Accept-Encoding: gzip, deflate, br
 
 ###
-# @name Alle Chases pro UserID (am Beispiel OE5JFE):
-GET https://api-db.sota.org.uk/admin/chaser_log_by_id?year=all&id=11330
-Accept: application/json
-
-###
 # @name Alle Aktivierungen (am Beispiel IK2LEY):
-GET https://api-db.sota.org.uk//admin/activator_log_by_id?id=11608&year=all
+GET https://api-db2.sota.org.uk/logs/activator/11608/9999/1
 Accept: application/json
 
 ###
 # @name Alle Chases pro UserID (am Beispiel IK2LEY):
-GET https://api-db.sota.org.uk/admin/chaser_log_by_id?year=all&id=11608
+GET https://api-db2.sota.org.uk/logs/chaser/11608/9999/1
 Accept: application/json
 
 ###
 # @name Alle S2S pro UserID (am Beispiel IK2LEY):
-GET https://api-db.sota.org.uk/admin/s2s_log_by_id?year=all&id=11608
+GET https://api-db2.sota.org.uk/logs/s2s/11608/9999/1
+Accept: application/json
+
+###
+# @name Alle Chases pro UserID (am Beispiel IK2LEY):
+GET https://api-db2.sota.org.uk/logs/chaser/11608/9999/1
+Accept: application/json
+
+###
+# @name Chases für W0TZ (kein OESOTA20 Diplom):
+GET https://api-db2.sota.org.uk/logs/chaser/46145/9999/1
 Accept: application/json
 
 ###
